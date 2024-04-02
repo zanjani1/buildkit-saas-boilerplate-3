@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-import { Providers } from './providers';
 
 const font = Inter({ subsets: ['latin'] });
 
@@ -45,9 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Script>
 
       <html lang='en'>
-        <Providers>
-          <body className={font.className}>{children}</body>
-        </Providers>
+        <body className={font.className}>
+          <main>{children}</main>
+        </body>
       </html>
     </>
   );
