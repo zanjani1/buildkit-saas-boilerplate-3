@@ -6,7 +6,7 @@ import { ThemeSupa } from '@supabase/auth-ui-shared';
 
 export default function GoogleAuth() {
   const supabase = supabaseBrowserClient();
-  const redirectUrl = `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`;
+  const redirectUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/callback`;
 
   return (
     <div className='w-full mt-4'>
@@ -20,7 +20,9 @@ export default function GoogleAuth() {
           variables: {
             default: {
               colors: {
-                defaultButtonText: 'black',
+                defaultButtonText: 'white',
+                defaultButtonBackground: '#2078FF',
+                defaultButtonBackgroundHover: '#2078ffeb',
               },
               radii: {
                 borderRadiusButton: '6px',

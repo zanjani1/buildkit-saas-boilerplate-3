@@ -1,0 +1,83 @@
+'use client';
+
+import { FC, useState } from 'react';
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
+import { signIn, signUp } from '@/app/login/actions';
+import { toast } from '../ui/use-toast';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
+interface EmailAuthProps {}
+
+const EmailAuth: FC<EmailAuthProps> = () => {
+  const [isLogin, setIsLogin] = useState<boolean>(true);
+
+  const router = useRouter();
+
+  const authStatusLabel = isLogin ? "Don't have an account?" : 'Already have an account?';
+
+  const handleFormAction = async (formData: FormData) => {
+    let error;
+
+    if (isLogin) {
+      error = await signIn(formData);
+    } else {
+      error = await signUp(formData);
+    }
+    if (error) {
+      toast({ description: error, variant: 'destructive' });
+      return;
+    }
+
+    router.push('/dashboard');
+  };
+
+  return (
+    <form className='w-full flex flex-col justify-center gap-8 text-foreground mt-2'>
+      <div className='flex flex-col gap-4'>
+        {!isLogin && <Input id='full-name' name='full-name' placeholder='Name' required className='h-11' />}
+        <Input id='email' name='email' placeholder='Email' required className='h-11' />
+        <Input
+          id='password'
+          type='password'
+          name='password'
+          placeholder='Password'
+          required
+          className='h-11'
+        />
+      </div>
+
+      <Button variant='secondary' formAction={handleFormAction} className='h-12'>
+        {isLogin ? 'Sign In' : 'Sign Up'}
+      </Button>
+
+      <div className='text-sm font-light text-center'>
+        <p>
+          By proceeding you agree to our{' '}
+          <Link href='/terms-of-service' target='_blank' className='font-semibold hover:underline'>
+            Terms
+          </Link>{' '}
+          and{' '}
+          <Link href='/privacy-policy' target='_blank' className='font-semibold hover:underline'>
+            Privacy Policy
+          </Link>
+          .
+        </p>
+      </div>
+
+      <div className='text-sm font-light text-center'>
+        <span>{authStatusLabel}</span>
+        <Button
+          type='button'
+          variant='link'
+          onClick={() => setIsLogin(!isLogin)}
+          className='text-sm text-secondary underline leading-tight font-light px-2'>
+          {isLogin ? 'Register' : 'Login'}
+        </Button>
+      </div>
+    </form>
+  );
+};
+
+export default EmailAuth;
