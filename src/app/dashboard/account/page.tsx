@@ -16,20 +16,32 @@ const page = () => {
         title='Account details'
         description='Access and Manage Your Personal Details, Contracts, and Wallet Address'
       />
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        <InputWrapper id='firstName' label='First Name'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl'>
+        <InputWrapper
+          id='firstName'
+          label='First Name'
+          className='text-[#363A4E] text-[14px] font-medium leading-[20px]'>
           <Input id='firstName' name='firstName' placeholder='Username' />
         </InputWrapper>
-        <InputWrapper id='lastName' label='Last Name'>
+        <InputWrapper
+          id='lastName'
+          label='Last Name'
+          className='text-[#363A4E] text-[14px] font-medium leading-[20px]'>
           <Input id='lastName' name='lastName' placeholder='Username' />
         </InputWrapper>
-        <InputWrapper id='email' label='Email Address'>
+        <InputWrapper
+          id='email'
+          label='Email Address'
+          className='text-[#363A4E] text-[14px] font-medium leading-[20px]'>
           <Input id='email' name='email' placeholder='genai@labs.com' />
         </InputWrapper>
-        <InputWrapper id='location' label='Location' className="">
+        <InputWrapper
+          id='location'
+          label='Location '
+          className='text-[#363A4E] text-[14px] font-medium leading-[20px]'>
           <Input id='location' name='location' placeholder='Where are you based at..' />
           <div className='flex border border-[#E4E6EA] bg-[#FCFCFC] rounded-md items-start gap-2 p-3 mt-2'>
-            <IoIosInformationCircle className='text-[#6B7280] text-lg' size={22} />{' '}
+            <IoIosInformationCircle className='text-[#6B7280] font-medium leading-5 text-lg' size={22} />{' '}
             <p>Please note that updating your location could affect your tax rates.</p>{' '}
           </div>
         </InputWrapper>
