@@ -9,11 +9,11 @@ interface ButtonCrispSupportProps {}
 
 const ButtonCrispSupport: FC<ButtonCrispSupportProps> = () => {
   const handleChat = () => {
-    if (config.CRISP_ID) {
+    if (config.crisp.id) {
       Crisp.chat.show();
       Crisp.chat.open();
     } else {
-      window.open(`mailto:${config.SUPPORT_EMAIL}?subject=I want Help ${config.APP_NAME}`, '_blank');
+      window.open(`mailto:${config.supportEmail}?subject=I want Help ${config.app.name}`, '_blank');
     }
   };
 

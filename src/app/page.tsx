@@ -3,7 +3,7 @@ import Features from '@/components/landing-page/Features';
 import Footer from '@/components/landing-page/Footer';
 import Hero from '@/components/landing-page/Hero';
 import Navbar from '@/components/landing-page/Navbar';
-import Pricing from '@/components/landing-page/Pricing';
+import Pricing from '@/components/landing-page/pricing/Pricing';
 import Product from '@/components/landing-page/Product';
 import { getUserDetails } from '@/utils/supabase/server';
 

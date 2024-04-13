@@ -1,41 +1,48 @@
-import Heading from '@/components/Heading';
 import InputWrapper from '@/components/InputWrapper';
+import PopoverLocationInfo from '@/components/dashboard/account/PopoverLocationInfo';
 import { Input } from '@/components/ui/input';
-import React from 'react';
-import { IoIosInformationCircle } from 'react-icons/io';
+import { SubmitButton } from './SubmitButton';
 
-const page = () => {
+export default async function Account() {
+  const handleAccountUpdate = async (formData: FormData) => {
+    'use server';
+
+    const firstName = formData.get('firstName') as string;
+    const lastName = formData.get('lastName') as string;
+    const email = formData.get('email') as string;
+    const location = formData.get('location') as string;
+
+    // Code to store the account details in the database
+    console.log({ firstName, lastName, email, location });
+  };
+
   return (
-    <div className='p-8 space-y-8'>
-      <div className='text-[#363A4E] text-2xl  not-italic font-semibold leading-7 tracking-[-0.48px];'>
-        Account Settings
+    <div className='p-8 space-y-10'>
+      <div className='space-y-1 text-secondary'>
+        <p className='text-2xl font-medium'>Account Settings</p>
+        <p>Access and Manage Your Personal Details, Contracts, and Wallet Address</p>
       </div>
-      <Heading
-        headerClassName='text-[#363A4E] font-semibold text-lg'
-        paragraphClassName='text-[#5A607D] font-medium'
-        title='Account details'
-        description='Access and Manage Your Personal Details, Contracts, and Wallet Address'
-      />
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-        <InputWrapper id='firstName' label='First Name'>
-          <Input id='firstName' name='firstName' placeholder='Username' />
-        </InputWrapper>
-        <InputWrapper id='lastName' label='Last Name'>
-          <Input id='lastName' name='lastName' placeholder='Username' />
-        </InputWrapper>
-        <InputWrapper id='email' label='Email Address'>
-          <Input id='email' name='email' placeholder='genai@labs.com' />
-        </InputWrapper>
-        <InputWrapper id='location' label='Location' className="">
-          <Input id='location' name='location' placeholder='Where are you based at..' />
-          <div className='flex border border-[#E4E6EA] bg-[#FCFCFC] rounded-md items-start gap-2 p-3 mt-2'>
-            <IoIosInformationCircle className='text-[#6B7280] text-lg' size={22} />{' '}
-            <p>Please note that updating your location could affect your tax rates.</p>{' '}
-          </div>
-        </InputWrapper>
-      </div>
+
+      <form>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl'>
+          <InputWrapper id='firstName' label='First Name'>
+            <Input id='firstName' name='firstName' placeholder='John' />
+          </InputWrapper>
+          <InputWrapper id='lastName' label='Last Name'>
+            <Input id='lastName' name='lastName' placeholder='Elahi' />
+          </InputWrapper>
+          <InputWrapper id='email' label='Email Address'>
+            <Input id='email' name='email' defaultValue='help@builderkit.ai' />
+          </InputWrapper>
+          <InputWrapper id='location' label='Location' infoPopover={<PopoverLocationInfo />}>
+            <Input id='location' name='location' placeholder='India' />
+          </InputWrapper>
+
+          <SubmitButton className='w-full' formAction={handleAccountUpdate}>
+            Update Account
+          </SubmitButton>
+        </div>
+      </form>
     </div>
   );
-};
-
-export default page;
+}
