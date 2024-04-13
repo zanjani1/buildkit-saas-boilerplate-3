@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Projects = async () => {
+export default async function Dashboard() {
   return <div className='p-4 max-w-7xl'>Dashboard</div>;
-};
-
-export default Projects;
+}
