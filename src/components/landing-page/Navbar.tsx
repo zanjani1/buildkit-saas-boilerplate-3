@@ -20,13 +20,15 @@ export default async function Navbar({ user }: { user: User | null }) {
 
       <ul className='hidden md:flex items-center gap-6'>
         {navbarRoutes.map((item, index) => (
-          <li key={index} className='text-sm cursor-pointer font-medium leading-6'>
-            <Link href={item.url}>{item.label}</Link>
+          <li key={index} className='text-sm font-medium'>
+            <Link href={item.url} className='hover:underline'>
+              {item.label}
+            </Link>
           </li>
         ))}
       </ul>
 
-      <Link href={user ? '/dashboard' : '/login'}>
+      <Link href={user ? '/dashboard' : '/login'} className='hidden md:block'>
         <Button>{user ? 'Try Now' : 'Login'}</Button>
       </Link>
 
@@ -38,7 +40,7 @@ export default async function Navbar({ user }: { user: User | null }) {
           <div className='space-y-6'>
             <ul className='gap-6'>
               {navbarRoutes.map((item, index) => (
-                <li key={index} className='text-sm cursor-pointer font-medium leading-6 py-2'>
+                <li key={index} className='text-sm font-medium py-2'>
                   <Link href={item.url}>{item.label}</Link>
                 </li>
               ))}

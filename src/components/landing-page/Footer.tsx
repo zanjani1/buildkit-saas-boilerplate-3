@@ -71,7 +71,7 @@ export default async function Footer({ user }: { user: User | null }) {
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='md:w-1/4 flex flex-col gap-8'>
             <Logo />
-            <p className='text-lg font-light'>
+            <p className='text-lg'>
               lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
             </p>
           </div>
