@@ -20,11 +20,11 @@ const CrispChat = (): null => {
   }, [supabase]);
 
   useEffect(() => {
-    if (config.CRISP_ID) {
-      Crisp.configure(config.CRISP_ID);
+    if (config.crisp.id) {
+      Crisp.configure(config.crisp.id);
 
       // You can also use <ButtonCrispSupport /> to manually add support button anywhere in the website.
-      if (!config.CRISP_ALLOWED_ROUTES.includes(pathname)) {
+      if (!config.crisp.allowedRoutes.includes(pathname)) {
         Crisp.chat.hide();
         Crisp.chat.onChatClosed(() => {
           Crisp.chat.hide();
