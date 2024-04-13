@@ -4,17 +4,20 @@ import { supabaseBrowserClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import config from '@/config';
 import { getPaymentUrl } from '@/utils/utils';
-import { TypeFrequency, TypePaymentGatwayProvider, TypeTier } from '@/types/pricing';
+import { TypeSubscriptionInterval, TypePaymentGatwayProvider, TypeSubscriptionPlan } from '@/types/pricing';
 
 interface ButtonPaymentProps {
   provider: TypePaymentGatwayProvider;
-  tier: TypeTier;
-  frequency: TypeFrequency;
+  tier: TypeSubscriptionPlan;
+  frequency: TypeSubscriptionInterval;
 }
 
 const ButtonPayment: FC<ButtonPaymentProps> = ({ provider, tier, frequency }) => {
   const supabase = supabaseBrowserClient();
   const router = useRouter();
+
+  // Optional: If you want to add discount code by default
+  const discount = provider === 'stripe' && frequency === 'annually' ? '8JDToQd0' : undefined;
 
   const goToPaymentPage = async () => {
     const {
@@ -26,7 +29,7 @@ const ButtonPayment: FC<ButtonPaymentProps> = ({ provider, tier, frequency }) =>
       url = '/login';
     } else if (tier !== 'trial') {
       const variantId = config[provider].variant[tier][frequency];
-      url = getPaymentUrl(provider, variantId, user.email!);
+      url = getPaymentUrl(provider, variantId, user.email!, discount);
     }
 
     router.push(url);

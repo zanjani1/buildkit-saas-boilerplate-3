@@ -1,5 +1,5 @@
-export type TypeTier = 'trial' | 'standard' | 'premium';
+export type TypeSubscriptionPlan = 'trial' | 'standard' | 'premium';
 
-export type TypeFrequency = 'monthly' | 'annually';
+export type TypeSubscriptionInterval = 'monthly' | 'annually';
 
 export type TypePaymentGatwayProvider = 'stripe' | 'lemonSqueezy';

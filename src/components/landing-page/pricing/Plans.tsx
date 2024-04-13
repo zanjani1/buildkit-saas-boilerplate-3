@@ -4,9 +4,11 @@ import { RadioGroup } from '@headlessui/react';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
 import { cn } from '@/utils/utils';
-import { TypeFrequency, TypeTier } from '@/types/pricing';
+import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/pricing';
 import ButtonPayment from './ButtonPayment';
 import SeparatorOr from '@/components/ui/separator-or';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const frequencies = [
   { value: 'monthly', label: 'Billed Monthly', priceSuffix: '/month' },
@@ -102,19 +104,27 @@ export default function Plans() {
               ))}
             </ul>
 
-            <div>
-              <ButtonPayment
-                provider='stripe'
-                tier={tier.id as TypeTier}
-                frequency={frequency.value as TypeFrequency}
-              />
-              <SeparatorOr />
-              <ButtonPayment
-                provider='lemonSqueezy'
-                tier={tier.id as TypeTier}
-                frequency={frequency.value as TypeFrequency}
-              />
-            </div>
+            {tier.id === 'trial' ? (
+              <Link href='/dashboard' className='w-full'>
+                <Button size='lg' className='w-full'>
+                  Get Started
+                </Button>
+              </Link>
+            ) : (
+              <div>
+                <ButtonPayment
+                  provider='stripe'
+                  tier={tier.id as TypeSubscriptionPlan}
+                  frequency={frequency.value as TypeSubscriptionInterval}
+                />
+                <SeparatorOr />
+                <ButtonPayment
+                  provider='lemonSqueezy'
+                  tier={tier.id as TypeSubscriptionPlan}
+                  frequency={frequency.value as TypeSubscriptionInterval}
+                />
+              </div>
+            )}
           </div>
         ))}
       </div>

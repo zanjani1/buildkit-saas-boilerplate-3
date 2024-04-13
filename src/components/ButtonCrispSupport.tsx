@@ -13,7 +13,7 @@ const ButtonCrispSupport: FC<ButtonCrispSupportProps> = () => {
       Crisp.chat.show();
       Crisp.chat.open();
     } else {
-      window.open(`mailto:${config.supportEmail}?subject=I want Help ${config.appName}`, '_blank');
+      window.open(`mailto:${config.supportEmail}?subject=I want Help ${config.app.name}`, '_blank');
     }
   };
 
