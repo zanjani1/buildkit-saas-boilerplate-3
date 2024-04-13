@@ -4,7 +4,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { LuLayoutDashboard } from 'react-icons/lu';
 import { RiHistoryFill } from 'react-icons/ri';
-import { IoSettingsOutline } from 'react-icons/io5';
+import { LuSettings } from 'react-icons/lu';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
 
@@ -23,7 +23,7 @@ const sidebarItems = [
     url: '/dashboard/history',
   },
   {
-    icon: IoSettingsOutline,
+    icon: LuSettings,
     label: 'Account Setting',
     url: '/dashboard/account',
   },

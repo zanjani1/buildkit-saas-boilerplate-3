@@ -3,6 +3,334 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 export type Database = {
   public: {
     Tables: {
+      content_creations: {
+        Row: {
+          created_at: string;
+          id: string;
+          results: string | null;
+          style: string;
+          topic: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          id?: string;
+          results?: string | null;
+          style: string;
+          topic: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          id?: string;
+          results?: string | null;
+          style?: string;
+          topic?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'content_creations_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      headshot_generations: {
+        Row: {
+          created_at: string;
+          generation_id: string;
+          id: string;
+          image_urls: string[] | null;
+          model_id: string;
+          negative_prompt: string | null;
+          prompt: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          generation_id: string;
+          id?: string;
+          image_urls?: string[] | null;
+          model_id: string;
+          negative_prompt?: string | null;
+          prompt: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          generation_id?: string;
+          id?: string;
+          image_urls?: string[] | null;
+          model_id?: string;
+          negative_prompt?: string | null;
+          prompt?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'headshot_generations_model_id_fkey';
+            columns: ['model_id'];
+            isOneToOne: false;
+            referencedRelation: 'headshot_models';
+            referencedColumns: ['model_id'];
+          },
+          {
+            foreignKeyName: 'headshot_generations_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      headshot_models: {
+        Row: {
+          created_at: string;
+          eta: string;
+          expires_at: string | null;
+          id: string;
+          images: string[];
+          model_id: string;
+          name: string;
+          status: Database['public']['Enums']['headshotmodelstatus'];
+          trained_at: string | null;
+          type: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          eta: string;
+          expires_at?: string | null;
+          id?: string;
+          images: string[];
+          model_id: string;
+          name: string;
+          status?: Database['public']['Enums']['headshotmodelstatus'];
+          trained_at?: string | null;
+          type: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          eta?: string;
+          expires_at?: string | null;
+          id?: string;
+          images?: string[];
+          model_id?: string;
+          name?: string;
+          status?: Database['public']['Enums']['headshotmodelstatus'];
+          trained_at?: string | null;
+          type?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'headshot_models_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      image_generations: {
+        Row: {
+          created_at: string;
+          error: string | null;
+          guidance: string;
+          id: string;
+          image_urls: string[] | null;
+          inference: string;
+          model: string;
+          negative_prompt: string | null;
+          no_of_outputs: string;
+          prediction_id: string;
+          prompt: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          error?: string | null;
+          guidance: string;
+          id?: string;
+          image_urls?: string[] | null;
+          inference: string;
+          model: string;
+          negative_prompt?: string | null;
+          no_of_outputs: string;
+          prediction_id: string;
+          prompt: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          error?: string | null;
+          guidance?: string;
+          id?: string;
+          image_urls?: string[] | null;
+          inference?: string;
+          model?: string;
+          negative_prompt?: string | null;
+          no_of_outputs?: string;
+          prediction_id?: string;
+          prompt?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'image_generations_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      interior_designs: {
+        Row: {
+          created_at: string;
+          error: string | null;
+          id: string;
+          image_urls: string[] | null;
+          negative_prompt: string | null;
+          no_of_outputs: string;
+          prediction_id: string;
+          prompt: string;
+          ref_image: string;
+          scale: number;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          error?: string | null;
+          id?: string;
+          image_urls?: string[] | null;
+          negative_prompt?: string | null;
+          no_of_outputs: string;
+          prediction_id: string;
+          prompt: string;
+          ref_image: string;
+          scale: number;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          error?: string | null;
+          id?: string;
+          image_urls?: string[] | null;
+          negative_prompt?: string | null;
+          no_of_outputs?: string;
+          prediction_id?: string;
+          prompt?: string;
+          ref_image?: string;
+          scale?: number;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'interior_designs_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      qr_code_generations: {
+        Row: {
+          created_at: string;
+          error: string | null;
+          id: string;
+          image_url: string | null;
+          prompt: string;
+          url: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          error?: string | null;
+          id?: string;
+          image_url?: string | null;
+          prompt: string;
+          url: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          error?: string | null;
+          id?: string;
+          image_url?: string | null;
+          prompt?: string;
+          url?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'qr_code_generations_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      subscriptions: {
+        Row: {
+          active: boolean | null;
+          amount: number | null;
+          created_at: string;
+          id: string;
+          interval: Database['public']['Enums']['billingcycle'] | null;
+          start_date: string | null;
+          subscription_id: string | null;
+          type: Database['public']['Enums']['subscriptiontype'];
+          user_email: string;
+          user_id: string;
+        };
+        Insert: {
+          active?: boolean | null;
+          amount?: number | null;
+          created_at?: string;
+          id?: string;
+          interval?: Database['public']['Enums']['billingcycle'] | null;
+          start_date?: string | null;
+          subscription_id?: string | null;
+          type?: Database['public']['Enums']['subscriptiontype'];
+          user_email: string;
+          user_id: string;
+        };
+        Update: {
+          active?: boolean | null;
+          amount?: number | null;
+          created_at?: string;
+          id?: string;
+          interval?: Database['public']['Enums']['billingcycle'] | null;
+          start_date?: string | null;
+          subscription_id?: string | null;
+          type?: Database['public']['Enums']['subscriptiontype'];
+          user_email?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'subscriptions_user_email_fkey';
+            columns: ['user_email'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['email'];
+          },
+          {
+            foreignKeyName: 'subscriptions_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       users: {
         Row: {
           avatar_url: string | null;
@@ -35,6 +363,79 @@ export type Database = {
           },
         ];
       };
+      voice_transcriptions: {
+        Row: {
+          audio_url: string | null;
+          created_at: string;
+          id: string;
+          summary: string | null;
+          transcription: string | null;
+          transcription_id: string;
+          user_id: string;
+        };
+        Insert: {
+          audio_url?: string | null;
+          created_at?: string;
+          id?: string;
+          summary?: string | null;
+          transcription?: string | null;
+          transcription_id: string;
+          user_id: string;
+        };
+        Update: {
+          audio_url?: string | null;
+          created_at?: string;
+          id?: string;
+          summary?: string | null;
+          transcription?: string | null;
+          transcription_id?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'voice_transcriptions_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      youtube_chats: {
+        Row: {
+          chat: Json | null;
+          created_at: string;
+          id: string;
+          transcription: Json;
+          url: string;
+          user_id: string;
+        };
+        Insert: {
+          chat?: Json | null;
+          created_at?: string;
+          id?: string;
+          transcription: Json;
+          url: string;
+          user_id: string;
+        };
+        Update: {
+          chat?: Json | null;
+          created_at?: string;
+          id?: string;
+          transcription?: Json;
+          url?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'youtube_chats_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
     };
     Views: {
       [_ in never]: never;
@@ -43,7 +444,9 @@ export type Database = {
       [_ in never]: never;
     };
     Enums: {
-      [_ in never]: never;
+      billingcycle: 'month' | 'year';
+      headshotmodelstatus: 'processing' | 'finished';
+      subscriptiontype: 'free' | 'standard' | 'premium';
     };
     CompositeTypes: {
       [_ in never]: never;

@@ -45,11 +45,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Script>
 
       <html lang='en'>
-        <Providers>
-          <body className={font.className}>
+        <body className={font.className}>
+          <Providers>
             <main>{children}</main>
-          </body>
-        </Providers>
+          </Providers>
+        </body>
       </html>
     </>
   );
