@@ -21,7 +21,7 @@ const routes = [
   {
     icon: CiSettings,
     label: 'Account Setting',
-    href: '/dashboard/account-setting',
+    href: '/dashboard/account',
   },
 ];
 
