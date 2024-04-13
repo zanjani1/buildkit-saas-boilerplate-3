@@ -40,19 +40,23 @@ export default async function Pricing() {
   return (
     <div id='pricing' className='max-w-6xl mx-auto px-4 py-28'>
       <div className='flex flex-col items-center justify-center'>
-        <p className='text-4xl mb-7'>Pricing</p>
-        <p className='w-1/2 text-lg opacity-60 font-light text-center mb-12'>
-          With lots of unique blocks, you can easily build a page without coding. Build your next landing
-          page.
-        </p>
+        <div className='space-y-7 max-w-lg mb-7'>
+          <p className=' text-[#161C2D] text-center text-4xl not-italic font-normal leading-[48px] tracking-[-1.2px];'>
+            Pricing & Plans
+          </p>
+          <p className=' text-[rgba(22,28,45,0.70)] text-center text-[19px] not-italic font-normal leading-8 tracking-[-0.18px]'>
+            With lots of unique blocks, you can easily build a page without coding. Build your next landing
+            page.
+          </p>
+        </div>
 
-        <div className='flex items-start justify-center gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
           {tiers.map((tier) => (
             <div key={tier.id} className='flex flex-col items-center justify-center gap-10 p-6'>
               <Badge className='bg-primary/10 text-primary shadow-none'>{tier.name}</Badge>
               <div className='text-center'>
-                <p className='text-5xl font-semibold mb-4'>{tier.price.monthly}</p>
-                <p className='text-sm opacity-60'>{tier.description}</p>
+                <p className='text-3xl md:text-5xl font-semibold mb-4'>{tier.price.monthly}</p>
+                <p className='text-base md:text-sm opacity-60'>{tier.description}</p>
               </div>
               <ul role='list' className='h-24 space-y-2 text-sm opacity-60'>
                 {tier.features.map((feature) => (
@@ -61,7 +65,7 @@ export default async function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link href={'/'}>
+              <Link href={'/'} className='w-full'>
                 <Button size='lg' className='w-full'>
                   Get Started
                 </Button>

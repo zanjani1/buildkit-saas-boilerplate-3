@@ -12,10 +12,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className='max-w-6xl mx-auto'>
-        <Navbar user={user} />
-        <Hero user={user} />
-      </div>
+      <Hero user={user} />
       <Features />
       <Product />
       <Pricing />
