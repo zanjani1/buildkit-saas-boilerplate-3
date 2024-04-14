@@ -24,21 +24,21 @@ export default async function Account() {
       </div>
 
       <form>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl'>
+        <div className='md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6'>
           <InputWrapper id='firstName' label='First Name'>
-            <Input id='firstName' name='firstName' placeholder='John' />
+            <Input id='firstName' name='firstName' placeholder='John' className='h-10' />
           </InputWrapper>
           <InputWrapper id='lastName' label='Last Name'>
-            <Input id='lastName' name='lastName' placeholder='Elahi' />
+            <Input id='lastName' name='lastName' placeholder='Elahi' className='h-10' />
           </InputWrapper>
           <InputWrapper id='email' label='Email Address'>
-            <Input id='email' name='email' defaultValue='help@builderkit.ai' />
+            <Input id='email' name='email' defaultValue='help@builderkit.ai' className='h-10' />
           </InputWrapper>
           <InputWrapper id='location' label='Location' infoPopover={<PopoverLocationInfo />}>
-            <Input id='location' name='location' placeholder='India' />
+            <Input id='location' name='location' placeholder='India' className='h-10' />
           </InputWrapper>
 
-          <SubmitButton className='w-full' formAction={handleAccountUpdate}>
+          <SubmitButton className='w-full opacity-75' formAction={handleAccountUpdate}>
             Update Account
           </SubmitButton>
         </div>

@@ -4,8 +4,11 @@ import React from 'react';
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='flex'>
-      <SideBar />
-      <div>{children}</div>
+      <div className='w-64 hidden md:block'>
+        <SideBar />
+      </div>
+
+      <div className='w-full'>{children}</div>
     </div>
   );
 };
