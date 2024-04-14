@@ -24,7 +24,7 @@ export default async function Account() {
       </div>
 
       <form>
-        <div className='md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6'>
+        <div className='md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-6'>
           <InputWrapper id='firstName' label='First Name'>
             <Input id='firstName' name='firstName' placeholder='John' className='h-10' />
           </InputWrapper>
@@ -38,7 +38,7 @@ export default async function Account() {
             <Input id='location' name='location' placeholder='India' className='h-10' />
           </InputWrapper>
 
-          <SubmitButton className='w-full opacity-75' formAction={handleAccountUpdate}>
+          <SubmitButton className='w-full opacity-80' formAction={handleAccountUpdate}>
             Update Account
           </SubmitButton>
         </div>
