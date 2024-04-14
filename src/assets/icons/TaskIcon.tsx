@@ -9,15 +9,15 @@ const TaskIcon = () => {
           <path
             id='Path'
             opacity='0.5'
-            fill-rule='evenodd'
-            clip-rule='evenodd'
+            fillRule='evenodd'
+            clipRule='evenodd'
             d='M39.4903 53.1119L25.15 42.0097L22 44.4489L39.5 58L57 44.4489L53.8306 42L39.4903 53.1119Z'
             fill='#F64B4B'
           />
           <path
             id='Path_2'
-            fill-rule='evenodd'
-            clip-rule='evenodd'
+            fillRule='evenodd'
+            clipRule='evenodd'
             d='M39.5 48L53.8208 36.9589L57 34.5L39.5 21L22 34.5L25.1694 36.9396L39.5 48Z'
             fill='#F64B4B'
           />

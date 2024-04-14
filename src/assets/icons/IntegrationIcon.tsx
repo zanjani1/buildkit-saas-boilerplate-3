@@ -10,8 +10,8 @@ const IntegrationIcon = () => {
       />
       <path
         opacity='0.5'
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M22 40C22 30.055 30.055 22 40 22C49.945 22 58 30.055 58 40C58 49.936 49.945 58 40 58C30.055 58 22 49.945 22 40ZM25.6 40C25.6 47.956 32.044 54.4 40 54.4C47.956 54.4 54.4 47.956 54.4 40C54.4 32.044 47.956 25.6 40 25.6C32.044 25.6 25.6 32.044 25.6 40Z'
         fill='#161C2D'
       />

@@ -35,8 +35,10 @@ export default async function Product() {
     <div id='product' className='bg-waves bg-[#EDF6FF] mx-auto p-4'>
       <div className='max-w-4xl flex flex-col justify-center items-center mx-auto py-20 space-y-20'>
         <div className='space-y-7 max-w-xl'>
-          <p className='text-[#1463FF] font-bold text-center'>WHY CHOOSE US</p>
-          <p className=' text-[#161C2D] text-center text-4xl not-italic font-normal leading-[48px] tracking-[-1.2px];'>
+          <p className='text-primary text-xs md:text-sm text-center font-bold leading-normal tracking-widest uppercase'>
+            WHY CHOOSE US
+          </p>
+          <p className='text-center text-3xl md:text-4xl leading-normal md:leading-snug'>
             People choose us because we serve the best for everyone
           </p>
         </div>
@@ -47,8 +49,8 @@ export default async function Product() {
                 <item.icon />
               </div>
               <div>
-                <p className='text-[#161C2D] text-22 font-semibold leading-[32px]'>{item.title}</p>
-                <p className='text-[rgba(22,28,45,0.70)] text-17 leading-[29px]'>{item.description}</p>
+                <p className='text-xl font-semibold mb-2'>{item.title}</p>
+                <p className='text-secondary/90 leading-relaxed'>{item.description}</p>
               </div>
             </div>
           ))}

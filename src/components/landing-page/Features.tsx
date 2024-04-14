@@ -1,8 +1,8 @@
 import ServiceImageIcon1 from '@/assets/icons/ServiceImageIcon1';
 import ServiceImageIcon2 from '@/assets/icons/ServiceImageIcon2';
 import ServiceImageIcon3 from '@/assets/icons/ServiceImageIcon3';
-import Image from 'next/image';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { Button } from '../ui/button';
 
 const cardContent = [
   {
@@ -48,16 +48,19 @@ export default async function Features() {
     <div id='features' className='max-w-6xl mx-auto p-4 space-y-20 my-20 '>
       <div className='flex flex-col items-center justify-center'>
         <div className='space-y-7 max-w-xl'>
-          <p className='text-[#1463FF] font-bold text-center'>OUR SERVICES</p>
-          <p className=' text-[#161C2D] text-center text-4xl not-italic font-normal leading-[48px] tracking-[-1.2px];'>
+          <p className='text-primary text-xs md:text-sm text-center font-bold leading-normal tracking-widest uppercase'>
+            OUR SERVICES
+          </p>
+          <p className='text-center text-3xl md:text-4xl leading-normal md:leading-snug'>
             We provide great services for our customers based on needs
           </p>
-          <p className=' text-[rgba(22,28,45,0.70)] text-center text-[19px] not-italic font-normal leading-8 tracking-[-0.18px]'>
+          <p className=' text-secondary/90 text-center text-lg md:text-xl font-light md:leading-8 tracking-wide'>
             With lots of unique blocks, you can easily build a page without coding. Build your next
             consultancy website within few minutes.
           </p>
         </div>
       </div>
+
       <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
         {cardContent.map((item, index) => (
           <div
@@ -67,30 +70,23 @@ export default async function Features() {
             <div className='flex justify-center'>
               <item.icon />
             </div>
-            <div>
-              <p className='text-white text-center text-[24px] font-medium leading-[34px]'>{item.title}</p>
-              <p className='text-[rgba(255,_255,_255,_0.88)] text-center text-[17px] font-normal leading-[142%] mt-4'>
-                {item.description}
-              </p>
-              <div className='text-white flex  py-8 items-center justify-center gap-2 mt-8'>
+            <div className='text-white text-center'>
+              <p className='text-2xl font-medium'>{item.title}</p>
+              <p className='font-light mt-4'>{item.description}</p>
+              <Button variant='link' className='text-white flex items-center gap-2 mx-auto mt-8'>
                 Learn more
                 <BiRightArrowAlt size={20} />
-              </div>
+              </Button>
             </div>
           </div>
         ))}
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
+
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-28'>
         {serviceFeatures.map((item, index) => (
-          <div key={index} className={` `}>
-            <div>
-              <p className='text-[#161C2D] text-center text-[48px] font-normal leading-[58px]'>
-                {item.title}
-              </p>
-              <p className='text-[rgba(22,_28,_45,_0.70)] text-center  text-[19px] not-italic font-normal leading-[32px] mt-4'>
-                {item.description}
-              </p>
-            </div>
+          <div key={index}>
+            <p className='text-center text-5xl leading-snug'>{item.title}</p>
+            <p className='text-secondary/90 text-center text-lg mt-4'>{item.description}</p>
           </div>
         ))}
       </div>
