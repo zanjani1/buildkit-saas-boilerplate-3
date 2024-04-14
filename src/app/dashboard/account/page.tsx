@@ -32,7 +32,7 @@ export default async function Account() {
             <Input id='lastName' name='lastName' placeholder='Elahi' className='h-10' />
           </InputWrapper>
           <InputWrapper id='email' label='Email Address'>
-            <Input id='email' name='email' defaultValue='help@builderkit.ai' className='h-10' />
+            <Input id='email' name='email' placeholder='help@builderkit.ai' className='h-10' />
           </InputWrapper>
           <InputWrapper id='location' label='Location' infoPopover={<PopoverLocationInfo />}>
             <Input id='location' name='location' placeholder='India' className='h-10' />
