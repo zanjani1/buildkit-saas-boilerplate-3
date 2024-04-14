@@ -2,24 +2,25 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
+import { Providers } from './providers';
 
 const font = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://aiboilerplate.com'),
-  title: 'AI Boilerplate',
-  description: 'AI Boilerplate',
+  metadataBase: new URL('https://builderkit.ai'),
+  title: 'BuilderKit',
+  description: 'BuilderKit',
   openGraph: {
     type: 'website',
-    title: 'AI Boilerplate',
-    description: 'AI Boilerplate',
+    title: 'BuilderKit',
+    description: 'BuilderKit',
     images: '/og-image.png',
-    url: 'https://aiboilerplate.com',
+    url: 'https://builderkit.ai',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Boilerplate',
-    description: 'AI Boilerplate',
+    title: 'BuilderKit',
+    description: 'BuilderKit',
     images: '/og-image.png',
   },
 };
@@ -45,7 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <html lang='en'>
         <body className={font.className}>
-          <main>{children}</main>
+          <Providers>
+            <main>{children}</main>
+          </Providers>
         </body>
       </html>
     </>
