@@ -34,14 +34,14 @@ const Modal: FC<ModalProps> = ({
   styleModalButton,
   labelActionButton,
   includeCancelButton = true,
-  actionButtonVariant,
+  actionButtonVariant = 'default',
   handleAction,
 }) => {
   const { className: modalButtonClassName, ...modalButtonProps } = styleModalButton ?? {};
 
   return (
     <Dialog>
-      <DialogTrigger className={cn(buttonVariants(modalButtonProps), modalButtonClassName, 'w-full')}>
+      <DialogTrigger className={cn('w-full', buttonVariants(modalButtonProps), modalButtonClassName)}>
         {labelModalButton ?? 'Open Modal'}
       </DialogTrigger>
 
@@ -55,7 +55,7 @@ const Modal: FC<ModalProps> = ({
         <DialogFooter>
           <Button
             onClick={handleAction}
-            className={cn(buttonVariants({ variant: actionButtonVariant ?? 'default' }), 'sm:w-1/2')}>
+            className={cn('sm:w-1/2', buttonVariants({ variant: actionButtonVariant }))}>
             {labelActionButton ?? 'Continue'}
           </Button>
           {includeCancelButton && (

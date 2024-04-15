@@ -5,7 +5,7 @@
   "author": "@saddysk",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm run lint",
+    "build": "next build && npm run postbuild",
     "postbuild": "next-sitemap",
     "start": "next start",
     "validate": "run-s format lint typecheck",
@@ -38,6 +38,7 @@
     "next-sitemap": "^4.2.2",
     "postcss": "8.4.33",
     "react": "^18",
+    "react-day-picker": "^8.10.0",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-spinners": "^0.13.8",

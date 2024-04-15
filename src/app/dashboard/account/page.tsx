@@ -18,9 +18,11 @@ export default async function Account() {
 
   return (
     <div className='p-8 space-y-10'>
-      <div className='space-y-1 text-secondary'>
+      <div className='space-y-1'>
         <p className='text-2xl font-medium'>Account Settings</p>
-        <p>Access and Manage Your Personal Details, Contracts, and Wallet Address</p>
+        <p className='text-secondary'>
+          Access and Manage Your Personal Details, Contracts, and Wallet Address
+        </p>
       </div>
 
       <form>
