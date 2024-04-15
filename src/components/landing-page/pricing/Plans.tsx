@@ -4,7 +4,7 @@ import { RadioGroup } from '@headlessui/react';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
 import { cn } from '@/utils/utils';
-import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/pricing';
+import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/types';
 import ButtonPayment from './ButtonPayment';
 import SeparatorOr from '@/components/ui/separator-or';
 import { Button } from '@/components/ui/button';

@@ -1,4 +1,4 @@
-import { EnumSubscription } from './enum';
+import { EnumSubscription } from './types';
 
 type TypePaymentGateway = {
   baseUrl: string;

@@ -4,7 +4,7 @@ import { supabaseBrowserClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import config from '@/config';
 import { getPaymentUrl } from '@/utils/utils';
-import { TypeSubscriptionInterval, TypePaymentGatwayProvider, TypeSubscriptionPlan } from '@/types/pricing';
+import { TypeSubscriptionInterval, TypePaymentGatwayProvider, TypeSubscriptionPlan } from '@/types/types';
 
 interface ButtonPaymentProps {
   provider: TypePaymentGatwayProvider;

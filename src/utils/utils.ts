@@ -1,5 +1,5 @@
 import config from '@/config';
-import { TypePaymentGatwayProvider } from '@/types/pricing';
+import { TypePaymentGatwayProvider } from '@/types/types';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { Button } from '../ui/button';
-import { User } from '@supabase/supabase-js';
 import Logo from '../Logo';
 
 const navbarRoutes = [
@@ -13,7 +12,7 @@ const navbarRoutes = [
   { label: 'FAQ', url: '/#faq' },
 ];
 
-export default async function Navbar({ user }: { user: User | null }) {
+export default async function Navbar() {
   return (
     <div className='max-w-6xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
@@ -29,8 +28,8 @@ export default async function Navbar({ user }: { user: User | null }) {
           ))}
         </ul>
 
-        <Link href={user ? '/dashboard' : '/login'} className='hidden md:block'>
-          <Button>{user ? 'Try Now' : 'Login'}</Button>
+        <Link href='/dashboard' className='hidden md:block'>
+          <Button>Try Now</Button>
         </Link>
 
         <Sheet>

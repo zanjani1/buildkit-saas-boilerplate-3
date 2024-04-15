@@ -1,5 +1,5 @@
 import config from '@/config';
-import { EnumSubscriptionBillingCycle } from '@/types/enum';
+import { EnumSubscriptionBillingCycle } from '@/types/types';
 import { supabaseAdmin } from '@/utils/supabase/admin';
 import { headers } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
