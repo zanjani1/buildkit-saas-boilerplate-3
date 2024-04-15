@@ -19,8 +19,10 @@ interface ModalProps extends ButtonProps {
   children: ReactNode;
   className?: string;
   labelModalButton?: string;
+  styleModalButton?: ButtonProps;
   labelActionButton?: string;
   includeCancelButton?: boolean;
+  actionButtonVariant?: ButtonProps['variant'];
   handleAction?: () => void;
 }
 
@@ -29,14 +31,17 @@ const Modal: FC<ModalProps> = ({
   children,
   className,
   labelModalButton,
+  styleModalButton,
   labelActionButton,
   includeCancelButton = true,
+  actionButtonVariant,
   handleAction,
-  ...props
 }) => {
+  const { className: modalButtonClassName, ...modalButtonProps } = styleModalButton ?? {};
+
   return (
     <Dialog>
-      <DialogTrigger className={buttonVariants({ ...props })}>
+      <DialogTrigger className={cn(buttonVariants(modalButtonProps), modalButtonClassName, 'w-full')}>
         {labelModalButton ?? 'Open Modal'}
       </DialogTrigger>
 
@@ -48,7 +53,9 @@ const Modal: FC<ModalProps> = ({
         <DialogDescription className='mb-4'>{children}</DialogDescription>
 
         <DialogFooter>
-          <Button onClick={handleAction} className='sm:w-1/2'>
+          <Button
+            onClick={handleAction}
+            className={cn(buttonVariants({ variant: actionButtonVariant ?? 'default' }), 'sm:w-1/2')}>
             {labelActionButton ?? 'Continue'}
           </Button>
           {includeCancelButton && (
