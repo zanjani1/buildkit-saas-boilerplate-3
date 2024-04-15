@@ -1,12 +1,13 @@
 'use client';
 
+import config from '@/config';
 import { supabaseBrowserClient } from '@/utils/supabase/client';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 
 export default function GoogleAuth() {
   const supabase = supabaseBrowserClient();
-  const redirectUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/callback`;
+  const redirectUrl = `${config.app.url}/api/auth/callback`;
 
   return (
     <div className='w-full mt-4'>

@@ -1,29 +1,12 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import { Providers } from './providers';
+import getSeoMetadata from '@/utils/seo-metadata';
 
 const font = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://builderkit.ai'),
-  title: 'BuilderKit',
-  description: 'BuilderKit',
-  openGraph: {
-    type: 'website',
-    title: 'BuilderKit',
-    description: 'BuilderKit',
-    images: '/og-image.png',
-    url: 'https://builderkit.ai',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'BuilderKit',
-    description: 'BuilderKit',
-    images: '/og-image.png',
-  },
-};
+export const metadata = getSeoMetadata();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

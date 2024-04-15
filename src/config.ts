@@ -10,6 +10,7 @@ const config = {
   // APP
   app: {
     name: 'BuilderKit',
+    description: 'AI SaaS NextJS Boilerplate',
     url: 'https://builderkit.ai',
   },
 
@@ -29,7 +30,6 @@ const config = {
     discountParam: 'checkout[discount_code]',
     variant: {
       standard: {
-        // monthly: 'ff87b529-a3b5-4ecd-966b-79042cff7a38', // test
         monthly: '81395ea4-4049-49a7-a11e-3ccdf620ce7e',
         annually: 'feb7cf4b-d0e0-4f04-a4e9-55d4415824ff',
       },
@@ -39,7 +39,6 @@ const config = {
       },
     },
     plan: {
-      // 245894: 'standard', // test
       245697: 'standard',
       245701: 'premium',
     },
