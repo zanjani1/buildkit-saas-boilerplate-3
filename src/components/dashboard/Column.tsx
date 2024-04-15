@@ -23,7 +23,7 @@ export const columns: ColumnDef<TableType>[] = [
       return (
         <Button variant='ghost' onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
           Date
-          <LuArrowUpDown className='ml-2 h-4 w-4' />
+          <LuArrowUpDown className='ml-2 size-4' />
         </Button>
       );
     },

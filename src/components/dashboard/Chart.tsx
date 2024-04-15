@@ -62,18 +62,20 @@ const Chart = () => {
       case 'today':
         filtered = chartData.filter((item) => item.date === format(new Date(), 'yyyy-MM-dd'));
         break;
-      case 'lastMonth':
+      case 'lastMonth': {
         const lastMonth = addDays(new Date(), -30);
         filtered = chartData.filter((item) =>
           isWithinInterval(new Date(item.date), { start: lastMonth, end: new Date() })
         );
         break;
-      case 'last6Months':
+      }
+      case 'last6Months': {
         const last6Months = addDays(new Date(), -180);
         filtered = chartData.filter((item) =>
           isWithinInterval(new Date(item.date), { start: last6Months, end: new Date() })
         );
         break;
+      }
       default:
         break;
     }
@@ -94,12 +96,12 @@ const Chart = () => {
   return (
     <>
       <div className='block md:flex items-center gap-4 space-y-3 md:space-y-0'>
-        <div className='border-l-4 border-blue-700 bg-opacity-10 p-3 md:p-6 rounded-lg border-y border-y-[#E4E6EA] border-r border-r-[#E4E6EA] space-y-3'>
+        <div className='border-l-4 border-blue-700 p-3 md:p-6 rounded-lg border-y border-y-[#E4E6EA] border-r border-r-[#E4E6EA] space-y-3'>
           <p className='text-[#5A607D] text-sm font-medium'>Title of the KPI</p>
           <p className='text-[#ADAEB6] text-lg md:text-2xl font-semibold'>0.0 USD 0.0 USD </p>
         </div>
 
-        <div className='border-l-4 border-blue-700 bg-opacity-10 p-3 md:p-6 rounded-lg border-y border-y-[#E4E6EA] border-r border-r-[#E4E6EA] space-y-3'>
+        <div className='border-l-4 border-blue-700 p-3 md:p-6 rounded-lg border-y border-y-[#E4E6EA] border-r border-r-[#E4E6EA] space-y-3'>
           <p className='text-[#5A607D] text-sm font-medium'>Title of the KPI</p>
           <p className='text-[#ADAEB6] text-lg md:text-2xl font-semibold'>0.0 USD 0.0 USD </p>
         </div>
@@ -125,7 +127,7 @@ const Chart = () => {
                   'w-auto justify-start text-left font-normal py-1 min-w-36',
                   !selectedDateRange && 'text-muted-foreground'
                 )}>
-                <CalendarIcon className='mr-2 h-4 w-4' />
+                <CalendarIcon className='mr-2 size-4' />
                 {selectedDateRange?.from ? (
                   selectedDateRange.to ? (
                     <>
