@@ -8,16 +8,17 @@ import { supabaseBrowserClient } from '@/utils/supabase/client';
 import config from '@/config';
 
 const CrispChat = (): null => {
-  const supabase = supabaseBrowserClient();
   const pathname = usePathname();
 
   const setupUser = useCallback(async () => {
+    const supabase = supabaseBrowserClient();
+
     const { data } = await supabase.auth.getUser();
 
     if (data?.user) {
       Crisp.session.setData({ email: data.user?.email });
     }
-  }, [supabase]);
+  }, []);
 
   useEffect(() => {
     if (config.crisp.id) {
@@ -31,7 +32,9 @@ const CrispChat = (): null => {
         });
       }
 
-      setupUser();
+      if (config.isSupabaseEnabled) {
+        setupUser();
+      }
     }
   }, [pathname, setupUser]);
 

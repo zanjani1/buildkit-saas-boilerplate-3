@@ -1,3 +1,4 @@
+import { User } from '@supabase/supabase-js';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Logo from '../Logo';
@@ -49,7 +50,7 @@ const footerItems = [
   },
 ];
 
-export default async function Footer() {
+export default async function Footer({ user }: { user: User | null }) {
   return (
     <div className='bg-[#161C2D] text-white'>
       <div className='max-w-6xl mx-auto px-4 py-16'>
@@ -57,9 +58,9 @@ export default async function Footer() {
           <p className='md:w-1/2 text-3xl md:text-4xl font-medium leading-normal md:leading-normal'>
             Get your AI apps built with blazing speed.
           </p>
-          <Link href='/dashboard'>
+          <Link href={user ? '/dashboard' : '/login'}>
             <Button size='lg' className='rounded-full bg-white hover:bg-white/90 text-black'>
-              Try Now
+              {user ? 'Try Now' : 'Login'}
               <span className='ml-2'>&rarr;</span>
             </Button>
           </Link>

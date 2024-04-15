@@ -1,3 +1,4 @@
+import config from '@/config';
 import { Database } from '@/types/supabase';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { cookies } from 'next/headers';
@@ -37,9 +38,13 @@ export const supabaseServerClient = () => {
 };
 
 export const getUserDetails = async () => {
-  const supabase = supabaseServerClient();
-
   try {
+    if (!config.isSupabaseEnabled) {
+      throw 'Supabase Url or Key not found.';
+    }
+
+    const supabase = supabaseServerClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

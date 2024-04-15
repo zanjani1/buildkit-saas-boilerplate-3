@@ -1,6 +1,12 @@
 import { TypeConfig } from './types/config';
 
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 const config = {
+  // VERIFY SUPABASE KEYS
+  isSupabaseEnabled: !!supabaseUrl && !!supabaseKey,
+
   // APP
   app: {
     name: 'BuilderKit',

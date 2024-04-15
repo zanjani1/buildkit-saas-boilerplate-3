@@ -1,14 +1,15 @@
+import { User } from '@supabase/supabase-js';
 import Navbar from './Navbar';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 import HeroImage from '../../assets/images/hero.png';
 import Link from 'next/link';
 
-export default async function Hero() {
+export default async function Hero({ user }: { user: User | null }) {
   return (
     <div className='bg-waves bg-[#EDF6FF]'>
       <div className='max-w-6xl mx-auto'>
-        <Navbar />
+        <Navbar user={user} />
 
         <div className='flex flex-col md:flex-row gap-10 py-5 md:py-14 px-4'>
           <div className='space-y-6 w-full md:w-1/2'>

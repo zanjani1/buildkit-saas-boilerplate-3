@@ -13,13 +13,14 @@ interface ButtonPaymentProps {
 }
 
 const ButtonPayment: FC<ButtonPaymentProps> = ({ provider, tier, frequency }) => {
-  const supabase = supabaseBrowserClient();
   const router = useRouter();
 
   // Optional: If you want to add discount code by default
   const discount = provider === 'stripe' && frequency === 'annually' ? '8JDToQd0' : undefined;
 
   const goToPaymentPage = async () => {
+    const supabase = supabaseBrowserClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();
