@@ -29,30 +29,26 @@ const footerItems = [
     url: '/product',
   },
   {
-    label: 'Press',
-    url: '/press',
-  },
-  {
-    label: 'More',
-    url: '/more',
-  },
-  {
-    label: 'Press',
-    url: '/press',
-  },
-  {
     label: 'Careers',
     url: '/careers',
   },
   {
-    label: 'Discord',
-    url: '/discord',
+    label: 'Press',
+    url: '/press',
+  },
+  {
+    label: 'Terms of Services',
+    url: '/terms-of-services',
+  },
+  {
+    label: 'Privacy Policy',
+    url: '/privacy-policy',
   },
 ];
 
 export default async function Footer({ user }: { user: User | null }) {
   return (
-    <div className='bg-[#161C2D] text-white'>
+    <footer className='bg-[#161C2D] text-white'>
       <div className='max-w-6xl mx-auto px-4 py-16'>
         <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
           <p className='md:w-1/2 text-3xl md:text-4xl font-medium leading-normal md:leading-normal'>
@@ -76,7 +72,7 @@ export default async function Footer({ user }: { user: User | null }) {
             </p>
           </div>
 
-          <div className='text-muted-foreground grid grid-rows-4 grid-cols-3 grid-flow-col gap-x-16 gap-y-6'>
+          <div className='text-muted-foreground grid grid-rows-4 grid-cols-3 grid-flow-col gap-x-10 gap-y-6'>
             {footerItems.map((item, index) => (
               <Link key={index} href={item.url} className='hover:underline'>
                 {item.label}
@@ -87,6 +83,6 @@ export default async function Footer({ user }: { user: User | null }) {
 
         <p className='font-medium'>All rights reserved.</p>
       </div>
-    </div>
+    </footer>
   );
 }

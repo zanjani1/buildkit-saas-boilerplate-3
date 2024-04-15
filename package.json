@@ -5,7 +5,7 @@
   "author": "@saddysk",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm run lint",
+    "build": "next build && npm run postbuild",
     "postbuild": "next-sitemap",
     "start": "next start",
     "validate": "run-s format lint typecheck",
@@ -38,6 +38,7 @@
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-spinners": "^0.13.8",
+    "sharp": "^0.33.3",
     "stripe": "^15.1.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss": "3.4.1",

@@ -1,5 +1,5 @@
-import Sidebar from '@/components/dashboard/sidebar/Sidebar';
 import React from 'react';
+import Sidebar from '@/components/dashboard/sidebar/Sidebar';
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (

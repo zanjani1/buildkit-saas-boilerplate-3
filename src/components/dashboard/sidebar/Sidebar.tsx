@@ -2,14 +2,14 @@ import { FC } from 'react';
 import SidebarItems from './SidebarItems';
 import Logo from '../../Logo';
 import ButtonSignout from './ButtonSignout';
-import { getUserDetails } from '@/utils/supabase/server';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { getUser } from '@/utils/get-user';
 
 interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = async () => {
-  const user = await getUserDetails();
+  const user = await getUser();
 
   return (
     <div className='h-screen flex flex-col justify-between items-start border-r px-4 py-8'>
