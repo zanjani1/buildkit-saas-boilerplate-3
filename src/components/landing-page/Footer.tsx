@@ -1,7 +1,7 @@
-import { User } from '@supabase/supabase-js';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Logo from '../Logo';
+import { getUser } from '@/utils/get-user';
 
 const footerItems = [
   {
@@ -37,8 +37,8 @@ const footerItems = [
     url: '/press',
   },
   {
-    label: 'Terms of Services',
-    url: '/terms-of-services',
+    label: 'Terms of Service',
+    url: '/terms-of-service',
   },
   {
     label: 'Privacy Policy',
@@ -46,7 +46,9 @@ const footerItems = [
   },
 ];
 
-export default async function Footer({ user }: { user: User | null }) {
+export default async function Footer() {
+  const user = await getUser();
+
   return (
     <footer className='bg-[#161C2D] text-white'>
       <div className='max-w-6xl mx-auto px-4 py-16'>
