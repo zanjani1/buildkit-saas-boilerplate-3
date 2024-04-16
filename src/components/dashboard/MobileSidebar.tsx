@@ -10,10 +10,10 @@ const MobileSidebar = () => {
       <Sheet>
         <SheetTrigger className='md:hidden pr-4 hover:opacity-75 transition'>
           <BiMenu size={20} />
-          <SheetContent side='left' className='p-0'>
-            <Sidebar />
-          </SheetContent>
         </SheetTrigger>
+        <SheetContent side='left' className='p-0'>
+          <Sidebar />
+        </SheetContent>
       </Sheet>
     </div>
   );
