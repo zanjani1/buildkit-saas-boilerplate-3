@@ -20,10 +20,9 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-
 export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [globalFilter, setGlobalFilter] = useState<string>('');
 
   const table = useReactTable({
     data,
@@ -32,23 +31,24 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
-    onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
-      columnFilters,
     },
   });
+
+  const handleGlobalFilterChange = (value: string) => {
+    setGlobalFilter(value);
+    table.setGlobalFilter(value);
+  };
 
   return (
     <div>
       <div className='flex items-center py-4'>
         <Input
           placeholder='Search by email, name, or message'
-          value={(table.getColumn('email' && 'name' && 'message')?.getFilterValue() as string) ?? ''}
-          onChange={(event) =>
-            table.getColumn('email' && 'name' && 'message')?.setFilterValue(event.target.value)
-          }
+          value={globalFilter}
+          onChange={(event) => handleGlobalFilterChange(event.target.value)}
           className='max-w-sm'
         />
       </div>
