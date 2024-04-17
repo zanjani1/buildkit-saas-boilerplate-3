@@ -2,7 +2,6 @@
 
 import {
   ColumnDef,
-  ColumnFiltersState,
   SortingState,
   flexRender,
   getCoreRowModel,
@@ -14,15 +13,15 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
-interface DataTableProps<TData, TValue> {
+interface TableDashboardProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
-export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [globalFilter, setGlobalFilter] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const table = useReactTable({
     data,
@@ -37,8 +36,9 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     },
   });
 
-  const handleGlobalFilterChange = (value: string) => {
-    setGlobalFilter(value);
+  const handleGlobalFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
     table.setGlobalFilter(value);
   };
 
@@ -47,8 +47,8 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
       <div className='flex items-center py-4'>
         <Input
           placeholder='Search by email, name, or message'
-          value={globalFilter}
-          onChange={(event) => handleGlobalFilterChange(event.target.value)}
+          value={searchQuery}
+          onChange={handleGlobalFilterChange}
           className='max-w-sm'
         />
       </div>

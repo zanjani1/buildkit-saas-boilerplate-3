@@ -19,8 +19,8 @@ const DropdownMoreActions: FC<DropdownMoreActionsProps> = () => {
             labelModalButton='Delete'
             labelActionButton='Delete'
             styleModalButton={{
-              variant: 'link',
-              className: 'text-red-500 hover:no-underline',
+              variant: 'ghost',
+              className: 'justify-start text-red-500 hover:no-underline',
             }}
             actionButtonVariant='destructive'>
             <p>Are you sure you want to delete this item?</p>
@@ -30,8 +30,8 @@ const DropdownMoreActions: FC<DropdownMoreActionsProps> = () => {
             labelModalButton='Edit'
             labelActionButton='Edit'
             styleModalButton={{
-              variant: 'link',
-              className: 'hover:no-underline',
+              variant: 'ghost',
+              className: 'justify-start hover:no-underline',
             }}>
             <p>Are you sure you want to edit this item?</p>
           </Modal>
