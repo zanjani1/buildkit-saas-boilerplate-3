@@ -7,7 +7,6 @@ import Logo from '../Logo';
 import { getUser } from '@/utils/get-user';
 
 const navbarRoutes = [
-  { label: 'Tools', url: '/tools' },
   { label: 'Features', url: '/#features' },
   { label: 'Product', url: '/#product' },
   { label: 'Pricing', url: '/#pricing' },
