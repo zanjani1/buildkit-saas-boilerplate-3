@@ -34,7 +34,7 @@ const MobileSidebarItems: FC<MobileSidebarItemsProps> = () => {
         const isActive = pathname === item.url;
 
         return (
-          <SheetClose asChild>
+          <SheetClose asChild key={index}>
             <Link
               key={index}
               href={item.url}
