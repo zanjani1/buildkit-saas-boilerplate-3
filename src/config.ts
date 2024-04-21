@@ -1,32 +1,38 @@
 import { TypeConfig } from './types/config';
 
+// Supabase API credentials retrieved from environment variables for secure access.
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 const config = {
-  // VERIFY SUPABASE KEYS
+  // Boolean flag to determine if Supabase should be enabled based on the availability of necessary environment variables.
   isSupabaseEnabled: !!supabaseUrl && !!supabaseKey,
 
-  // APP
+  // APP: Basic application settings used globally for branding and links.
   app: {
     name: 'BuilderKit',
     description: 'AI SaaS NextJS Boilerplate',
     url: 'https://builderkit.ai',
   },
 
-  // CRISP
+  // CRISP: Configuration details for the Crisp chat support integration.
   crisp: {
+    // Crisp Website ID.
     id: 'b602d409-734d-41c6-919a-2f568ccce58c',
+    // Show Crisp by default only in this route "/" (homepage). Crisp is toggled with <ButtonSupport/>.
     allowedRoutes: ['/'],
   },
 
-  // SUPPORT
+  // SUPPORT: Contact email for application support, should be updated with an actual email address.
   supportEmail: '',
 
-  // LEMON SQUEEZY
+  // LEMON SQUEEZY: Configuration for the Lemon Squeezy payment gateway, handling payments and subscriptions.
   lemonSqueezy: {
+    // Endpoint for initiating the checkout process.
     baseUrl: 'https://reminder-bot.lemonsqueezy.com/buy',
+    // URL parameter key for passing customer email by default to the checkout link.
     emailParam: 'checkout[email]',
+    // URL parameter key for applying discount codes by default in the checkout link. This is optional. It works only if the Discount is available.
     discountParam: 'checkout[discount_code]',
     variant: {
       standard: {
@@ -38,16 +44,20 @@ const config = {
         annually: 'cde373b7-1619-4788-9e6b-664ba048f693',
       },
     },
+    // Mapping of product ID to subscription type to support dynamic product offerings.
     plan: {
       245697: 'standard',
       245701: 'premium',
     },
   },
 
-  // STRIPE
+  // STRIPE: payment configuration similar in structure to Lemon Squeezy for processing payments.
   stripe: {
+    // Base URL for Stripe checkout sessions.
     baseUrl: 'https://buy.stripe.com',
+    // Prefills the email input in the checkout form if provided by default.
     emailParam: 'prefilled_email',
+    // Prefills a promo code if provided by default. This is optional. It works only if the Discount is available.
     discountParam: 'prefilled_promo_code',
     variant: {
       standard: {
@@ -59,6 +69,7 @@ const config = {
         annually: 'test_fZe3fCflEfnf8uYfZ1',
       },
     },
+    // Product mappings which help in correlating the checkout process with specific products.
     plan: {
       prod_PuuU0reuFt6y8W: 'standard',
       prod_P0jB4G8yniRIE2: 'standard',

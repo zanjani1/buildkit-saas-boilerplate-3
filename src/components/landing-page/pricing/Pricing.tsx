@@ -1,3 +1,5 @@
+// This is the Pricing component of the landing page.
+
 import Plans from './Plans';
 
 export default async function Pricing() {

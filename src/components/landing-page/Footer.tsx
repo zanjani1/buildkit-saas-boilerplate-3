@@ -1,8 +1,11 @@
+// This is the Footer component of the landing page.
+
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Logo from '../Logo';
 import { getUser } from '@/utils/get-user';
 
+// Array of objects representing footer navigation items
 const footerItems = [
   {
     label: 'About',
@@ -47,6 +50,7 @@ const footerItems = [
 ];
 
 export default async function Footer() {
+  // Fetch current user; await ensures the user data is loaded before rendering
   const user = await getUser();
 
   return (

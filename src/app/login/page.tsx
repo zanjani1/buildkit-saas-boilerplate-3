@@ -1,3 +1,8 @@
+// This page represents the login screen of the application.
+// It displays a central form allowing users to log in or register either through email or Google authentication.
+// The application name is dynamically fetched from the config and displayed at the top.
+// The `EmailAuth` and `GoogleAuth` components are used here for handling the respective authentication methods.
+
 import EmailAuth from '@/components/auth/EmailAuth';
 import GoogleAuth from '@/components/auth/GoogleAuth';
 import config from '@/config';

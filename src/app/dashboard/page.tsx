@@ -1,4 +1,9 @@
+// This component serves as the main Dashboard page, displaying both chart and table data.
+// It imports and uses multiple components to render a chart, a divider, and a data table.
+
 import React from 'react';
+
+// Import UI components and data from the relative path or package.
 import { TableDashboard } from '@/components/dashboard/table/TableDashboard';
 import Chart from '@/components/dashboard/chart/Chart';
 import { columns } from '@/components/dashboard/table/Column';

@@ -1,3 +1,5 @@
+// Function to get the current user from Supabase using the server-side client in server actions.
+
 'use server';
 
 import config from '@/config';

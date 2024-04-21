@@ -1,3 +1,5 @@
+// Item for the mobile sidebar. This component is being used in the "MobileSidebar.tsx" file.
+
 'use client';
 
 import { FC } from 'react';

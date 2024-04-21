@@ -1,3 +1,6 @@
+// This component is a popover used to provide additional information about the location field in a form.
+// It utilizes a reusable popover component from '@/components/ui/popover' and an information icon from 'react-icons/io'.
+
 import { FC } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { IoMdInformationCircle } from 'react-icons/io';

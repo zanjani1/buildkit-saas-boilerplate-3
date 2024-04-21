@@ -1,3 +1,5 @@
+// This file contains the columns for the table in the dashboard page.
+
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
@@ -59,6 +61,6 @@ export const columns: ColumnDef<TableType>[] = [
   },
   {
     header: 'More',
-    cell: () => <DropdownMoreActions />,
+    cell: () => <DropdownMoreActions />, // This is the dropdown menu for more actions
   },
 ];

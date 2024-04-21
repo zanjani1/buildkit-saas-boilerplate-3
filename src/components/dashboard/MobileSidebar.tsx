@@ -1,3 +1,5 @@
+// This is the MobileSidebar component that displays the sidebar items in the dashboard for mobile devices only.
+
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { BiMenu } from 'react-icons/bi';
 import Link from 'next/link';

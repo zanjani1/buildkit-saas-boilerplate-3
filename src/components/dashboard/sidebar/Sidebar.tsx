@@ -1,3 +1,5 @@
+// Sidebar component used in the dashboard layout to display the sidebar with the logo, sidebar items, and sign-out button.
+
 import { FC } from 'react';
 import SidebarItems from './SidebarItems';
 import Logo from '../../Logo';

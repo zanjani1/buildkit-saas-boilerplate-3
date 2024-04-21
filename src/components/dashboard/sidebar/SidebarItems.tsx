@@ -1,3 +1,5 @@
+// This is the SidebarItems component that displays the sidebar items in the dashboard.
+
 'use client';
 
 import { FC } from 'react';
@@ -29,7 +31,7 @@ const SidebarItems: FC<SidebarItemsProps> = () => {
   return (
     <div className='w-full flex flex-col gap-2'>
       {sidebarItems.map((item, index) => {
-        // Determine if the current item is active
+        // Determine if the current item is active based on the pathname
         const isActive = pathname === item.url;
 
         return (

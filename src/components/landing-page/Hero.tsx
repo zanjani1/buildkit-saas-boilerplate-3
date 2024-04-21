@@ -1,3 +1,6 @@
+// This component renders the main hero section of the landing page which is designed to grab the visitor's attention.
+// It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
+
 import Navbar from './Navbar';
 import { Button } from '../ui/button';
 import Image from 'next/image';
@@ -8,6 +11,7 @@ export default async function Hero() {
   return (
     <div className='bg-waves bg-[#EDF6FF]'>
       <div className='max-w-6xl mx-auto'>
+        {/* Navbar component: Displays the top navigation menu. */}
         <Navbar />
 
         <div className='flex flex-col md:flex-row gap-10 py-5 md:py-14 px-4'>

@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '@/components/dashboard/sidebar/Sidebar';
 import MobileSidebar from '@/components/dashboard/MobileSidebar';
 
+// Custom layout for Dashboared Pages including Sidebar and MobileSidebar.
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='flex'>

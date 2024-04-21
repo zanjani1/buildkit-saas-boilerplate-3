@@ -1,3 +1,5 @@
+// Features component to display the services provided by the application in the landing page.
+
 import ServiceImageIcon1 from '@/assets/icons/ServiceImageIcon1';
 import ServiceImageIcon2 from '@/assets/icons/ServiceImageIcon2';
 import ServiceImageIcon3 from '@/assets/icons/ServiceImageIcon3';

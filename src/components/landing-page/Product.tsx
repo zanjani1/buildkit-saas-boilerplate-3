@@ -1,3 +1,5 @@
+// Product component of landing page
+
 import ChatIcon from '@/assets/icons/ChatIcon';
 import IntegrationIcon from '@/assets/icons/IntegrationIcon';
 import TaskIcon from '@/assets/icons/TaskIcon';

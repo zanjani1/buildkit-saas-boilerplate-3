@@ -1,3 +1,6 @@
+// SelectDuration component provides a UI for selecting a data filter duration or a specific date range for the Chart component.
+// It dynamically updates the parent component's state based on user selection.
+
 import { cn } from '@/utils/utils';
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
@@ -8,27 +11,22 @@ import { DateRange } from 'react-day-picker';
 import { format } from 'date-fns';
 import { TypeSelectDurationInput } from './Chart';
 
-// Define Option interface
-interface Option {
-  value: string;
-  label: string;
-}
+// List of options for the duration selector.
+const durationOptions = [
+  { value: 'today', label: 'Today' },
+  { value: 'lastMonth', label: 'Last Month' },
+  { value: 'last6Months', label: 'Last 6 Months' },
+];
 
 // Define Props interface for SelectDuration component
 interface SelectDurationProps {
-  options: Option[];
   selectedValue?: string;
   selectedDateRange?: DateRange;
   onSelect: (value: TypeSelectDurationInput) => void;
 }
 
 // SelectDuration component
-const SelectDuration: React.FC<SelectDurationProps> = ({
-  options,
-  selectedValue,
-  selectedDateRange,
-  onSelect,
-}) => {
+const SelectDuration: React.FC<SelectDurationProps> = ({ selectedValue, selectedDateRange, onSelect }) => {
   const [selectedOption, setSelectedOption] = useState<string | undefined>(selectedValue);
 
   useEffect(() => {
@@ -44,8 +42,9 @@ const SelectDuration: React.FC<SelectDurationProps> = ({
 
   return (
     <div className='block md:flex items-center gap-2 my-6'>
+      {/* Tabs to select between different duration options */}
       <div className='flex'>
-        {options.map((option, index) => (
+        {durationOptions.map((option, index) => (
           <button
             key={option.value}
             className={cn(
@@ -54,7 +53,7 @@ const SelectDuration: React.FC<SelectDurationProps> = ({
                 ? 'bg-[#1463FF] text-white'
                 : 'bg-white text-[#363A4E] border border-[#E4E6EA]',
               index === 0 && 'rounded-l-md',
-              index === options.length - 1 && 'rounded-r-md'
+              index === durationOptions.length - 1 && 'rounded-r-md'
             )}
             onClick={() => handleOptionChange(option.value)}>
             {option.label}
@@ -62,8 +61,10 @@ const SelectDuration: React.FC<SelectDurationProps> = ({
         ))}
       </div>
 
+      {/* Calendar to select date range */}
       <div className={cn('grid gap-2 mt-2 md:mt-0')}>
         <Popover>
+          {/* View the selected value or placeholder */}
           <PopoverTrigger asChild>
             <Button
               id='date'
@@ -87,6 +88,7 @@ const SelectDuration: React.FC<SelectDurationProps> = ({
               )}
             </Button>
           </PopoverTrigger>
+
           <PopoverContent className='w-auto p-0' align='start'>
             <Calendar
               initialFocus

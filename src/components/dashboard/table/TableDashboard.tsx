@@ -1,3 +1,6 @@
+// TableDashboard component provides a dynamic table display using @tanstack/react-table library.
+// It supports sorting, filtering, and pagination functionalities for the data it displays.
+
 'use client';
 
 import {
@@ -19,6 +22,7 @@ interface TableDashboardProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
 export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -36,6 +40,7 @@ export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardP
     },
   });
 
+  // Handles changes in the global filter field.
   const handleGlobalFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchQuery(value);
@@ -56,11 +61,13 @@ export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardP
       <div className='rounded-md border'>
         <Table>
           <TableHeader>
+            {/* Map through header groups from react-table instance for dynamic header rendering. */}
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
+                      {/* Conditional rendering for placeholder cells in the header. */}
                       {header.isPlaceholder
                         ? null
                         : flexRender(header.column.columnDef.header, header.getContext())}
@@ -71,6 +78,7 @@ export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardP
             ))}
           </TableHeader>
           <TableBody>
+            {/* Render rows based on filtered, sorted, or paginated data from react-table. */}
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
@@ -82,6 +90,7 @@ export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardP
                 </TableRow>
               ))
             ) : (
+              // Display message when no data matches the filters.
               <TableRow>
                 <TableCell colSpan={columns.length} className='h-24 text-center'>
                   No results.
@@ -92,19 +101,22 @@ export function TableDashboard<TData, TValue>({ columns, data }: TableDashboardP
         </Table>
       </div>
 
+      {/* Pagination controls with conditional rendering based on the ability to navigate pages. */}
       <div className='flex items-center justify-end space-x-2 py-4'>
         <Button
           variant='outline'
           size='sm'
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}>
+          onClick={() => table.previousPage()} // Navigate to the previous page.
+          disabled={!table.getCanPreviousPage()} // Disable button if no previous page available.
+        >
           Previous
         </Button>
         <Button
           variant='outline'
           size='sm'
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}>
+          onClick={() => table.nextPage()} // Navigate to the next page.
+          disabled={!table.getCanNextPage()} // Disable button if no next page available.
+        >
           Next
         </Button>
       </div>

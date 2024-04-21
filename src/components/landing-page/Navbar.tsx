@@ -1,3 +1,7 @@
+// This component serves as the navigation bar for the application, which appears across various pages.
+// It dynamically adjusts to display different links based on the user's authentication status and screen size.
+// The component uses both responsive and conditional rendering techniques for optimization across devices.
+
 import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -14,6 +18,7 @@ const navbarRoutes = [
 ];
 
 export default async function Navbar() {
+  // Fetch user information to determine authentication state.
   const user = await getUser();
 
   return (
@@ -31,6 +36,7 @@ export default async function Navbar() {
           ))}
         </ul>
 
+        {/* Conditional button that changes based on user status. */}
         <Link href={user ? '/dashboard' : '/login'} className='hidden md:block'>
           <Button>{user ? 'Try Now' : 'Login'}</Button>
         </Link>

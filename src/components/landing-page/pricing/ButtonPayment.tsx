@@ -1,3 +1,9 @@
+// This component responsible for handling payment actions for different plans and frequencies.
+// Optional discounts are applied automatically for annual subscriptions when paying via Stripe.
+// If the user is not logged in, they are redirected to the login page.
+// Otherwise, the payment URL is constructed based on the selected provider, plan, and frequency, with potential discounts applied.
+// The button's appearance and behavior change based on the payment provider (Stripe or Lemon Squeezy).
+
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
 import { supabaseBrowserClient } from '@/utils/supabase/client';
@@ -18,6 +24,8 @@ const ButtonPayment: FC<ButtonPaymentProps> = ({ provider, tier, frequency }) =>
   // Optional: If you want to add discount code by default
   const discount = provider === 'stripe' && frequency === 'annually' ? '8JDToQd0' : undefined;
 
+  // This function handles the redirection logic based on the user's authentication status and subscription choice.
+  // If the user is logged in, it constructs a specific URL for the payment gateway, optionally adding a discount code for annual payments via Stripe.
   const goToPaymentPage = async () => {
     const supabase = supabaseBrowserClient();
 

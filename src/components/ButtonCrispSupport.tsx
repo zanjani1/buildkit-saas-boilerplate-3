@@ -1,3 +1,8 @@
+// This component provides a support button using the Crisp chat SDK or email fallback.
+// It utilizes a conditional statement to check if the Crisp ID is available:
+// - If available, it initializes the Crisp chat window.
+// - If not available, it opens the default email client with a predefined subject line including the app name.
+
 'use client';
 
 import { Crisp } from 'crisp-sdk-web';

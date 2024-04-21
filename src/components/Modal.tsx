@@ -1,3 +1,8 @@
+// This snippet demonstrates the use of a Modal component to display a dialog box with a title, content, and action buttons.
+// The Modal component is used in the DropdownMoreActions component to confirm the deletion or editing of an item in this case.
+// You can use the Modal component to create custom dialog boxes for various purposes in your application.
+// You just need to provide the title, content (can be any react component), and action buttons for the dialog box.
+
 'use client';
 
 import { FC, ReactNode } from 'react';
