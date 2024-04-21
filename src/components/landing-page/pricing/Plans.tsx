@@ -1,10 +1,14 @@
+// This component renders the pricing plans for different subscription tiers.
+// It utilizes the <RadioGroup> from HeadlessUI to toggle between 'monthly' and 'annually' payment frequencies.
+// Tiers data is mapped to display each plan with its respective price, features, and a call-to-action.
+
 'use client';
 
 import { RadioGroup } from '@headlessui/react';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
 import { cn } from '@/utils/utils';
-import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/pricing';
+import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/types';
 import ButtonPayment from './ButtonPayment';
 import SeparatorOr from '@/components/ui/separator-or';
 import { Button } from '@/components/ui/button';
@@ -48,11 +52,16 @@ const tiers = [
   },
 ];
 
+// Each plan might have different components rendered based on its type (e.g., Trial vs. Standard vs. Premium).
+// It uses internal state to manage the selected frequency of payments (monthly/annually).
+// This component dynamically renders plan details and pricing based on the selected frequency.
 export default function Plans() {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
   return (
     <>
+      {/* <RadioGroup> is used here to allow the user to choose between monthly or annual billing. */}
+      {/* It affects the display of prices and billing cycles dynamically based on the selection. */}
       <div className='flex justify-center mb-8'>
         <RadioGroup
           value={frequency}
@@ -74,6 +83,7 @@ export default function Plans() {
 
       <div className='flex flex-col md:flex-row items-start justify-center gap-10'>
         {tiers.map((tier) => (
+          // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
             className='md:w-1/4 flex flex-col items-center justify-center gap-6 md:gap-10 p-6'>
@@ -104,6 +114,7 @@ export default function Plans() {
               ))}
             </ul>
 
+            {/* CTA button for the specific plan. */}
             {tier.id === 'trial' ? (
               <Link href='/dashboard' className='w-full'>
                 <Button size='lg' className='w-full'>

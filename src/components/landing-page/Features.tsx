@@ -1,3 +1,5 @@
+// Features component to display the services provided by the application in the landing page.
+
 import ServiceImageIcon1 from '@/assets/icons/ServiceImageIcon1';
 import ServiceImageIcon2 from '@/assets/icons/ServiceImageIcon2';
 import ServiceImageIcon3 from '@/assets/icons/ServiceImageIcon3';
@@ -45,7 +47,7 @@ const serviceFeatures = [
 
 export default async function Features() {
   return (
-    <div id='features' className='max-w-6xl mx-auto p-4 space-y-20 my-20 '>
+    <div id='features' className='max-w-6xl mx-auto p-4 space-y-20 my-20'>
       <div className='flex flex-col items-center justify-center'>
         <div className='space-y-7 max-w-xl'>
           <p className='text-primary text-xs md:text-sm text-center font-bold leading-normal tracking-widest uppercase'>

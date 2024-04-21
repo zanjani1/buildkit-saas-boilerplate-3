@@ -35,18 +35,3 @@ export const supabaseServerClient = () => {
     }
   );
 };
-
-export const getUserDetails = async () => {
-  const supabase = supabaseServerClient();
-
-  try {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    return user;
-  } catch (error) {
-    console.error('[Get User Error]', error);
-    return null;
-  }
-};

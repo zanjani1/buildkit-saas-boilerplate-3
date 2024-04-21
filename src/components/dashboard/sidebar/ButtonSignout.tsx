@@ -1,3 +1,7 @@
+// This snippet demonstrates the use of a ButtonSignout component to sign out a user from the application.
+// The ButtonSignout component is used in the dashboard sidebar to allow users to sign out of the application.
+// You can use the ButtonSignout component to create sign-out buttons anywhere in your application.
+
 'use client';
 
 import { FC } from 'react';
@@ -21,6 +25,7 @@ const ButtonSignout: FC<ButtonSignoutProps> = ({ className }) => {
       <Button
         variant='link'
         onClick={async () => {
+          // Supabase function to sign out the user
           await supabase.auth.signOut();
           router.refresh();
         }}

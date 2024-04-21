@@ -1,9 +1,15 @@
+// This component handles the user account settings.
+// The form allows users to update their personal details such as first name, last name, email, and location.
+// The data is logged to the console, but you should replace this with actual API calls to update the database.
+
 import InputWrapper from '@/components/InputWrapper';
 import PopoverLocationInfo from '@/components/dashboard/account/PopoverLocationInfo';
 import { Input } from '@/components/ui/input';
 import { SubmitButton } from './SubmitButton';
 
 export default async function Account() {
+  // This function is triggered when the user submits the form.
+  // It collects data from the form and should contain logic to update these details in the backend.
   const handleAccountUpdate = async (formData: FormData) => {
     'use server';
 
@@ -12,15 +18,17 @@ export default async function Account() {
     const email = formData.get('email') as string;
     const location = formData.get('location') as string;
 
-    // Code to store the account details in the database
+    // Replace this console.log with your API call to store the account details in the database
     console.log({ firstName, lastName, email, location });
   };
 
   return (
     <div className='p-8 space-y-10'>
-      <div className='space-y-1 text-secondary'>
+      <div className='space-y-1'>
         <p className='text-2xl font-medium'>Account Settings</p>
-        <p>Access and Manage Your Personal Details, Contracts, and Wallet Address</p>
+        <p className='text-secondary'>
+          Access and Manage Your Personal Details, Contracts, and Wallet Address
+        </p>
       </div>
 
       <form>

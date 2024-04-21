@@ -1,3 +1,6 @@
+// This is a context wrapper component that includes all the context providers your application needs.
+// It wraps the application's child components with the required contexts, such as Toaster for notifications and CrispChat for customer support chat.
+
 'use client';
 
 import { Toaster } from '@/components/ui/toaster';
@@ -7,17 +10,24 @@ import { Crisp } from 'crisp-sdk-web';
 import { supabaseBrowserClient } from '@/utils/supabase/client';
 import config from '@/config';
 
+// This component configures and controls the visibility of the Crisp chat based on the URL path.
+// It checks if the current route is allowed for Crisp chat:
+// - If not allowed, it hides the chat window.
+// - It also sets up a listener to hide the chat window whenever the chat is closed.
+// If Supabase is enabled, it sets up user data in Crisp session for personalized support.
+// This component does not render any visual elements directly (returns null).
 const CrispChat = (): null => {
-  const supabase = supabaseBrowserClient();
   const pathname = usePathname();
 
   const setupUser = useCallback(async () => {
+    const supabase = supabaseBrowserClient();
+
     const { data } = await supabase.auth.getUser();
 
     if (data?.user) {
       Crisp.session.setData({ email: data.user?.email });
     }
-  }, [supabase]);
+  }, []);
 
   useEffect(() => {
     if (config.crisp.id) {
@@ -31,7 +41,9 @@ const CrispChat = (): null => {
         });
       }
 
-      setupUser();
+      if (config.isSupabaseEnabled) {
+        setupUser();
+      }
     }
   }, [pathname, setupUser]);
 

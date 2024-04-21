@@ -1,10 +1,14 @@
+// This component serves as the navigation bar for the application, which appears across various pages.
+// It dynamically adjusts to display different links based on the user's authentication status and screen size.
+// The component uses both responsive and conditional rendering techniques for optimization across devices.
+
 import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { Button } from '../ui/button';
-import { User } from '@supabase/supabase-js';
 import Logo from '../Logo';
+import { getUser } from '@/utils/get-user';
 
 const navbarRoutes = [
   { label: 'Features', url: '/#features' },
@@ -13,7 +17,10 @@ const navbarRoutes = [
   { label: 'FAQ', url: '/#faq' },
 ];
 
-export default async function Navbar({ user }: { user: User | null }) {
+export default async function Navbar() {
+  // Fetch user information to determine authentication state.
+  const user = await getUser();
+
   return (
     <div className='max-w-6xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
@@ -29,6 +36,7 @@ export default async function Navbar({ user }: { user: User | null }) {
           ))}
         </ul>
 
+        {/* Conditional button that changes based on user status. */}
         <Link href={user ? '/dashboard' : '/login'} className='hidden md:block'>
           <Button>{user ? 'Try Now' : 'Login'}</Button>
         </Link>

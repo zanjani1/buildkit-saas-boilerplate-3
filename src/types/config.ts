@@ -1,4 +1,4 @@
-import { EnumSubscription } from './enum';
+import { EnumSubscription } from './types';
 
 type TypePaymentGateway = {
   baseUrl: string;
@@ -20,8 +20,10 @@ type TypePaymentGateway = {
 };
 
 export type TypeConfig = {
+  isSupabaseEnabled: boolean;
   app: {
     name: string;
+    description: string;
     url: string;
   };
   crisp: {

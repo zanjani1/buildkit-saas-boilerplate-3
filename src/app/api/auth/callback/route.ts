@@ -1,3 +1,7 @@
+// This route handles the server-side OAuth callback for Supabase authentication.
+// It retrieves the auth code from the request URL, exchanges it for a user session, and redirects to the dashboard.
+// This is an essential part of the OAuth flow, allowing secure authentication with third-party providers.
+
 import { supabaseServerClient } from '@/utils/supabase/server';
 import { NextResponse } from 'next/server';
 
