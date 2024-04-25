@@ -14,12 +14,13 @@ type SupabaseTable =
   | 'voice_transcriptions';
 
 const sampleDashboard = async () => {
-  const supabase = supabaseAdmin();
-
   // Function to fetch data from a table and specific field
   async function fetchData(table: SupabaseTable, field: string) {
     try {
-      const { data } = await supabase.from(table).select(field).order('created_at', { ascending: false });
+      const { data } = await supabaseAdmin
+        .from(table)
+        .select(field)
+        .order('created_at', { ascending: false });
 
       return data ?? [];
     } catch (error) {
@@ -73,7 +74,10 @@ const sampleDashboard = async () => {
   const chartData = await fetchStatistics();
 
   //Get all users from the users table
-  const { data: users } = await supabase.from('users').select('*').order('created_at', { ascending: false });
+  const { data: users } = await supabaseAdmin
+    .from('users')
+    .select('*')
+    .order('created_at', { ascending: false });
 
   return (
     <div className='p-4 md:p-8 w-full'>
