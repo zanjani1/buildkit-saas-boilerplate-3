@@ -1,3 +1,5 @@
+// This is a provider component used to switch between light and dark themes.
+
 'use client';
 
 import * as React from 'react';

@@ -1,3 +1,5 @@
+// This is the Waitlist page component. It uses the SelectTheme component to allow users to switch between dark and light themes.
+
 'use client';
 
 import { SelectTheme } from '@/components/SelectTheme';
@@ -6,16 +8,19 @@ import React from 'react';
 import { FaFacebookF, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa6';
 import { RiInstagramFill } from 'react-icons/ri';
 
-const Waiting = () => {
+const Waitlist = () => {
+  // Currently the default theme is "dark". You can change it to "light" from "app/waitlist/layout.tsx".
   const { theme } = useTheme();
+
   return (
     <div className='bg-[#FFFEF8] dark:bg-[#031614]'>
       <div className='max-w-7xl mx-auto relative h-screen'>
         <div className='flex flex-col justify-between h-full'>
-          <div className=''>
-            <div className='flex justify-end border-b border-gray-400 p-4'>
+          <div>
+            <div className='flex justify-end p-4'>
               <SelectTheme />
             </div>
+
             <div className='hidden md:flex items-center gap-20 max-w-7xl relative justify-center p-4'>
               <div
                 className='font-bold text-[130px] lg:text-[190px] xl:text-[250px] text-transparent leading-normal bg-transparent text-strock '
@@ -42,9 +47,10 @@ const Waiting = () => {
             <div className='text-[#26AB75] text-4xl md:text-5xl lg:text-[72px] mt-20 md:mt-0 font-bold md:absolute md:top-52 md:left-40 lg:top-[17rem] lg:left-28, xl:top-[20.5rem] xl:left-36 p-4'>
               We are <br /> Coming Soon.
             </div>
+
             <div className='mt-32 md:mt-10 flex flex-col items-end justify-end p-4'>
               <div className='w-full md:w-[400px]'>
-                <p className='font-bold text-xl mb-2'>Join the waitlist</p>
+                <p className='font-bold text-xl mb-2'>Join the Waitlist</p>
                 <div className='relative inline-flex w-full md:w-[400px]'>
                   <input
                     type='text'
@@ -62,6 +68,7 @@ const Waiting = () => {
               </div>
             </div>
           </div>
+
           <footer className='space-y-10 my-10 md:mt-0'>
             <div className='flex items-center justify-center gap-6 '>
               <FaFacebookF className='size-6 cursor-pointer' />
@@ -78,4 +85,4 @@ const Waiting = () => {
   );
 };
 
-export default Waiting;
+export default Waitlist;
