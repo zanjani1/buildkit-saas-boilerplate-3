@@ -1,4 +1,4 @@
-import { ChartData } from '@/components/dashboard/chart/Chart';
+import { ChartData } from '@/components/dashboard/sample-dashboard/Chart';
 
 // Generate random data for the chart
 export function sampleChartData(numDays: number): ChartData[] {

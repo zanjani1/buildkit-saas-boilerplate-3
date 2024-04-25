@@ -9,6 +9,7 @@ import { LuSettings } from 'react-icons/lu';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
 import { SheetClose } from '../ui/sheet';
+import { RiAdminLine } from 'react-icons/ri';
 
 interface MobileSidebarItemsProps {}
 
@@ -16,13 +17,18 @@ interface MobileSidebarItemsProps {}
 const mobileSidebarItems = [
   {
     icon: LuLayoutDashboard,
-    label: 'My Dashboard',
+    label: 'Sample Dashboard',
     url: '/dashboard',
+  },
+  {
+    icon: RiAdminLine,
+    label: 'Admin Dashboard',
+    url: '/admin-dashboard',
   },
   {
     icon: LuSettings,
     label: 'Account Setting',
-    url: '/dashboard/account',
+    url: '/account',
   },
 ];
 
