@@ -39,7 +39,7 @@ const Waiting = () => {
                 26<span className='text-[72px]'>.</span>
               </div>
             </div>
-            <div className='text-[#26AB75] text-4xl md:text-5xl lg:text-[72px] mt-20 md:mt-0 font-bold md:absolute md:top-[13rem] md:left-[10rem] lg:top-[17rem] lg:left-[7rem] xl:top-[20.5rem] xl:left-[9rem] p-4'>
+            <div className='text-[#26AB75] text-4xl md:text-5xl lg:text-[72px] mt-20 md:mt-0 font-bold md:absolute md:top-52 md:left-40 lg:top-[17rem] lg:left-28, xl:top-[20.5rem] xl:left-36 p-4'>
               We are <br /> Coming Soon.
             </div>
             <div className='mt-32 md:mt-10 flex flex-col items-end justify-end p-4'>
@@ -62,7 +62,7 @@ const Waiting = () => {
               </div>
             </div>
           </div>
-          <footer className='space-y-10 mt-10 md:mt-0 mb-10'>
+          <footer className='space-y-10 my-10 md:mt-0'>
             <div className='flex items-center justify-center gap-6 '>
               <FaFacebookF className='size-6 cursor-pointer' />
               <FaTwitter className='size-6 cursor-pointer' />
