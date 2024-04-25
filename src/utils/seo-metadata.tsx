@@ -39,7 +39,7 @@ const getSeoMetadata = ({
       url: config.app.url,
       siteName: title || config.app.name,
       //   You don't need to add add the code below if you have an opengraph-image.(jpg|jpeg|png) in your /src/app directory
-      //   images: '/opengraph-image.png',
+      images: '/opengraph-image.png',
     },
 
     // Twitter card data to define how URLs are displayed on Twitter, specifying the type of card and other visual elements.
@@ -48,7 +48,7 @@ const getSeoMetadata = ({
       title: title || config.app.name,
       description: description || config.app.description,
       //   You don't need to add add the code below if you have an twitter-image.(jpg|jpeg|png) in your /src/app directory
-      //   images: '/twitter-image.png',
+      images: '/opengraph-image.png',
     },
 
     ...(canonicalUrlRelative && {

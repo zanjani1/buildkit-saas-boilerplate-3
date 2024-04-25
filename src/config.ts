@@ -11,7 +11,7 @@ const config = {
   // APP: Basic application settings used globally for branding and links.
   app: {
     name: 'BuilderKit',
-    description: 'AI SaaS NextJS Boilerplate',
+    description: 'NextJS SaaS AI Boilerplate',
     url: 'https://builderkit.ai',
   },
 
