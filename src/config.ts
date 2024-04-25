@@ -29,7 +29,7 @@ const config = {
   // LEMON SQUEEZY: Configuration for the Lemon Squeezy payment gateway, handling payments and subscriptions.
   lemonSqueezy: {
     // Endpoint for initiating the checkout process.
-    baseUrl: 'https://reminder-bot.lemonsqueezy.com/buy',
+    baseUrl: 'https://builderkit.lemonsqueezy.com/buy',
     // URL parameter key for passing customer email by default to the checkout link.
     emailParam: 'checkout[email]',
     // URL parameter key for applying discount codes by default in the checkout link. This is optional. It works only if the Discount is available.

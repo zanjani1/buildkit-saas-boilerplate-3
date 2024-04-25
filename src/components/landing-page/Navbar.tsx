@@ -11,6 +11,7 @@ import Logo from '../Logo';
 import { getUser } from '@/utils/get-user';
 
 const navbarRoutes = [
+  { label: 'Waitlist', url: '/waitlist' },
   { label: 'Features', url: '/#features' },
   { label: 'Product', url: '/#product' },
   { label: 'Pricing', url: '/#pricing' },
