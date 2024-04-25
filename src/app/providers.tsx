@@ -33,15 +33,17 @@ const CrispChat = (): null => {
     if (config.crisp.id) {
       Crisp.configure(config.crisp.id);
 
+      const isCrispHidden = config.crisp.hideOnRoutes?.includes(pathname);
+
       // You can also use <ButtonCrispSupport /> to manually add support button anywhere in the website.
-      if (!config.crisp.allowedRoutes.includes(pathname)) {
+      if (isCrispHidden) {
         Crisp.chat.hide();
         Crisp.chat.onChatClosed(() => {
           Crisp.chat.hide();
         });
       }
 
-      if (config.isSupabaseEnabled) {
+      if (config.isSupabaseEnabled && !isCrispHidden) {
         setupUser();
       }
     }

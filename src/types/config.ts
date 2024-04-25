@@ -28,7 +28,7 @@ export type TypeConfig = {
   };
   crisp: {
     id: string;
-    allowedRoutes: string[];
+    hideOnRoutes?: string[];
   };
   supportEmail: string;
   lemonSqueezy: TypePaymentGateway;
