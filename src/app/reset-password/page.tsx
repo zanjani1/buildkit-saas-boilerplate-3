@@ -5,11 +5,11 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getUser } from '@/utils/get-user';
-import { SubmitButton } from '../dashboard/account/SubmitButton';
 import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
 import config from '@/config';
 import { supabaseServerClient } from '@/utils/supabase/server';
+import { SubmitButton } from '../(dashboard)/account/SubmitButton';
 
 export default async function ResetPassword({
   searchParams,

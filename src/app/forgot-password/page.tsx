@@ -4,13 +4,13 @@
 
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
-import { SubmitButton } from '../dashboard/account/SubmitButton';
 import config from '@/config';
 import InputWrapper from '@/components/InputWrapper';
 import { redirect } from 'next/navigation';
 import { supabaseServerClient } from '@/utils/supabase/server';
 import { headers } from 'next/headers';
 import { getUser } from '@/utils/get-user';
+import { SubmitButton } from '../(dashboard)/account/SubmitButton';
 
 export default async function ForgotPassword({ searchParams }: { searchParams: { message: string } }) {
   const user = await getUser();
