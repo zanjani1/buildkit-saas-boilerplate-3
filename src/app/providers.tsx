@@ -7,8 +7,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { Crisp } from 'crisp-sdk-web';
-import { supabaseBrowserClient } from '@/utils/supabase/client';
 import config from '@/config';
+import { getUser } from '@/utils/get-user';
 
 // This component configures and controls the visibility of the Crisp chat based on the URL path.
 // It checks if the current route is allowed for Crisp chat:
@@ -20,12 +20,10 @@ const CrispChat = (): null => {
   const pathname = usePathname();
 
   const setupUser = useCallback(async () => {
-    const supabase = supabaseBrowserClient();
+    const user = await getUser();
 
-    const { data } = await supabase.auth.getUser();
-
-    if (data?.user) {
-      Crisp.session.setData({ email: data.user?.email });
+    if (user) {
+      Crisp.session.setData({ email: user.email });
     }
   }, []);
 
@@ -33,17 +31,15 @@ const CrispChat = (): null => {
     if (config.crisp.id) {
       Crisp.configure(config.crisp.id);
 
-      const isCrispHidden = config.crisp.hideOnRoutes?.includes(pathname);
-
       // You can also use <ButtonCrispSupport /> to manually add support button anywhere in the website.
-      if (isCrispHidden) {
+      if (config.crisp.hideOnRoutes?.includes(pathname)) {
         Crisp.chat.hide();
         Crisp.chat.onChatClosed(() => {
           Crisp.chat.hide();
         });
       }
 
-      if (config.isSupabaseEnabled && !isCrispHidden) {
+      if (config.isSupabaseEnabled) {
         setupUser();
       }
     }

@@ -45,8 +45,8 @@ const EmailAuth: FC<EmailAuthProps> = () => {
   return (
     <form className='w-full flex flex-col justify-center gap-8 text-foreground mt-2'>
       <div className='flex flex-col gap-4'>
-        {!isLogin && <Input id='full-name' name='full-name' placeholder='Name' required className='h-11' />}
-        <Input id='email' name='email' placeholder='Email' required className='h-11' />
+        {!isLogin && <Input id='full-name' name='full-name' placeholder='Name' required className='h-10' />}
+        <Input id='email' name='email' placeholder='Email' required className='h-10' />
         <Input
           id='password'
           type='password'
@@ -57,9 +57,15 @@ const EmailAuth: FC<EmailAuthProps> = () => {
         />
       </div>
 
-      <Button variant='secondary' formAction={handleFormAction} className='h-12'>
+      <Button variant='secondary' formAction={handleFormAction} className='h-10'>
         {isLogin ? 'Sign In' : 'Sign Up'}
       </Button>
+
+      <Link
+        href='/forgot-password'
+        className='text-sm text-primary text-center font-light px-2 hover:underline'>
+        Forgot password?
+      </Link>
 
       <div className='text-sm font-light text-center'>
         <p>
