@@ -2,7 +2,7 @@
 // It toggles between login and registration forms based on the user's choice.
 // Forms are submitted to the `signIn` or `signUp` actions depending on the mode (login or register).
 // Errors during form submission are displayed using the `toast` function.
-// Successful authentication redirects the user to the `/dashboard`.
+// Successful authentication redirects the user to the `/admin-dashboard`.
 
 'use client';
 
@@ -39,7 +39,7 @@ const EmailAuth: FC<EmailAuthProps> = () => {
       return;
     }
 
-    router.push('/dashboard');
+    router.push('/admin-dashboard');
   };
 
   return (

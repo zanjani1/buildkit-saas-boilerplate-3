@@ -4,40 +4,25 @@
 
 import { FC } from 'react';
 import Link from 'next/link';
-import { LuLayoutDashboard } from 'react-icons/lu';
-import { LuSettings } from 'react-icons/lu';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
-import { SheetClose } from '../ui/sheet';
-import { RiAdminLine } from 'react-icons/ri';
+import { SheetClose } from '../../ui/sheet';
+import { sidebarItems } from './SidebarItems';
+import { User } from '@supabase/supabase-js';
 
-interface MobileSidebarItemsProps {}
+interface MobileSidebarItemsProps {
+  user: User | null;
+}
 
-// Define the items for the sidebar
-const mobileSidebarItems = [
-  {
-    icon: LuLayoutDashboard,
-    label: 'Sample Dashboard',
-    url: '/dashboard',
-  },
-  {
-    icon: RiAdminLine,
-    label: 'Admin Dashboard',
-    url: '/admin-dashboard',
-  },
-  {
-    icon: LuSettings,
-    label: 'Account Setting',
-    url: '/account',
-  },
-];
-
-const MobileSidebarItems: FC<MobileSidebarItemsProps> = () => {
+const MobileSidebarItems: FC<MobileSidebarItemsProps> = ({ user }) => {
   const pathname = usePathname();
+
+  // Define the items for the sidebar
+  const items = sidebarItems(user);
 
   return (
     <div className='w-full flex flex-col gap-2'>
-      {mobileSidebarItems.map((item, index) => {
+      {items.map((item, index) => {
         // Determine if the current item is active
         const isActive = pathname === item.url;
 

@@ -33,7 +33,7 @@ const ButtonPayment: FC<ButtonPaymentProps> = ({ provider, tier, frequency }) =>
       data: { user },
     } = await supabase.auth.getUser();
 
-    let url = '/dashboard';
+    let url = '/admin-dashboard';
     if (user == null) {
       url = '/login';
     } else if (tier !== 'trial') {

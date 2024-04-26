@@ -4,9 +4,9 @@
 import React from 'react';
 
 // Import UI components and data from the relative path or package.
-import { TableDashboard } from '@/components/dashboard/table/TableDashboard';
+import { TableDashboard } from '@/components/dashboard/sample-dashboard/table/TableDashboard';
 import Chart from '@/components/dashboard/sample-dashboard/Chart';
-import { columns } from '@/components/dashboard/table/Column';
+import { columns } from '@/components/dashboard/sample-dashboard/table/Column';
 import { Divider } from '@tremor/react';
 import { sampleTableData } from './sample-table-data';
 import { sampleChartData } from './sample-chart-data';

@@ -5,8 +5,8 @@ import { BiMenu } from 'react-icons/bi';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { getUser } from '@/utils/get-user';
-import Logo from '../Logo';
-import ButtonSignout from './sidebar/ButtonSignout';
+import Logo from '../../Logo';
+import ButtonSignout from './ButtonSignout';
 import MobileSidebarItems from './MobileSidebarItems';
 
 const MobileSidebar = async () => {
@@ -26,7 +26,7 @@ const MobileSidebar = async () => {
                 <Logo />
               </div>
 
-              <MobileSidebarItems />
+              <MobileSidebarItems user={user} />
             </div>
 
             {user ? (

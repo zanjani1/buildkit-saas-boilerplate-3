@@ -20,7 +20,7 @@ const Sidebar: FC<SidebarProps> = async () => {
           <Logo />
         </div>
 
-        <SidebarItems />
+        <SidebarItems user={user} />
       </div>
 
       {user ? (

@@ -116,7 +116,7 @@ export default function Plans() {
 
             {/* CTA button for the specific plan. */}
             {tier.id === 'trial' ? (
-              <Link href='/dashboard' className='w-full'>
+              <Link href='/admin-dashboard' className='w-full'>
                 <Button size='lg' className='w-full'>
                   Get Started
                 </Button>

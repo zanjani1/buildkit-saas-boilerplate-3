@@ -1,7 +1,9 @@
 import Chart from '@/components/dashboard/admin-dashboard/Chart';
 import ApiUsageChart from '@/components/dashboard/admin-dashboard/DonutChart';
 import UsersAreaChart from '@/components/dashboard/admin-dashboard/UsersAreaChart';
+import { getUser } from '@/utils/get-user';
 import { supabaseAdmin } from '@/utils/supabase/admin';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 // Define the type of Supabase tables
@@ -14,6 +16,12 @@ type SupabaseTable =
   | 'voice_transcriptions';
 
 const sampleDashboard = async () => {
+  const user = await getUser();
+
+  if (!user) {
+    redirect('/sample-dashboard');
+  }
+
   // Function to fetch data from a table and specific field
   async function fetchData(table: SupabaseTable, field: string) {
     try {

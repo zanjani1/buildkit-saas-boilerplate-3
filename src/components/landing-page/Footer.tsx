@@ -60,7 +60,7 @@ export default async function Footer() {
           <p className='md:w-1/2 text-3xl md:text-4xl font-medium leading-normal md:leading-normal'>
             Get your AI apps built with blazing speed.
           </p>
-          <Link href={user ? '/dashboard' : '/login'}>
+          <Link href={user ? '/admin-dashboard' : '/login'}>
             <Button size='lg' className='rounded-full bg-white hover:bg-white/90 text-black'>
               {user ? 'Try Now' : 'Login'}
               <span className='ml-2'>&rarr;</span>

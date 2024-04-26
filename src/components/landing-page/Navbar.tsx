@@ -38,7 +38,7 @@ export default async function Navbar() {
         </ul>
 
         {/* Conditional button that changes based on user status. */}
-        <Link href={user ? '/dashboard' : '/login'} className='hidden md:block'>
+        <Link href={user ? '/admin-dashboard' : '/login'} className='hidden md:block'>
           <Button>{user ? 'Try Now' : 'Login'}</Button>
         </Link>
 

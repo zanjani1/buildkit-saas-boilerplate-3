@@ -19,7 +19,7 @@ export default async function ResetPassword({
   const user = await getUser();
 
   if (user) {
-    redirect(`/dashboard`);
+    redirect(`/admin-dashboard`);
   }
 
   // Server action function to handle reset password request

@@ -16,7 +16,7 @@ export default async function ForgotPassword({ searchParams }: { searchParams: {
   const user = await getUser();
 
   if (user) {
-    redirect(`/dashboard`);
+    redirect(`/admin-dashboard`);
   }
 
   // Server action function to handle to send reset email to create new password

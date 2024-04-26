@@ -1,4 +1,4 @@
-import { TableType } from '@/components/dashboard/table/Column';
+import { TableType } from '@/components/dashboard/sample-dashboard/table/Column';
 import { addDays, format } from 'date-fns';
 
 type TypeStatus = 'success' | 'pending' | 'failed';

@@ -24,7 +24,7 @@ export default async function Hero() {
               With lots of unique blocks, you can easily build a page without coding.
               <br className='block md:hidden' /> Build your next AI website within few minutes.
             </p>
-            <Link href='/dashboard' className='block'>
+            <Link href='/admin-dashboard' className='block'>
               <Button className='px-8 py-5'>Get Started</Button>
             </Link>
           </div>
