@@ -47,12 +47,13 @@ export const columns: ColumnDef<TableType>[] = [
       const value = row.original.status;
       return (
         <span
-          className={`px-2 py-1 rounded-xl text-xs ${value === 'pending'
+          className={`px-2 py-1 rounded-xl text-xs ${
+            value === 'pending'
               ? 'bg-yellow-100 text-yellow-800'
               : value === 'success'
                 ? 'bg-green-100 text-green-800'
                 : 'bg-red-100 text-red-800'
-            }`}>
+          }`}>
           {value}
         </span>
       );

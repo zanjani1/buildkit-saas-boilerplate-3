@@ -9,7 +9,6 @@ import { LuSettings } from 'react-icons/lu';
 import { RiAdminLine } from 'react-icons/ri';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
-import { TypeUser } from '@/types/types';
 import { User } from '@supabase/supabase-js';
 
 interface SidebarItemsProps {
