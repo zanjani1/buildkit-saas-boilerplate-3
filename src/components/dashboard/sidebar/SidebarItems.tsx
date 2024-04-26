@@ -6,6 +6,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { LuLayoutDashboard } from 'react-icons/lu';
 import { LuSettings } from 'react-icons/lu';
+import { RiAdminLine } from 'react-icons/ri';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
 
@@ -15,13 +16,18 @@ interface SidebarItemsProps {}
 const sidebarItems = [
   {
     icon: LuLayoutDashboard,
-    label: 'My Dashboard',
+    label: 'Sample Dashboard',
     url: '/dashboard',
+  },
+  {
+    icon: RiAdminLine,
+    label: 'Admin Dashboard',
+    url: '/admin-dashboard',
   },
   {
     icon: LuSettings,
     label: 'Account Setting',
-    url: '/dashboard/account',
+    url: '/account',
   },
 ];
 
