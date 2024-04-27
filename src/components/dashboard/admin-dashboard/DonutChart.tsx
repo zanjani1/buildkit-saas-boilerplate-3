@@ -1,4 +1,5 @@
 'use client';
+import { cn } from '@/utils/utils';
 import { Card, DonutChart, List, ListItem } from '@tremor/react';
 import { FC } from 'react';
 
@@ -80,9 +81,9 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
   const categorizedChartData = Object.values(categorizedData);
 
   return (
-    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 h-fit w-full lg:w-1/2'>
-      <Card className=' md:flex gap-10 z-10 rounded-lg p-4'>
-        <div className=''>
+    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 w-full lg:w-1/2'>
+      <Card className='md:flex gap-10 z-10 rounded-lg p-4'>
+        <div>
           <h3 className='text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
             Total API Usage by Category
           </h3>
@@ -100,7 +101,7 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
             showTooltip={false}
           />
         </div>
-        <div className=''>
+        <div>
           {/* API Requests List */}
           <p className='mt-8 flex items-center justify-between text-tremor-label text-tremor-content dark:text-dark-tremor-content'>
             <span>Category</span>
@@ -112,7 +113,7 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
                 <div className='flex items-center space-x-2.5 truncate'>
                   {/* Category Indicator */}
                   <span
-                    className={'h-2.5 w-2.5 shrink-0 rounded-sm ' + `bg-${item.color}-500`}
+                    className={cn('h-2.5 w-2.5 shrink-0 rounded-sm', `bg-${item.color}-500`)}
                     aria-hidden={true}
                   />
                   {/* Category Name */}
