@@ -1,3 +1,4 @@
+import { toast } from '@/components/ui/use-toast';
 import config from '@/config';
 import { TypePaymentGatwayProvider } from '@/types/types';
 import { type ClassValue, clsx } from 'clsx';
@@ -8,6 +9,11 @@ import { twMerge } from 'tailwind-merge';
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+// Function: cn (Class Name)
+// This utility function combines and deduplicates class names using clsx and twMerge.
+export const errorToast = (description: string, title?: string) =>
+  toast({ title, description, variant: 'destructive' });
 
 // Constructs a URL for initiating a payment process based on the provider, variant ID, user email, and an optional discount code.
 // Parameters:

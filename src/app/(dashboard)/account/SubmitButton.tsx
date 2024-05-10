@@ -5,24 +5,34 @@
 'use client';
 
 import { useFormStatus } from 'react-dom';
-import { type ComponentProps } from 'react';
-
+import { ReactNode, type ComponentProps } from 'react';
 import { BarLoader } from 'react-spinners';
 import { Button, ButtonProps } from '@/components/ui/button';
+import { LuLoader } from 'react-icons/lu';
 
 type Props = ComponentProps<'button'> &
   ButtonProps & {
-    loaderColor?: string; // Optional prop to customize the loader color
+    isCircleLoader?: ReactNode;
+    loaderColor?: string;
   };
 
-export function SubmitButton({ loaderColor, children, ...props }: Props) {
+export function SubmitButton({ isCircleLoader, loaderColor, children, ...props }: Props) {
   const { pending, action } = useFormStatus();
 
-  const isPending = pending && action === props.formAction; // Determines if the specific form action is pending
+  // Checks if the form is pending and the action matches the form action
+  const isPending = pending && action === props.formAction;
 
   return (
     <Button {...props} type='submit' aria-disabled={pending}>
-      {isPending ? <BarLoader height={1} color={loaderColor ?? 'white'} /> : children}
+      {isPending ? (
+        isCircleLoader ? (
+          <LuLoader className='animate-[spin_3s_linear_infinite]' size={16} />
+        ) : (
+          <BarLoader height={1} color={loaderColor ?? 'white'} />
+        )
+      ) : (
+        children
+      )}
     </Button>
   );
 }
