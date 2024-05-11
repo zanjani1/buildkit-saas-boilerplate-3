@@ -26,15 +26,17 @@ type FormFields = {
 
 const outputLanguages = ['English', 'Mandarin', 'Hindi', 'Spanish', 'French', 'Portuguese', 'Urdu'];
 
+const initialFormData: FormFields = {
+  topic: '',
+  style: '',
+  wordLimit: '',
+  tone: '',
+  language: outputLanguages[0],
+};
+
 const ContentWriter: FC<ContentWriterProps> = () => {
   const [contentData, setContentData] = useState<{ title: string; description: string }[]>();
-  const [formData, setFormData] = useState<FormFields>({
-    topic: '',
-    style: '',
-    wordLimit: '',
-    tone: '',
-    language: outputLanguages[0],
-  });
+  const [formData, setFormData] = useState<FormFields>(initialFormData);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -172,7 +174,11 @@ const ContentWriter: FC<ContentWriterProps> = () => {
               </SubmitButton>
 
               {contentData != null && (
-                <Button type='button' variant='destructive' className='w-full'>
+                <Button
+                  type='button'
+                  variant='destructive'
+                  className='w-full'
+                  onClick={() => setFormData(initialFormData)}>
                   Reset
                 </Button>
               )}
