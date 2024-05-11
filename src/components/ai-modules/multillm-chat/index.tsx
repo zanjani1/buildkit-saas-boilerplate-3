@@ -1,5 +1,4 @@
 // This is the MultiLLmChatGPT component that uses the SelectChatModel component to select the chat model.
-// It then displays the chat history and allows the user to ask questions and get responses from the chat model.
 
 'use client';
 
@@ -57,8 +56,6 @@ const MultiLLmChatGPT: FC<MultiLLmChatGPTProps> = () => {
         });
       }
     }
-
-    return streamData;
   };
 
   // Function to make api call for getting the chat response
@@ -98,7 +95,7 @@ const MultiLLmChatGPT: FC<MultiLLmChatGPTProps> = () => {
   };
 
   return (
-    <div className='max-w-3xl mx-auto py-4'>
+    <div className='max-w-3xl mx-auto p-4'>
       <h1 className='text-xl font-semibold mb-8'>MultiLLm ChatGPT</h1>
 
       {/* This component allows user to select among different available models */}
