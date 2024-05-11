@@ -3,7 +3,6 @@
 'use client';
 
 import { FC, useState } from 'react';
-import SelectChatModel, { modelOptions } from './SelectChatModel';
 import { cn, errorToast } from '@/utils/utils';
 import { LuSend } from 'react-icons/lu';
 import { RiMessage2Fill } from 'react-icons/ri';
@@ -13,6 +12,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { SubmitButton } from '@/app/(dashboard)/account/SubmitButton';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 interface MultiLLmChatGPTProps {}
 
@@ -20,6 +20,30 @@ interface IChat {
   role: string;
   content: string;
 }
+
+// Available chat models
+export const modelOptions = [
+  {
+    value: 'gpt-35',
+    label: 'GPT-3.5',
+  },
+  {
+    value: 'gpt-4',
+    label: 'GPT-4',
+  },
+  {
+    value: 'claude',
+    label: 'Claude',
+  },
+  {
+    value: 'mistral',
+    label: 'Mistral',
+  },
+  {
+    value: 'llama-2',
+    label: 'Llama 2',
+  },
+];
 
 const MultiLLmChatGPT: FC<MultiLLmChatGPTProps> = () => {
   const [chatModel, setChatModel] = useState<string>(modelOptions[0].value);
@@ -99,7 +123,19 @@ const MultiLLmChatGPT: FC<MultiLLmChatGPTProps> = () => {
       <h1 className='text-xl font-semibold mb-8'>MultiLLm ChatGPT</h1>
 
       {/* This component allows user to select among different available models */}
-      <SelectChatModel defaultModel={chatModel} onSelect={(value) => setChatModel(value)} />
+      <Select defaultValue={chatModel} onValueChange={(value) => setChatModel(value)}>
+        <SelectTrigger className='w-28 rounded-lg bg-accent mb-4 md:mb-0'>
+          <SelectValue />
+        </SelectTrigger>
+
+        <SelectContent>
+          {modelOptions.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
 
       <div className='h-[calc(100vh-150px)] flex flex-col justify-end rounded-md mx-auto'>
         {/* Show this section if there is no chat yet */}
