@@ -2,11 +2,13 @@
 // It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
 
 import LandingPage1 from '@/components/landing-pages/landing-page-1';
+import LandingPage2 from '@/components/landing-pages/landing-page-2';
 
 export default async function Home() {
   return (
     <>
       <LandingPage1 />
+      <LandingPage2 />
     </>
   );
 }
