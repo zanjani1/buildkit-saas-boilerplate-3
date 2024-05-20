@@ -2,7 +2,7 @@
 // It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
 
 import Navbar from './Navbar';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 import Image from 'next/image';
 import HeroImage from '../../assets/images/hero.png';
 import Link from 'next/link';
