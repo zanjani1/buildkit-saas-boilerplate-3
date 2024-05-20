@@ -1,35 +1,35 @@
 // Product component of landing page
 
-import StarICon from '@/assets/landing-page-2/icons/StarICon';
+import StarIcon from '@/assets/landing-page-2/icons/StarIcon';
 
 const cardContent = [
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    icon: StarICon,
+    icon: StarIcon,
     title: 'Quality apps',
     description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },

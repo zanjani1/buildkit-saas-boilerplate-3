@@ -27,11 +27,7 @@ export default async function Navbar() {
     <div className='max-w-6xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
         <Link href='/'>
-          <div className='flex items-center gap-2'>
-            {/* Image component is commented out. If you want to display the logo image, uncomment the following line and ensure the image path is correct. */}
-            <LogoIcon />
-            <p className='text-2xl not-italic font-bold leading-6'>Builderkit.ai</p>
-          </div>
+          <LogoIcon />
         </Link>
 
         <ul className='hidden md:flex items-center gap-6'>
