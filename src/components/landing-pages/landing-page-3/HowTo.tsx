@@ -1,5 +1,6 @@
 import { howTo } from '@/assets/landing-page-3/images';
 import Image from 'next/image';
+
 export default async function HowTo() {
   const heading = 'Revolutionize your workflow';
   const content =

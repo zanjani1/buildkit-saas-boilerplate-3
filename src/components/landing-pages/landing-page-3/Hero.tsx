@@ -2,6 +2,7 @@ import Image from 'next/image';
 import HeroImage from '@/assets/landing-page-3/images/hero.svg';
 import { ArrowRightIcon, VideoIcon } from '@radix-ui/react-icons';
 import Button from './Button';
+
 export default async function Hero() {
   const heading = 'Generate AI Apps with Ease';
   const content =

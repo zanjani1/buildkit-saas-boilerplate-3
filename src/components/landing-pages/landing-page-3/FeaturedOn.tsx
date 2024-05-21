@@ -1,5 +1,6 @@
 import { Notion, Grammarly, Intercom, Unsplash, Descript } from '@/assets/landing-page-3/images';
 import Image from 'next/image';
+
 export default async function FeaturedOn() {
   const imageSrc = [Unsplash, Notion, Intercom, Descript, Grammarly];
   const content = 'More than 25,000 teams use Builderkit';

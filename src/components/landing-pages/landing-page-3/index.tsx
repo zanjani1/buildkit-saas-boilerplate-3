@@ -7,7 +7,8 @@ import HowTo from './HowTo';
 import Pricing from './Pricing/Pricing';
 import Help from './Help';
 import Footer from './Footer';
-export default async function LandingPage2() {
+
+export default async function LandingPage3() {
   return (
     <>
       <Navbar />
