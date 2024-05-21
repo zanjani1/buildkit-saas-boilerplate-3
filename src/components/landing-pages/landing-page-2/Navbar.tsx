@@ -42,8 +42,8 @@ export default async function Navbar() {
 
         {/* Conditional button that changes based on user status. */}
         <Link href={user ? '/admin-dashboard' : '/login'} className='hidden md:block'>
-          <Button className=' bg-gradient-to-t from-[#FF4F00] to-[#ff5100dc]'>
-            {user ? 'Try Now' : 'Get Started'} <ArrowRightIcon />
+          <Button className=' bg-gradient-to-t from-lp2-primary/80 to-lp2-primary'>
+            {user ? 'Try Now' : 'Get Started'} <ArrowRightIcon className='ml-2' />
           </Button>
         </Link>
 
@@ -60,7 +60,7 @@ export default async function Navbar() {
                   </li>
                 ))}
               </ul>
-              <Button className='rounded-lg w-full flex border border-[#51DCA3] green-btn-gradient'>
+              <Button className='rounded-lg w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
                 Sign Up
               </Button>
             </div>
