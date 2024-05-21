@@ -1,6 +1,6 @@
 'use client';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import Button from './Button';
+import Button from '../landing-page-3/Button';
 import Image from 'next/image';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
@@ -41,11 +41,13 @@ export default function Navbar() {
           );
         })}
       </div>
-      <div className='flex gap-2'>
-        <Button>
-          <span className=' leading-5'>Sign Up</span>
-          <ArrowRightIcon />
-        </Button>
+      <div>
+        <div className='hidden md:block'>
+          <Button>
+            <span className=' leading-5'>Sign Up</span>
+            <ArrowRightIcon />
+          </Button>
+        </div>
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>

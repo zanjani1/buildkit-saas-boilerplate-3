@@ -62,7 +62,7 @@ export default function Footer() {
       <div className='flex flex-col gap-16 max-md:gap-8 '>
         <div className='flex justify-between max-md:flex-col max-md:gap-6'>
           <h1 className='font-medium text-4xl text-white max-w-[613px] max-md:text-2xl'>{heading}</h1>
-          <Button className='bg-white hover:bg-white rounded-full flex gap-2 max-md:gap-1 py-4 px-8 leading-6 max-md:px-2 max-md:py-1 text-black font-semibold text-base box-content max-md:text-sm'>
+          <Button className='bg-white hover:bg-white hover:opacity-80 rounded-full flex md:gap-2 gap-1  md:px-8 leading-6 px-2 text-black font-semibold md:text-base text-sm md:h-14 h-10'>
             <span>Get Started</span>
             <ArrowRightIcon></ArrowRightIcon>
           </Button>
@@ -77,7 +77,7 @@ export default function Footer() {
             <p className='font-medium text-white'>All rights reserved</p>
           </div>
 
-          <div className='grid grid-cols-3 gap-x-[140px] gap-y-4 max-md:gap-x-10 text-stone-400 text-sm font-medium '>
+          <div className='grid grid-cols-3 md:gap-x-[140px] gap-y-4 gap-x-10 text-stone-400 text-sm font-medium '>
             {options.map((option, index) => {
               return (
                 <Link href={option.url} className='text-start hover:underline' key={index}>

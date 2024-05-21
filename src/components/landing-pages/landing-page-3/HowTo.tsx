@@ -17,11 +17,11 @@ export default async function HowTo() {
       <div className='flex gap-4 max-md:gap-2 max-md:flex-col'>
         {[0, 1, 2].map((i) => {
           return (
-            <div className='flex flex-col gap-6 max-md:gap-3' key={i}>
-              <Image src={howTo} width={500} height={500} alt='how-to' className='w-full'></Image>
+            <div className='flex flex-col md:gap-6 gap-3' key={i}>
+              <Image src={howTo} width={500} height={500} alt='how-to' className='w-full' />
               <div className='flex flex-col gap-3'>
-                <h3 className='font-medium text-2xl max-md:text-xl'>{headingCard}</h3>
-                <span className='text-stone-500  max-md:text-sm'>{contentCard}</span>
+                <h3 className='font-medium md:text-2xl text-xl'>{headingCard}</h3>
+                <span className='text-stone-500 text-sm md:text-base'>{contentCard}</span>
               </div>
             </div>
           );

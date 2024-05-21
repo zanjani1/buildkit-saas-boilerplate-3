@@ -1,14 +1,18 @@
-import { Toggle, Discount } from '@/assets/landing-page-3/images';
+'use client';
+import { Discount } from '@/assets/landing-page-3/images';
 import Image from 'next/image';
 import pricingDetails from './PricingConstants';
 import tick from '@/assets/landing-page-3/icons/tick-circle.svg';
 import cross from '@/assets/landing-page-3/icons/close-circle.svg';
 import clsx from 'clsx';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import ToggleSwitch from './ToggleSwitch';
+const heading = 'Ready to Get Started?';
+const content = 'Choose a plan that suits your business';
 
-export default async function Pricing() {
-  const heading = 'Ready to Get Started?';
-  const content = 'Choose a plan that suits your business';
+export default function Pricing() {
+  const [checked, setChecked] = useState(false);
   return (
     <div
       id='Pricing'
@@ -19,9 +23,9 @@ export default async function Pricing() {
       </div>
 
       <div className='flex flex-col'>
-        <div className='flex font-medium gap-4 text-xl max-md:text-lg'>
+        <div className='flex font-medium gap-4 text-xl max-md:text-lg items-center'>
           <span>Monthly</span>
-          <Image src={Toggle} width={100} height={50} alt='toggle' className='w-12 h-6'></Image>
+          <ToggleSwitch isToggled={checked} setIsToggled={setChecked} />
           <span>Yearly</span>
         </div>
         <div className='ml-auto flex'>
@@ -44,8 +48,10 @@ export default async function Pricing() {
               </div>
 
               <div className='flex items-center'>
-                <span className='text-4xl font-semibold max-md:text-2xl'>{plans.price}</span>
-                <span className='text-stone-500'>/month</span>
+                <span className='text-4xl font-semibold max-md:text-2xl'>
+                  {!checked ? plans.price : '$' + Math.round(Number(plans.price.substring(1)) * 12 * 0.35)}
+                </span>
+                <span className='text-stone-500'>{checked ? '/yearly' : '/month'}</span>
               </div>
 
               <div className='text-stone-500 text-start max-md:text-sm'>{plans.description}</div>
