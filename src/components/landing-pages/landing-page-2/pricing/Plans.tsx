@@ -3,17 +3,8 @@
 // Tiers data is mapped to display each plan with its respective price, features, and a call-to-action.
 
 'use client';
-
-import { RadioGroup } from '@headlessui/react';
-import { Badge } from '@/components/ui/badge';
-import { useState } from 'react';
-import { cn } from '@/utils/utils';
-import { TypeSubscriptionInterval, TypeSubscriptionPlan } from '@/types/types';
-import ButtonPayment from './ButtonPayment';
-import SeparatorOr from '@/components/ui/separator-or';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ArrowRightIcon, CircleIcon } from '@radix-ui/react-icons';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 const tiers = [
   {

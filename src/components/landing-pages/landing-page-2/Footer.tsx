@@ -2,10 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '../../ui/button';
-import Logo from '../../Logo';
 import { getUser } from '@/utils/get-user';
-import LogoIcon from '@/assets/landing-page-2/icons/LogoIcon';
-import { BiRightArrow } from 'react-icons/bi';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 // Array of objects representing footer navigation items
