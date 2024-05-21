@@ -10,7 +10,9 @@ export default async function Pricing() {
   const heading = 'Ready to Get Started?';
   const content = 'Choose a plan that suits your business';
   return (
-    <div className='px-32 flex flex-col gap-12 justify-center items-center text-center max-md:px-8 my-40'>
+    <div
+      id='Pricing'
+      className='px-32 flex flex-col gap-12 justify-center items-center text-center max-md:px-8 my-40'>
       <div className='flex flex-col gap-4'>
         <h1 className='text-4xl font-medium max-md:text-2xl'>{heading}</h1>
         <span className='text-stone-500'>{content}</span>

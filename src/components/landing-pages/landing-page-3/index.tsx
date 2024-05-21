@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import FeaturedOn from './FeaturedOn';
 import HowTo from './HowTo';
-import Pricing from './Pricing';
+import Pricing from './Pricing/Pricing';
 import Help from './Help';
 import Footer from './Footer';
 export default async function LandingPage2() {

@@ -1,6 +1,6 @@
-import free from '../../../assets/landing-page-3/icons/free.svg';
-import pro from '../../../assets/landing-page-3/icons/pro.svg';
-import ultimate from '../../../assets/landing-page-3/icons/ultimate.svg';
+import free from '@/assets/landing-page-3/icons/free.svg';
+import pro from '@/assets/landing-page-3/icons/pro.svg';
+import ultimate from '@/assets/landing-page-3/icons/ultimate.svg';
 const pricingDetails = [
   {
     icon: free,

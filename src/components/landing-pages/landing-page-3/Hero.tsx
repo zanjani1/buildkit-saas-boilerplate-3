@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import HeroImage from '../../../assets/landing-page-3/images/hero.svg';
+import HeroImage from '@/assets/landing-page-3/images/hero.svg';
 import { ArrowRightIcon, VideoIcon } from '@radix-ui/react-icons';
-import { Button } from '../../ui/button';
+import Button from './Button';
 export default async function Hero() {
   const heading = 'Generate AI Apps with Ease';
   const content =
@@ -17,14 +17,14 @@ export default async function Hero() {
           </span>
           <span className='text-stone-500 leading-7 px-2.5 max-md:text-sm text-balance'>{content}</span>
           <div className='flex gap-4 justify-center leading-5'>
-            <Button className='bg-lp3-primary shadow-md flex gap-2.5 hover:bg-lp3-primary px-3 py-6  max-md:px-1.5 max-md:py-3 max-md:text-xs'>
+            <Button>
               <span>Start Creating</span>
               <ArrowRightIcon></ArrowRightIcon>
             </Button>
-            <Button className='shadow-md flex gap-2.5 bg-white hover:bg-white text-black px-3 py-6 max-md:px-1.5 max-md:py-3 max-md:text-xs'>
+            <button className='rounded-lg border flex gap-2 items-center px-6 max-md:px-3 max-md:py-2 shadow max-md:text-xs'>
               <span>Watch Demo</span>
               <VideoIcon></VideoIcon>
-            </Button>
+            </button>
           </div>
         </div>
         <Image

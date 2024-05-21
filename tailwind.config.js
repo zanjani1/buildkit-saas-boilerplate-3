@@ -28,11 +28,8 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        lp3: {
-          primary: '#26AB75',
-          footer: '#062B1C',
-        },
         primary: {
+          lp3: '#26AB75',
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },

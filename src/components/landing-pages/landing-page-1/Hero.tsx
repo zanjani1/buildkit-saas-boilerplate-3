@@ -4,7 +4,7 @@
 import Navbar from './Navbar';
 import { Button } from '../../ui/button';
 import Image from 'next/image';
-import HeroImage from '../../../assets/images/hero.png';
+import HeroImage from '@/assets/landing-page-1/images/hero.png';
 import Link from 'next/link';
 
 export default async function Hero() {

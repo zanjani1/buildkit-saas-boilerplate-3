@@ -8,7 +8,7 @@ export default async function HowTo() {
   const contentCard =
     'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.';
   return (
-    <div className='flex flex-col px-32 max-md:px-8 my-40'>
+    <div id='about' className='flex flex-col px-32 max-md:px-8 my-40'>
       <div className='flex flex-col gap-6 items-center '>
         <h1 className='text-4xl max-md:text-xl font-medium'>{heading}</h1>
         <span className='text-stone-500 max-md:text-sm max-w-2xl text-center text-balance '>{content}</span>
