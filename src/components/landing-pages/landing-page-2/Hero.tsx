@@ -16,7 +16,7 @@ export default async function Hero() {
         <Navbar />
 
         <div className='flex  flex-col gap-10 py-5 md:py-14 px-4 items-center justify-center mx-auto max-w-4xl'>
-          <h1 className='font-semibold text-6xl text-center'>
+          <h1 className='font-semibold text-6xl max-sm:text-3xl text-center'>
             Generate modular <span className='text-primary-lp2'>AI Apps with ease and pace</span>{' '}
           </h1>
           <p className='text-gray-700 text-center font-inter text-lg font-medium leading-6'>

@@ -7,7 +7,7 @@ import LandingPage2 from '@/components/landing-pages/landing-page-2';
 export default async function Home() {
   return (
     <>
-      <LandingPage1 />
+      {/* <LandingPage1 /> */}
       <LandingPage2 />
     </>
   );

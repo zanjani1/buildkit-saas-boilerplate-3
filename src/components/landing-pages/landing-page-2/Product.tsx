@@ -40,7 +40,7 @@ export default async function Product() {
     <div id='product' className=' mx-auto p-4'>
       <div className='max-w-6xl flex flex-col justify-center items-center mx-auto py-20 space-y-20'>
         <div className='space-y-7 max-w-2xl'>
-          <p className='font-semibold text-5xl text-center '>
+          <p className='font-semibold text-6xl max-sm:text-3xl text-center '>
             <span className='text-primary-lp2'>Essentially </span> , everything you need to ship you first AI
             App
           </p>
