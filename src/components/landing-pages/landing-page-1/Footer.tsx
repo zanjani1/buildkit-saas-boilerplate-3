@@ -1,8 +1,8 @@
 // This is the Footer component of the landing page.
 
 import Link from 'next/link';
-import { Button } from '../ui/button';
-import Logo from '../Logo';
+import { Button } from '../../ui/button';
+import Logo from '../../Logo';
 import { getUser } from '@/utils/get-user';
 
 // Array of objects representing footer navigation items
