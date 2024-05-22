@@ -53,11 +53,11 @@ export default async function Footer() {
     <footer className='bg-[#1C1C1C] text-white px-5'>
       <div className='max-w-6xl mx-auto px-4 py-16'>
         <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
-          <p className='md:w-1/2 text-3xl md:text-4xl font-medium leading-normal md:leading-normal'>
+          <p className='md:w-1/2 text-2xl font-medium leading-normal md:leading-normal'>
             Get your AI apps built with blazing speed.
           </p>
-          <Link href={'/login'} className=''>
-            <Button className=' bg-gradient-to-t from-lp5-primary to-[#ff5100dc] flex gap-2 p-6'>
+          <Link href={'/login'}>
+            <Button className='bg-lp5-primary flex gap-2 px-4 py-6 rounded-full'>
               Get Started
               <ArrowRightIcon />
             </Button>
@@ -68,7 +68,7 @@ export default async function Footer() {
 
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='md:w-1/4 flex flex-col gap-8'>
-            <p className='text-3xl font-semibold'>GEN AI</p>
+            <p className='text-2xl font-normal'>GEN AI</p>
 
             <p className='text-lg text-white/60'>
               lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.

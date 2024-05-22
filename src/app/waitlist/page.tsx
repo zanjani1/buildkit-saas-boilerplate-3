@@ -23,7 +23,7 @@ const Waitlist = () => {
 
             <div className='hidden md:flex items-center gap-20 max-w-7xl relative justify-center p-4'>
               <div
-                className='font-bold text-[130px] lg:text-[190px] xl:text-[250px] text-transparent leading-normal bg-transparent text-strock '
+                className='font-bold text-[130px] lg:text-[190px] xl:text-[250px] text-transparent leading-normal bg-transparent text-strock'
                 style={{
                   WebkitTextStrokeColor: theme === 'dark' ? '#1d4531' : '#cccbc6',
                 }}>
@@ -70,14 +70,14 @@ const Waitlist = () => {
           </div>
 
           <footer className='space-y-10 my-10 md:mt-0'>
-            <div className='flex items-center justify-center gap-6 '>
+            <div className='flex items-center justify-center gap-6'>
               <FaFacebookF className='size-6 cursor-pointer' />
               <FaTwitter className='size-6 cursor-pointer' />
               <RiInstagramFill className='size-6 cursor-pointer' />
               <FaLinkedin className='size-6 cursor-pointer' />
               <FaGithub className='size-6 cursor-pointer' />
             </div>
-            <p className='text-[#828282] text-center '>© Copyrights 1811 Labs | All Rights Reserved</p>
+            <p className='text-[#828282] text-center'>© Copyrights 1811 Labs | All Rights Reserved</p>
           </footer>
         </div>
       </div>

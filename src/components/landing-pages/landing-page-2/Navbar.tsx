@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
-import { Button } from '../../ui/button';
+import { Button } from '@/components/ui/button';
 import { getUser } from '@/utils/get-user';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import LogoIcon from '../../../assets/landing-page-2/icons/LogoIcon';
+import LogoIcon from '@/assets/landing-page-2/icons/LogoIcon';
 
 const navbarRoutes = [
   { label: 'Waitlist', url: '/waitlist' },

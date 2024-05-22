@@ -1,10 +1,10 @@
 // This component renders the main hero section of the landing page which is designed to grab the visitor's attention.
 // It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
 
-import Navbar from './Navbar';
-import { Button } from '../../ui/button';
+import Navbar from '@/components/landing-pages/landing-page-2/Navbar';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import HeroImage from '../../../assets/landing-page-2/images/hero.png';
+import HeroImage from '@/assets/landing-page-2/images/hero.png';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 

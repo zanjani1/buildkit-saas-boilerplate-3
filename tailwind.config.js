@@ -36,6 +36,10 @@ module.exports = {
           primary: '#FF4F00',
           secondary: '#374151',
         },
+        lp5: {
+          primary: '#FF4F00',
+          secondary: '#787878',
+        },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
