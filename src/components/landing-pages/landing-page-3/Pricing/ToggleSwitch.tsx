@@ -1,14 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
 
+type SetStateType = React.Dispatch<React.SetStateAction<boolean>>;
 interface ToggleSwitchProps {
   isToggled: boolean;
-  setIsToggled: (value: boolean) => void;
+  setIsToggled: SetStateType;
 }
 
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ isToggled, setIsToggled }) => {
   const handleToggle = () => {
-    setIsToggled(!isToggled);
+    setIsToggled((prev) => !prev);
   };
 
   return (
