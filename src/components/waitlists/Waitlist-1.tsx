@@ -2,8 +2,9 @@ import Waitlist from './Waitlist';
 
 const colorScheme = {
   bg: '#031614',
-  primary: '#051A17',
-  secondary: '#26AB75',
+  input: '#051A17',
+  button: '#26AB75',
+  border: '#51DCA3',
   dark: true,
 };
 
