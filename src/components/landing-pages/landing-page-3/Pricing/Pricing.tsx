@@ -38,7 +38,7 @@ export default function Pricing() {
           return (
             <div
               key={index}
-              className='flex flex-col gap-7 border border-stone-200 rounded-lg md:p-8 p-4  justify-start items-start h-fit max-w-96 shadow-md'>
+              className='flex flex-col gap-7 border border-stone-200 rounded-lg md:p-8 p-4  justify-start items-start h-fit max-w-96 '>
               <div className='flex flex-col gap-3'>
                 <div className='flex gap-2 items-center'>
                   <Image src={plans.icon} width={35} height={40} alt='icon'></Image>
@@ -61,7 +61,7 @@ export default function Pricing() {
                   return (
                     <div key={feat.feature} className='flex gap-3 text-start'>
                       <Image src={feat.available ? tick : cross} width={20} height={20} alt='icon'></Image>
-                      <span className={clsx('font-medium md:text-lg', { 'text-slate-400': !feat.available })}>
+                      <span className={clsx('md:text-lg', { 'text-stone-500': !feat.available })}>
                         {feat.feature}
                       </span>
                     </div>
@@ -69,7 +69,7 @@ export default function Pricing() {
                 })}
               </div>
               <div className='w-full'>
-                <Button className='bg-[#009429] hover:bg-[#009429] text-sm text-white size-full'>
+                <Button className='bg-[#009429] hover:bg-[#009429] text-sm text-white w-full h-12 rounded-lg'>
                   Get Started
                 </Button>
               </div>

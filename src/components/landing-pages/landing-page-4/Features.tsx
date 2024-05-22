@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { features } from '@/assets/landing-page-4/images';
 
-const heading = 'Explore the power of AI apps generation Workflow';
 const content =
   'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of Effort and Use our robust Deployable code.';
 
@@ -28,7 +27,10 @@ export default async function Features() {
     <div id='features' className='flex justify-center'>
       <div className='md:max-w-6xl max-w-80 flex flex-col md:mt-56 mt-24 items-center gap-24'>
         <div className='flex flex-col items-center gap-7 justify-between text-center'>
-          <h1 className='md:text-4xl text-2xl font-medium max-w-lg'>{heading}</h1>
+          <h1 className='md:text-4xl text-2xl font-medium max-w-lg flex flex-col gap-2'>
+            <span>Explore the power of</span>
+            <span>AI apps generation Workflow</span>
+          </h1>
           <span className='text-stone-400 leading-6 max-w-2xl'>{content}</span>
         </div>
 

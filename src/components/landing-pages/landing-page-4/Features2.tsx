@@ -48,10 +48,10 @@ export default function Features2() {
               return (
                 <div
                   key={card.title}
-                  className='rounded flex flex-col p-6 gap-5 border border-[#171717] max-w-[366px]'>
+                  className='rounded-lg flex flex-col p-6 gap-5 border border-[#171717] max-w-[366px]'>
                   <LightningBoltIcon className='size-6 text-[#94989E]' />
-                  <div className='gap-2 flex flex-col font-medium'>
-                    <h3 className='leading-6'>{card.title}</h3>
+                  <div className='gap-2 flex flex-col '>
+                    <h3 className='leading-6 font-medium'>{card.title}</h3>
                     <span className='text-stone-400 text-sm'>{card.content}</span>
                   </div>
                 </div>

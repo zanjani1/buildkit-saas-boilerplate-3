@@ -33,7 +33,7 @@ export default function FAQ() {
         <h1 className='md:text-4xl font-medium text-2xl'>{heading}</h1>
         <p className='text-stone-400 px-10 md:px-0 text-center'>{content}</p>
       </div>
-      <div className='flex flex-col gap-4 items-start leading-8 '>
+      <div className='flex flex-col items-start leading-8 '>
         {accordion.map((item, index) => {
           return (
             <Accordion type='single' collapsible key={index}>

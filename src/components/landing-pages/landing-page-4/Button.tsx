@@ -10,7 +10,7 @@ interface ButtonProps {
 function Button({ children, fill, size }: ButtonProps) {
   return (
     <button
-      className={clsx('flex hover:opacity-90 rounded-lg items-center shadow w-fit font-medium', {
+      className={clsx('flex hover:opacity-90 rounded-lg items-center shadow w-fit', {
         'text-black bg-white ': fill,
         'text-white bg-[#262626]': !fill,
         'px-2.5 h-8': size === 'sm',

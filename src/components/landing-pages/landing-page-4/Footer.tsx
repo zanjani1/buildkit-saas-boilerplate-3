@@ -64,7 +64,7 @@ export default function Footer() {
           <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>{heading}</h1>
           <Button fill={true} size='md'>
             <span>Get Started</span>
-            <ArrowRightIcon></ArrowRightIcon>
+            <ArrowRightIcon className='font-bolder' />
           </Button>
         </div>
 

@@ -21,7 +21,7 @@ export default function Pricing() {
       <div className='flex flex-col gap-20 md:max-w-6xl max-w-80 items-center'>
         <h1 className='md:text-4xl text-2xl text-center max-w-[560px] font-medium'>{heading}</h1>
         <div className='flex gap-4 md:flex-row flex-col'>
-          <div className='border border-[#171717] rounded-lg flex gap-12 px-1 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#69FFF61A] from-10% to-black'>
+          <div className='border border-[#171717] rounded-lg flex gap-12 px-1 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#69FFF61A] from-10% to-black w-full'>
             <div className='flex flex-col gap-6 items-center flex-1'>
               <div className='flex flex-col gap-2'>
                 <h3 className='font-semibold text-center'>PRO</h3>
@@ -40,16 +40,24 @@ export default function Pricing() {
                 return (
                   <div
                     key={feat.feature}
-                    className={clsx('flex gap-0.5 ', { 'text-stone-400': !feat.available })}>
-                    <Image src={Tick} alt='tick' width={20} height={20} />
-                    <span className={clsx('font-medium leading-6')}>{feat.feature}</span>
+                    className={clsx('flex gap-2 items-start', {
+                      'text-stone-400': !feat.available,
+                    })}>
+                    <Image
+                      src={Tick}
+                      alt='tick'
+                      width={20}
+                      height={20}
+                      className={clsx({ 'opacity-70': !feat.available })}
+                    />
+                    <span className={clsx('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className='border border-[#171717] rounded-lg flex gap-12 px-1 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#FF2BAA29] from-10% to-black '>
+          <div className='border border-[#171717] rounded-lg flex gap-12 px-4 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#FF2BAA29] from-10% to-black w-full '>
             <div className='flex flex-col gap-6 items-center flex-1'>
               <div className='flex flex-col gap-2'>
                 <h3 className='font-semibold text-center'>PRO</h3>
@@ -66,9 +74,9 @@ export default function Pricing() {
             <div className='flex flex-col gap-4 max-w-72 flex-1'>
               {features.map((feat) => {
                 return (
-                  <div key={feat.feature} className={clsx('flex gap-0.5 ')}>
+                  <div key={feat.feature} className={clsx('flex gap-2 items-start')}>
                     <Image src={Tick} alt='tick' width={20} height={20} />
-                    <span className={clsx('font-medium leading-6')}>{feat.feature}</span>
+                    <span className={clsx('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
                   </div>
                 );
               })}
