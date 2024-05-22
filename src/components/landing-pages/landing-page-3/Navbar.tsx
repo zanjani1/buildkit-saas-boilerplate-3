@@ -27,9 +27,9 @@ const navOptions = [
 
 export default function Navbar() {
   return (
-    <div className='flex justify-between px-16  max-md:px-4 h-20 items-center max-md:h-12'>
+    <div className='flex justify-between md:px-16  px-4 md:h-20 items-center h-12'>
       <Image src='/lp3-logo.svg' width={100} height={100} alt='logo' className='h-12 w-32' />
-      <div className='flex max-md:hidden gap-4'>
+      <div className='hidden md:flex gap-4'>
         {navOptions.map((opt) => {
           return (
             <Link

@@ -16,14 +16,14 @@ export default function Pricing() {
   return (
     <div
       id='Pricing'
-      className='px-32 flex flex-col gap-12 justify-center items-center text-center max-md:px-8 my-40'>
+      className='md:px-32 flex flex-col gap-12 justify-center items-center text-center px-8 my-40'>
       <div className='flex flex-col gap-4'>
-        <h1 className='text-4xl font-medium max-md:text-2xl'>{heading}</h1>
+        <h1 className='md:text-4xl font-medium text-2xl'>{heading}</h1>
         <span className='text-stone-500'>{content}</span>
       </div>
 
       <div className='flex flex-col'>
-        <div className='flex font-medium gap-4 text-xl max-md:text-lg items-center'>
+        <div className='flex font-medium gap-4 md:text-xl text-lg items-center'>
           <span>Monthly</span>
           <ToggleSwitch isToggled={checked} setIsToggled={setChecked} />
           <span>Yearly</span>
@@ -33,7 +33,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className='flex gap-3 md:mx-2 max-md:flex-col '>
+      <div className='flex gap-3 md:mx-2 flex-col md:flex-row'>
         {pricingDetails.map((plans, index) => {
           return (
             <div
@@ -48,13 +48,13 @@ export default function Pricing() {
               </div>
 
               <div className='flex items-center'>
-                <span className='text-4xl font-semibold max-md:text-2xl'>
+                <span className='md:text-4xl font-semibold text-2xl'>
                   {!checked ? plans.price : '$' + Math.round(Number(plans.price.substring(1)) * 12 * 0.35)}
                 </span>
                 <span className='text-stone-500'>{checked ? '/yearly' : '/month'}</span>
               </div>
 
-              <div className='text-stone-500 text-start max-md:text-sm'>{plans.description}</div>
+              <div className='text-stone-500 text-start text-sm md:text-base'>{plans.description}</div>
 
               <div className='flex flex-col gap-5 '>
                 {plans.features.map((feat) => {

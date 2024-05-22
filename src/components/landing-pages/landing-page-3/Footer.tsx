@@ -58,10 +58,10 @@ export default function Footer() {
   const content = 'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. ';
 
   return (
-    <div className=' mt-[208px] py-20 px-32 bg-[#062B1C] max-md:px-8 max-mmd:py-5'>
-      <div className='flex flex-col gap-16 max-md:gap-8 '>
-        <div className='flex justify-between max-md:flex-col max-md:gap-6'>
-          <h1 className='font-medium text-4xl text-white max-w-[613px] max-md:text-2xl'>{heading}</h1>
+    <div className=' mt-[208px] md:py-20 md:px-32 bg-[#062B1C] px-8 py-10'>
+      <div className='flex flex-col md:gap-16 gap-8 '>
+        <div className='flex justify-between flex-col gap-6 md:gap-0 md:flex-row'>
+          <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>{heading}</h1>
           <Button className='bg-white hover:bg-white hover:opacity-80 rounded-full flex md:gap-2 gap-1  md:px-8 leading-6 px-2 text-black font-semibold md:text-base text-sm md:h-14 h-10'>
             <span>Get Started</span>
             <ArrowRightIcon></ArrowRightIcon>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <hr className='border opacity-25'></hr>
 
-        <div className='flex justify-between max-md:flex-col max-md:gap-10'>
+        <div className='flex justify-between flex-col gap-10 md:flex-row md:gap-0'>
           <div className='flex flex-col gap-8 max-w-[300px]'>
             <h1 className='font-medium text-2xl leading-6 text-stone-300'>Gen AI</h1>
             <span className='text-stone-400'>{content}</span>

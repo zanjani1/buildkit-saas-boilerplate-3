@@ -10,19 +10,19 @@ export default async function Hero() {
 
   return (
     // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className='flex w-full justify-center bg-gradient-to-r from-[#52BDAA33] from-20% via-white  to-[#52BDAA33] to-80%'>
-      <div className='flex flex-col w-full items-center mt-14 max-md:mt-8 '>
+    <div className='flex w-full justify-center '>
+      <div className='flex flex-col w-full items-center md:mt-14 mt-8 '>
         <div className='flex flex-col gap-8 max-w-[625px] items-center py-2.5 text-center'>
-          <span className=' text-6xl max-md:text-3xl font-semibold px-10 bg-gradient-to-b from-black from-60% to-[#929292] bg-clip-text text-transparent'>
+          <span className='md:text-6xl text-3xl font-semibold px-10 bg-gradient-to-b from-black from-60% to-[#929292] bg-clip-text text-transparent'>
             {heading}
           </span>
-          <span className='text-stone-500 leading-7 px-2.5 max-md:text-sm text-balance'>{content}</span>
+          <span className='text-stone-500 leading-7 px-2.5 text-sm md:text-base text-balance'>{content}</span>
           <div className='flex gap-4 justify-center leading-5'>
             <Button>
               <span>Start Creating</span>
               <ArrowRightIcon></ArrowRightIcon>
             </Button>
-            <button className='rounded-lg border flex gap-2 items-center px-6 max-md:px-3 max-md:py-2 shadow max-md:text-xs hover:opacity-80'>
+            <button className='rounded-lg border flex gap-2 items-center md:px-6 px-3 py-2 shadow text-xs hover:opacity-80 md:text-base bg-white'>
               <span>Watch Demo</span>
               <VideoIcon></VideoIcon>
             </button>
@@ -33,7 +33,7 @@ export default async function Hero() {
           width={500}
           height={500}
           alt='hero'
-          className=' w-full px-24 max-md:px-4 mt-14 max-md:mt-8'
+          className=' w-full md:px-24 px-4 md:mt-14 mt-8'
         />
       </div>
     </div>

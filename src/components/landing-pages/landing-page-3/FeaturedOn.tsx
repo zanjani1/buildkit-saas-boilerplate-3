@@ -7,9 +7,9 @@ export default async function FeaturedOn() {
   return (
     <div
       id='testimonials'
-      className='flex justify-center flex-col items-center text-2xl gap-16 my-40 max-md:my-20 max-md:gap-8'>
-      <span className=' font-semibold text-center max-md:text-lg'>{content}</span>
-      <div className='flex justify-center gap-10 max-md:flex-wrap max-md:gap-5'>
+      className='flex justify-center flex-col items-center text-2xl md:gap-16 md:my-40 my-20 gap-8'>
+      <span className=' font-semibold text-center text-lg md:text-2xl'>{content}</span>
+      <div className='flex justify-center md:gap-10 flex-wrap gap-5'>
         {imageSrc.map((src, index) => {
           return <Image key={index} src={src} width={125} height={125} alt='logo' />;
         })}
