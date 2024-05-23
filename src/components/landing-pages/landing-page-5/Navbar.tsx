@@ -13,7 +13,7 @@ const navbarRoutes = [
 
 export default function Navbar() {
   return (
-    <div className='max-w-2xl mx-auto pt-5 transition-all'>
+    <div className='max-w-2xl mx-auto px-3 pt-3 transition-all'>
       <div
         className='w-full p-2 flex flex-col justify-between items-center border-[#222222] border rounded-full bg-[linear-gradient(180deg,#121212_0%,#202020_100%)] transition-all duration-300 ease-in-out
         '>

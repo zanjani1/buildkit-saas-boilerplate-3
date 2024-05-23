@@ -48,10 +48,10 @@ export default async function Navbar() {
         </Link>
 
         <Sheet>
-          <SheetTrigger className='block md:hidden'>
+          <SheetTrigger className='block md:hidden -mr-3 mb-3'>
             <HiBars3 className='size-6' />
           </SheetTrigger>
-          <SheetContent side='top'>
+          <SheetContent side='top' className='px-5'>
             <div className='space-y-6'>
               <ul className='gap-6'>
                 {navbarRoutes.map((item, index) => (
