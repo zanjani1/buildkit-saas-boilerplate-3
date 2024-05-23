@@ -54,14 +54,13 @@ const options = [
 ];
 
 export default function Footer() {
-  const heading = 'Get your AI apps built with blazing speed.';
-  const content = 'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. ';
-
   return (
     <div className=' md:mt-[208px] mt-24 md:py-20 md:px-32 px-8 py-5'>
       <div className='flex flex-col md:gap-16 gap-8 '>
         <div className='flex justify-between flex-col md:flex-row gap-6 md:gap-0'>
-          <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>{heading}</h1>
+          <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>
+            Get your AI apps built with blazing speed.
+          </h1>
           <Button fill={true} size='md'>
             <span>Get Started</span>
             <ArrowRightIcon className='font-bolder' />
@@ -73,7 +72,9 @@ export default function Footer() {
         <div className='flex justify-between flex-col md:flex-row gap-10 md:gap-0'>
           <div className='flex flex-col gap-8 max-w-[300px]'>
             <h1 className='font-medium text-2xl leading-6 text-stone-300'>Gen AI</h1>
-            <span className='text-stone-400'>{content}</span>
+            <span className='text-stone-400'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
+            </span>
             <p className='font-medium text-white'>All rights reserved</p>
           </div>
 

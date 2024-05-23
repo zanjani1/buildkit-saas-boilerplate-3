@@ -1,9 +1,6 @@
 import Image from 'next/image';
 import { features } from '@/assets/landing-page-4/images';
 
-const content =
-  'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of Effort and Use our robust Deployable code.';
-
 const cardDetails = [
   {
     title: 'Build your AI apps Fast',
@@ -31,7 +28,10 @@ export default async function Features() {
             <span>Explore the power of</span>
             <span>AI apps generation Workflow</span>
           </h1>
-          <span className='text-stone-400 leading-6 max-w-2xl'>{content}</span>
+          <span className='text-stone-400 leading-6 max-w-2xl'>
+            Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
+            of Effort and Use our robust Deployable code.
+          </span>
         </div>
 
         <div className='flex gap-4 flex-col md:flex-row '>

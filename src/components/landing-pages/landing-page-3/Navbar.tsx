@@ -1,15 +1,16 @@
 'use client';
+
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Button from '../landing-page-3/Button';
 import Image from 'next/image';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import Link from 'next/link';
 
 const navOptions = [
   {
     label: 'Features',
-    url: '/features',
+    url: '/#features',
   },
   {
     label: 'Product',
@@ -21,7 +22,7 @@ const navOptions = [
   },
   {
     label: 'FAQ',
-    url: '/#Help',
+    url: '/#faq',
   },
 ];
 
@@ -48,17 +49,19 @@ export default function Navbar() {
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>
-            <HiBars3 />
+            <HiBars3 size={24} />
           </SheetTrigger>
           <SheetContent side='top' className=''>
             <div className='space-y-6'>
-              <ul className='gap-6'>
+              <div className='flex flex-col gap-4'>
                 {navOptions.map((item, index) => (
-                  <li key={index} className='text-sm font-medium py-2'>
-                    <Link href={item.url}>{item.label}</Link>
-                  </li>
+                  <div key={index} className='text-sm font-medium py-2'>
+                    <SheetClose asChild>
+                      <Link href={item.url}>{item.label}</Link>
+                    </SheetClose>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <Button>
                 <span>Sign Up</span>
                 <ArrowRightIcon />

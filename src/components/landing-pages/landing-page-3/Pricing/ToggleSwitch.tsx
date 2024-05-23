@@ -1,21 +1,16 @@
-import React from 'react';
-import clsx from 'clsx';
+import { cn } from '@/utils/utils';
+import { FC } from 'react';
 
-type SetStateType = React.Dispatch<React.SetStateAction<boolean>>;
 interface ToggleSwitchProps {
   isToggled: boolean;
-  setIsToggled: SetStateType;
+  handleToggle: () => void;
 }
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ isToggled, setIsToggled }) => {
-  const handleToggle = () => {
-    setIsToggled((prev) => !prev);
-  };
-
+const ToggleSwitch: FC<ToggleSwitchProps> = ({ isToggled, handleToggle }) => {
   return (
     <div
       onClick={handleToggle}
-      className={clsx(
+      className={cn(
         'cursor-pointer md:w-16 md:h-9 w-14 h-7 p-1 rounded-full md:p-2 transition-colors duration-100 ease-in-out',
         {
           'bg-[#009429]': isToggled,
@@ -23,7 +18,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ isToggled, setIsToggled }) 
         }
       )}>
       <div
-        className={clsx(
+        className={cn(
           'bg-white size-5 rounded-full transition-transform duration-300 ease-in-out pointer-events-none',
           {
             'translate-x-7': isToggled,

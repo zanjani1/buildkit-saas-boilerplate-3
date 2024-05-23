@@ -38,7 +38,7 @@ const accordion = [
 
 export default function Help() {
   return (
-    <div id='Help' className='flex flex-col items-center md:py-20 md:gap-20 gap-10 py-10'>
+    <div id='faq' className='flex flex-col items-center md:py-20 md:gap-20 gap-10 py-10'>
       <div className='flex flex-col gap-6 items-center justify-around'>
         <h1 className='md:text-4xl font-medium text-2xl'>{heading}</h1>
         <p className='text-stone-500 px-10 md:px-0 text-center'>{content}</p>

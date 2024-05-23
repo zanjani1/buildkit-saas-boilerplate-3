@@ -1,18 +1,20 @@
 'use client';
+
 import { Discount } from '@/assets/landing-page-3/images';
 import Image from 'next/image';
 import pricingDetails from './PricingConstants';
 import tick from '@/assets/landing-page-3/icons/tick-circle.svg';
 import cross from '@/assets/landing-page-3/icons/close-circle.svg';
-import clsx from 'clsx';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import ToggleSwitch from './ToggleSwitch';
+import { cn } from '@/utils/utils';
 const heading = 'Ready to Get Started?';
 const content = 'Choose a plan that suits your business';
 
 export default function Pricing() {
   const [checked, setChecked] = useState(false);
+
   return (
     <div
       id='Pricing'
@@ -25,7 +27,7 @@ export default function Pricing() {
       <div className='flex flex-col'>
         <div className='flex font-medium gap-4 md:text-xl text-lg items-center'>
           <span>Monthly</span>
-          <ToggleSwitch isToggled={checked} setIsToggled={setChecked} />
+          <ToggleSwitch isToggled={checked} handleToggle={() => setChecked(!checked)} />
           <span>Yearly</span>
         </div>
         <div className='ml-auto flex'>
@@ -61,7 +63,7 @@ export default function Pricing() {
                   return (
                     <div key={feat.feature} className='flex gap-3 text-start'>
                       <Image src={feat.available ? tick : cross} width={20} height={20} alt='icon'></Image>
-                      <span className={clsx('md:text-lg', { 'text-stone-500': !feat.available })}>
+                      <span className={cn('md:text-lg', { 'text-stone-500': !feat.available })}>
                         {feat.feature}
                       </span>
                     </div>

@@ -1,8 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const heading = 'Frequently asked questions';
-const content = "Don't worry, we got you. Here are some answers for your questions.";
-
 const accordion = [
   {
     title: 'What is buildekit?',
@@ -30,8 +27,10 @@ export default function FAQ() {
   return (
     <div id='faq' className='flex flex-col items-center md:py-20 md:gap-20 gap-10 py-10'>
       <div className='flex flex-col gap-6 items-center justify-around'>
-        <h1 className='md:text-4xl font-medium text-2xl'>{heading}</h1>
-        <p className='text-stone-400 px-10 md:px-0 text-center'>{content}</p>
+        <h1 className='md:text-4xl font-medium text-2xl'>Frequently asked questions</h1>
+        <p className='text-stone-400 px-10 md:px-0 text-center'>
+          Don't worry, we got you. Here are some answers for your questions.
+        </p>
       </div>
       <div className='flex flex-col items-start leading-8 '>
         {accordion.map((item, index) => {
