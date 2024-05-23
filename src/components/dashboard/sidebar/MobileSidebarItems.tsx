@@ -6,7 +6,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/utils';
-import { SheetClose } from '../../ui/sheet';
+import { SheetClose } from '@/components/ui/sheet';
 import { sidebarItems } from './SidebarItems';
 import { User } from '@supabase/supabase-js';
 
