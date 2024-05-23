@@ -49,7 +49,7 @@ export default function Help() {
             <Accordion type='single' collapsible key={index}>
               <AccordionItem value={item.title} className=' md:w-[640px] w-80 border-b-0'>
                 <AccordionTrigger className='font-medium text-base'>{item.title}</AccordionTrigger>
-                <AccordionContent className='text-stone-500 md:text-base bg-[#F4FFF5] border-t border-t-[#F1F1F1] py-2'>
+                <AccordionContent className='text-stone-500 text-sm bg-[#F4FFF5] border-t border-t-[#F1F1F1] p-2'>
                   {item.content}
                 </AccordionContent>
               </AccordionItem>
