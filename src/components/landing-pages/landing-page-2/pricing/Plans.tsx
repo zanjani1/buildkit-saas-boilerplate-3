@@ -54,12 +54,12 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='flex flex-col w-full md:flex-row items-start justify-between gap-6 mt-16'>
+      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-10 mt-16'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
-            className='w-full max-w-[23rem] bg-gradient-to-b shadow-sm from-white via-[rgba(249, 249, 250, 0.80)] to-transparent border md:p-6 pt-12 rounded-2xl flex mx-auto flex-col mt-6'>
+            className='w-full max-w-[23rem] bg-gradient-to-b shadow-sm from-white via-[rgba(249, 249, 250, 0.80)] to-transparent border md:p-6 pt-12 p-2 pb-6 rounded-2xl flex mx-auto flex-col mt-6'>
             <div className='text-center w-full'>
               {tier.name === 'Pro' && (
                 <p className='flex gap-3 pb-2 text-center w-full text-sm font-medium text-lp2-primary justify-center items-center'>
@@ -74,11 +74,11 @@ export default function Plans() {
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
             </div>
-            <ul role='list' className='space-y-2 mt-5 '>
+            <ul role='list' className='space-y-2 mt-5'>
               {tier.features.map((feature) => (
                 <li
                   key={feature}
-                  className=' leading-relaxed grid pb-3  grid-cols-[auto,1fr]  gap-3 font-medium items-center '>
+                  className=' leading-relaxed grid pb-3 grid-cols-[auto,1fr] gap-3 font-medium items-center'>
                   <OrangeArrowIcon /> <span>{feature}</span>
                 </li>
               ))}

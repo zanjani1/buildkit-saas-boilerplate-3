@@ -30,8 +30,8 @@ export default async function Features() {
   return (
     <div id='features' className='max-w-6xl mx-auto p-4 space-y-20 my-20'>
       <div className='flex flex-col items-center justify-center'>
-        <div className='space-y-7 max-w-3xl '>
-          <p className='text-center text-[#1C1C1C] font-inter max-w-lg mx-auto leading-[57px] text-5xl max-sm:text-3xl font-semibold '>
+        <div className='space-y-7 max-w-3xl'>
+          <p className='text-center text-[#1C1C1C] font-inter max-w-lg mx-auto leading-[57px] text-5xl max-sm:text-3xl font-semibold'>
             Explore the power of AI apps generation
           </p>
           <p className='text-lp2-secondary leading-[28.8px] text-center font-medium md:text-xl md:leading-8 tracking-wide'>
@@ -41,10 +41,10 @@ export default async function Features() {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 '>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-2'>
         {cardContent.map((item, index) => (
-          <div key={index} className='rounded-2xl space-y-4 '>
-            <div className='flex justify-center w-[348px] -mb-2'>
+          <div key={index} className='rounded-2xl w-full max-w-[368px] mx-auto space-y-4'>
+            <div className='flex justify-center -mb-2'>
               <item.icon />
             </div>
 

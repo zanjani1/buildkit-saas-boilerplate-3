@@ -22,13 +22,13 @@ export default async function Hero() {
         {/* Navbar component: Displays the top navigation menu. */}
         <Navbar />
         <div className='flex max-w-4xl mt-4 flex-col gap-5 py-5 md:py-14 px-4 items-center justify-center mx-auto'>
-          <Badge className='bg-[#5d5d5d4f]'>
-            Unlock Your Creative Spark! <ArrowRightIcon className='ml-2' />{' '}
+          <Badge className='bg-[#5d5d5d4f] pt-0.5'>
+            Unlock Your Creative Spark! <ArrowRightIcon className='ml-2 pt-0.5' />{' '}
           </Badge>
-          <h1 className='font-medium text-white text-6xl max-sm:text-3xl text-center'>
+          <h1 className='font-medium text-white text-3xl sm:text-6xl  text-center'>
             Generate AI Apps with ease
           </h1>
-          <p className='text-lp5-secondary text-center mb-8 md:px-12 px-0 font-medium'>
+          <p className='text-lp5-secondary text-center mb-8 max-w-xl font-medium'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>

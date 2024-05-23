@@ -43,8 +43,8 @@ export default async function Navbar() {
         {/* Conditional button that changes based on user status. */}
         <Link
           href={user ? '/admin-dashboard' : '/login'}
-          className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-6 py-3 from-lp2-primary to-lp2-primary/70'>
-          Get Started <ArrowRightIcon className='ml-2' />
+          className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-7 py-2 from-lp2-primary to-lp2-primary/70'>
+          Get Started <ArrowRightIcon className='ml-2 mt-0.5' />
         </Link>
 
         <Sheet>

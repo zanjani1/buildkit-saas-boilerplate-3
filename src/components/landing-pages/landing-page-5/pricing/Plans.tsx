@@ -54,17 +54,17 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='flex flex-col w-full md:flex-row items-start justify-between gap-10 mt-16'>
+      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-10 mt-16'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
-            className='w-full border-[#171717] bg-[#0D0D0D] gap-2 text-white rounded-2xl p-3 lg:p-6 flex mx-auto flex-col mt-6'>
+            className='w-full max-w-sm border-[#171717] bg-[#0D0D0D] gap-2 text-white rounded-2xl p-3 pb-6 sm:p-6 flex mx-auto flex-col mt-6'>
             <div className='text-center w-full'>
               {tier.name === 'Pro' && (
-                <p className='flex gap-3 lg:px-4 py-2 rounded-md  w-fit mx-auto  text-xs font-medium text-lp2-primary justify-center  bg-[#FCF9F712] items-center'>
+                <p className='flex gap-3 px-4 py-2 rounded-md w-fit mx-auto text-xs font-medium text-lp2-primary justify-center bg-[#FCF9F712] items-center'>
                   {' '}
-                  <span className='size-1.5 text-center bg-lp2-primary rounded-full  block' /> MOST POPULAR
+                  <span className='size-1.5 text-center bg-lp2-primary rounded-full block' /> MOST POPULAR
                 </p>
               )}
               <p className='text-lg font-semibold mt-2'>{tier.name.toUpperCase()}</p>
@@ -78,7 +78,7 @@ export default function Plans() {
               {tier.features.map((feature) => (
                 <li
                   key={feature}
-                  className=' leading-relaxed grid pb-3  grid-cols-[auto,1fr]  gap-3 font-medium items-center '>
+                  className=' leading-relaxed grid pb-3 grid-cols-[auto,1fr] gap-3 font-medium items-center '>
                   <OrangeArrowIcon /> <span>{feature}</span>
                 </li>
               ))}
@@ -88,7 +88,7 @@ export default function Plans() {
 
             <Button
               variant={'ghost'}
-              className={`mt-12 py-7 bg-[#262626] rounded-full w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80  hover:bg-lp2-primary hover:text-white text-white'}`}>
+              className={`mt-12 py-7 bg-[#262626] rounded-full w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white'}`}>
               Get Now{' '}
               {tier.name === 'Pro' ? (
                 <span className='ml-2'>

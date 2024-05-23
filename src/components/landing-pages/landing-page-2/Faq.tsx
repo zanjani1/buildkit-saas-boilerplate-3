@@ -43,7 +43,7 @@ export default async function Faq() {
                 {item.question}
               </AccordionTrigger>
               <AccordionContent
-                className='text-black/80  p-0 mb-1.5 font-normal leading-5 max-w-md
+                className='text-[#171717]  p-0 mb-1.5 leading-5 max-w-md
               '>
                 {item.answer}
               </AccordionContent>

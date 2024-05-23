@@ -82,7 +82,7 @@ export default async function Footer() {
             </p>
           </div>
 
-          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col gap-x-[140px] gap-y-6'>
+          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col sm:gap-x-[140px] gap-y-6'>
             {footerItems.map((item, index) => (
               <Link key={index} href={item.url} className='hover:underline'>
                 {item.label}

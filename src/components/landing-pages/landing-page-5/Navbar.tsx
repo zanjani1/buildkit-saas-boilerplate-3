@@ -32,7 +32,7 @@ export default function Navbar() {
           </ul>
           <Link
             href={'/login'}
-            className='hidden m ax-h-12 md:flex justify-center items-center gap-[10px] py-1.5 pb-2 leading-4 px-2.5 text-white rounded-full bg-[#262626] hover:bg-[#262626]/70'>
+            className='hidden max-h-12 md:flex text-sm pt-1.5 pb-2.5 leading-4 px-2.5 text-white rounded-full bg-[#262626] hover:bg-[#262626]/70'>
             Sign in
           </Link>
           <Sheet>
@@ -50,6 +50,11 @@ export default function Navbar() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={'/login'}
+                  className='h-10 pb-0.5 justify-center items-center mt-5 w-full flex leading-4 text-white rounded-full bg-[#262626] hover:bg-[#262626]/70'>
+                  Sign in
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
