@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa6';
 import { MdOutlineEmail } from 'react-icons/md';
 
-const heading = 'Join the waitlist for the best Saas AI toolkit';
-
 interface colorScheme {
   bg: string;
   input: string;
@@ -14,11 +12,11 @@ interface colorScheme {
   dark: boolean;
 }
 
-interface WaitlistProps {
+interface WaitlistComponentProps {
   colorScheme: colorScheme;
 }
 
-export default async function Waitlist({ colorScheme }: WaitlistProps) {
+export default async function WaitlistComponent({ colorScheme }: WaitlistComponentProps) {
   return (
     <div
       style={{ backgroundColor: colorScheme.bg }}
@@ -36,7 +34,9 @@ export default async function Waitlist({ colorScheme }: WaitlistProps) {
               alt='logo'
               className=' w-32 h-8'
             />
-            <h1 className='md:text-[40px] md:leading-[56px] text-2xl text-center'>{heading}</h1>
+            <h1 className='md:text-[40px] md:leading-[56px] text-2xl text-center'>
+              Join the waitlist for the best SaaS AI toolkit
+            </h1>
           </div>
 
           <div className='flex flex-col gap-2 md:w-[400px] w-80 '>

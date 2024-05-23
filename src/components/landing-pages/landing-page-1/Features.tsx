@@ -4,7 +4,7 @@ import ServiceImageIcon1 from '@/assets/icons/ServiceImageIcon1';
 import ServiceImageIcon2 from '@/assets/icons/ServiceImageIcon2';
 import ServiceImageIcon3 from '@/assets/icons/ServiceImageIcon3';
 import { BiRightArrowAlt } from 'react-icons/bi';
-import { Button } from '../../ui/button';
+import { Button } from '@/components/ui/button';
 
 const cardContent = [
   {

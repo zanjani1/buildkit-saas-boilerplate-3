@@ -1,7 +1,7 @@
 // This is the Footer component of the landing page.
 
 import Link from 'next/link';
-import { Button } from '../../ui/button';
+import { Button } from '@/components/ui/button';
 import Logo from '../../Logo';
 import { getUser } from '@/utils/get-user';
 
