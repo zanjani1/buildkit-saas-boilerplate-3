@@ -49,11 +49,11 @@ export default async function Product() {
             of Effort and Use our robust Deployable code.
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {cardContent.map((item, index) => (
             <div
               key={index}
-              className='rounded-2xl max-w-64 space-y-2 border bg-[#0D0D0D] border-[#171717] p-4'>
+              className='rounded-2xl md:max-w-64 space-y-2 border bg-[#0D0D0D] border-[#171717] p-4'>
               <div>
                 <item.icon />
               </div>

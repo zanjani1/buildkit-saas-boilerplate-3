@@ -38,12 +38,12 @@ export default async function Faq() {
 
         <Accordion type='single' collapsible className='w-full'>
           {accordionItems.map((item, index) => (
-            <AccordionItem key={index} className='p-0 pb-1.5' value={item.value}>
-              <AccordionTrigger className='text-start -mb-2.5  font-medium leading-relaxed'>
+            <AccordionItem key={index} className='p-0 ' value={item.value}>
+              <AccordionTrigger className='text-start  font-medium leading-relaxed'>
                 {item.question}
               </AccordionTrigger>
               <AccordionContent
-                className='text-[#171717]  p-0 mb-1.5 leading-5 max-w-md
+                className='text-[#171717]  p-0 mb-6 leading-5 max-w-md
               '>
                 {item.answer}
               </AccordionContent>

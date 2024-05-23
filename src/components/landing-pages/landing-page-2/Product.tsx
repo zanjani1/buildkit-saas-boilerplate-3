@@ -46,11 +46,11 @@ export default async function Product() {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 '>
+        <div className='grid grid-cols-1 mx-auto xl:w-full lg:w-[870px] md:grid-cols-2 xl:grid-cols-3 gap-2'>
           {cardContent.map((item, index) => (
             <div
               key={index}
-              className='rounded-3xl max-w-[360px] shadow-sm space-y-10 border border-[#E5E7EB] p-6'>
+              className='rounded-3xl md:max-w-[360px] shadow-sm space-y-10 border border-[#E5E7EB] p-6'>
               <div className='flex '>
                 <item.icon />
               </div>

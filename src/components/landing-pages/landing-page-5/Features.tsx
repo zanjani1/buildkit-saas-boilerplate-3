@@ -40,11 +40,11 @@ export default async function Features() {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 mt-24 '>
+      <div className='grid grid-cols-1 mx-auto xl:w-full lg:w-[870px] lg:grid-cols-2 xl:grid-cols-3 gap-8'>
         {cardContent.map((item, index) => (
           <div
             key={index}
-            className='rounded-2xl w-full max-w-[416px] max-lg:mx-auto p-4 text-center bg-[#0D0D0D]'>
+            className='rounded-2xl w-full md:max-w-[416px] max-lg:mx-auto p-4 text-center bg-[#0D0D0D]'>
             <p className='text-2xl font-medium text-white/80 mt-4'>{item.title}</p>
             <p className='font-medium leading-6 mb-8 mt-2 text-center text-lp5-secondary'>
               {item.description}

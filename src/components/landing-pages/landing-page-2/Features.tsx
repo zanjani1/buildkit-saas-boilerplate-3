@@ -40,10 +40,11 @@ export default async function Features() {
           </p>
         </div>
       </div>
-
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-2'>
+      <div className='grid grid-cols-1 mx-auto xl:w-full lg:w-[870px] md:grid-cols-2 xl:grid-cols-3 gap-2'>
         {cardContent.map((item, index) => (
-          <div key={index} className='rounded-2xl w-full max-w-[368px] mx-auto space-y-4'>
+          <div
+            key={index}
+            className='rounded-2xl w-full max-md:text-center md:max-w-[368px] mx-auto space-y-4'>
             <div className='flex justify-center -mb-2'>
               <item.icon />
             </div>

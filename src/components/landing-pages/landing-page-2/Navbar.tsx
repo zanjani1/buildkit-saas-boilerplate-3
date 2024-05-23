@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
-import { Button } from '@/components/ui/button';
 import { getUser } from '@/utils/get-user';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import LogoIcon from '@/assets/landing-page-2/icons/LogoIcon';
@@ -23,7 +22,7 @@ export default async function Navbar() {
   const user = await getUser();
 
   return (
-    <div className='max-w-6xl mx-auto'>
+    <div className='max-w-7xl mx-auto bg-white'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
         <Link href='/'>
           <LogoIcon />
@@ -31,8 +30,8 @@ export default async function Navbar() {
 
         <ul className='hidden md:flex items-center gap-6'>
           {navbarRoutes.map((item, index) => (
-            <li key={index} className='text-sm font-medium'>
-              <Link href={item.url} className='hover:underline'>
+            <li key={index} className='text-sm font-medium '>
+              <Link href={item.url} className='hover:underline text-[#4b5563]'>
                 {item.label}
               </Link>
             </li>
@@ -43,7 +42,7 @@ export default async function Navbar() {
         <Link
           href={user ? '/admin-dashboard' : '/login'}
           className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-7 py-2 from-lp2-primary to-lp2-primary/70'>
-          Get Started <ArrowRightIcon className='ml-2 mt-0.5' />
+          Get Started <ArrowRightIcon className='ml-2' />
         </Link>
 
         <Sheet>
@@ -59,9 +58,11 @@ export default async function Navbar() {
                   </li>
                 ))}
               </ul>
-              <Button className='rounded-lg px-6 py-3   w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
+              <Link
+                href={user ? '/admin-dashboard' : '/login'}
+                className='rounded-lg px-6 py-3 text-white justify-center w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
                 Sign Up
-              </Button>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>
