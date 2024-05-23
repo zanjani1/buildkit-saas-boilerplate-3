@@ -1,10 +1,8 @@
 'use client';
 import Link from 'next/link';
 import { HiBars3 } from 'react-icons/hi2';
-import { RiCloseFill } from 'react-icons/ri';
-import { Button } from '@/components/ui/button';
 import LogoIcon from '@/assets/landing-page-5/icons/LogoIcon';
-import { useEffect, useState } from 'react';
+import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
 
 const navbarRoutes = [
   { label: 'Features', url: '/#features' },
@@ -14,33 +12,15 @@ const navbarRoutes = [
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div className='max-w-2xl mx-auto pt-5 transition-all'>
       <div
-        className={`w-full flex flex-col justify-between items-center border-[#222222] rounded-full bg-gradient-to-t from-[#202020] to-[#121212] px-2 transition-all duration-300 ease-in-out ${
-          isOpen ? 'h-64 rounded-xl justify-center' : 'h-12'
-        }`}>
+        className='w-full p-2 flex flex-col justify-between items-center border-[#222222] border rounded-full bg-[linear-gradient(180deg,#121212_0%,#202020_100%)] transition-all duration-300 ease-in-out
+        '>
         <div className='w-full flex justify-between items-center '>
           <Link href='/'>
             <LogoIcon />
           </Link>
-
           <ul className='hidden md:flex items-center gap-6'>
             {navbarRoutes.map((item, index) => (
               <li key={index} className='text-sm font-medium text-white'>
@@ -50,47 +30,30 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
-          <Link href={'/login'} className='hidden md:block'>
-            <Button className=' text-white rounded-full bg-[#262626] hover:bg-[#262626]/70'>Sign in</Button>
+          <Link
+            href={'/login'}
+            className='hidden m ax-h-12 md:flex justify-center items-center gap-[10px] py-1.5 pb-2 leading-4 px-2.5 text-white rounded-full bg-[#262626] hover:bg-[#262626]/70'>
+            Sign in
           </Link>
-
-          <div className='block md:hidden'>
-            {isOpen ? (
-              <RiCloseFill
-                className='text-white size-10 mr-3 cursor-pointer'
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                }}
-              />
-            ) : (
-              <HiBars3
-                className='text-white size-10 mr-3 cursor-pointer'
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                }}
-              />
-            )}
-          </div>
+          <Sheet>
+            <SheetTrigger className='block md:hidden'>
+              <HiBars3 className='text-white size-7' />
+            </SheetTrigger>
+            <SheetContent
+              side='top'
+              className='bg-[linear-gradient(180deg,#121212_0%,#202020_100%)] border-none text-white'>
+              <div className='space-y-6'>
+                <ul className='gap-6'>
+                  {navbarRoutes.map((item, index) => (
+                    <li key={index} className='text-sm font-medium py-2'>
+                      <Link href={item.url}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-
-        <ul
-          className={`w-full flex flex-col justify-center space-y-5 ${
-            isOpen ? 'opacity-100 mb-20' : 'opacity-0'
-          } transition-opacity duration-300 ease-in-out`}>
-          {navbarRoutes.map((item, index) => (
-            <li
-              key={index}
-              className='text-sm mx-auto font-medium text-white py-2'
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}>
-              <Link href={item.url} className='hover:underline block px-4'>
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

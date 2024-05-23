@@ -10,24 +10,24 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 export default async function Hero() {
   return (
-    <div className=''>
+    <div>
       <div className='max-w-7xl mx-auto '>
         {/* Navbar component: Displays the top navigation menu. */}
         <Navbar />
 
-        <div className='flex  flex-col gap-10 py-5 md:py-14 px-4 items-center justify-center mx-auto max-w-4xl'>
-          <h1 className='font-semibold text-6xl max-sm:text-3xl text-center'>
+        <div className='flex  flex-col gap-10 md:py-14 px-4 items-center justify-center mx-auto max-w-3xl'>
+          <h1 className='font-semibold leading-[67px]  text-6xl max-sm:text-3xl text-center'>
             Generate modular <span className='text-lp2-primary'>AI Apps with ease and pace</span>{' '}
           </h1>
-          <p className='text-lp2-secondary text-center font-inter text-lg font-medium leading-6'>
+
+          <p className='text-lp2-secondary text-center text-lg font-medium leading-7'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>
-          <Link href={'/login'} className='hidden md:block'>
-            <Button className=' bg-gradient-to-t from-lp2-primary to-lp2-primary/80 flex gap-2 px-3 py-2'>
-              Get Started
-              <ArrowRightIcon />
-            </Button>
+          <Link
+            href='/login'
+            className='flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-6 py-3   from-lp2-primary to-lp2-primary/80'>
+            Get Started <ArrowRightIcon className='ml-2' />
           </Link>
         </div>
         <div className='w-full'>

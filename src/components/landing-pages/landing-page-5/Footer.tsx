@@ -11,20 +11,16 @@ const footerItems = [
     url: '/about',
   },
   {
-    label: 'Contact',
-    url: '/contact',
-  },
-  {
-    label: 'Blog',
-    url: '/blog',
-  },
-  {
-    label: 'Story',
-    url: '/story',
-  },
-  {
     label: 'Company',
     url: '/company',
+  },
+  {
+    label: 'Press',
+    url: '/press',
+  },
+  {
+    label: 'Contact',
+    url: '/contact',
   },
   {
     label: 'Product',
@@ -35,16 +31,28 @@ const footerItems = [
     url: '/careers',
   },
   {
+    label: 'Blog',
+    url: '/blog',
+  },
+  {
+    label: 'More',
+    url: '/more',
+  },
+  {
     label: 'Press',
     url: '/press',
   },
   {
-    label: 'Terms',
-    url: '/terms-of-service',
+    label: 'Story',
+    url: '/story',
   },
   {
-    label: 'Privacy',
-    url: '/privacy-policy',
+    label: 'News letters',
+    url: '/news-letters',
+  },
+  {
+    label: 'More',
+    url: '/more',
   },
 ];
 
@@ -67,15 +75,14 @@ export default async function Footer() {
         <hr className='opacity-10 my-16' />
 
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
-          <div className='md:w-1/4 flex flex-col gap-8'>
-            <p className='text-2xl font-normal'>GEN AI</p>
-
-            <p className='text-lg text-white/60'>
-              lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
+          <div className='flex flex-col gap-8'>
+            <p className='text-2xl font-semibold text-white/70'>GEN AI</p>
+            <p className='text-lg max-w-sm tracking-[-0.54px] font-normal leading-6 text-white/60'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
             </p>
           </div>
 
-          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col gap-x-10 gap-y-6'>
+          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col  lg:gap-x-[140px] gap-y-6'>
             {footerItems.map((item, index) => (
               <Link key={index} href={item.url} className='hover:underline'>
                 {item.label}
@@ -83,7 +90,6 @@ export default async function Footer() {
             ))}
           </div>
         </div>
-
         <p className='font-medium'>All rights reserved.</p>
       </div>
     </footer>

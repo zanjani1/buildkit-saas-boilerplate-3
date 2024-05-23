@@ -41,17 +41,17 @@ export default async function Navbar() {
         </ul>
 
         {/* Conditional button that changes based on user status. */}
-        <Link href={user ? '/admin-dashboard' : '/login'} className='hidden md:block'>
-          <Button className=' bg-gradient-to-t from-lp2-primary/80 to-lp2-primary'>
-            {user ? 'Try Now' : 'Get Started'} <ArrowRightIcon className='ml-2' />
-          </Button>
+        <Link
+          href={user ? '/admin-dashboard' : '/login'}
+          className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-6 py-3 from-lp2-primary to-lp2-primary/70'>
+          Get Started <ArrowRightIcon className='ml-2' />
         </Link>
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>
-            <HiBars3 />
+            <HiBars3 className='size-6' />
           </SheetTrigger>
-          <SheetContent side='top' className=''>
+          <SheetContent side='top'>
             <div className='space-y-6'>
               <ul className='gap-6'>
                 {navbarRoutes.map((item, index) => (
@@ -60,7 +60,7 @@ export default async function Navbar() {
                   </li>
                 ))}
               </ul>
-              <Button className='rounded-lg w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
+              <Button className='rounded-lg px-6 py-3   w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
                 Sign Up
               </Button>
             </div>

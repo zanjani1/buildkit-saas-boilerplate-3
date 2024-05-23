@@ -5,37 +5,48 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 const accordionItems = [
   {
     value: '1',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+    question: 'What is buildekit?',
+    answer: 'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days',
   },
   {
     value: '2',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres to the WAI-ARIA design pattern.',
+    question: 'What do i get exactly?',
+    answer:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
   },
   {
     value: '3',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+    question: 'Who is builder kit for?',
+    answer: 'Builderkit is for developers who want to build AI apps faster.',
+  },
+  {
+    value: '4',
+    question: 'Is it a website template?',
+    answer: 'No, Builderkit is a NextJS AI Boilerplate that allows you to ship any AI Apps within days.',
   },
 ];
 
 export default async function Faq() {
   return (
-    <div id='faq' className='mx-auto py-20 px-6'>
+    <div id='faq' className='mx-auto max-w-xl py-20 md:px-6 px-4'>
       <div className='max-w-xl mx-auto p-4'>
         <div className='flex flex-col items-center justify-center'>
           <div className='space-y-7 max-w-lg'>
             <p className='text-center text-5xl max-sm:text-3xl leading-snug font-semibold'>FAQ</p>
           </div>
         </div>
+
         <Accordion type='single' collapsible className='w-full'>
           {accordionItems.map((item, index) => (
-            <AccordionItem key={index} className='my-5 px-0 ' value={item.value}>
-              <AccordionTrigger className='text-start font-medium leading-relaxed'>
+            <AccordionItem key={index} className='p-0 pb-1.5' value={item.value}>
+              <AccordionTrigger className='text-start -mb-2.5  font-medium leading-relaxed'>
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className='text-black/80 pt-3 leading-loose'>{item.answer}</AccordionContent>
+              <AccordionContent
+                className='text-black/80  p-0 mb-1.5 font-normal leading-5 max-w-md
+              '>
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
