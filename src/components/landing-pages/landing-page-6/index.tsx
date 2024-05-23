@@ -15,7 +15,7 @@ export default function LandingPage6() {
       <Features />
       <Pricing />
       <Faq />
-      <hr className='border border-[#2B2F45] w-full'></hr>
+      <hr className='border border-[#2B2F45] w-full' />
       <Footer />
     </div>
   );

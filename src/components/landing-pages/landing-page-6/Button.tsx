@@ -1,5 +1,5 @@
+import { cn } from '@/utils/utils';
 import { ReactNode } from 'react';
-import clsx from 'clsx';
 
 interface ButtonProps {
   children: ReactNode;
@@ -11,7 +11,7 @@ interface ButtonProps {
 function Button({ children, fill, size, rounded }: ButtonProps) {
   return (
     <button
-      className={clsx('flex hover:opacity-90 rounded-lg items-center shadow w-fit gap-2.5', {
+      className={cn('flex hover:opacity-90 rounded-lg items-center shadow w-fit gap-2.5', {
         'text-black bg-white ': fill,
         'text-white bg-[#343854]': !fill,
         'px-2.5 h-8': size === 'sm',

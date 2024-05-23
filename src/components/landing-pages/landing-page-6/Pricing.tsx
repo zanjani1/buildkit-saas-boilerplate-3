@@ -3,9 +3,8 @@ import Image from 'next/image';
 import Tick from '@/assets/landing-page-6/icons/Tick.svg';
 import Button from './Button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import clsx from 'clsx';
+import { cn } from '@/utils/utils';
 
-const heading = 'Pricing Plans to Suit Your Needs';
 const features = [
   { feature: 'NextJS Boilerplate', available: true },
   { feature: 'AI Modules', available: true },
@@ -22,7 +21,9 @@ export default function Pricing() {
         <div className='items-center flex flex-col gap-7'>
           <div className='items-center flex flex-col gap-4'>
             <span className='text-[#227BFF] font-semibold text-sm'>Pricing</span>
-            <h1 className='md:text-4xl text-2xl text-center max-w-[560px] font-medium'>{heading}</h1>
+            <h1 className='md:text-4xl text-2xl text-center max-w-[560px] font-medium'>
+              Pricing Plans to Suit Your Needs
+            </h1>
           </div>
 
           <span className='text-stone-400 text-center'>Start making smarter decisions,Choose a plan</span>
@@ -47,17 +48,15 @@ export default function Pricing() {
                 return (
                   <div
                     key={feat.feature}
-                    className={clsx('flex gap-2 items-start', {
-                      'text-stone-600': !feat.available,
-                    })}>
+                    className={cn('flex gap-2 items-start', { 'text-stone-600': !feat.available })}>
                     <Image
                       src={Tick}
                       alt='tick'
                       width={20}
                       height={20}
-                      className={clsx({ 'opacity-25': !feat.available })}
+                      className={cn({ 'opacity-25': !feat.available })}
                     />
-                    <span className={clsx('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
+                    <span className={cn('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
                   </div>
                 );
               })}
@@ -81,9 +80,9 @@ export default function Pricing() {
             <div className='flex flex-col gap-4 max-w-72 flex-1'>
               {features.map((feat) => {
                 return (
-                  <div key={feat.feature} className={clsx('flex gap-2 items-start')}>
+                  <div key={feat.feature} className={cn('flex gap-2 items-start')}>
                     <Image src={Tick} alt='tick' width={20} height={20} />
-                    <span className={clsx('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
+                    <span className={cn('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
                   </div>
                 );
               })}

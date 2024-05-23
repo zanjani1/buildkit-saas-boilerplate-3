@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Button from './Button';
+
 const navOptions = [
   {
     label: 'Features',
@@ -47,19 +48,19 @@ export default function Navbar() {
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>
-            <HiBars3 />
+            <HiBars3 size={24} />
           </SheetTrigger>
           <SheetContent side='top' className='bg-[#141414] text-white border-black'>
             <div className='space-y-6'>
-              <ul className='gap-6'>
+              <div className='flex flex-col gap-4'>
                 {navOptions.map((item, index) => (
-                  <li key={index} className='text-sm font-medium py-2'>
-                    <Link href={item.url} className=' scroll-smooth'>
-                      {item.label}
-                    </Link>
-                  </li>
+                  <div key={index} className='text-sm font-medium py-2'>
+                    <SheetClose asChild>
+                      <Link href={item.url}>{item.label}</Link>
+                    </SheetClose>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <Button fill={false} size='sm'>
                 <span>Sign in</span>
                 <ArrowRightIcon className='font-bold' />

@@ -1,10 +1,6 @@
 import { Lightning } from '@/assets/landing-page-6/icons';
 import Image from 'next/image';
 
-const heading = 'Essentially, everything you need to ship you first AI App ';
-const content =
-  'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of Effort and Use our robust Deployable code.';
-
 const cardDetails = [
   {
     title: 'Quality apps',
@@ -37,11 +33,16 @@ export default async function Features2() {
     <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
       <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
         <div className='flex flex-col gap-4 items-center'>
-          <span className='font-semibold text-sm text-[#227AFF]'>What can you do with builder kit?</span>
-          <h1 className='font-medium md:text-4xl text-2xl max-w-xl text-center'>{heading}</h1>
+          <p className='font-semibold text-sm text-[#227AFF]'>What can you do with builder kit?</p>
+          <h1 className='font-medium md:text-4xl text-2xl max-w-xl text-center'>
+            Essentially, everything you need to ship you first AI App
+          </h1>
         </div>
 
-        <span className='md:text-lg md:max-w-[642px] text-stone-400 text-center '>{content}</span>
+        <span className='md:text-lg md:max-w-[642px] text-stone-400 text-center'>
+          Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
+          Effort and Use our robust Deployable code.
+        </span>
       </div>
 
       <div className='flex md:grid grid-cols-3 flex-col md:gap-6 gap-4  flex-wrap'>
