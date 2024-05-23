@@ -39,7 +39,7 @@ export default async function Hero() {
           </Link>
           <div className='w-[250px] md:w-[600px] -z-50 rounded-full mx-auto pt-0 translate-y-20 bg-[#302f2f] blur-[50px] block h-20' />
         </div>
-        <div className='w-full'>
+        <div className='w-full px-7'>
           <Image src={HeroImage} alt='hero' />
         </div>
       </div>

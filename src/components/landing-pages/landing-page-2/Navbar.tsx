@@ -12,7 +12,6 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 import LogoIcon from '@/assets/landing-page-2/icons/LogoIcon';
 
 const navbarRoutes = [
-  { label: 'Waitlist', url: '/waitlist' },
   { label: 'Features', url: '/#features' },
   { label: 'Product', url: '/#product' },
   { label: 'Pricing', url: '/#pricing' },

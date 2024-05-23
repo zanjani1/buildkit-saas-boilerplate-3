@@ -69,7 +69,7 @@ export default function Plans() {
               )}
               <p className='text-lg font-semibold'>{tier.name.toUpperCase()}</p>
 
-              <p className='font-medium leading-loose text-4xl'>
+              <p className='font-semibold leading-loose text-4xl'>
                 <span>{tier.sellingPrice.monthly}</span>
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
@@ -88,7 +88,7 @@ export default function Plans() {
 
             <Button
               variant={'ghost'}
-              className={`mt-12 border w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 flex py-2 hover:bg-lp2-primary hover:text-white text-white flex-1'}`}>
+              className={`mt-12 border w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 flex py-3.5 px-8 rounded-xl hover:bg-lp2-primary hover:text-white text-white flex-1'}`}>
               Get Now{' '}
               {tier.name === 'Pro' ? (
                 <span className='ml-2'>

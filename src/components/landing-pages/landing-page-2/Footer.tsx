@@ -8,58 +8,58 @@ import WhiteArrowIcon from '@/assets/landing-page-2/icons/WhiteArrowIcon';
 const footerItems = [
   {
     label: 'About',
-    url: '/about',
+    url: '#',
   },
   {
     label: 'Company',
-    url: '/company',
+    url: '#',
   },
   {
     label: 'Press',
-    url: '/press',
+    url: '#',
   },
   {
     label: 'Contact',
-    url: '/contact',
+    url: '#',
   },
   {
     label: 'Product',
-    url: '/product',
+    url: '#',
   },
   {
     label: 'Careers',
-    url: '/careers',
+    url: '#',
   },
   {
     label: 'Blog',
-    url: '/blog',
+    url: '#',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '#',
   },
   {
     label: 'Press',
-    url: '/press',
+    url: '#',
   },
   {
     label: 'Story',
-    url: '/story',
+    url: '#',
   },
   {
     label: 'News letters',
-    url: '/news-letters',
+    url: '#',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '#',
   },
 ];
 
 export default async function Footer() {
   return (
     <footer className='bg-[#1C1C1C] text-white px-5'>
-      <div className='max-w-6xl mx-auto px-4 py-16'>
+      <div className='max-w-6xl mx-auto py-16'>
         <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
           <p className='max-w-xl text-3xl md:text-4xl font-medium leading-tight md:leading-[52px]'>
             Get your AI apps built with blazing speed.

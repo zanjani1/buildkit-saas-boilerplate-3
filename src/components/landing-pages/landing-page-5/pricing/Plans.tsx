@@ -54,7 +54,7 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-10 mt-16'>
+      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-3 lg:gap-6 mt-16'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
           <div
