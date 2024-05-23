@@ -48,7 +48,7 @@ export default function Navbar() {
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>
-            <HiBars3 />
+            <HiBars3 size={24} />
           </SheetTrigger>
           <SheetContent side='top' className='bg-black text-white border-black'>
             <div className='space-y-6'>
