@@ -43,7 +43,7 @@ const info = [
 
 export default async function Footer() {
   return (
-    <div className='flex md:justify-center bg-[#FCFCFC] border border-t-[#DEDEDE] px-5'>
+    <div className='flex md:justify-center bg-[#FCFCFC] border border-t-[#DEDEDE] p-5'>
       <div className='flex flex-col md:gap-32 gap-24 md:py-12 md:max-w-5xl w-full'>
         <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
           <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
@@ -87,13 +87,16 @@ export default async function Footer() {
             <div className='flex flex-col gap-4 w-1/3'>
               <p className='text-xs text-stone-400'>CONTACTS</p>
               <div className='gap-3 text-lp7-secondary'>
-                <p>vatsal1811@gmail.com</p>
+                <p>
+                  <Link href='mailto:vatsal1811@gmail.com'>vatsal1811@gmail.com</Link>
+                </p>
+
                 <p>India</p>
               </div>
             </div>
           </div>
         </div>
-        <div className='flex justify-center -mb-1'>
+        <div className='flex justify-center'>
           <p className='text-stone-600 text-xs'>© 2024 — 1811 Labs</p>
         </div>
       </div>

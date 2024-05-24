@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { HiBars3 } from 'react-icons/hi2';
 import LogoIcon from '@/assets/landing-page-7/icons/LogoIcon';
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from '@/components/ui/sheet';
 import { Button } from '@/components/landing-pages/landing-page-7/Button';
 import ArrowRightSm from '@/assets/landing-page-7/icons/ArrowRightSm';
 
@@ -19,13 +19,13 @@ export default function Navbar() {
       <div
         className='w-full p-2 flex flex-col justify-between items-center border-[#EAEAEA] border rounded-2xl
         '>
-        <div className='w-full flex justify-between items-center '>
+        <div className='w-full flex justify-between items-center'>
           <Link href='/'>
             <LogoIcon />
           </Link>
           <ul className='hidden md:flex items-center gap-6'>
             {navbarRoutes.map((item, index) => (
-              <li key={index} className='text-sm font-medium text-[##0C0E1E]'>
+              <li key={index} className='text-sm font-medium text-[#0C0E1E]'>
                 <Link href={item.url} className='hover:underline'>
                   {item.label}
                 </Link>
@@ -42,13 +42,13 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side='top' className='border-none text-[#0C0E1E]'>
               <div className='space-y-6'>
-                <ul className='gap-6'>
+                <div className='flex flex-col gap-4'>
                   {navbarRoutes.map((item, index) => (
-                    <li key={index} className='text-sm font-medium py-2'>
+                    <SheetClose asChild key={index} className='text-sm font-medium py-2'>
                       <Link href={item.url}>{item.label}</Link>
-                    </li>
+                    </SheetClose>
                   ))}
-                </ul>
+                </div>
                 <Button className='flex w-full gap-2 px-3 py-1.5'>
                   <Link href={'/login'}>Sign up</Link>
                   <ArrowRightSm />

@@ -26,11 +26,11 @@ const accordionItems = [
 
 export default function Faq() {
   return (
-    <div className='flex justify-center px-6'>
+    <div className='flex justify-center md:px-6 px-2'>
       <div id='faq' className='grid lg:grid-cols-[1fr_2fr] md:py-20 md:gap-20 gap-10 py-10 max-w-5xl'>
         <div className='flex flex-col gap-4 items-center mt-2'>
           <h1 className='md:text-3xl text-lp7-secondary font-medium text-2xl'>Frequently asked questions</h1>
-          <p className='text-lp7-sub px-10 md:px-0 lg:text-start text-center'>
+          <p className='text-lp7-sub px-3 md:px-0 lg:text-start text-center'>
             Don't worry, we got you. Here are some answers for your questions.
           </p>
         </div>
