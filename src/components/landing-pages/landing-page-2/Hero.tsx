@@ -36,7 +36,7 @@ export default async function Hero() {
             Get Started <ArrowRightIcon className='ml-2 mt-0.5' />
           </Link>
         </div>
-        <div className='w-full max-md:px-7 px-2'>
+        <div className='w-full max-md:px-7 px-3 md:mt-5'>
           <Image src={HeroImage} alt='hero' />
         </div>
       </div>
