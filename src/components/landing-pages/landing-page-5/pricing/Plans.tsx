@@ -82,12 +82,11 @@ export default function Plans() {
             </ul>
 
             {/* CTA button for the specific plan. */}
-
             <button
               className={cn(
-                'w-full h-12 md:h-14 flex items-center justify-center gap-2 rounded-full mt-12 text-sm hover:bg-auto',
+                'w-full h-12 md:h-14 flex items-center justify-center gap-2 rounded-full mt-12 text-sm',
                 tier.name === 'Pro'
-                  ? 'bg-lp2-primary hover:bg-lp2-primary/90'
+                  ? 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white'
                   : 'bg-[#262626] hover:bg-[#262626]/90'
               )}>
               Get Now <BoldRightIcon />

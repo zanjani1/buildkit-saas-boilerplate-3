@@ -42,7 +42,7 @@ export default async function Faq() {
         <Accordion type='single' collapsible className='w-full'>
           {accordionItems.map((item) => (
             <AccordionItem key={item.value} className='my-2 px-0 border-[#171717]' value={item.value}>
-              <AccordionTrigger className='text-start text-white font-medium px-6 leading-relaxed'>
+              <AccordionTrigger className='text-white font-medium px-6 leading-relaxed'>
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className='text-lp5-secondary px-6 pt-0 leading-loose'>

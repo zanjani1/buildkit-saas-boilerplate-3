@@ -31,7 +31,7 @@ export default async function Features() {
     <div id='features' className='max-w-6xl mx-auto p-4 space-y-[72px] my-20'>
       <div className='flex flex-col items-center justify-center'>
         <div className='space-y-7 max-w-3xl'>
-          <p className='text-center text-[#1C1C1C] font-inter max-w-lg mx-auto leading-[57px] text-5xl max-sm:text-3xl font-semibold'>
+          <p className='text-center text-[#1C1C1C] max-w-lg mx-auto text-5xl max-sm:text-3xl leading-tight font-semibold'>
             Explore the power of AI apps generation
           </p>
           <p className='text-lp2-secondary leading-[28.8px] text-center md:text-xl md:leading-8 tracking-wide'>
@@ -44,16 +44,16 @@ export default async function Features() {
         {cardContent.map((item, index) => (
           <div
             key={index}
-            className='rounded-2xl w-full max-md:text-center md:max-w-[368px] mx-auto space-y-4'>
-            <div className='flex justify-center -mb-2 bg-[#FFF7F480] rounded-xl'>
+            className='rounded-2xl w-full max-md:text-center md:max-w-[368px] mx-auto space-y-6'>
+            <div className='flex justify-center bg-[#FFF7F480] rounded-xl'>
               <item.icon />
             </div>
 
             <p className='text-[2rem] text-[#1C1C1C] tracking-tight leading-10 font-semibold'>
-              {item.title} <span className='text-lp2-primary'>{item.colorText}</span>{' '}
+              {item.title} <span className='text-lp2-primary'>{item.colorText}</span>
             </p>
 
-            <p className='leading-7 -mt-2 text-lp2-secondary'>{item.description}</p>
+            <p className='leading-7 text-lp2-secondary'>{item.description}</p>
           </div>
         ))}
       </div>

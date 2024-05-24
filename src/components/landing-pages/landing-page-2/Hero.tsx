@@ -6,6 +6,7 @@ import Image from 'next/image';
 import HeroImage from '@/assets/landing-page-2/images/hero.png';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+
 export default async function Hero() {
   return (
     <div className='max-w-7xl mx-auto'>

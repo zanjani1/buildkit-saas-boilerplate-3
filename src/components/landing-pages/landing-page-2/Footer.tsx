@@ -1,7 +1,6 @@
 // This is the Footer component of the landing page.
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import WhiteArrowIcon from '@/assets/landing-page-2/icons/WhiteArrowIcon';
 
 // Array of objects representing footer navigation items
@@ -65,10 +64,10 @@ export default async function Footer() {
             Get your AI apps built with blazing speed.
           </p>
           <Link href={'/login'}>
-            <Button className='font-semibold leading-6 bg-gradient-to-t from-lp5-primary to-[#ff5100dc] flex gap-2 p-6'>
+            <button className='h-12 flex items-center gap-2 rounded-xl font-semibold bg-gradient-to-t from-lp5-primary to-[#ff5100dc] px-6'>
               Get Started
               <WhiteArrowIcon />
-            </Button>
+            </button>
           </Link>
         </div>
 
@@ -77,15 +76,12 @@ export default async function Footer() {
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='flex flex-col gap-8'>
             <p className='text-3xl font-semibold text-white/70'>GEN AI</p>
-            <p className='text-lg max-w-[290px] tracking-[-0.54px] leading-6 text-white/60'>
+            <p className='md:text-lg max-w-[290px] tracking-[-0.54px] leading-6 text-white/60'>
               lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
             </p>
           </div>
 
-          <div
-            className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col 
-          md:gap-x-16
-          lg:gap-x-[140px] gap-y-6'>
+          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col lg:gap-x-24 gap-y-6'>
             {footerItems.map((item, index) => (
               <Link key={index} href={item.url} className='hover:underline'>
                 {item.label}
