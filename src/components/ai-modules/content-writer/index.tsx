@@ -200,7 +200,7 @@ const ContentWriter: FC<ContentWriterProps> = () => {
           ) : (
             <div className='space-y-5 overflow-auto max-h-[calc(100vh-200px)]'>
               {contentData.map((content, index) => (
-                <div key={index} className='border border-[#EEE] p-4 rounded-lg '>
+                <div key={index} className='border border-[#EEE] p-4 rounded-lg'>
                   <div className='flex justify-between items-start'>
                     <p className='font-medium text-[#333333] mb-2'>{content.title}</p>
 
