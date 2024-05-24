@@ -56,7 +56,7 @@ const options = [
 export default function Footer() {
   return (
     // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className='bg-black md:py-20 md:pb-28 md:px-[135px] px-8 py-10 bg-gradient-to-b from-[#090A18] from-60% to-[#313B827D]'>
+    <div className='bg-black md:py-20 md:pb-28 md:px-[135px] px-8 py-10 bg-gradient-to-b from-[#090A18] from-80% to-[#313B827D]'>
       <div className='flex flex-col md:gap-16 gap-8 '>
         <div className='flex justify-between flex-col md:flex-row gap-6 md:gap-0'>
           <h1 className='font-medium text-white text-[26px] leading-[52px]'>

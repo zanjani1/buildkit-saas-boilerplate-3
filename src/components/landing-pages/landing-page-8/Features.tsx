@@ -48,7 +48,7 @@ export default async function Features() {
                 alt={card.title}
                 width={400}
                 height={400}
-                className='bg-[#F2F1F930] rounded-sm'
+                className='bg-[#F2F1F960] rounded-sm'
               />
               <div className='text-center'>
                 <h2 className='font-medium md:text-2xl text-xl mb-4'>{card.title}</h2>
