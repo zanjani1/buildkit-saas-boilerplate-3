@@ -9,17 +9,8 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 export default async function Hero() {
   return (
-    <div className='max-w-7xl mx-auto'>
-      {/*Gradient Background*/}
-      <div className='relative w-full'>
-        <div className='absolute inset-0 flex justify-between'>
-          <div className='rounded-full bg-[#FFD6B0] blur-[500px] size-[634px] -translate-x-11/ -z-10' />
-          <div className='rounded-full bg-[#ff8412] blur-[50px] size-[634px] -z-10 translate-x-1/2' />
-        </div>
-      </div>
-
-      <div>
-        {/* Navbar component: Displays the top navigation menu. */}
+    <div className='bg-gradient-to-b from-[#FFFFFF33] to-[#FFD6B033]'>
+      <div className='max-w-7xl mx-auto'>
         <Navbar />
 
         <div className='flex flex-col gap-6 sm:gap-8 py-8 md:py-14 px-4 items-center justify-center mx-auto max-w-3xl'>

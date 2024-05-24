@@ -28,7 +28,7 @@ export default async function Features() {
     <div id='features' className='max-w-7xl mx-auto p-4 space-y-20 md:my-48 my-28'>
       <div className='flex flex-col items-center justify-center'>
         <div className='space-y-7 max-w-3xl text-center'>
-          <p className='sm:text-4xl tracking-[1.08px] text-[36px] max-w-[560px] mx-auto leading-[44px] text-white font-medium'>
+          <p className='text-3xl sm:text-4xl tracking-[1.08px] max-w-[560px] mx-auto leading-[44px] text-white font-medium'>
             Explore the power of AI apps generation
             <span className='text-lp5-primary'> Workflow</span>
           </p>
