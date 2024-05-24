@@ -6,6 +6,7 @@ import LandingPage1 from '@/components/landing-pages/landing-page-1';
 // import LandingPage3 from '@/components/landing-pages/landing-page-3';
 // import LandingPage4 from '@/components/landing-pages/landing-page-4';
 // import LandingPage5 from '@/components/landing-pages/landing-page-5';
+// import LandingPage7 from '@/components/landing-pages/landing-page-7';
 
 export default async function Home() {
   return (
@@ -15,6 +16,7 @@ export default async function Home() {
       {/* <LandingPage3 /> */}
       {/* <LandingPage4 /> */}
       {/* <LandingPage5 /> */}
+      {/* <LandingPage7 /> */}
     </>
   );
 }
