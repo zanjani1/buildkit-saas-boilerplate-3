@@ -35,7 +35,7 @@ export default function Navbar() {
               <Link
                 href={opt.url}
                 key={opt.label}
-                className='px-1 py-2.5 text-base leading-6 font-medium hover:underline'>
+                className='px-1 py-2.5 text-base leading-6 hover:underline'>
                 {opt.label}
               </Link>
             );

@@ -16,7 +16,9 @@ const features = [
 
 export default function Pricing() {
   return (
-    <div id='pricing' className='flex justify-center md:py-20 py-10'>
+    <div
+      id='pricing'
+      className='flex justify-center md:py-20 py-10 bg-gradient-to-bl from-[#313B8233] to-50% to-[#090A1833]'>
       <div className='flex flex-col gap-20 md:max-w-6xl max-w-80 items-center'>
         <div className='items-center flex flex-col gap-7'>
           <div className='items-center flex flex-col gap-4'>
@@ -26,19 +28,19 @@ export default function Pricing() {
             </h1>
           </div>
 
-          <span className='text-stone-400 text-center'>Start making smarter decisions,Choose a plan</span>
+          <span className='text-[#A8A8A8] text-center'>Start making smarter decisions, Choose a plan</span>
         </div>
         <div className='flex gap-4 md:flex-row flex-col'>
-          <div className='border border-[#2B2F45] rounded-lg flex gap-12 px-1 py-8 items-center md:flex-row flex-col w-full bg-[#161823]'>
+          <div className='border border-[#2B2F45] rounded-3xl flex gap-12 px-1 py-8 items-center md:flex-row flex-col w-full bg-[#161823]'>
             <div className='flex flex-col gap-6 items-center flex-1'>
               <div className='flex flex-col gap-2'>
-                <h3 className='font-semibold text-center'>PRO</h3>
+                <h3 className='font-semibold text-center text-lg'>PRO</h3>
                 <div className='font-semibold text-[40px] leading-[50px]'>
                   <span className=''>$149</span>
                   <span className='text-stone-400'>/mo</span>
                 </div>
               </div>
-              <Button fill={false} size='md'>
+              <Button size='md' className='bg-[#FFFFFF0A]'>
                 Buy Now <ArrowRightIcon />
               </Button>
             </div>
@@ -48,7 +50,7 @@ export default function Pricing() {
                 return (
                   <div
                     key={feat.feature}
-                    className={cn('flex gap-2 items-start', { 'text-stone-600': !feat.available })}>
+                    className={cn('flex gap-2 items-start', { 'text-[#484848]': !feat.available })}>
                     <Image
                       src={Tick}
                       alt='tick'
@@ -56,17 +58,17 @@ export default function Pricing() {
                       height={20}
                       className={cn({ 'opacity-25': !feat.available })}
                     />
-                    <span className={cn('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
+                    <span className='font-medium leading-6 -mt-0.5 md:text-lg'>{feat.feature}</span>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className='border border-[#2B2F45] rounded-lg flex gap-12 px-4 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0085FF29] from-10% to-[#1A1A1A29] w-full '>
+          <div className='border border-[#2B2F45] rounded-3xl flex gap-12 px-4 py-8 items-center md:flex-row flex-col bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0085FF29] from-10% to-[#1A1A1A29] w-full'>
             <div className='flex flex-col gap-6 items-center flex-1'>
               <div className='flex flex-col gap-2'>
-                <h3 className='font-semibold text-center'>PRO</h3>
+                <h3 className='font-semibold text-center text-lg'>PRO</h3>
                 <div className='font-semibold text-[40px] leading-[50px]'>
                   <span className=''>$149</span>
                   <span className='text-stone-400'>/mo</span>
@@ -82,7 +84,7 @@ export default function Pricing() {
                 return (
                   <div key={feat.feature} className={cn('flex gap-2 items-start')}>
                     <Image src={Tick} alt='tick' width={20} height={20} />
-                    <span className={cn('font-medium leading-6 -mt-0.5')}>{feat.feature}</span>
+                    <span className={cn('font-medium leading-6 -mt-0.5 md:text-lg')}>{feat.feature}</span>
                   </div>
                 );
               })}

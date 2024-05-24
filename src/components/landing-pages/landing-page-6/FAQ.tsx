@@ -25,11 +25,12 @@ const accordion = [
 
 export default function FAQ() {
   return (
-    <div className='flex justify-center '>
-      <div id='faq' className='flex flex-col md:flex-row md:py-20 md:gap-20 gap-10 py-10 max-w-5xl'>
+    // eslint-disable-next-line tailwindcss/no-contradicting-classname
+    <div className='flex justify-center bg-gradient-to-br from-[#090A1833] to-[#313B8233] from-50%'>
+      <div id='faq' className='flex flex-col md:flex-row md:py-32 md:gap-20 gap-10 py-10 max-w-5xl'>
         <div className='flex flex-col gap-6 items-center mt-2'>
           <h1 className='md:text-3xl font-medium text-2xl'>Frequently asked questions</h1>
-          <p className='text-stone-400 px-10 md:px-0 '>
+          <p className='text-[#A8A8A8] px-10 md:px-0 leading-7'>
             Don't worry, we got you. Here are some answers for your questions.
           </p>
         </div>
@@ -38,13 +39,11 @@ export default function FAQ() {
           {accordion.map((item, index) => {
             return (
               <Accordion type='single' collapsible key={index}>
-                <AccordionItem
-                  value={item.title}
-                  className=' md:w-[669px] w-80  border-[#2B2F45] border-b h-16'>
-                  <AccordionTrigger className='font-medium text-base flex justify-between w-full md:mx-6 mx-3'>
+                <AccordionItem value={item.title} className=' md:w-[669px] w-80  border-[#2B2F45] border-b'>
+                  <AccordionTrigger className='font-medium text-base flex justify-between w-full md:mx-6 mx-3 md:h-16'>
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className='text-stone-400 md:text-base p-2'>
+                  <AccordionContent className='text-[#A8A8A8] md:text-base p-2'>
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>

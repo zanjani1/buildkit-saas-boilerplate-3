@@ -43,13 +43,14 @@ const Info = [
 
 export default async function Footer() {
   return (
-    <div className='flex justify-center'>
+    // eslint-disable-next-line tailwindcss/no-contradicting-classname
+    <div className='flex justify-center bg-gradient-to-bl from-[#313B8233] to-[#090A1833] to-50%'>
       <div className='flex flex-col md:gap-32 gap-24 md:py-20 py-10 md:max-w-5xl max-w-80 '>
         <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
           <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
             <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32 h-8' />
 
-            <span className='text-stone-400 text-start'>
+            <span className='text-[#A8A8A8] text-start'>
               Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
             </span>
 
@@ -62,7 +63,7 @@ export default async function Footer() {
           <div className='flex gap-6 md:flex-1 flex-col  md:flex-row'>
             <div className='flex flex-col gap-4 w-1/3'>
               <p className='text-xs'>ALL</p>
-              <div className='flex flex-col gap-3 text-stone-400'>
+              <div className='flex flex-col gap-3 text-[#A8A8A8]'>
                 {All.map((item) => {
                   return (
                     <Link href={item.link} key={item.label}>

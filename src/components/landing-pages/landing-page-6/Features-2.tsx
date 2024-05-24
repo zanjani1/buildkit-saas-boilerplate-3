@@ -4,33 +4,40 @@ import Image from 'next/image';
 const cardDetails = [
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
   {
     title: 'Quality apps',
-    content: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours. ',
   },
 ];
 
 export default async function Features2() {
   return (
-    <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
+    // eslint-disable-next-line tailwindcss/no-contradicting-classname
+    <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10 bg-gradient-to-bl to-50% from-[#313B8233] to-[#090A1833]'>
       <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
         <div className='flex flex-col gap-4 items-center'>
           <p className='font-semibold text-sm text-[#227AFF]'>What can you do with builder kit?</p>
@@ -39,7 +46,7 @@ export default async function Features2() {
           </h1>
         </div>
 
-        <span className='md:text-lg md:max-w-[642px] text-stone-400 text-center'>
+        <span className='md:text-lg md:max-w-[642px] text-[#A8A8A8] text-center'>
           Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
           Effort and Use our robust Deployable code.
         </span>
@@ -56,7 +63,7 @@ export default async function Features2() {
                 <h1 className='text-xl font-semibold'>{card.title}</h1>
               </div>
 
-              <p className='text-sm text-stone-400'>{card.content}</p>
+              <p className='text-sm text-[#A8A8A8]'>{card.content}</p>
             </div>
           );
         })}
