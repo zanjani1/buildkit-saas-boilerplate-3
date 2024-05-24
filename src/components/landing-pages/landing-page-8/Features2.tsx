@@ -33,7 +33,7 @@ export default async function Features2() {
     <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
       <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
         <div className='flex flex-col gap-4 items-center'>
-          <h1 className='font-medium md:text-4xl text-2xl leading-[44px] max-w-xl text-center'>
+          <h1 className='font-medium text-2xl md:text-4xl md:leading-[44px] max-w-xl text-center'>
             Essentially, <span className='text-[#005CE7]'>everything</span> you need to ship{' '}
             <span className='text-[#005CE7]'>you first AI App</span>
           </h1>

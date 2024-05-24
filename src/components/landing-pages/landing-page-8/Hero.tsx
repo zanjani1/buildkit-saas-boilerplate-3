@@ -17,7 +17,7 @@ export default function Hero() {
             <ArrowRightIcon className='ml-2' />
           </div>
 
-          <h1 className='font-medium md:leading-[60px] md:text-[60px] text-3xl md:w-fit'>
+          <h1 className='font-medium md:leading-[60px] md:text-[60px] text-3xl text-center md:w-fit'>
             Generate AI Apps with ease
           </h1>
 

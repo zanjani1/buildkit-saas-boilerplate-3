@@ -42,10 +42,10 @@ export default async function Features() {
 
         <div className='flex gap-4 flex-col md:flex-row '>
           {cardDetails.map((card) => (
-            <div key={card.title} className='flex flex-col md:flex md:gap-6 gap-4 '>
+            <div key={card.title} className='flex flex-col md:gap-6 gap-4'>
               <Image src={card.url} alt={card.title} width={400} height={400} className='rounded-xl' />
-              <div className='gap-4 flex flex-col'>
-                <h2 className='font-medium md:text-2xl text-xl'>{card.title}</h2>
+              <div className='text-center'>
+                <h2 className='font-medium md:text-2xl text-xl mb-4'>{card.title}</h2>
                 <span className='text-[#727272]'>{card.content}</span>
               </div>
             </div>
