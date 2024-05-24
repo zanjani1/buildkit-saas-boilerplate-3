@@ -73,7 +73,6 @@ Ensure you have the following installed:
    LEMON_SQUEEZY_WEBHOOK_SECRET=<your-lemon-squeezy-webhook-secret>
    STRIPE_SECRET_KEY=<your-stripe-api-secret-key>
    STRIPE_WEBHOOK_SECRET=<your-stripe-webhook-secret>
-   LOOPS_BASE_URL=<your-loops-base-url>
    LOOPS_API_KEY=<your-loops-api-key>
    NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY=<your-google-analytics-key>
    ```

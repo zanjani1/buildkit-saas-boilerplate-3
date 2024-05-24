@@ -8,7 +8,7 @@ import { toast } from '@/components/ui/use-toast';
 import { errorToast } from '@/utils/utils';
 import React from 'react';
 import { IoMdCopy } from 'react-icons/io';
-import MachinLerningIcon from '@/assets/icons/MachinLerningIcon';
+import MachinLerningIcon from '@/assets/ai-modules/icons/MachinLerningIcon';
 import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -200,7 +200,7 @@ const ContentWriter: FC<ContentWriterProps> = () => {
           ) : (
             <div className='space-y-5 overflow-auto max-h-[calc(100vh-200px)]'>
               {contentData.map((content, index) => (
-                <div key={index} className='border border-[#EEE] p-4 rounded-lg '>
+                <div key={index} className='border border-[#EEE] p-4 rounded-lg'>
                   <div className='flex justify-between items-start'>
                     <p className='font-medium text-[#333333] mb-2'>{content.title}</p>
 

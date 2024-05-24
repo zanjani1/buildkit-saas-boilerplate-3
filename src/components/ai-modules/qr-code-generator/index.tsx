@@ -13,7 +13,7 @@ import { generateQrCodeFn } from './actions';
 import Image from 'next/image';
 import { TbDownload } from 'react-icons/tb';
 import { downloadQrCode } from '@/utils/utils';
-import MachinLerningIcon from '@/assets/icons/MachinLerningIcon';
+import MachinLerningIcon from '@/assets/ai-modules/icons/MachinLerningIcon';
 
 interface QRCodeGeneratorProps {}
 

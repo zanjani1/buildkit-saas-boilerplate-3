@@ -61,7 +61,7 @@ export default async function Footer() {
             </Button>
           </div>
 
-          <div className='grid grid-cols-2 sm:grid-cols-3 w-full justify-between max-w-xl md:grid-cols-2 xl:grid-cols-3 gap-6'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 w-full justify-between max-w-xl md:grid-cols-2 xl:grid-cols-3 gap-10'>
             <div className='flex flex-col gap-4 w-1/3'>
               <p className='text-xs text-stone-400'>ALL</p>
               <div className='flex flex-col gap-3 '>
@@ -86,13 +86,9 @@ export default async function Footer() {
 
             <div className='flex flex-col gap-4 w-1/3'>
               <p className='text-xs text-stone-400'>CONTACTS</p>
-              <div className='gap-3 text-lp7-secondary'>
-                <p>
-                  <Link href='mailto:vatsal1811@gmail.com'>vatsal1811@gmail.com</Link>
-                </p>
-
-                <p>India</p>
-              </div>
+              <Link href='mailto:vatsal1811@gmail.com' className='text-lp7-secondary'>
+                vatsal1811@gmail.com
+              </Link>
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default async function Product() {
     <div id='product' className='max-w-7xl mx-auto  px-4 my-[120px]'>
       <div className='flex flex-col justify-center items-center text-center'>
         <p className='text-lp7-primary text-sm font-semibold mb-4'>What can you do with builder kit?</p>
-        <p className='font-medium max-w-xl md:leading-9 leading-7 text-lp7-secondary tracking-[-1.68px] text-3xl sm:text-[32px]'>
+        <p className='font-medium max-w-xl leading-9 text-lp7-secondary tracking-[-1.68px] text-3xl sm:text-[32px]'>
           Explore the power of AI apps generation
         </p>
         <p className='max-w-xl text-lp7-sub leading-7 mt-2'>
@@ -42,7 +42,7 @@ export default async function Product() {
           <div
             key={index}
             className='rounded-2xl w-full md:max-w-md mx-auto bg-[#FCFCFC] border border-[#EDEDED] p-4'>
-            <div className='flex justify-center md:mb-5 h-fit rounded-xl border border-[#F1F1F1]'>
+            <div className='flex justify-center md:mb-5 h-fit rounded-xl border border-[#F1F1F1] mb-4'>
               <item.icon />
             </div>
 

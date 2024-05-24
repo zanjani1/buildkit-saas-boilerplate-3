@@ -3,6 +3,7 @@
 // Tiers data is mapped to display each plan with its respective price, features, and a call-to-action.
 
 'use client';
+
 import TickIcon from '@/assets/landing-page-7/icons/TickIcon';
 import { cn } from '@/utils/utils';
 import { Button } from '@/components/landing-pages/landing-page-7/Button';
@@ -71,7 +72,7 @@ export default function Plans() {
             </div>
             <ul role='list' className='space-y-4 mt-8'>
               {tier.features.map((feature) => (
-                <li key={feature} className='leading-relaxed flex gap-3 items-center font-medium'>
+                <li key={feature} className='leading-relaxed flex gap-3 font-medium'>
                   <TickIcon /> <span>{feature}</span>
                 </li>
               ))}

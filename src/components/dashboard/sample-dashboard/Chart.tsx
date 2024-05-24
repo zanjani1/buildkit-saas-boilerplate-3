@@ -97,7 +97,7 @@ export default function Chart({ sampleChartData }: { sampleChartData: ChartData[
 
       {/* Bar chart display section with conditional rendering based on data availability. */}
       <div className='z-10 rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input'>
-        <div className='border rounded-lg p-4 '>
+        <div className='border rounded-lg p-4'>
           <p className='text-lg font-semibold leading-7'>Platform Visitors</p>
           <p className='text-secondary text-sm font-medium'>
             Get a detailed snapshopt for the selected period

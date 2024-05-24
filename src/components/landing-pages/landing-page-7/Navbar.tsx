@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { HiBars3 } from 'react-icons/hi2';
 import LogoIcon from '@/assets/landing-page-7/icons/LogoIcon';
@@ -38,15 +39,17 @@ export default function Navbar() {
           </Button>
           <Sheet>
             <SheetTrigger className='block md:hidden'>
-              <HiBars3 className='text-[#0C0E1E] size-7' />
+              <HiBars3 size={24} />
             </SheetTrigger>
             <SheetContent side='top' className='border-none text-[#0C0E1E]'>
               <div className='space-y-6'>
                 <div className='flex flex-col gap-4'>
                   {navbarRoutes.map((item, index) => (
-                    <SheetClose asChild key={index} className='text-sm font-medium py-2'>
-                      <Link href={item.url}>{item.label}</Link>
-                    </SheetClose>
+                    <div key={index} className='text-sm font-medium py-2'>
+                      <SheetClose asChild>
+                        <Link href={item.url}>{item.label}</Link>
+                      </SheetClose>
+                    </div>
                   ))}
                 </div>
                 <Button className='flex w-full gap-2 px-3 py-1.5'>
