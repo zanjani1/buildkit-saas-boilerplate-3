@@ -77,7 +77,7 @@ export default async function Footer() {
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='flex flex-col gap-8'>
             <p className='text-3xl font-semibold text-white/70'>GEN AI</p>
-            <p className='text-lg max-w-[290px] tracking-[-0.54px] font-normal leading-6 text-white/60'>
+            <p className='text-lg max-w-[290px] tracking-[-0.54px] leading-6 text-white/60'>
               lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
             </p>
           </div>

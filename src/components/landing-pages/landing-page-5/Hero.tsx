@@ -22,7 +22,7 @@ export default async function Hero() {
         {/* Navbar component: Displays the top navigation menu. */}
         <Navbar />
         <div className='flex max-w-4xl mt-4 flex-col gap-5 py-5 md:py-14 px-4 items-center justify-center mx-auto'>
-          <Badge className='bg-[#5d5d5d4f] pt-0.5'>
+          <Badge className='bg-[#5d5d5d4f]'>
             Unlock Your Creative Spark! <ArrowRightIcon className='ml-2 pt-0.5' />{' '}
           </Badge>
           <h1 className='font-medium text-white text-3xl sm:text-6xl  text-center'>

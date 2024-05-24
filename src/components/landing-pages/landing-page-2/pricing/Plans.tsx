@@ -54,31 +54,31 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-10 md:space-y-0 '>
+      <div className='grid mt-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
-            className='w-full max-w-[23rem] h-fit bg-gradient-to-b shadow-sm from-white via-[rgba(249, 249, 250, 0.80)] to-transparent border md:p-6 pt-12 p-2 pb-6 rounded-2xl flex mx-auto flex-col mt-6'>
-            <div className='text-center w-full'>
+            className='w-full max-w-[23rem] h-fit bg-gradient-to-b shadow-sm from-white via-[rgba(249, 249, 250, 0.80)] to-transparent border border-[#E5E7EB] p-6 rounded-2xl flex mx-auto flex-col mt-6'>
+            <div className='text-center space-y-2 w-full mt-10'>
               {tier.name === 'Pro' && (
-                <p className='flex gap-3 pb-2 text-center w-full text-sm font-medium text-lp2-primary justify-center items-center'>
+                <p className='flex gap-3 py-1.5 px-3.5 text-center bg-[#FCF9F7] w-fit mx-auto text-xs font-medium text-lp2-primary rounded-sm justify-center items-center'>
                   {' '}
-                  <span className='size-1.5 text-center bg-lp2-primary rounded-full block' /> MOST POPULAR
+                  <span className='size-1.5  text-center bg-lp2-primary rounded-full block' /> MOST POPULAR
                 </p>
               )}
               <p className='text-lg font-semibold'>{tier.name.toUpperCase()}</p>
 
-              <p className='font-semibold leading-loose text-4xl'>
+              <p className='font-semibold text-4xl'>
                 <span>{tier.sellingPrice.monthly}</span>
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
             </div>
-            <ul role='list' className='space-y-2 mt-5'>
+            <ul role='list' className='space-y-2 mt-6'>
               {tier.features.map((feature) => (
                 <li
                   key={feature}
-                  className=' leading-relaxed grid pb-3 grid-cols-[auto,1fr] gap-3 font-medium items-center'>
+                  className='leading-relaxed grid grid-cols-[auto,1fr] gap-4 font-medium items-center'>
                   <OrangeArrowIcon /> <span>{feature}</span>
                 </li>
               ))}
@@ -88,7 +88,7 @@ export default function Plans() {
 
             <Button
               variant={'ghost'}
-              className={`mt-12 border w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 flex py-3.5 px-8 rounded-xl hover:bg-lp2-primary hover:text-white text-white flex-1'}`}>
+              className={`mt-16 border border-gray-200 bg-gradient-to-b from-white to-gray-100 w-full py-3 px-8 rounded-xl flex-1 ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80  hover:bg-lp2-primary hover:text-white text-white '}`}>
               Get Now{' '}
               {tier.name === 'Pro' ? (
                 <span className='ml-2'>

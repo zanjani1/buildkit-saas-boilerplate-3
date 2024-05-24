@@ -54,12 +54,12 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-3 lg:gap-6 mt-16'>
+      <div className='flex flex-col w-full lg:flex-row items-start justify-between gap-3 lg:gap-6 mt-20'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
-            className='w-full max-w-sm border-[#171717] bg-[#0D0D0D] gap-2 text-white rounded-2xl p-3 pb-6 sm:p-6 flex mx-auto flex-col mt-6'>
+            className='w-full max-w-sm border-[#171717] bg-[#0D0D0D] shadow-sm gap-2 text-white rounded-2xl p-3 pb-6 sm:p-6 flex mx-auto flex-col mt-6'>
             <div className='text-center w-full'>
               {tier.name === 'Pro' && (
                 <p className='flex gap-3 px-4 py-2 rounded-md w-fit mx-auto text-xs font-medium text-lp2-primary justify-center bg-[#FCF9F712] items-center'>

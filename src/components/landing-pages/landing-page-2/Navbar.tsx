@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { getUser } from '@/utils/get-user';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
@@ -23,7 +23,7 @@ export default async function Navbar() {
 
   return (
     <div className='max-w-7xl mx-auto bg-white'>
-      <div className='w-full flex justify-between items-center p-4 mb-5'>
+      <div className='w-full flex justify-between items-center p-4'>
         <Link href='/'>
           <LogoIcon />
         </Link>
@@ -53,9 +53,9 @@ export default async function Navbar() {
             <div className='space-y-6'>
               <ul className='gap-6'>
                 {navbarRoutes.map((item, index) => (
-                  <li key={index} className='text-sm font-medium py-2'>
+                  <SheetClose key={index} asChild className='text-sm flex flex-col font-medium py-2'>
                     <Link href={item.url}>{item.label}</Link>
-                  </li>
+                  </SheetClose>
                 ))}
               </ul>
               <Link

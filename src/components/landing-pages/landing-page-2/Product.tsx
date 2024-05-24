@@ -46,16 +46,14 @@ export default async function Product() {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 mx-auto xl:w-full lg:w-[870px] md:grid-cols-2 xl:grid-cols-3 gap-2'>
+        <div className='grid grid-cols-1 mx-auto xl:w-full lg:w-[870px] md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8'>
           {cardContent.map((item, index) => (
-            <div
-              key={index}
-              className='rounded-3xl md:max-w-[360px] shadow-sm space-y-10 border border-[#E5E7EB] p-6'>
-              <div className='flex '>
+            <div key={index} className='rounded-3xl md:max-w-[360px] shadow-md border border-[#E5E7EB] p-6'>
+              <div>
                 <item.icon />
               </div>
               <div>
-                <p className='text-2xl leading-7 font-semibold'>{item.title}</p>
+                <p className='text-2xl leading-7 mt-10 font-semibold'>{item.title}</p>
                 <p className='text-lp2-secondary font-medium mt-4 pr-2'>{item.description}</p>
               </div>
             </div>
