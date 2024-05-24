@@ -57,9 +57,10 @@ export default function Plans() {
       <div className='grid mt-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
+
           <div
             key={tier.id}
-            className='w-full h-fit bg-gradient-to-b shadow-sm from-white via-[rgba(249, 249, 250, 0.80)] to-transparent border border-[#E5E7EB] p-6 rounded-2xl flex mx-auto flex-col mt-6'>
+            className='w-full h-fit shadow-sm bg-gradient-to-b from-white to-neutral-50 border border-[#E5E7EB] p-6 rounded-2xl flex mx-auto flex-col mt-6'>
             <div className='text-center space-y-4 w-full mt-4'>
               {tier.name === 'Pro' && (
                 <div className='w-1/2 h-7 flex items-center justify-center gap-3 rounded-md mx-auto text-xs font-medium text-lp2-primary bg-[#FCF9F7]'>
@@ -84,7 +85,7 @@ export default function Plans() {
             {/* CTA button for the specific plan. */}
             <button
               className={cn(
-                'w-full h-12 flex items-center justify-center gap-2 mt-12 text-sm',
+                'w-full h-12 font-semibold flex items-center justify-center gap-2 mt-12 text-sm',
                 tier.name === 'Pro'
                   ? 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white rounded-xl'
                   : 'bg-gradient-to-b from-white to-gray-100 border border-gray-200 rounded-lg'

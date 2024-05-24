@@ -13,8 +13,8 @@ export default async function Hero() {
       {/*Gradient Background*/}
       <div className='relative w-full'>
         <div className='absolute inset-0 flex justify-between'>
-          <div className='rounded-full bg-[#FFD6B0] blur-[500px] size-[634px] -translate-x-1/2 -z-10'></div>
-          <div className='rounded-full bg-[#FFD6B0] blur-[500px] size-[634px] -translate-x-1/4 -z-10'></div>
+          <div className='rounded-full bg-[#FFD6B0] blur-[500px] size-[634px] -translate-x-11/ -z-10' />
+          <div className='rounded-full bg-[#ff8412] blur-[50px] size-[634px] -z-10 translate-x-1/2' />
         </div>
       </div>
 
@@ -23,7 +23,7 @@ export default async function Hero() {
         <Navbar />
 
         <div className='flex flex-col gap-6 sm:gap-8 py-8 md:py-14 px-4 items-center justify-center mx-auto max-w-3xl'>
-          <h1 className='font-semibold leading-[67px] text-6xl max-sm:text-4xl text-center'>
+          <h1 className='font-semibold text-[#262626] leading-[67px] tracking-[-2.5px] text-6xl max-sm:text-4xl text-center'>
             Generate modular <span className='text-lp2-primary'>AI Apps with ease and pace</span>{' '}
           </h1>
 
@@ -33,8 +33,8 @@ export default async function Hero() {
           </p>
           <Link
             href='/login'
-            className='flex justify-center items-center text-white rounded-lg bg-gradient-to-t px-6 py-3 from-lp2-primary to-lp2-primary/80 max-sm:mb-8'>
-            Get Started <ArrowRightIcon className='ml-2 mt-0.5' />
+            className='flex gap-2.5 justify-center items-center text-white rounded-lg bg-gradient-to-t px-6 py-3 from-lp2-primary to-lp2-primary/80 max-sm:mb-8'>
+            Get Started <ArrowRightIcon className='mt-0.5' />
           </Link>
         </div>
         <div className='w-full max-md:px-7 px-3 md:mt-5'>

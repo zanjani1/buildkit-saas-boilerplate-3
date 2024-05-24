@@ -31,7 +31,7 @@ export default async function Navbar() {
         <ul className='hidden md:flex items-center gap-6'>
           {navbarRoutes.map((item, index) => (
             <li key={index} className='text-sm font-medium '>
-              <Link href={item.url} className='hover:underline text-[#4b5563]'>
+              <Link href={item.url} className='hover:underline text-[#4B5563]'>
                 {item.label}
               </Link>
             </li>
@@ -41,7 +41,7 @@ export default async function Navbar() {
         {/* Conditional button that changes based on user status. */}
         <Link
           href={user ? '/admin-dashboard' : '/login'}
-          className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t px-7 py-2 from-lp2-primary to-lp2-primary/70'>
+          className='hidden md:flex justify-center items-center text-white rounded-lg  bg-gradient-to-t h-12 px-6 from-lp2-primary to-lp2-primary/70'>
           Get Started <ArrowRightIcon className='ml-2' />
         </Link>
 

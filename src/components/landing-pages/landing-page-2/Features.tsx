@@ -34,7 +34,7 @@ export default async function Features() {
           <p className='text-center text-[#1C1C1C] max-w-lg mx-auto text-5xl max-sm:text-3xl leading-tight font-semibold'>
             Explore the power of AI apps generation
           </p>
-          <p className='text-lp2-secondary leading-[28.8px] text-center md:text-xl md:leading-8 tracking-wide'>
+          <p className='text-lp2-secondary leading-[28.8px] max-w-2xl text-center md:text-lg md:leading-8 tracking-wide'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>
@@ -44,12 +44,12 @@ export default async function Features() {
         {cardContent.map((item, index) => (
           <div
             key={index}
-            className='rounded-2xl w-full max-md:text-center md:max-w-[368px] mx-auto space-y-6'>
+            className='rounded-2xl w-full max-md:text-center md:max-w-[368px] mx-auto space-y-4'>
             <div className='flex justify-center bg-[#FFF7F480] rounded-xl'>
               <item.icon />
             </div>
 
-            <p className='text-[2rem] text-[#1C1C1C] tracking-tight leading-10 font-semibold'>
+            <p className='text-[2rem] text-[#1C1C1C] leading-10 pt-2 tracking-[-2px] font-semibold'>
               {item.title} <span className='text-lp2-primary'>{item.colorText}</span>
             </p>
 

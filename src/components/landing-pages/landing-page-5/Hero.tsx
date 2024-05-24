@@ -21,10 +21,10 @@ export default async function Hero() {
         {/* Navbar component: Displays the top navigation menu. */}
         <Navbar />
         <div className='flex items-center justify-center max-w-4xl mt-4 flex-col gap-5 py-5 md:py-14 px-4 mx-auto'>
-          <Badge className='bg-[#5d5d5d4f]'>
+          <Badge className='bg-[#5d5d5d4f] text-sm'>
             Unlock Your Creative Spark! <ArrowRightIcon className='ml-2 pt-0.5' />
           </Badge>
-          <h1 className='font-medium text-white text-3xl sm:text-6xl  text-center'>
+          <h1 className='font-medium text-white text-3xl sm:text-6xl tracking-[-2.4px] text-center'>
             Generate AI Apps with ease
           </h1>
           <p className='text-lp5-secondary text-center mb-8 max-w-2xl font-medium'>

@@ -64,7 +64,7 @@ export default async function Footer() {
             Get your AI apps built with blazing speed.
           </p>
           <Link href={'/login'}>
-            <button className='h-12 flex items-center gap-2 rounded-xl font-semibold bg-gradient-to-t from-lp5-primary to-[#ff5100dc] px-6'>
+            <button className='h-12 flex items-center gap-2 rounded-xl font-semibold bg-gradient-to-t from-lp5-primary to-[#ff5100dc] px-8 py-3'>
               Get Started
               <WhiteArrowIcon />
             </button>

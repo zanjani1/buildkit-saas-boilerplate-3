@@ -53,7 +53,7 @@ export default async function Product() {
                 <item.icon />
               </div>
               <div>
-                <p className='text-2xl leading-7 mt-10 font-semibold'>{item.title}</p>
+                <p className='text-2xl leading-7 mt-10 font-semibold tracking-[-2%]'>{item.title}</p>
                 <p className='text-lp2-secondary mt-4 pr-2'>{item.description}</p>
               </div>
             </div>
