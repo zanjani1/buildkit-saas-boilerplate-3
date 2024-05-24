@@ -3,7 +3,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
-import { Button } from '../../../ui/button';
+import { Button } from '@/components/ui/button';
 import { LuArrowUpDown } from 'react-icons/lu';
 import DropdownMoreActions from './DropdownMoreActions';
 
