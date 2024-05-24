@@ -55,7 +55,7 @@ export default async function Footer() {
               Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
             </span>
 
-            <Button className='flex shadow-xl w-fit'>
+            <Button className='flex shadow-xl w-fit h-10'>
               Get Started
               <ArrowRightMd />
             </Button>

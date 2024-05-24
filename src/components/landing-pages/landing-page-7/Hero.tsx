@@ -26,7 +26,7 @@ export default async function Hero() {
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>
-          <Button className='flex gap-2.5 shadow-xl py-2 px-4'>
+          <Button className='flex gap-2.5 shadow-xl h-10 px-4'>
             <Link href={'/login'}>Get started</Link>
             <ArrowRightMd />
           </Button>
