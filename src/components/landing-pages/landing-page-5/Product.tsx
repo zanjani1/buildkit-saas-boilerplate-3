@@ -38,13 +38,13 @@ const cardContent = [
 export default async function Product() {
   return (
     <div id='product' className=' mx-auto p-4'>
-      <div className='max-w-6xl flex flex-col justify-center items-center mx-auto space-y-20'>
-        <div className='space-y-7 max-w-2xl text-center'>
-          <p className='font-semibold max-w-xl mx-auto lg:px-2 leading-[44px] text-3xl sm:text-4xl text-white '>
+      <div className='flex flex-col justify-center items-center mx-auto space-y-20'>
+        <div className='space-y-7 max-w-4xl text-center'>
+          <p className='max-w-xl font-medium mx-auto lg:px-2 text-2xl sm:text-4xl text-white'>
             Essentially, <span className='text-[#BC86FF]'> everything </span> you need to ship you{' '}
             <span className='text-[#BC86FF]'> first AI App</span>
-          </p>{' '}
-          <p className='text-lp5-secondary text-lg max-sm:text-sm lg:px-8 max-w-2xl md:leading-6 tracking-wide'>
+          </p>
+          <p className='text-lp5-secondary text-lg max-sm:text-sm max-w-2xl md:leading-8 tracking-wide'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>

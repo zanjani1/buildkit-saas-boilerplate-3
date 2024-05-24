@@ -76,13 +76,13 @@ export default async function Footer() {
 
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='flex flex-col gap-8'>
-            <p className='text-2xl font-semibold text-white/70'>GEN AI</p>
+            <p className='text-2xl font-semibold text-white/70'>BuilderKit.ai</p>
             <p className='text-lg max-w-sm tracking-[-0.54px] font-normal leading-6 text-white/60'>
               Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
             </p>
           </div>
 
-          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col  lg:gap-x-[140px] gap-y-6'>
+          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col lg:gap-x-24 gap-y-6'>
             {footerItems.map((item, index) => (
               <Link key={index} href={item.url} className='hover:underline'>
                 {item.label}

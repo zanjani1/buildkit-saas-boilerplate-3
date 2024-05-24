@@ -3,10 +3,10 @@
 // Tiers data is mapped to display each plan with its respective price, features, and a call-to-action.
 
 'use client';
+
 import BoldRightIcon from '@/assets/landing-page-2/icons/BoldRightIcon';
 import OrangeArrowIcon from '@/assets/landing-page-2/icons/OrangeArrowIcon';
-import { Button } from '@/components/ui/button';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { cn } from '@/utils/utils';
 
 const tiers = [
   {
@@ -59,13 +59,12 @@ export default function Plans() {
           // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
-            className='w-full h-fit md:max-w-sm border-[#171717] bg-[#0D0D0D] shadow-sm gap-2 text-white rounded-2xl p-3 sm:p-6 mx-auto mt-3'>
-            <div className='text-center w-full'>
+            className='w-full h-fit md:max-w-sm border-[#171717] bg-[#0D0D0D] shadow-sm text-white rounded-2xl p-4 sm:p-6 mx-auto mt-3'>
+            <div className='text-center w-full mt-4'>
               {tier.name === 'Pro' && (
-                <p className='flex gap-3 px-4 py-2 rounded-md w-fit mx-auto text-xs font-medium text-lp2-primary justify-center bg-[#FCF9F712] items-center'>
-                  {' '}
+                <div className='w-1/2 h-8 flex items-center justify-center gap-3 rounded-md mx-auto text-xs font-medium text-lp2-primary bg-[#FCF9F712]'>
                   <span className='size-1.5 text-center bg-lp2-primary rounded-full block' /> MOST POPULAR
-                </p>
+                </div>
               )}
               <p className='text-lg font-semibold mt-2'>{tier.name.toUpperCase()}</p>
 
@@ -74,11 +73,9 @@ export default function Plans() {
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
             </div>
-            <ul role='list' className='space-y-2 mt-5 '>
+            <ul role='list' className='space-y-5 mt-5 '>
               {tier.features.map((feature) => (
-                <li
-                  key={feature}
-                  className=' leading-relaxed grid pb-3 grid-cols-[auto,1fr] gap-3 font-medium items-center '>
+                <li key={feature} className='flex items-start leading-relaxed gap-3 font-medium'>
                   <OrangeArrowIcon /> <span>{feature}</span>
                 </li>
               ))}
@@ -86,18 +83,15 @@ export default function Plans() {
 
             {/* CTA button for the specific plan. */}
 
-            <Button
-              variant={'ghost'}
-              className={`mt-12 py-7 bg-[#262626] rounded-full w-full ${tier.name === 'Pro' && 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white'}`}>
-              Get Now{' '}
-              {tier.name === 'Pro' ? (
-                <span className='ml-2'>
-                  <BoldRightIcon />
-                </span>
-              ) : (
-                <ArrowRightIcon className='ml-4' />
-              )}
-            </Button>
+            <button
+              className={cn(
+                'w-full h-12 md:h-14 flex items-center justify-center gap-2 rounded-full mt-12 text-sm hover:bg-auto',
+                tier.name === 'Pro'
+                  ? 'bg-lp2-primary hover:bg-lp2-primary/90'
+                  : 'bg-[#262626] hover:bg-[#262626]/90'
+              )}>
+              Get Now <BoldRightIcon />
+            </button>
           </div>
         ))}
       </div>

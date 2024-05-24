@@ -1,6 +1,7 @@
 // Faq in the landing page is a section that provides answers to frequently asked questions.
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
 const accordionItems = [
   {
     value: '1',
