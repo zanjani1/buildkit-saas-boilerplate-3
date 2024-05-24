@@ -47,17 +47,19 @@ export default async function Navbar() {
 
         <Sheet>
           <SheetTrigger className='block md:hidden -mr-3 mb-3'>
-            <HiBars3 className='size-6' />
+            <HiBars3 size={24} />
           </SheetTrigger>
           <SheetContent side='top' className='px-5'>
             <div className='space-y-6'>
-              <ul className='gap-6'>
+              <div className='flex flex-col gap-4'>
                 {navbarRoutes.map((item, index) => (
-                  <SheetClose key={index} asChild className='text-sm flex flex-col font-medium py-2'>
-                    <Link href={item.url}>{item.label}</Link>
-                  </SheetClose>
+                  <div key={index} className='text-sm font-medium py-2'>
+                    <SheetClose asChild>
+                      <Link href={item.url}>{item.label}</Link>
+                    </SheetClose>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <Link
                 href={user ? '/admin-dashboard' : '/login'}
                 className='rounded-lg px-6 py-3 text-white justify-center w-full flex border bg-gradient-to-t from-lp2-primary to-lp2-primary/80'>
