@@ -25,7 +25,7 @@ const cardContent = [
 
 export default async function Product() {
   return (
-    <div id='product' className='max-w-6xl mx-auto  px-4 my-[120px]'>
+    <div id='product' className='max-w-7xl mx-auto  px-4 my-[120px]'>
       <div className='flex flex-col justify-center items-center text-center'>
         <p className='text-lp7-primary text-sm font-semibold mb-4'>What can you do with builder kit?</p>
         <p className='font-medium max-w-xl leading-[38px] text-lp7-secondary tracking-[-1.68px] text-2xl sm:text-[32px]'>
