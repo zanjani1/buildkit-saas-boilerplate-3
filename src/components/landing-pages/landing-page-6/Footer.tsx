@@ -89,10 +89,9 @@ export default async function Footer() {
 
             <div className='flex flex-col gap-4 w-1/3'>
               <p className='text-xs'>CONTACTS</p>
-              <div className='flex flex-col gap-3 text-stone-400'>
-                <p className=''>vatsal1811@gmail.com</p>
-                <p>India</p>
-              </div>
+              <Link href='mailto:vatsal1811@gmail.com' className='text-stone-400'>
+                vatsal1811@gmail.com
+              </Link>
             </div>
           </div>
         </div>
