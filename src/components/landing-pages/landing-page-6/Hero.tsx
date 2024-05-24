@@ -6,7 +6,7 @@ import hero from '@/assets/landing-page-6/images/hero.svg';
 
 export default function Hero() {
   return (
-    <div className='flex flex-col items-center md:gap-[88px] gap-16 bg-gradient-to-tr from-[#090A1833] to-[#313B8233] pt-4'>
+    <div className='flex flex-col items-center md:gap-[88px] gap-16 pt-4 '>
       <Navbar />
 
       <div className='flex flex-col gap-8'>

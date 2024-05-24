@@ -27,11 +27,11 @@ export default async function Features() {
     <div
       id='features'
       // eslint-disable-next-line tailwindcss/no-contradicting-classname
-      className='flex justify-center bg-gradient-to-br from-[#090A1833] from-50% to-[#313B8233]'>
+      className='flex justify-center'>
       <div className='md:max-w-[1030px] max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
         <div className='flex flex-col items-center gap-7 justify-between text-center'>
           <div className='flex flex-col gap-4'>
-            <span className='font-semibold text-sm text-[#227AFF]'>What can you do with builder kit?</span>
+            <span className='font-medium text-sm text-[#227AFF]'>What can you do with builder kit?</span>
             <h1 className='md:text-4xl text-2xl font-semibold max-w-lg flex flex-col gap-2'>
               <span>Explore the power of</span>
               <span>AI apps generation Workflow</span>

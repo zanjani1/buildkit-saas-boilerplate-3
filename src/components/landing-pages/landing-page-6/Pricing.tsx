@@ -16,9 +16,7 @@ const features = [
 
 export default function Pricing() {
   return (
-    <div
-      id='pricing'
-      className='flex justify-center md:py-20 py-10 bg-gradient-to-bl from-[#313B8233] to-50% to-[#090A1833]'>
+    <div id='pricing' className='flex justify-center md:py-20 py-10'>
       <div className='flex flex-col gap-20 md:max-w-6xl max-w-80 items-center'>
         <div className='items-center flex flex-col gap-7'>
           <div className='items-center flex flex-col gap-4'>
@@ -58,7 +56,7 @@ export default function Pricing() {
                       height={20}
                       className={cn({ 'opacity-25': !feat.available })}
                     />
-                    <span className='font-medium leading-6 -mt-0.5 md:text-lg'>{feat.feature}</span>
+                    <span className='leading-6 -mt-0.5'>{feat.feature}</span>
                   </div>
                 );
               })}
@@ -84,7 +82,7 @@ export default function Pricing() {
                 return (
                   <div key={feat.feature} className={cn('flex gap-2 items-start')}>
                     <Image src={Tick} alt='tick' width={20} height={20} />
-                    <span className={cn('font-medium leading-6 -mt-0.5 md:text-lg')}>{feat.feature}</span>
+                    <span className='leading-6 -mt-0.5'>{feat.feature}</span>
                   </div>
                 );
               })}

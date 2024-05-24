@@ -37,7 +37,7 @@ const cardDetails = [
 export default async function Features2() {
   return (
     // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10 bg-gradient-to-bl to-50% from-[#313B8233] to-[#090A1833]'>
+    <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
       <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
         <div className='flex flex-col gap-4 items-center'>
           <p className='font-semibold text-sm text-[#227AFF]'>What can you do with builder kit?</p>

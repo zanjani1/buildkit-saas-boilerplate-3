@@ -32,16 +32,13 @@ export default function Navbar() {
         <div className='md:flex gap-4 hidden items-center'>
           {navOptions.map((opt) => {
             return (
-              <Link
-                href={opt.url}
-                key={opt.label}
-                className='px-1 py-2.5 text-base leading-6 hover:underline'>
+              <Link href={opt.url} key={opt.label} className='px-1 py-2.5 text-sm leading-6 hover:underline'>
                 {opt.label}
               </Link>
             );
           })}
           <Button fill={false} size='sm' rounded={true}>
-            <span>Sign in</span>
+            <span>Signin</span>
             <ArrowRightIcon />
           </Button>
         </div>
