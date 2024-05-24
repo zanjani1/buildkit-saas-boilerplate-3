@@ -32,7 +32,7 @@ export default async function Faq() {
         <div className='flex flex-col items-center justify-center mb-12'>
           <div className='space-y-7 text-center'>
             <p className=' text-white text-4xl font-medium'>Frequently asked questions</p>
-            <p className='text-lp5-secondary text-lg font-normal md:text-xl md:leading-8 tracking-wide'>
+            <p className='text-lp5-secondary text-lg max-sm:text-sm lg:px-8 max-w-3xl md:leading-8 tracking-wide'>
               Seamlessly use your preferred tools for unified work, start to finish. Don't worry, we got you.
               Here are some answers for your questions.
             </p>

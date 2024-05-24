@@ -32,8 +32,7 @@ export default async function Features() {
             Explore the power of AI apps generation
             <span className='text-lp5-primary'> Workflow</span>
           </p>
-
-          <p className='text-lp5-secondary lg:px-8 font-medium max-w-2xl md:leading-8 tracking-wide'>
+          <p className='text-lp5-secondary text-lg max-sm:text-sm lg:px-8 max-w-2xl md:leading-8 tracking-wide'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>

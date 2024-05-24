@@ -44,7 +44,7 @@ export default async function Product() {
             Essentially, <span className='text-[#BC86FF]'> everything </span> you need to ship you{' '}
             <span className='text-[#BC86FF]'> first AI App</span>
           </p>{' '}
-          <p className='text-lp5-secondary max-sm:text-sm lg:px-8 font-medium max-w-2xl md:leading-6 tracking-wide'>
+          <p className='text-lp5-secondary text-lg max-sm:text-sm lg:px-8 max-w-2xl md:leading-6 tracking-wide'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>
@@ -59,7 +59,7 @@ export default async function Product() {
               </div>
               <div>
                 <p className='text-[#F7F7F8] font-medium'>{item.title}</p>
-                <p className='text-[#94989E] text-sm mt-2 font-medium'>{item.description}</p>
+                <p className='text-[#94989E] text-sm mt-2'>{item.description}</p>
               </div>
             </div>
           ))}

@@ -28,7 +28,7 @@ export default async function Hero() {
           <h1 className='font-medium text-white text-3xl sm:text-6xl  text-center'>
             Generate AI Apps with ease
           </h1>
-          <p className='text-lp5-secondary text-center mb-8 max-w-xl font-medium'>
+          <p className='text-lp5-secondary text-center mb-8 max-w-2xl font-medium'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
           </p>

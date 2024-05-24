@@ -53,7 +53,7 @@ export default async function Features() {
               {item.title} <span className='text-lp2-primary'>{item.colorText}</span>{' '}
             </p>
 
-            <p className='font-semibold leading-7 -mt-2 text-lp2-secondary'>{item.description}</p>
+            <p className='leading-7 -mt-2 text-lp2-secondary'>{item.description}</p>
           </div>
         ))}
       </div>
