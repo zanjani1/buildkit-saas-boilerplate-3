@@ -18,7 +18,7 @@ const Chart: FC<ChartData> = ({ chartData }) => {
   return (
     <>
       <div className='z-10 rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input'>
-        <div className='border rounded-lg p-4 '>
+        <div className='border rounded-lg p-4'>
           <h3 className='text-lg font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
             API Requests
           </h3>

@@ -200,12 +200,12 @@ const ContentWriter: FC<ContentWriterProps> = () => {
           ) : (
             <div className='space-y-5 overflow-auto max-h-[calc(100vh-200px)]'>
               {contentData.map((content, index) => (
-                <div key={index} className='border border-[#EEE] p-4 rounded-lg '>
+                <div key={index} className='border border-[#EEE] p-4 rounded-lg'>
                   <div className='flex justify-between items-start'>
                     <p className='font-medium text-[#333333] mb-2'>{content.title}</p>
 
                     <IoMdCopy
-                      className='size-6 p-1 rounded border text-[#3e3e3e] border-[#EEE] cursor-pointer'
+                      className='size-6 p-1 rounded border text-lp7-secondary border-[#EEE] cursor-pointer'
                       onClick={() => {
                         navigator.clipboard.writeText(`${content.title}\n${content.description}`).then(() => {
                           toast({ title: 'Content copied to clipboard' });
