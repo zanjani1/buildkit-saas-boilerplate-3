@@ -2,9 +2,9 @@
 // It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
 
 import Navbar from './Navbar';
-import { Button } from '../../ui/button';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import HeroImage from '../../../assets/images/hero.png';
+import HeroImage from '@/assets/landing-page-1/images/hero.png';
 import Link from 'next/link';
 
 export default async function Hero() {
@@ -17,9 +17,9 @@ export default async function Hero() {
         <div className='flex flex-col md:flex-row gap-10 py-5 md:py-14 px-4'>
           <div className='space-y-6 w-full md:w-1/2'>
             <p className='text-primary text-xs md:text-sm font-bold leading-normal tracking-widest uppercase'>
-              Let's shift your Apps faster
+              Let's ship your Apps faster
             </p>
-            <p className='text-5xl md:text-6xl'>Shift AI apps like a pro.</p>
+            <p className='text-5xl md:text-6xl'>Ship AI apps like a pro.</p>
             <p className='text-lg md:text-xl text-secondary md:leading-relaxed'>
               With lots of unique blocks, you can easily build a page without coding.
               <br className='block md:hidden' /> Build your next AI website within few minutes.

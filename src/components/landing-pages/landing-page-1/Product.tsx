@@ -1,9 +1,9 @@
 // Product component of landing page
 
-import ChatIcon from '@/assets/icons/ChatIcon';
-import IntegrationIcon from '@/assets/icons/IntegrationIcon';
-import TaskIcon from '@/assets/icons/TaskIcon';
-import UserIcon from '@/assets/icons/UserIcon';
+import ChatIcon from '@/assets/landing-page-1/icons/ChatIcon';
+import IntegrationIcon from '@/assets/landing-page-1/icons/IntegrationIcon';
+import TaskIcon from '@/assets/landing-page-1/icons/TaskIcon';
+import UserIcon from '@/assets/landing-page-1/icons/UserIcon';
 
 const items = [
   {
