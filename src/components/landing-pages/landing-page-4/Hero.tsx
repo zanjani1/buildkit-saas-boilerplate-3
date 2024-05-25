@@ -11,7 +11,7 @@ export default function Hero() {
 
       <div className='flex flex-col md:max-w-6xl w-full md:my-24 my-12 max-w-80'>
         <div className='flex flex-col gap-4'>
-          <div className='bg-primary-lp4 px-4 text-sm gap-2 rounded-lg font-semibold max-w-60 py-2 flex items-center'>
+          <div className='bg-primary-[#262626] px-4 text-sm gap-2 rounded-lg font-semibold max-w-60 py-2 flex items-center'>
             <span>Unlock Your Creative Spark</span>
             <ArrowRightIcon />
           </div>
