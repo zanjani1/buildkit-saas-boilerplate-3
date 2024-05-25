@@ -4,10 +4,10 @@
 
 import Link from 'next/link';
 
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
-import { Button } from '@/components/ui/button';
-import Logo from '@/components/Logo';
+import { Button } from '../../ui/button';
+import Logo from '../../Logo';
 import { getUser } from '@/utils/get-user';
 
 const navbarRoutes = [
@@ -44,19 +44,17 @@ export default async function Navbar() {
 
         <Sheet>
           <SheetTrigger className='block md:hidden'>
-            <HiBars3 size={24} />
+            <HiBars3 />
           </SheetTrigger>
-          <SheetContent side='top'>
+          <SheetContent side='top' className=''>
             <div className='space-y-6'>
-              <div className='flex flex-col gap-4'>
+              <ul className='gap-6'>
                 {navbarRoutes.map((item, index) => (
-                  <div key={index} className='text-sm font-medium py-2'>
-                    <SheetClose asChild>
-                      <Link href={item.url}>{item.label}</Link>
-                    </SheetClose>
-                  </div>
+                  <li key={index} className='text-sm font-medium py-2'>
+                    <Link href={item.url}>{item.label}</Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <Button className='rounded-lg w-full flex border border-[#51DCA3] green-btn-gradient'>
                 Sign Up
               </Button>

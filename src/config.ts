@@ -78,9 +78,6 @@ const config = {
       prod_PuuVeP4vko8uhg: 'premium',
     },
   },
-  loops: {
-    baseUrl: 'https://app.loops.so/api/v1',
-  },
 };
 
 export default config as TypeConfig;
