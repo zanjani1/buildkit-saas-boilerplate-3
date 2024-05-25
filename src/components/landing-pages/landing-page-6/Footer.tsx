@@ -43,7 +43,6 @@ const Info = [
 
 export default async function Footer() {
   return (
-    // eslint-disable-next-line tailwindcss/no-contradicting-classname
     <div className='flex justify-center'>
       <div className='flex flex-col md:gap-32 gap-24 md:py-20 py-10 md:max-w-5xl max-w-80 '>
         <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>

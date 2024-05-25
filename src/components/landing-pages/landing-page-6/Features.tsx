@@ -24,10 +24,7 @@ const cardDetails = [
 
 export default async function Features() {
   return (
-    <div
-      id='features'
-      // eslint-disable-next-line tailwindcss/no-contradicting-classname
-      className='flex justify-center'>
+    <div id='features' className='flex justify-center'>
       <div className='md:max-w-[1030px] max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
         <div className='flex flex-col items-center gap-7 justify-between text-center'>
           <div className='flex flex-col gap-4'>

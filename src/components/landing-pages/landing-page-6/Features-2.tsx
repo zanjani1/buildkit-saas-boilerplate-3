@@ -36,7 +36,6 @@ const cardDetails = [
 
 export default async function Features2() {
   return (
-    // eslint-disable-next-line tailwindcss/no-contradicting-classname
     <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
       <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
         <div className='flex flex-col gap-4 items-center'>
@@ -52,12 +51,12 @@ export default async function Features2() {
         </span>
       </div>
 
-      <div className='flex md:grid grid-cols-3 flex-col md:gap-6 gap-4  flex-wrap'>
+      <div className='flex md:grid grid-cols-3 flex-col md:gap-6 gap-4 flex-wrap'>
         {cardDetails.map((card, index) => {
           return (
             <div
               key={index}
-              className='md:rounded-3xl rounded-lg flex flex-col gap-2 bg-[#161823] md:p-6 p-4 w-80 items-start'>
+              className='md:rounded-3xl rounded-lg shadow-md flex flex-col gap-2 bg-[#0f111a] md:p-6 p-4 w-80 items-start'>
               <div className='flex flex-col gap-4'>
                 <Image src={Lightning} width={25} height={25} alt='logo' className='size-8' />
                 <h1 className='text-xl font-semibold'>{card.title}</h1>
