@@ -21,9 +21,9 @@ export default async function Navbar() {
   return (
     <div className='w-full text-white bg-[#031614]'>
       <div className={cn('max-w-6xl mx-auto flex justify-between items-center p-4')}>
-        <Link href='https://www.builderkit.ai/#pricing'>
+        <Link href='https://www.builderkit.ai'>
           <div className='flex items-center gap-2 w-fit'>
-            <Image src='/lp-10-logo.png' width={132} height={132} alt='logo' />
+            <Image src='/lp10-logo.png' width={132} height={132} alt='logo' />
           </div>
         </Link>
 

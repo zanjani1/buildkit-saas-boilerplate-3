@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { HiBars3 } from 'react-icons/hi2';
-import LogoIcon from '@/assets/landing-page-7/icons/LogoIcon';
 import { Sheet, SheetTrigger, SheetContent, SheetClose } from '@/components/ui/sheet';
 import { Button } from '@/components/landing-pages/landing-page-7/Button';
 import ArrowRightSm from '@/assets/landing-page-7/icons/ArrowRightSm';
+import Image from 'next/image';
 
 const navbarRoutes = [
   { label: 'Features', url: '/#features' },
@@ -21,9 +21,12 @@ export default function Navbar() {
         className='w-full p-2 flex flex-col justify-between items-center border-[#EAEAEA] border rounded-2xl
         '>
         <div className='w-full flex justify-between items-center'>
-          <Link href='/'>
-            <LogoIcon />
+          <Link href='https://www.builderkit.ai'>
+            <div className='flex items-center gap-2 w-fit'>
+              <Image src='/lp7-logo.svg' width={140} height={140} alt='logo' />
+            </div>
           </Link>
+
           <ul className='hidden md:flex items-center gap-6'>
             {navbarRoutes.map((item, index) => (
               <li key={index} className='text-sm font-medium text-[#0C0E1E]'>

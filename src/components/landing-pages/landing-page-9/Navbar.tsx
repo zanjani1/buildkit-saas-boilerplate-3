@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { getUser } from '@/utils/get-user';
-import LogoIcon from '@/assets/landing-page-9/icons/LogoIcon';
 import ArrowRightMd from '@/assets/landing-page-9/icons/ArrowRightMd';
+import Image from 'next/image';
 
 const navbarRoutes = [
   { label: 'Features', url: '/#features' },
@@ -24,8 +24,10 @@ export default async function Navbar() {
   return (
     <div className='max-w-7xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4'>
-        <Link href='/'>
-          <LogoIcon />
+        <Link href='https://www.builderkit.ai'>
+          <div className='flex items-center gap-2 w-fit'>
+            <Image src='/lp9-logo.svg' width={140} height={140} alt='logo' />
+          </div>
         </Link>
 
         <ul className='hidden md:flex items-center gap-8'>

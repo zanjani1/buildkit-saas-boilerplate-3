@@ -29,7 +29,12 @@ const navOptions = [
 export default function Navbar() {
   return (
     <div className='flex justify-between md:px-16  px-4 md:h-20 items-center h-12'>
-      <Image src='/lp3-logo.svg' width={100} height={100} alt='logo' className='h-12 w-32' />
+      <Link href='https://www.builderkit.ai'>
+        <div className='flex items-center gap-2 w-fit'>
+          <Image src='/lp3-logo.png' width={140} height={140} alt='logo' />
+        </div>
+      </Link>
+
       <div className='hidden md:flex gap-4'>
         {navOptions.map((opt) => {
           return (

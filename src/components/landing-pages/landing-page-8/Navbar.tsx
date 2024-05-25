@@ -29,7 +29,12 @@ const navOptions = [
 export default function Navbar() {
   return (
     <div className='flex justify-between h-12 md:max-w-screen-sm mt-4 items-center w-full max-w-80 border border-[#222222] px-2 md:rounded-2xl rounded-lg bg-[#0C0E1E]'>
-      <Image src='/lp8-logo.svg' width={100} height={100} alt='logo' className='w-32 h-8' />
+      <Link href='https://www.builderkit.ai'>
+        <div className='flex items-center gap-2 w-fit'>
+          <Image src='/lp8-logo.svg' width={140} height={140} alt='logo' />
+        </div>
+      </Link>
+
       <div className='md:flex hidden gap-0.5 font-medium'>
         {navOptions.map((opt) => {
           return (

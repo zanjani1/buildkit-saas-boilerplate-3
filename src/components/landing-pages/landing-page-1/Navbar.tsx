@@ -25,10 +25,11 @@ export default async function Navbar() {
   return (
     <div className='max-w-6xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
-        <div className='flex items-center gap-2'>
-          <Image src='/logo.png' className='size-8' width={50} height={50} alt='logo' />
-          <p className='text-2xl not-italic font-medium leading-6'>BuilderKit.ai</p>
-        </div>
+        <Link href='https://www.builderkit.ai'>
+          <div className='flex items-center gap-2 w-fit'>
+            <Image src='/lp1-logo.png' width={140} height={140} alt='logo' />
+          </div>
+        </Link>
 
         <ul className='hidden md:flex items-center gap-6'>
           {navbarRoutes.map((item, index) => (

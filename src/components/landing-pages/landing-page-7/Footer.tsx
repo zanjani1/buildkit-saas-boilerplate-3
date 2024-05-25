@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/landing-pages/landing-page-7/Button';
-import LogoIcon from '@/assets/landing-page-7/icons/LogoIcon';
 import ArrowRightMd from '@/assets/landing-page-7/icons/ArrowRightMd';
+import Image from 'next/image';
 
 const all = [
   {
@@ -47,8 +47,10 @@ export default async function Footer() {
       <div className='flex flex-col md:gap-32 gap-24 md:py-12 md:max-w-5xl w-full'>
         <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
           <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
-            <Link href='/'>
-              <LogoIcon />
+            <Link href='https://www.builderkit.ai'>
+              <div className='flex items-center gap-2 w-fit'>
+                <Image src='/lp7-logo.svg' width={140} height={140} alt='logo' />
+              </div>
             </Link>
 
             <span className='text-lp7-secondary font-medium leading-7 lg:min-w-[400px]'>
