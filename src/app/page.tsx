@@ -10,6 +10,7 @@ import LandingPage1 from '@/components/landing-pages/landing-page-1';
 // import LandingPage7 from '@/components/landing-pages/landing-page-7';
 // import LandingPage8 from '@/components/landing-pages/landing-page-8';
 // import LandingPage9 from '@/components/landing-pages/landing-page-9';
+// import LandingPage10 from '@/components/landing-pages/landing-page-10';
 
 export default async function Home() {
   return (
@@ -23,6 +24,7 @@ export default async function Home() {
       {/* <LandingPage7 /> */}
       {/* <LandingPage8 /> */}
       {/* <LandingPage9 /> */}
+      {/* <LandingPage10 /> */}
     </>
   );
 }

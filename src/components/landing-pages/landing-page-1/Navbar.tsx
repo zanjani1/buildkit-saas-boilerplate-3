@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HiBars3 } from 'react-icons/hi2';
 import { Button } from '@/components/ui/button';
-import Logo from '@/components/Logo';
 import { getUser } from '@/utils/get-user';
+import Image from 'next/image';
 
 const navbarRoutes = [
   { label: 'Waitlist', url: '/waitlist' },
@@ -25,7 +25,10 @@ export default async function Navbar() {
   return (
     <div className='max-w-6xl mx-auto'>
       <div className='w-full flex justify-between items-center p-4 mb-5'>
-        <Logo />
+        <div className='flex items-center gap-2'>
+          <Image src='/logo.png' className='size-8' width={50} height={50} alt='logo' />
+          <p className='text-2xl not-italic font-medium leading-6'>BuilderKit.ai</p>
+        </div>
 
         <ul className='hidden md:flex items-center gap-6'>
           {navbarRoutes.map((item, index) => (
