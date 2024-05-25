@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className='flex justify-between flex-col md:flex-row gap-10 md:gap-0'>
           <div className='flex flex-col gap-8 max-w-96'>
-            <h1 className='font-medium text-2xl leading-6 text-[#FFFFFFB2]'>Gen AI</h1>
+            <h1 className='font-medium text-2xl leading-6 text-[#FFFFFFB2]'>BuilderKit.ai</h1>
             <span className='text-[#B0B2B8] md:text-lg'>
               Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
             </span>

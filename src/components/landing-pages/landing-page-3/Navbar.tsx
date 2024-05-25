@@ -42,7 +42,7 @@ export default function Navbar() {
       <div>
         <div className='hidden md:block'>
           <Button>
-            <span className=' leading-5'>Sign Up</span>
+            <span className='leading-5'>Sign Up</span>
             <ArrowRightIcon />
           </Button>
         </div>

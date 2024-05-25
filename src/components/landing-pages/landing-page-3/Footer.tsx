@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className='flex justify-between flex-col gap-10 md:flex-row md:gap-0'>
           <div className='flex flex-col gap-8 max-w-[300px]'>
-            <h1 className='font-medium text-2xl leading-6 text-stone-300'>Gen AI</h1>
+            <h1 className='font-medium text-2xl leading-6 text-stone-300'>BuilderKit.ai</h1>
             <span className='text-stone-400'>{content}</span>
             <p className='font-medium text-white'>All rights reserved</p>
           </div>

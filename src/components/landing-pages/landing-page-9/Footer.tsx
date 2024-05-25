@@ -1,7 +1,8 @@
 // This is the Footer component of the landing page.
 
 import Link from 'next/link';
-import WhiteArrowIcon from '@/assets/landing-page-2/icons/WhiteArrowIcon';
+import { Button } from '@/components/ui/button';
+import ArrowRightSm from '@/assets/landing-page-9/icons/ArrowRightSm';
 
 // Array of objects representing footer navigation items
 const footerItems = [
@@ -10,15 +11,19 @@ const footerItems = [
     url: '#',
   },
   {
-    label: 'Company',
-    url: '#',
-  },
-  {
-    label: 'Press',
-    url: '#',
-  },
-  {
     label: 'Contact',
+    url: '#',
+  },
+  {
+    label: 'Blog',
+    url: '#',
+  },
+  {
+    label: 'Story',
+    url: '#',
+  },
+  {
+    label: 'Company',
     url: '#',
   },
   {
@@ -26,11 +31,7 @@ const footerItems = [
     url: '#',
   },
   {
-    label: 'Careers',
-    url: '#',
-  },
-  {
-    label: 'Blog',
+    label: 'Press',
     url: '#',
   },
   {
@@ -42,7 +43,7 @@ const footerItems = [
     url: '#',
   },
   {
-    label: 'Story',
+    label: 'Careers',
     url: '#',
   },
   {
@@ -57,27 +58,27 @@ const footerItems = [
 
 export default async function Footer() {
   return (
-    <footer className='bg-[#1C1C1C] text-white px-5'>
-      <div className='max-w-6xl mx-auto py-16'>
+    <footer className='bg-[#062616] text-white px-5'>
+      <div className='max-w-6xl mx-auto py-12 md:py-16'>
         <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
-          <p className='max-w-xl text-3xl md:text-4xl font-medium leading-tight md:leading-[52px]'>
+          <p className='md:w-3/4 text-3xl md:text-4xl font-medium'>
             Get your AI apps built with blazing speed.
           </p>
           <Link href={'/login'}>
-            <button className='h-12 flex items-center gap-2 rounded-xl font-semibold bg-gradient-to-t from-lp5-primary to-[#ff5100dc] px-8 py-3'>
+            <Button variant={'ghost'} className='flex gap-2 px-4 py-6 rounded bg-white text-black'>
               Get Started
-              <WhiteArrowIcon />
-            </button>
+              <ArrowRightSm />
+            </Button>
           </Link>
         </div>
 
-        <hr className='opacity-30 my-16' />
+        <hr className='opacity-10 my-16' />
 
-        <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
-          <div className='flex flex-col gap-8'>
-            <p className='text-3xl font-semibold text-white/70'>BuilderKit.ai</p>
-            <p className='md:text-lg max-w-[290px] tracking-[-0.54px] leading-6 text-white/60'>
-              lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
+        <div className='flex flex-col md:flex-row justify-between gap-10 max-md:mb-8'>
+          <div className='flex flex-col gap-10'>
+            <p className='text-2xl font-medium text-white/70'>BuilderKit.ai</p>
+            <p className='max-w-sm tracking-[-0.54px] leading-6 text-white/60'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
             </p>
           </div>
 
@@ -89,7 +90,7 @@ export default async function Footer() {
             ))}
           </div>
         </div>
-        <p>All rights reserved.</p>
+        <p className='font-medium'>All rights reserved.</p>
       </div>
     </footer>
   );
