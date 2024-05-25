@@ -33,7 +33,4 @@ export type TypeConfig = {
   supportEmail: string;
   lemonSqueezy: TypePaymentGateway;
   stripe: TypePaymentGateway;
-  loops: {
-    baseUrl: string;
-  };
 };
