@@ -53,6 +53,10 @@ module.exports = {
           secondary: '#3E3E3E',
           sub: '#53535C',
         },
+        lp9: {
+          primary: '#0B3721',
+          secondary: '#1C1C1C',
+        },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
