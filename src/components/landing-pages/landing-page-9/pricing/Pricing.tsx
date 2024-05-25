@@ -9,9 +9,10 @@ export default async function Pricing() {
         <div className='flex flex-col justify-center items-center text-center'>
           <p className='max-w-xl leading-[58px] tracking-[-1.5px] text-3xl sm:text-5xl'>Pricing Plans</p>
           <p className='max-w-xl tracking-tighter text-lg text-[#53535C] mt-4'>
-            Start making smarter decisions,Choose a plan
+            Start making smarter decisions, <br /> Choose a plan
           </p>
         </div>
+
         <Plans />
       </div>
     </div>

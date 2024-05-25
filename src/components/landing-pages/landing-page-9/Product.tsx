@@ -42,7 +42,7 @@ export default async function Product() {
       <div className='grid grid-cols-1 mt-14 mx-auto gap-2 md:grid-cols-2 xl:grid-cols-3'>
         {cardContent.map((item, index) => (
           <div key={index} className='rounded-2xl w-full md:max-w-md mx-auto p-4'>
-            <div className='flex justify-center md:mb-6 h-fit rounded-xl bg-[#F1F9F330]'>
+            <div className='flex justify-center md:mb-6 h-fit rounded-xl bg-[#F1F9F380]'>
               <item.icon />
             </div>
 

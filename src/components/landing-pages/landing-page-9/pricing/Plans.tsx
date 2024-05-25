@@ -3,6 +3,7 @@
 // Tiers data is mapped to display each plan with its respective price, features, and a call-to-action.
 
 'use client';
+
 import ArrowRightMd from '@/assets/landing-page-9/icons/ArrowRightMd';
 import TickIcon from '@/assets/landing-page-9/icons/TickIcon';
 import { Button } from '@/components/ui/button';
@@ -56,7 +57,7 @@ export default function Plans() {
           <div
             key={tier.id}
             className={cn(
-              'w-full h-fit md:max-w-sm bg-[#1F2E270D] shadow-sm gap-2 text-lp9-secondary rounded-2xl p-3 sm:p-6 mx-auto mt-3',
+              'w-full h-fit md:max-w-sm bg-[#1F2E270D] shadow-sm gap-2 text-lp9-secondary rounded-md p-3 sm:p-6 mx-auto mt-3',
               tier.id === 'ultimate' && 'bg-[#E8F2EC]'
             )}>
             <div className='w-full mt-6'>
@@ -66,22 +67,21 @@ export default function Plans() {
                 <span>{tier.sellingPrice.monthly}</span>
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
-              <p>{tier.description}</p>
+              <p className='text-sm md:text-base font-light'>{tier.description}</p>
             </div>
-            <ul role='list' className='space-y-4 mt-8'>
+            <ul role='list' className='space-y-2 md:space-y-4 mt-8'>
               {tier.features.map((feature) => (
-                <li key={feature} className='leading-relaxed flex gap-3 items-center font-medium'>
+                <li key={feature} className='leading-relaxed flex gap-3 items-center text-sm md:text-base'>
                   <TickIcon /> <span>{feature}</span>
                 </li>
               ))}
             </ul>
 
             {/* CTA button for the specific plan. */}
-
             <Button
               size={'lg'}
               className={cn(
-                'flex gap-2.5 w-full mt-16 py-6 px-8 font-semibold',
+                'gap-2.5 w-full mt-16 py-6 px-8 font-semibold',
                 tier.id === 'pro'
                   ? 'bg-lp9-primary hover:bg-lp9-primary/95'
                   : 'bg-white hover:text-lp9-primary hover:bg-white border border-[#E5E7EB] text-[#030712]'
