@@ -30,10 +30,6 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
         lp2: {
           primary: '#FF4F00',
           secondary: '#374151',
@@ -41,10 +37,6 @@ module.exports = {
         lp5: {
           primary: '#FF4F00',
           secondary: '#787878',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
         },
         lp7: {
           primary: '#227AFF',
@@ -54,6 +46,14 @@ module.exports = {
         lp9: {
           primary: '#0B3721',
           secondary: '#1C1C1C',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
