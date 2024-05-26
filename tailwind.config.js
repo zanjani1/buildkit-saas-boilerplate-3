@@ -21,6 +21,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         waves: "url('/waves-background.png')",
+        'gradient-feat-lp4': 'linear-gradient(90deg, #000000 0%, #69FFF614 20%, #FF2BAA14 80%,#000000 100%)',
+        'gradient-hero-lp4': 'linear-gradient(75deg, #000000 0%, #69FFF614 20%, #FF2BAA14 80%,#000000 100%)',
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -28,6 +30,23 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        lp2: {
+          primary: '#FF4F00',
+          secondary: '#374151',
+        },
+        lp5: {
+          primary: '#FF4F00',
+          secondary: '#787878',
+        },
+        lp7: {
+          primary: '#227AFF',
+          secondary: '#3E3E3E',
+          sub: '#53535C',
+        },
+        lp9: {
+          primary: '#0B3721',
+          secondary: '#1C1C1C',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
