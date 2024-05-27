@@ -16,15 +16,19 @@ interface WelcomeEmailProps {
   userFirstname: string;
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? `https://${process.env.NEXT_PUBLIC_APP_URL}` : '';
-
 export const WelcomeEmail = ({ userFirstname }: WelcomeEmailProps) => (
   <Html>
     <Head />
     <Preview>The sales intelligence platform that helps you uncover qualified leads.</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Img src={`${baseUrl}/logo.png`} width='170' height='50' alt='BuilderKit' style={logo} />
+        <Img
+          src='https://utfs.io/f/f34b65da-6ade-48e4-bc41-06b639ede08f-ln8uob.png'
+          width='150'
+          height='40'
+          alt='BuilderKit'
+          style={logo}
+        />
         <Text style={paragraph}>Hi {userFirstname},</Text>
         <Text style={paragraph}>
           Welcome to BuilderKit,your one stop solution for building sass Applications.
