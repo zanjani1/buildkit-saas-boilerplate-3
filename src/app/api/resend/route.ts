@@ -2,7 +2,7 @@ import { WelcomeEmail } from '@/components/WelcomeEmail';
 import { Resend } from 'resend';
 
 // Initialize the Resend instance with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('re_EXsnrnsE_3nrG3ybxqBcmUbhAURA9KLrU');
 
 export async function POST(req: Request) {
   try {
@@ -15,6 +15,7 @@ export async function POST(req: Request) {
       to: ['delivered@resend.dev', email], // Note: It will not send emails to custom emails until you configure your domain in Resend.
       subject: 'Welcome to BuilderKit.io', // Email subject line
       react: WelcomeEmail({ userFirstname: name }), // React component for the email body
+      text: `Hi ${name},\n\nWelcome to BuilderKit, your one-stop solution for building SaaS applications.\n\nBest,\nThe BuilderKit team`, // Plain text version of the email body
     });
 
     return new Response(JSON.stringify({ success: true }), {

@@ -1,102 +1,91 @@
-import {
-  Body,
-  Button,
-  Container,
-  Head,
-  Hr,
-  Html,
-  Img,
-  Preview,
-  Section,
-  Text,
-} from '@react-email/components';
-import * as React from 'react';
+import React from 'react';
 
 interface WelcomeEmailProps {
   userFirstname: string;
 }
 
-export const WelcomeEmail = ({ userFirstname }: WelcomeEmailProps) => (
-  <Html>
-    <Head />
-    <Preview>The sales intelligence platform that helps you uncover qualified leads.</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Img
+export const WelcomeEmail: React.FC<WelcomeEmailProps> = ({ userFirstname }) => {
+  return (
+    <div style={main}>
+      <div style={container}>
+        <img
           src='https://utfs.io/f/f34b65da-6ade-48e4-bc41-06b639ede08f-ln8uob.png'
-          width='150'
-          height='40'
+          width='100'
+          height='60'
           alt='BuilderKit'
           style={logo}
         />
-        <Text style={paragraph}>Hi {userFirstname},</Text>
-        <Text style={paragraph}>
-          Welcome to BuilderKit,your one stop solution for building sass Applications.
-        </Text>
-        <Section style={btnContainer}>
-          <Button style={button} href='https://www.builderkit.ai/'>
+        <p style={paragraph}>Hi {userFirstname},</p>
+        <p style={paragraph}>Welcome to BuilderKit, your one-stop solution for building SaaS applications.</p>
+        <div style={btnContainer}>
+          <a href='https://www.builderkit.ai/' style={button}>
             Get started
-          </Button>
-        </Section>
-        <Text style={paragraph}>
+          </a>
+        </div>
+        <p style={paragraph}>
+          <br /> {/* Added an additional line break */}
           Best,
           <br />
           The BuilderKit team
-        </Text>
-        <Hr style={hr} />
-        <Text style={footer}>470 Noor Ave STE B #1148, South San Francisco, CA 94080</Text>
-      </Container>
-    </Body>
-  </Html>
-);
+        </p>
+        <hr style={hr} />
+        <p style={footer}>470 Noor Ave STE B #1148, South San Francisco, CA 94080</p>
+      </div>
+    </div>
+  );
+};
 
-WelcomeEmail.PreviewProps = {
-  userFirstname: 'Alan',
-} as WelcomeEmailProps;
-
-export default WelcomeEmail;
-
-const main = {
+// Define styles using CSSProperties for type safety
+const main: React.CSSProperties = {
   backgroundColor: '#ffffff',
+  maxWidth: '600px',
+  margin: '0 auto',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 };
 
-const container = {
+const container: React.CSSProperties = {
   margin: '0 auto',
   padding: '20px 0 48px',
 };
 
-const logo = {
+const logo: React.CSSProperties = {
   margin: '0 auto',
+  display: 'block',
+  objectFit: 'contain',
 };
 
-const paragraph = {
+const paragraph: React.CSSProperties = {
   fontSize: '16px',
   lineHeight: '26px',
 };
 
-const btnContainer = {
-  textAlign: 'center' as const,
+const btnContainer: React.CSSProperties = {
+  width: '100%',
+  textAlign: 'center',
 };
 
-const button = {
+const button: React.CSSProperties = {
   backgroundColor: '#5F51E8',
-  borderRadius: '3px',
+  borderRadius: '6px', // Increased the border radius
   color: '#fff',
   fontSize: '16px',
   textDecoration: 'none',
-  textAlign: 'center' as const,
+  textAlign: 'center',
   display: 'block',
-  padding: '12px',
+  width: '100%',
+  padding: '12px 0',
+  marginTop: '10px',
 };
 
-const hr = {
+const hr: React.CSSProperties = {
   borderColor: '#cccccc',
   margin: '20px 0',
 };
 
-const footer = {
+const footer: React.CSSProperties = {
   color: '#8898aa',
   fontSize: '12px',
 };
+
+export default WelcomeEmail;
