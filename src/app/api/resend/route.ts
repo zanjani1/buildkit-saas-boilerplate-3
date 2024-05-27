@@ -2,7 +2,7 @@ import { WelcomeEmail } from '@/components/WelcomeEmail';
 import { Resend } from 'resend';
 
 // Initialize the Resend instance with the API key from environment variables
-const resend = new Resend('re_EXsnrnsE_3nrG3ybxqBcmUbhAURA9KLrU');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
