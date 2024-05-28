@@ -42,6 +42,10 @@ const getCategoryForTool = (tool: string): string[] => {
       return ['OpenAI'];
     case 'Headshot Models':
       return ['Astria'];
+    case 'Chat With PDF':
+      return ['OpenAI'];
+    case 'MultiLLM Chatgpt':
+      return ['OpenAI'];
     default:
       return ['Other'];
   }
@@ -82,14 +86,14 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
 
   return (
     <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 w-full lg:w-1/2'>
-      <Card className=' rounded-lg p-4 h-full'>
+      <Card className='rounded-lg p-4 h-full'>
         <h3 className='text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
           Total API Usage by Category
         </h3>
         <div className='block md:flex items-center justify-center gap-10 z-10 h-full'>
           <div>
             <DonutChart
-              className='w-full h-52'
+              className='w-full h-60'
               data={categorizedChartData.map((item) => ({
                 name: item.name,
                 amount: item['Total API Requests'],

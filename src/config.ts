@@ -12,7 +12,7 @@ const config = {
   app: {
     name: 'BuilderKit',
     description: 'NextJS SaaS AI Boilerplate',
-    url: 'https://builderkit.ai',
+    url: 'https://base.builderkit.ai',
   },
 
   // CRISP: Configuration details for the Crisp chat support integration.

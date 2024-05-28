@@ -74,7 +74,7 @@ Ensure you have the following installed:
    STRIPE_SECRET_KEY=<your-stripe-api-secret-key>
    STRIPE_WEBHOOK_SECRET=<your-stripe-webhook-secret>
    LOOPS_API_KEY=<your-loops-api-key>
-   RESEND_API_KEY=
+   RESEND_API_KEY=<your-resend-api-key>
    SENTRY_AUTH_TOKEN=<your-sentry-api-key>
    NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY=<your-google-analytics-key>
    ```
