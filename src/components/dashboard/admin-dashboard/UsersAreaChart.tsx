@@ -39,7 +39,7 @@ const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
   }));
 
   return (
-    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 w-full lg:w-1/2 '>
+    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 w-full lg:w-1/2'>
       <div className='rounded-lg p-4 border'>
         <h3 className='text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
           Users Created by Date
@@ -51,6 +51,7 @@ const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
           colors={['indigo']}
           valueFormatter={dataFormatter}
           yAxisWidth={60}
+          className='h-60'
         />
       </div>
     </div>
