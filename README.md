@@ -74,6 +74,8 @@ Ensure you have the following installed:
    STRIPE_SECRET_KEY=<your-stripe-api-secret-key>
    STRIPE_WEBHOOK_SECRET=<your-stripe-webhook-secret>
    LOOPS_API_KEY=<your-loops-api-key>
+   RESEND_API_KEY=
+   SENTRY_AUTH_TOKEN=<your-sentry-api-key>
    NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY=<your-google-analytics-key>
    ```
 
@@ -143,6 +145,8 @@ Ensure you have the following installed:
 - **Lemon Squeezy**: Create an account in [Lemon Squeezy](https://www.lemonsqueezy.com/) to get the API key and setup the webhook.
 - **Stripe**: Sign up in [Stripe](https://stripe.com) to get the API key and setup the webhook.
 - **Loops**: Create an account in Loops and get the API key and Base Url [Loops](https://loops.so/).
+- **Resend**: Sign up in [Resend](https://resend.com/) to configure your domain and get the api key.
+- **Sentry**: Create an account in [Sentry](https://sentry.io/) to setup your account (Organisation and Project) and get the DSN key and API key
 
 ## License
 
