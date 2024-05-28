@@ -15,6 +15,7 @@ export async function POST(req: Request) {
       to: ['delivered@resend.dev', email], // Note: It will not send emails to custom emails until you configure your domain in Resend.
       subject: 'Welcome to BuilderKit.io', // Email subject line
       react: WelcomeEmail({ userFirstname: name }), // React component for the email body
+      text: `Hi ${name},\n\nWelcome to BuilderKit, your one-stop solution for building SaaS applications.\n\nBest,\nThe BuilderKit team`, // Plain text version of the email body
     });
 
     return new Response(JSON.stringify({ success: true }), {
