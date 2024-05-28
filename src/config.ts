@@ -81,6 +81,10 @@ const config = {
   loops: {
     baseUrl: 'https://app.loops.so/api/v1',
   },
+  // Uncomment the following block to enable Sentry error tracking. And add the DSN key.
+  // sentry: {
+  //   dsn: 'YOUR_SENTRY_DSN_KEY',
+  // },
 };
 
 export default config as TypeConfig;
