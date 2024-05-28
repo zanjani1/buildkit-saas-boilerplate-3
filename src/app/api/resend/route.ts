@@ -1,8 +1,12 @@
-import { WelcomeEmail } from '@/components/WelcomeEmail';
+import WelcomeEmail from '@/components/email-template/WelcomeEmail';
+import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize the Resend instance with the API key from environment variables
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const senderEmailAddress = 'onboarding@resend.dev';
+const testEmail = 'delivered@resend.dev'; // Use this email address to test the email sending functionality.
 
 export async function POST(req: Request) {
   try {
@@ -11,24 +15,19 @@ export async function POST(req: Request) {
 
     // Send the welcome email using the Resend instance
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // Sender email address
-      to: ['delivered@resend.dev', email], // Note: It will not send emails to custom emails until you configure your domain in Resend.
-      subject: 'Welcome to BuilderKit.io', // Email subject line
-      react: WelcomeEmail({ userFirstname: name }), // React component for the email body
-      text: `Hi ${name},\n\nWelcome to BuilderKit, your one-stop solution for building SaaS applications.\n\nBest,\nThe BuilderKit team`, // Plain text version of the email body
+      from: senderEmailAddress,
+      to: testEmail ?? email, // For multiple addresses, send as an array of strings. Max 50. It will not send emails to custom emails until you configure your domain in Resend.
+      subject: 'Welcome to BuilderKit.ai',
+      react: WelcomeEmail({ name }), // Email template
+      // Optional: Use "text" parameter to send message in the email body instead of react or html format.
+      // Example: Hi ${name},\n\nWelcome to BuilderKit, your one-stop solution for building SaaS applications.\n\nBest,\nTeam BuilderKit
+      text: '',
     });
 
-    return new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'application/json' },
-    });
-  } catch (error) {
-    console.error('Error sending email:', error);
-
-    // Return a JSON response indicating an error, with a 500 status code
-    return new Response(JSON.stringify({ error }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return NextResponse.json({ message: `Email sent to ${email}` }, { status: 200 });
+  } catch (error: any) {
+    console.error(error.message);
+    return NextResponse.json({ message: error.message }, { status: 400 });
   }
 }
 

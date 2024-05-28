@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 interface WelcomeEmailProps {
-  userFirstname: string;
+  name: string;
 }
 
-export const WelcomeEmail: React.FC<WelcomeEmailProps> = ({ userFirstname }) => {
+export const WelcomeEmail: FC<WelcomeEmailProps> = ({ name }) => {
   return (
     <div style={main}>
       <div style={container}>
@@ -15,7 +15,7 @@ export const WelcomeEmail: React.FC<WelcomeEmailProps> = ({ userFirstname }) => 
           alt='BuilderKit'
           style={logo}
         />
-        <p style={paragraph}>Hi {userFirstname},</p>
+        <p style={paragraph}>Hi {name},</p>
         <p style={paragraph}>Welcome to BuilderKit, your one-stop solution for building SaaS applications.</p>
         <div style={btnContainer}>
           <a href='https://www.builderkit.ai/' style={button}>
