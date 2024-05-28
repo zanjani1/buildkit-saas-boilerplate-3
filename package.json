@@ -51,6 +51,7 @@
     "rehype-highlight": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "replicate": "^0.29.4",
+    "resend": "^3.2.0",
     "sharp": "^0.33.3",
     "stripe": "^15.1.0",
     "tailwind-merge": "^2.2.2",
