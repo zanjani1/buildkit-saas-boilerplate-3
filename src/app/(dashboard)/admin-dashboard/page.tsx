@@ -15,7 +15,6 @@ type SupabaseTable =
   | 'qr_code_generations'
   | 'voice_transcriptions';
 
-
 const sampleDashboard = async () => {
   const user = await getUser();
 

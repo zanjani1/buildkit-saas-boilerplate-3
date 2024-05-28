@@ -36,4 +36,7 @@ export type TypeConfig = {
   loops: {
     baseUrl: string;
   };
+  sentry?: {
+    dsn: string;
+  };
 };
