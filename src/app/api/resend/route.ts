@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize the Resend instance with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const senderEmailAddress = 'onboarding@resend.dev';
 const testEmail = 'delivered@resend.dev'; // Use this email address to test the email sending functionality.
