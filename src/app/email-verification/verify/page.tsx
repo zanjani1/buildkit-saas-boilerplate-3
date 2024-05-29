@@ -17,11 +17,12 @@ export default function Verify({ searchParams }: { searchParams: { token: string
   const magicId = localStorage.getItem('magicId');
   const token = searchParams?.token;
   const router = useRouter();
+
   //function to call the verifyJWT function and handle the response and set the message
   const handleResponse = useCallback(async () => {
     if (token) {
       const response: responseType = await verifyJWT(token);
-      console.log(response);
+
       if (response.error) {
         setShowButton(true);
         setMessage(response.error);
@@ -42,7 +43,6 @@ export default function Verify({ searchParams }: { searchParams: { token: string
     handleResponse();
   }, [handleResponse]);
 
-  console.log(`${process.env.NEXT_PUBLIC_BASE_URL}/email-verification`);
   return (
     <div className='h-screen flex flex-col justify-center items-center'>
       {message && <p className='w-full mt-4 p-4 bg-muted text-sm text-center rounded-md'>{message}</p>}

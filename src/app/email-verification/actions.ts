@@ -1,6 +1,7 @@
 'use server';
 import * as jwt from 'jsonwebtoken';
 import crypto from 'crypto';
+import axios from 'axios';
 
 type generateJWTType = {
   email: string;
@@ -29,26 +30,27 @@ export async function sendMagicLink(email: string) {
 
   try {
     const token = await generateJWT(obj);
-    const magicLink = `${process.env.BASE_URL}/email-verification/verify?token=${token}`;
+    const magicLink = `${process.env.APP_URL}/email-verification/verify?token=${token}`;
     const subject = 'Magic Link to verify your email';
     const emailBody =
       'Click on the link below to verify your email address: <a href="' + magicLink + '">Verify Email</a>';
     //api call to send the magicLink through resend
+    const data = {
+      email,
+      subject,
+      emailBody,
+    };
     try {
-      const res = await fetch(`${process.env.BASE_URL}/api/resend`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, subject, emailBody }),
-      });
-      if (!res.ok) {
-        return { error: 'Something went wrong, please try again' };
+      const res = await axios.post(`${process.env.APP_URL}/api/resend`, data);
+      if (res.status === 200) {
+        return { error: res.data.message };
       }
     } catch (err) {
       return { error: `${err}` };
     }
 
     return {
-      message: 'Magic link sent successfully',
+      message: 'Magic Link sent successfully',
     };
   } catch (err) {
     return { error: err };

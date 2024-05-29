@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 export default function EmailVerification({ searchParams }: { searchParams: { message: string } }) {
   //function to send the magicLink to the entered email
   const handleEmailVerification = async (formData: FormData) => {
+    'use server';
     const email = formData.get('email') as string;
 
     if (!email) {
