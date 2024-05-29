@@ -1,7 +1,12 @@
 'use client';
 
-import { BarChart } from '@tremor/react';
+// This file is a component that displays a bar chart of API requests
+// It is used in the AdminDashboard component to display the API requests
+// The component receives the API requests data as a prop and displays the bar chart
+// The bar chart displays the total API requests, rejected requests, and successful requests
+
 import { FC } from 'react';
+import { BarChart } from '@tremor/react';
 
 const dataFormatter = (number: number) => Intl.NumberFormat('us').format(number).toString();
 
@@ -14,7 +19,7 @@ interface ChartData {
   }[];
 }
 
-const Chart: FC<ChartData> = ({ chartData }) => {
+const ApiRequestChart: FC<ChartData> = ({ chartData }) => {
   return (
     <>
       <div className='z-10 rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input'>
@@ -37,4 +42,4 @@ const Chart: FC<ChartData> = ({ chartData }) => {
   );
 };
 
-export default Chart;
+export default ApiRequestChart;

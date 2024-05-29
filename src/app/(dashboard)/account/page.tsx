@@ -23,7 +23,7 @@ export default async function Account() {
   };
 
   return (
-    <div className='p-8 space-y-10'>
+    <div className='p-4 space-y-10'>
       <div className='space-y-1'>
         <p className='text-2xl font-medium'>Account Settings</p>
         <p className='text-secondary'>
