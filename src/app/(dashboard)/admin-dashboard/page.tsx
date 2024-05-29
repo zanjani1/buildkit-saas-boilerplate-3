@@ -55,7 +55,7 @@ const AdminDashboard = async () => {
         return { name, 'Total API Requests': 0, Rejected: 0, Successful: 0 };
       }
 
-      let entries = (data as any) ?? [];
+      const entries = (data as any) ?? [];
 
       const totalRequests = entries.length;
       const rejected = entries.filter((entry: any) => !entry[field.split(', ')[0]]).length;

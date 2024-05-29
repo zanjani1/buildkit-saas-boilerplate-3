@@ -7,7 +7,6 @@
 import { FC } from 'react';
 import { TypeUser } from '@/types/types';
 import { AreaChart } from '@tremor/react';
-import { User } from '@supabase/supabase-js';
 
 // Formatter function to convert number to string
 const dataFormatter = (number: number | bigint) => number.toString();

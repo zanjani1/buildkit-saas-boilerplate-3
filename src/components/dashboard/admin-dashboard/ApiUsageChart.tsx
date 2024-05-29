@@ -124,7 +124,7 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
                 <ListItem key={item.name} className='space-x-6'>
                   <div className='flex items-center space-x-2.5 truncate'>
                     <span
-                      className={`h-2.5 w-2.5 shrink-0 rounded-sm bg-${item.color}-500`}
+                      className={`size-2.5 shrink-0 rounded-sm bg-${item.color}-500`}
                       aria-hidden={true}
                     />
                     <span className='truncate dark:text-dark-tremor-content-emphasis'>{item.name}</span>
