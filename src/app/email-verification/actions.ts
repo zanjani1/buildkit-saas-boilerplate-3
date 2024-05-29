@@ -34,21 +34,22 @@ export async function sendMagicLink(email: string) {
     const subject = 'Magic Link to verify your email';
     const emailBody =
       'Click on the link below to verify your email address: <a href="' + magicLink + '">Verify Email</a>';
-    //api call to send the magicLink through resend
     const data = {
       email,
       subject,
       emailBody,
     };
+
     try {
+      //api call to send the magicLink through resend
       const res = await axios.post(`${process.env.APP_URL}/api/resend`, data);
-      if (res.status === 200) {
+      if (res.status !== 200) {
         return { error: res.data.message };
       }
     } catch (err) {
       return { error: `${err}` };
     }
-
+    //return the message if the magicLink is sent successfully if no error encountered
     return {
       message: 'Magic Link sent successfully',
     };
@@ -68,6 +69,7 @@ function hashString(string: string) {
 export const verifyJWT = async (token: string) => {
   try {
     const secret_key = process.env.JWT_SECRET_KEY;
+
     if (secret_key) {
       const decoded = await jwt.verify(token, secret_key);
       const message = hashString(JSON.stringify(decoded));

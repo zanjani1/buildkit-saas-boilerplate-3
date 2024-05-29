@@ -1,5 +1,3 @@
-// 'use client';
-
 import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
 import config from '@/config';
@@ -16,6 +14,7 @@ export default function EmailVerification({ searchParams }: { searchParams: { me
     if (!email) {
       redirect(`/email-verification?message=Invalid email`);
     }
+
     const response = await sendMagicLink(email);
     if (response.error) {
       redirect(`/email-verification?message=${response.error}`);
