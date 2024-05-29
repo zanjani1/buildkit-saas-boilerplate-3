@@ -1,4 +1,4 @@
-// import WelcomeEmail from '@/components/email-template/WelcomeEmail';
+// import welcomeEmail from '@/components/email-template/WelcomeEmail';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
