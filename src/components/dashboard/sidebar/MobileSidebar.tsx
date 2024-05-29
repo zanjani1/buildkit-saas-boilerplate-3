@@ -16,7 +16,7 @@ const MobileSidebar = async () => {
     <div className='p-4 h-full flex items-center justify-between shadhow-sm'>
       <Logo />
       <Sheet>
-        <SheetTrigger className='md:hidden pr-4 hover:opacity-75 transition'>
+        <SheetTrigger className='md:hidden hover:opacity-75 transition'>
           <BiMenu size={20} />
         </SheetTrigger>
         <SheetContent side='left' className='p-0'>

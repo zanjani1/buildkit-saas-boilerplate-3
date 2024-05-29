@@ -1,7 +1,13 @@
 'use client';
+
+// This file is a component that displays an area chart of user counts by date
+// It is used in the AdminDashboard component to display the user counts by date
+// The component receives the list of users as a prop and aggregates the user counts by date to display the chart
+
+import { FC } from 'react';
 import { TypeUser } from '@/types/types';
 import { AreaChart } from '@tremor/react';
-import { FC } from 'react';
+import { User } from '@supabase/supabase-js';
 
 // Formatter function to convert number to string
 const dataFormatter = (number: number | bigint) => number.toString();
@@ -23,14 +29,12 @@ const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
   // Initialize an object to store user counts by date
   const userCountByDate: { [key: string]: number } = {};
 
-  // If users data is provided, aggregate user counts by date
-  if (users) {
-    users.forEach((user) => {
-      const date = new Date(user.created_at);
-      const formattedDate = formatDate(date);
-      userCountByDate[formattedDate] = (userCountByDate[formattedDate] || 0) + 1;
-    });
-  }
+  // aggregate user counts by date
+  users.forEach((user) => {
+    const date = new Date(user.created_at);
+    const formattedDate = formatDate(date);
+    userCountByDate[formattedDate] = (userCountByDate[formattedDate] || 0) + 1;
+  });
 
   // Prepare chart data by mapping user counts to chart data format
   const chartData = Object.keys(userCountByDate).map((date) => ({
@@ -39,7 +43,7 @@ const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
   }));
 
   return (
-    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-10 w-full lg:w-1/2'>
+    <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-8 w-full lg:w-1/2'>
       <div className='rounded-lg p-4 border'>
         <h3 className='text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
           Users Created by Date

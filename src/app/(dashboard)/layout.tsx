@@ -5,15 +5,16 @@ import MobileSidebar from '@/components/dashboard/sidebar/MobileSidebar';
 // Custom layout for Dashboared Pages including Sidebar and MobileSidebar.
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='flex'>
-      <div className='h-[80px] md:pl-56 fixed md:hidden inset-y-0 w-full z-50'>
-        <MobileSidebar />
-      </div>
-      <div className='w-64 hidden md:block'>
+    <div className='h-screen flex'>
+      <div className='w-72 hidden md:flex flex-col'>
         <Sidebar />
       </div>
-
-      <div className='w-full h-screen overflow-auto mt-[80px] md:mt-0'>{children}</div>
+      <div className='w-full max-w-7xl overflow-auto px-1'>
+        <div className='md:hidden'>
+          <MobileSidebar />
+        </div>
+        {children}
+      </div>
     </div>
   );
 };
