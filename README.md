@@ -29,21 +29,30 @@ BuilderKit is a Next.js SaaS AI Boilerplate project designed to accelerate the d
 Ensure you have the following installed:
 
 - Node.js (v14 or higher)
-- npm or yarn
+- npm or pnpm or yarn `(npm for me)`
 
 ### Installation
 
 1. **Clone the repository:**
 
-   Use the Project Url based on your plan
+   Use the Project URL based on your plan
 
-   - Starter - https://github.com/1811-Labs-LLC/BuilderKit-Starter.git
-   - Pro - https://github.com/1811-Labs-LLC/BuilderKit-Pro.git
+   **Starter**
 
    ```sh
-   git clone <url>
+   git clone https://github.com/1811-Labs-LLC/BuilderKit-Starter.git [YOUR_APP_NAME]
+   ```
 
-   cd builderkit
+   **Pro**
+
+   ```sh
+   git clone https://github.com/1811-Labs-LLC/BuilderKit-Pro.git [YOUR_APP_NAME]
+   ```
+
+   ```sh
+   cd [YOUR_APP_NAME]
+
+   git remote remove origin
 
    git checkout content-writer
    ```
@@ -52,8 +61,6 @@ Ensure you have the following installed:
 
    ```sh
    npm install
-   # or
-   yarn install
    ```
 
 3. **Environment Variables:**
@@ -82,10 +89,14 @@ Ensure you have the following installed:
    This will sync the table schema locally from Supabase. Run the below commands to login to supabase and sync the schema type.
 
    ```sh
-   supabase login
+   npx supabase login
 
-   npx supabase gen types typescript --project-id <project-id> --schema public > src/types/supabase.ts
+   npx supabase init
+
+   npx supabase gen types typescript --project-id [PROJECT_ID] --schema public > src/types/supabase.ts
    ```
+
+   _To get the **PROJECT ID**, go to **Project Settings** in Supabase where you have created your project. You will find **Reference ID** under **General settings** section which is your Project ID._
 
 ### Running the Application
 
@@ -93,8 +104,6 @@ Ensure you have the following installed:
 
    ```sh
    npm run dev
-   # or
-   yarn dev
    ```
 
    This will start the development server on `http://localhost:3000`.
@@ -103,8 +112,6 @@ Ensure you have the following installed:
 
    ```sh
    npm run build
-   # or
-   yarn build
    ```
 
    This command compiles the application for production usage.
@@ -113,8 +120,6 @@ Ensure you have the following installed:
 
    ```sh
    npm start
-   # or
-   yarn start
    ```
 
    This will start the application in production mode.
