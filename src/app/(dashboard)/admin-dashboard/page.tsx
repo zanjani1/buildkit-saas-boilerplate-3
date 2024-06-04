@@ -38,37 +38,29 @@ const AdminDashboard = async () => {
     { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
     { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
     { name: 'Content Creations', table: 'content_creations', field: 'results' },
-    { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history, model' },
+    { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
     { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
   ];
 
   // Fetch data from each table
   const chartData: ChartData[] = await Promise.all(
     tables.map(async ({ name, table, field }) => {
-      const { data, error } = await supabaseAdmin
-        .from(table as SupabaseTable)
-        .select(field)
-        .order('created_at', { ascending: false });
+      const { data, error } = await supabaseAdmin.from(table as SupabaseTable).select(field);
 
       if (error) {
         console.error(`Error fetching data from ${table}:`, error);
         return { name, 'Total API Requests': 0, Rejected: 0, Successful: 0 };
       }
 
-      const entries = (data as any) ?? [];
-
-      const totalRequests = entries.length;
-      const rejected = entries.filter((entry: any) => !entry[field.split(', ')[0]]).length;
-      const successful = entries.filter(
-        (entry: any) => entry[field.split(', ')[0]] && entry[field.split(', ')[0]].length > 0
-      ).length;
+      const totalRequests = data.length;
+      const successful = data.filter((entry: any) => entry[field]?.length > 0).length;
 
       return {
         name,
         'Total API Requests': totalRequests,
-        Rejected: rejected,
+        Rejected: totalRequests - successful,
         Successful: successful,
-        entries,
+        entries: data,
       };
     })
   );
@@ -84,7 +76,7 @@ const AdminDashboard = async () => {
       <ApiRequestChart chartData={chartData} />
       <div className='block lg:flex gap-8'>
         <ApiUsageChart chartData={chartData} />
-        {users && <UsersAreaChart users={users} />}
+        <UsersAreaChart users={users || []} />
       </div>
     </div>
   );
