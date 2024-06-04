@@ -7,15 +7,16 @@
 import { FC } from 'react';
 import { TypeUser } from '@/types/types';
 import { AreaChart } from '@tremor/react';
+import { format } from 'date-fns';
 
 // Formatter function to convert number to string
 const dataFormatter = (number: number | bigint) => number.toString();
 
 // Function to format the date
 const formatDate = (date: Date) => {
-  const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'short' });
-  return `${day}${day % 10 === 1 && day !== 11 ? 'st' : day % 10 === 2 && day !== 12 ? 'nd' : day % 10 === 3 && day !== 13 ? 'rd' : 'th'} ${month}`;
+  const day = format(date, "do"); // Day with ordinal suffix
+  const month = format(date, 'MMMM'); // Full month name
+  return `${day} ${month}`;
 };
 
 // Define the props type for the component

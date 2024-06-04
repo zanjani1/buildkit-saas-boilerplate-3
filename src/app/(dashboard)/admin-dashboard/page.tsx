@@ -31,6 +31,8 @@ const AdminDashboard = async () => {
     redirect('/sample-dashboard');
   }
 
+  // Define the tables to fetch data from supabase
+  // Each table has a name, table name, and field name to fetch data from the table
   const tables = [
     { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
     { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
@@ -52,9 +54,11 @@ const AdminDashboard = async () => {
         return { name, 'Total API Requests': 0, Rejected: 0, Successful: 0 };
       }
 
+      // Calculate the total requests, successful requests, and rejected requests
       const totalRequests = data.length;
       const successful = data.filter((entry: any) => entry[field]?.length > 0).length;
 
+      // Return the chart data with the total requests, successful requests, and rejected requests
       return {
         name,
         'Total API Requests': totalRequests,
