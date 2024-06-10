@@ -10,7 +10,7 @@ import { PiChatsLight } from 'react-icons/pi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { SubmitButton } from '@/app/(dashboard)/account/SubmitButton';
+import { SubmitButton } from '@/components/SubmitButton';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 

@@ -10,7 +10,7 @@ import { redirect } from 'next/navigation';
 import { supabaseServerClient } from '@/utils/supabase/server';
 import { headers } from 'next/headers';
 import { getUser } from '@/utils/get-user';
-import { SubmitButton } from '../(dashboard)/account/SubmitButton';
+import { SubmitButton } from '../../components/SubmitButton';
 
 export default async function ForgotPassword({ searchParams }: { searchParams: { message: string } }) {
   const user = await getUser();
