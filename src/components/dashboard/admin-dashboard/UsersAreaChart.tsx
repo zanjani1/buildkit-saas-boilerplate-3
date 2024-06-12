@@ -14,7 +14,7 @@ const dataFormatter = (number: number | bigint) => number.toString();
 
 // Function to format the date
 const formatDate = (date: Date) => {
-  const day = format(date, "do"); // Day with ordinal suffix
+  const day = format(date, 'do'); // Day with ordinal suffix
   const month = format(date, 'MMMM'); // Full month name
   return `${day} ${month}`;
 };
