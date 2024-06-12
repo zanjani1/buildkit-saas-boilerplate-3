@@ -5,7 +5,7 @@
 import InputWrapper from '@/components/InputWrapper';
 import PopoverLocationInfo from '@/components/dashboard/account/PopoverLocationInfo';
 import { Input } from '@/components/ui/input';
-import { SubmitButton } from './SubmitButton';
+import { SubmitButton } from '../../../components/SubmitButton';
 
 export default async function Account() {
   // This function is triggered when the user submits the form.

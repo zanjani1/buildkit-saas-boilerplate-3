@@ -19,7 +19,7 @@ const config = {
   crisp: {
     // Crisp Website ID.
     id: 'b602d409-734d-41c6-919a-2f568ccce58c',
-    // By default crisp is visible on every route. If you want to hide crisp from a specific route add the routes below. Eg. Un-comment bellow to hide Crisp from '/'. You can also show Crisp manually with <ButtonSupport/>.
+    // By default crisp is visible on every route. If you want to hide crisp from a specific route add the routes below. Eg. Un-comment bellow to hide Crisp from '/'. You can also show Crisp manually with <ButtonCrispSupport/>.
     // Recommended to hide Crisp from "/reset-password" route as it may interfere with the reset password process.
     hideOnRoutes: ['/reset-password', '/ai-modules'],
   },
