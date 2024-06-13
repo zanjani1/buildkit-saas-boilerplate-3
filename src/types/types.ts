@@ -5,6 +5,7 @@ export type EnumSubscription = Database['public']['Enums']['subscriptiontype'];
 export type EnumSubscriptionBillingCycle = Database['public']['Enums']['billingcycle'];
 
 export type TypeUser = Database['public']['Tables']['users']['Row'];
+
 // Custom types
 
 export type TypeSubscriptionPlan = 'trial' | 'standard' | 'premium';

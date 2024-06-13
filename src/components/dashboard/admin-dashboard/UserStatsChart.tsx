@@ -13,34 +13,27 @@ import { format } from 'date-fns';
 const dataFormatter = (number: number | bigint) => number.toString();
 
 // Function to format the date
-const formatDate = (date: Date) => {
-  const day = format(date, 'do'); // Day with ordinal suffix
-  const month = format(date, 'MMMM'); // Full month name
-  return `${day} ${month}`;
-};
+const formatDate = (date: Date) => format(date, 'do MMMM');
 
 // Define the props type for the component
-type UsersAreaChartType = {
+interface UserStatsChartProps {
   users: TypeUser[];
-};
+}
 
 // Functional component to display area chart of user counts by date
-const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
-  // Initialize an object to store user counts by date
-  const userCountByDate: { [key: string]: number } = {};
-
-  // aggregate user counts by date
-  users.forEach((user) => {
-    const date = new Date(user.created_at);
-    const formattedDate = formatDate(date);
-    userCountByDate[formattedDate] = (userCountByDate[formattedDate] || 0) + 1;
-  });
+const UserStatsChart: FC<UserStatsChartProps> = ({ users }) => {
+  // Aggregate user counts by date
+  const userCountByDate = users.reduce(
+    (acc, user) => {
+      const date = formatDate(new Date(user.created_at));
+      acc[date] = (acc[date] || 0) + 1;
+      return acc;
+    },
+    {} as { [key: string]: number }
+  );
 
   // Prepare chart data by mapping user counts to chart data format
-  const chartData = Object.keys(userCountByDate).map((date) => ({
-    date,
-    Users: userCountByDate[date],
-  }));
+  const chartData = Object.entries(userCountByDate).map(([date, usersCount]) => ({ date, usersCount }));
 
   return (
     <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-8 w-full lg:w-1/2'>
@@ -62,4 +55,4 @@ const UsersAreaChart: FC<UsersAreaChartType> = ({ users }) => {
   );
 };
 
-export default UsersAreaChart;
+export default UserStatsChart;

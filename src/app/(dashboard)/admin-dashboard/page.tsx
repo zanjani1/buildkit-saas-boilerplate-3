@@ -1,6 +1,6 @@
 import ApiRequestChart from '@/components/dashboard/admin-dashboard/ApiRequestChart';
 import ApiUsageChart from '@/components/dashboard/admin-dashboard/ApiUsageChart';
-import UsersAreaChart from '@/components/dashboard/admin-dashboard/UsersAreaChart';
+import UserStatsChart from '@/components/dashboard/admin-dashboard/UsersAreaChart';
 import { getUser } from '@/utils/get-user';
 import { supabaseAdmin } from '@/utils/supabase/admin';
 import { redirect } from 'next/navigation';
@@ -16,6 +16,19 @@ type SupabaseTable =
   | 'multillm_chatgpt'
   | 'chat_with_file';
 
+// Define the tables to fetch data from supabase
+// Each table has a name, table name, and field name to fetch data from the table
+const tables = [
+  { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
+  { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
+  { name: 'Voice Transcriptions', table: 'voice_transcriptions', field: 'transcription' },
+  { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
+  { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
+  { name: 'Content Creations', table: 'content_creations', field: 'results' },
+  { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
+  { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
+];
+
 // Define the type of chart data
 interface ChartData {
   name: string;
@@ -30,19 +43,6 @@ const AdminDashboard = async () => {
   if (!user) {
     redirect('/sample-dashboard');
   }
-
-  // Define the tables to fetch data from supabase
-  // Each table has a name, table name, and field name to fetch data from the table
-  const tables = [
-    { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
-    { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
-    { name: 'Voice Transcriptions', table: 'voice_transcriptions', field: 'transcription' },
-    { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
-    { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
-    { name: 'Content Creations', table: 'content_creations', field: 'results' },
-    { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
-    { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
-  ];
 
   // Fetch data from each table
   const chartData: ChartData[] = await Promise.all(
@@ -80,7 +80,7 @@ const AdminDashboard = async () => {
       <ApiRequestChart chartData={chartData} />
       <div className='block lg:flex gap-8'>
         <ApiUsageChart chartData={chartData} />
-        <UsersAreaChart users={users || []} />
+        <UserStatsChart users={users || []} />
       </div>
     </div>
   );

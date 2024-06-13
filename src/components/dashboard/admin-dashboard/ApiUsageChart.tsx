@@ -13,6 +13,14 @@ interface ApiUsageChartType {
   }[];
 }
 
+type TypeCategorizedData = {
+  [key: string]: {
+    name: string;
+    'Total API Requests': number;
+    color: string;
+  };
+};
+
 const categoryColors: { [key: string]: string } = {
   'Control Net': 'blue',
   'Stable Diffusion': 'green',
@@ -26,7 +34,7 @@ const categoryColors: { [key: string]: string } = {
 };
 
 // Function to categorize API usage based on tools and models
-const getCategoryForTool = (tool: string, model?: string | null): string[] => {
+const getCategoryForTool = (tool: string): string[] => {
   // Define mappings of tools to categories
   const toolCategoryMappings: { [key: string]: string[] } = {
     'Interior Designs': ['Control Net'],
@@ -36,14 +44,7 @@ const getCategoryForTool = (tool: string, model?: string | null): string[] => {
     'Content Creations': ['OpenAI'],
     'Headshot Models': ['Astria'],
     'Chat With PDF': ['OpenAI'],
-    'MultiLLM Chatgpt': model
-      ? [
-          model.includes('gpt') ? 'OpenAI' : '',
-          model.includes('claude') ? 'Claude' : '',
-          model.includes('llama') ? 'Llama 2' : '',
-          model.includes('mistral') ? 'Mistral' : '',
-        ].filter(Boolean)
-      : ['Other'],
+    'MultiLLM Chatgpt': ['Claude'],
   };
 
   // Retrieve categories for the tool
@@ -52,47 +53,22 @@ const getCategoryForTool = (tool: string, model?: string | null): string[] => {
 
 const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
   // Categorize API usage data
-  const categorizedData = chartData.reduce(
-    (acc, item) => {
-      const totalRequests = item['Total API Requests'];
+  const categorizedData = chartData.reduce((acc, item) => {
+    const totalRequests = item['Total API Requests'];
+    const categories = getCategoryForTool(item.name);
 
-      if (item.name === 'MultiLLM Chatgpt' && item.entries) {
-        item.entries.forEach((entry) => {
-          const categories = getCategoryForTool(item.name, entry.model);
-          categories.forEach((category) => {
-            if (!acc[category]) {
-              acc[category] = {
-                name: category,
-                'Total API Requests': 0,
-                color: categoryColors[category],
-              };
-            }
-            acc[category]['Total API Requests'] += 1;
-          });
-        });
-      } else {
-        const categories = getCategoryForTool(item.name);
-        categories.forEach((category) => {
-          if (!acc[category]) {
-            acc[category] = {
-              name: category,
-              'Total API Requests': 0,
-              color: categoryColors[category],
-            };
-          }
-          acc[category]['Total API Requests'] += totalRequests;
-        });
+    categories.forEach((category) => {
+      if (!acc[category]) {
+        acc[category] = {
+          name: category,
+          'Total API Requests': 0,
+          color: categoryColors[category],
+        };
       }
-      return acc;
-    },
-    {} as {
-      [key: string]: {
-        name: string;
-        'Total API Requests': number;
-        color: string;
-      };
-    }
-  );
+      acc[category]['Total API Requests'] += totalRequests;
+    });
+    return acc;
+  }, {} as TypeCategorizedData);
 
   // Convert categorized data to array
   const categorizedChartData = Object.values(categorizedData);
