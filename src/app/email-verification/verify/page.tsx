@@ -14,8 +14,7 @@ type Props = {
 export default function Verify({ searchParams }: Props) {
   const [message, setMessage] = useState<string>();
   const [showButton, setShowButton] = useState<boolean>(false);
-
-  const magicId = localStorage.getItem('magicId');
+  const [magicId, setMagicId] = useState<string | null>(null);
   const token = searchParams?.token;
   const router = useRouter();
 
@@ -40,8 +39,16 @@ export default function Verify({ searchParams }: Props) {
   }, [token, magicId]);
 
   useEffect(() => {
-    handleResponse();
-  }, [handleResponse]);
+    // This will run only on the client side
+    const storedMagicId = localStorage.getItem('magicId');
+    setMagicId(storedMagicId);
+  }, []);
+
+  useEffect(() => {
+    if (magicId !== null) {
+      handleResponse();
+    }
+  }, [handleResponse, magicId]);
 
   return (
     <div className='h-screen flex flex-col justify-center items-center'>
