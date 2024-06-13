@@ -1,6 +1,6 @@
 import ApiRequestChart from '@/components/dashboard/admin-dashboard/ApiRequestChart';
 import ApiUsageChart from '@/components/dashboard/admin-dashboard/ApiUsageChart';
-import UserStatsChart from '@/components/dashboard/admin-dashboard/UsersAreaChart';
+import UserStatsChart from '@/components/dashboard/admin-dashboard/UserStatsChart';
 import { getUser } from '@/utils/get-user';
 import { supabaseAdmin } from '@/utils/supabase/admin';
 import { redirect } from 'next/navigation';
