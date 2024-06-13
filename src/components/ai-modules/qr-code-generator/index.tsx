@@ -2,7 +2,7 @@
 
 'use client';
 
-import { SubmitButton } from '@/app/(dashboard)/account/SubmitButton';
+import { SubmitButton } from '@/components/SubmitButton';
 import InputWrapper from '@/components/InputWrapper';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

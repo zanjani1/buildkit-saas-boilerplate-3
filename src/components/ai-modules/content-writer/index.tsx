@@ -2,7 +2,7 @@
 
 'use client';
 
-import { SubmitButton } from '@/app/(dashboard)/account/SubmitButton';
+import { SubmitButton } from '@/components/SubmitButton';
 import { FC, useState } from 'react';
 import { toast } from '@/components/ui/use-toast';
 import { errorToast } from '@/utils/utils';

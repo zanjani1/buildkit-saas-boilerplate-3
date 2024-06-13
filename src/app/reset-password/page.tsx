@@ -9,7 +9,7 @@ import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
 import config from '@/config';
 import { supabaseServerClient } from '@/utils/supabase/server';
-import { SubmitButton } from '../(dashboard)/account/SubmitButton';
+import { SubmitButton } from '../../components/SubmitButton';
 
 export default async function ResetPassword({
   searchParams,
