@@ -1,41 +1,41 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { verifyJWT } from '../actions';
+import { verifyMagicLink } from '../actions';
 import { useRouter } from 'next/navigation';
-
-type responseType = {
-  error?: string;
-  message?: string;
-};
+import { Button } from '@/components/ui/button';
 
 const successMessage = 'Congratulations! You have verified your Email ID through Magic Link.';
 
-export default function Verify({ searchParams }: { searchParams: { token: string } }) {
+type Props = {
+  searchParams: { token: string };
+};
+
+export default function Verify({ searchParams }: Props) {
   const [message, setMessage] = useState<string>();
   const [showButton, setShowButton] = useState<boolean>(false);
+
   const magicId = localStorage.getItem('magicId');
   const token = searchParams?.token;
   const router = useRouter();
 
-  //function to call the verifyJWT function and handle the response and set the message
+  //function to call the verifyMagicLink function and handle the response and set the message
   const handleResponse = useCallback(async () => {
     if (token) {
-      const response: responseType = await verifyJWT(token);
+      const response = await verifyMagicLink(token);
 
-      if (response.error) {
+      if (typeof response == 'string') {
         setShowButton(true);
-        setMessage(response.error);
-      } else if (response.message) {
+        setMessage(response);
+      } else {
         localStorage.setItem('magicId', response.message);
         setMessage(successMessage);
       }
+    } else if (magicId) {
+      setMessage('You have already verified your Email ID through Magic Link.');
     } else {
-      if (magicId) setMessage('You have already verified your Email ID through Magic Link.');
-      else {
-        setShowButton(true);
-        setMessage('Please verify your Email ID through Magic Link.');
-      }
+      setShowButton(true);
+      setMessage('Please verify your Email ID through Magic Link.');
     }
   }, [token, magicId]);
 
@@ -47,13 +47,9 @@ export default function Verify({ searchParams }: { searchParams: { token: string
     <div className='h-screen flex flex-col justify-center items-center'>
       {message && <p className='w-full mt-4 p-4 bg-muted text-sm text-center rounded-md'>{message}</p>}
       {showButton && (
-        <button
-          className='mt-4 p-4 bg-primary text-white text-sm text-center rounded-md'
-          onClick={() => {
-            router.push('/email-verification');
-          }}>
+        <Button onClick={() => router.push('/email-verification')} className='mt-4'>
           Verify Email
-        </button>
+        </Button>
       )}
     </div>
   );

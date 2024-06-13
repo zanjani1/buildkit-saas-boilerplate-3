@@ -9,15 +9,15 @@ export default function EmailVerification({ searchParams }: { searchParams: { me
   //function to send the magicLink to the entered email
   const handleEmailVerification = async (formData: FormData) => {
     'use server';
-    const email = formData.get('email') as string;
 
+    const email = formData.get('email') as string;
     if (!email) {
       redirect(`/email-verification?message=Invalid email`);
     }
 
     const response = await sendMagicLink(email);
-    if (response.error) {
-      redirect(`/email-verification?message=${response.error}`);
+    if (typeof response === 'string') {
+      redirect(`/email-verification?message=${response}`);
     } else if (response.message) {
       redirect(`/email-verification?message=${response.message}`);
     }

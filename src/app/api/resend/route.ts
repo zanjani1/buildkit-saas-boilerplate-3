@@ -1,12 +1,9 @@
-// import welcomeEmail from '@/components/email-template/WelcomeEmail';
+import config from '@/config';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize the Resend instance with the API key from environment variables
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const senderEmailAddress = 'onboarding@resend.dev';
-// const testEmail = 'deliered@resend.dev'; // Use this email address to test the email sending functionality.
 
 export async function POST(req: Request) {
   try {
@@ -15,9 +12,9 @@ export async function POST(req: Request) {
 
     // Send the mail using the Resend instance
     await resend.emails.send({
-      from: senderEmailAddress,
+      from: config.resend.senderEmailAddress,
       to: email, // For multiple addresses, send as an array of strings. Max 50. It will not send emails to custom emails until you configure your domain in Resend.
-      subject: subject,
+      subject,
       html: emailBody, //add email body in HTML format
     });
 
