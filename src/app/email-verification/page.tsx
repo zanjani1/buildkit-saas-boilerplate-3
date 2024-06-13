@@ -1,9 +1,9 @@
 import InputWrapper from '@/components/InputWrapper';
 import { Input } from '@/components/ui/input';
 import config from '@/config';
-import { SubmitButton } from '../(dashboard)/account/SubmitButton';
 import { sendMagicLink } from './actions';
 import { redirect } from 'next/navigation';
+import { SubmitButton } from '@/components/SubmitButton';
 
 export default function EmailVerification({ searchParams }: { searchParams: { message: string } }) {
   //function to send the magicLink to the entered email
