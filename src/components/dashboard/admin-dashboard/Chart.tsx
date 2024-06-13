@@ -23,7 +23,7 @@ const Chart: FC<ChartData> = ({ chartData }) => {
             API Requests
           </h3>
           <BarChart
-            className='mt-6'
+            className='mt-6 h-64'
             data={chartData}
             index='name'
             categories={['Total API Requests', 'Rejected', 'Successful']}

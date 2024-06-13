@@ -36,4 +36,10 @@ export type TypeConfig = {
   loops: {
     baseUrl: string;
   };
+  resend: {
+    senderEmailAddress: string;
+  };
+  sentry?: {
+    dsn: string;
+  };
 };

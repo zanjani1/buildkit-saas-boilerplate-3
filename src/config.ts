@@ -81,6 +81,14 @@ const config = {
   loops: {
     baseUrl: 'https://app.loops.so/api/v1',
   },
+  resend: {
+    // Update the sender email address for the Resend service.
+    senderEmailAddress: 'onboarding@resend.dev',
+  },
+  // Uncomment the following block to enable Sentry error tracking. And add the DSN key.
+  // sentry: {
+  //   dsn: 'YOUR_SENTRY_DSN_KEY',
+  // },
 };
 
 export default config as TypeConfig;

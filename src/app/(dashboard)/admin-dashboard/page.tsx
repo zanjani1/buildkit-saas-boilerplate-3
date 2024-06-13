@@ -61,6 +61,8 @@ const sampleDashboard = async () => {
       { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
       { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
       { name: 'Content Creations', table: 'content_creations', field: 'results' },
+      { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
+      { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
     ];
 
     const chartData = [];
