@@ -59,7 +59,7 @@ Ensure you have the following installed:
    npm install
    ```
 
-3. **Environment Variables:**
+3. **Environment Variables (Optional):**
 
    Create a `.env.local` file in the root directory and add the following variables:
 
@@ -105,6 +105,8 @@ Ensure you have the following installed:
    ```
 
    This will start the development server on `http://localhost:3000`.
+
+   > Note: To enable Google Authentication for your application, please refer to the [Supabase Setup Guide](https://docs.builderkit.ai/setup/supabase).
 
 2. **Build for production:**
 
