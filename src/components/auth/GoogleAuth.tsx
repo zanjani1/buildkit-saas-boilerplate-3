@@ -4,7 +4,6 @@
 
 'use client';
 
-import config from '@/config';
 import { supabaseBrowserClient } from '@/utils/supabase/client';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
@@ -14,7 +13,7 @@ export default function GoogleAuth() {
 
   // Ensure the redirect URL is configured correctly in the Supabase project settings.
   // Incorrect configuration can lead to failed authentication attempts or security vulnerabilities.
-  const redirectUrl = `${config.app.url}/api/auth/callback`;
+  const redirectUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/callback`;
 
   return (
     <div className='w-full mt-4'>

@@ -3,6 +3,44 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 export type Database = {
   public: {
     Tables: {
+      chat_with_file: {
+        Row: {
+          chat_history: Json | null;
+          created_at: string;
+          file: string;
+          filename: string;
+          history_metadata: string | null;
+          id: string;
+          user_id: string;
+        };
+        Insert: {
+          chat_history?: Json | null;
+          created_at?: string;
+          file: string;
+          filename: string;
+          history_metadata?: string | null;
+          id?: string;
+          user_id: string;
+        };
+        Update: {
+          chat_history?: Json | null;
+          created_at?: string;
+          file?: string;
+          filename?: string;
+          history_metadata?: string | null;
+          id?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'chat_with_file_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       content_creations: {
         Row: {
           created_at: string;
@@ -11,6 +49,8 @@ export type Database = {
           style: string;
           topic: string;
           user_id: string;
+          voice: string | null;
+          word_limit: string | null;
         };
         Insert: {
           created_at?: string;
@@ -19,6 +59,8 @@ export type Database = {
           style: string;
           topic: string;
           user_id: string;
+          voice?: string | null;
+          word_limit?: string | null;
         };
         Update: {
           created_at?: string;
@@ -27,6 +69,8 @@ export type Database = {
           style?: string;
           topic?: string;
           user_id?: string;
+          voice?: string | null;
+          word_limit?: string | null;
         };
         Relationships: [
           {
@@ -195,12 +239,11 @@ export type Database = {
           error: string | null;
           id: string;
           image_urls: string[] | null;
-          negative_prompt: string | null;
-          no_of_outputs: string;
           prediction_id: string;
           prompt: string;
           ref_image: string;
-          scale: number;
+          room_type: string;
+          theme: string;
           user_id: string;
         };
         Insert: {
@@ -208,12 +251,11 @@ export type Database = {
           error?: string | null;
           id?: string;
           image_urls?: string[] | null;
-          negative_prompt?: string | null;
-          no_of_outputs: string;
           prediction_id: string;
           prompt: string;
           ref_image: string;
-          scale: number;
+          room_type: string;
+          theme: string;
           user_id: string;
         };
         Update: {
@@ -221,17 +263,51 @@ export type Database = {
           error?: string | null;
           id?: string;
           image_urls?: string[] | null;
-          negative_prompt?: string | null;
-          no_of_outputs?: string;
           prediction_id?: string;
           prompt?: string;
           ref_image?: string;
-          scale?: number;
+          room_type?: string;
+          theme?: string;
           user_id?: string;
         };
         Relationships: [
           {
             foreignKeyName: 'interior_designs_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      multillm_chatgpt: {
+        Row: {
+          chat_history: Json | null;
+          created_at: string;
+          id: string;
+          model: string | null;
+          title: string | null;
+          user_id: string;
+        };
+        Insert: {
+          chat_history?: Json | null;
+          created_at?: string;
+          id?: string;
+          model?: string | null;
+          title?: string | null;
+          user_id: string;
+        };
+        Update: {
+          chat_history?: Json | null;
+          created_at?: string;
+          id?: string;
+          model?: string | null;
+          title?: string | null;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'multillm_chatgpt_user_id_fkey';
             columns: ['user_id'];
             isOneToOne: false;
             referencedRelation: 'users';
@@ -367,6 +443,7 @@ export type Database = {
         Row: {
           audio_url: string | null;
           created_at: string;
+          error: string | null;
           id: string;
           summary: string | null;
           transcription: string | null;
@@ -376,6 +453,7 @@ export type Database = {
         Insert: {
           audio_url?: string | null;
           created_at?: string;
+          error?: string | null;
           id?: string;
           summary?: string | null;
           transcription?: string | null;
@@ -385,6 +463,7 @@ export type Database = {
         Update: {
           audio_url?: string | null;
           created_at?: string;
+          error?: string | null;
           id?: string;
           summary?: string | null;
           transcription?: string | null;
@@ -401,40 +480,41 @@ export type Database = {
           },
         ];
       };
-      youtube_chats: {
+      youtube_summary_tool: {
         Row: {
-          chat: Json | null;
+          chat_history: Json | null;
           created_at: string;
           id: string;
-          transcription: Json;
-          url: string;
+          output_style: string;
+          summary: string | null;
+          tone: string;
+          transcription: string | null;
           user_id: string;
+          video_link: string;
         };
         Insert: {
-          chat?: Json | null;
+          chat_history?: Json | null;
           created_at?: string;
           id?: string;
-          transcription: Json;
-          url: string;
+          output_style: string;
+          summary?: string | null;
+          tone: string;
+          transcription?: string | null;
           user_id: string;
+          video_link: string;
         };
         Update: {
-          chat?: Json | null;
+          chat_history?: Json | null;
           created_at?: string;
           id?: string;
-          transcription?: Json;
-          url?: string;
+          output_style?: string;
+          summary?: string | null;
+          tone?: string;
+          transcription?: string | null;
           user_id?: string;
+          video_link?: string;
         };
-        Relationships: [
-          {
-            foreignKeyName: 'youtube_chats_user_id_fkey';
-            columns: ['user_id'];
-            isOneToOne: false;
-            referencedRelation: 'users';
-            referencedColumns: ['id'];
-          },
-        ];
+        Relationships: [];
       };
     };
     Views: {

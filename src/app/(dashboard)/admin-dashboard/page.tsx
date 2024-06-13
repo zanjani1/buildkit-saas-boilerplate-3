@@ -1,10 +1,9 @@
-import Chart from '@/components/dashboard/admin-dashboard/Chart';
-import ApiUsageChart from '@/components/dashboard/admin-dashboard/DonutChart';
-import UsersAreaChart from '@/components/dashboard/admin-dashboard/UsersAreaChart';
+import ApiRequestChart from '@/components/dashboard/admin-dashboard/ApiRequestChart';
+import ApiUsageChart from '@/components/dashboard/admin-dashboard/ApiUsageChart';
+import UserStatsChart from '@/components/dashboard/admin-dashboard/UserStatsChart';
 import { getUser } from '@/utils/get-user';
 import { supabaseAdmin } from '@/utils/supabase/admin';
 import { redirect } from 'next/navigation';
-import React from 'react';
 
 // Define the type of Supabase tables
 type SupabaseTable =
@@ -13,77 +12,64 @@ type SupabaseTable =
   | 'image_generations'
   | 'interior_designs'
   | 'qr_code_generations'
-  | 'voice_transcriptions';
+  | 'voice_transcriptions'
+  | 'multillm_chatgpt'
+  | 'chat_with_file';
 
-const sampleDashboard = async () => {
+// Define the tables to fetch data from supabase
+// Each table has a name, table name, and field name to fetch data from the table
+const tables = [
+  { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
+  { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
+  { name: 'Voice Transcriptions', table: 'voice_transcriptions', field: 'transcription' },
+  { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
+  { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
+  { name: 'Content Creations', table: 'content_creations', field: 'results' },
+  { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
+  { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
+];
+
+// Define the type of chart data
+interface ChartData {
+  name: string;
+  'Total API Requests': number;
+  Rejected: number;
+  Successful: number;
+}
+
+const AdminDashboard = async () => {
   const user = await getUser();
 
   if (!user) {
     redirect('/sample-dashboard');
   }
 
-  // Function to fetch data from a table and specific field
-  async function fetchData(table: SupabaseTable, field: string) {
-    try {
-      const { data } = await supabaseAdmin
-        .from(table)
-        .select(field)
-        .order('created_at', { ascending: false });
+  // Fetch data from each table
+  const chartData: ChartData[] = await Promise.all(
+    tables.map(async ({ name, table, field }) => {
+      const { data, error } = await supabaseAdmin.from(table as SupabaseTable).select(field);
 
-      return data ?? [];
-    } catch (error) {
-      console.error(`Error fetching data from ${table}:`, error);
-      return [];
-    }
-  }
+      if (error) {
+        console.error(`Error fetching data from ${table}:`, error);
+        return { name, 'Total API Requests': 0, Rejected: 0, Successful: 0 };
+      }
 
-  // Function to count rejected and successful entries
-  function countRejectedAndSuccessful(data: any[], field: string) {
-    const rejected = data.filter((item) => !item[field]);
-    const successful = data.filter((item) => item[field] && item[field].length > 0);
-    return { rejected: rejected.length, successful: successful.length };
-  }
+      // Calculate the total requests, successful requests, and rejected requests
+      const totalRequests = data.length;
+      const successful = data.filter((entry: any) => entry[field]?.length > 0).length;
 
-  // Function to fetch data and process statistics
-  async function fetchDataAndProcessStats(table: string, field: string) {
-    const data = await fetchData(table as SupabaseTable, field);
-    const totalRequests = data?.length;
-    const { rejected, successful } = countRejectedAndSuccessful(data, field);
-    return { totalRequests, rejected, successful };
-  }
-
-  // Function to fetch statistics
-  async function fetchStatistics() {
-    const tables = [
-      { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
-      { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
-      { name: 'Voice Transcriptions', table: 'voice_transcriptions', field: 'transcription' },
-      { name: 'Interior Designs', table: 'interior_designs', field: 'image_urls' },
-      { name: 'Headshot Models', table: 'headshot_generations', field: 'image_urls' },
-      { name: 'Content Creations', table: 'content_creations', field: 'results' },
-      { name: 'MultiLLM Chatgpt', table: 'multillm_chatgpt', field: 'chat_history' },
-      { name: 'Chat With PDF', table: 'chat_with_file', field: 'chat_history' },
-    ];
-
-    const chartData = [];
-
-    for (const { name, table, field } of tables) {
-      const { totalRequests, rejected, successful } = await fetchDataAndProcessStats(table, field);
-      chartData.push({
+      // Return the chart data with the total requests, successful requests, and rejected requests
+      return {
         name,
         'Total API Requests': totalRequests,
-        Rejected: rejected,
+        Rejected: totalRequests - successful,
         Successful: successful,
-      });
-    }
+        entries: data,
+      };
+    })
+  );
 
-    return chartData;
-  }
-
-  // Fetch statistics for the chart
-  const chartData = await fetchStatistics();
-
-  //Get all users from the users table
+  // Get all users from the users table
   const { data: users } = await supabaseAdmin
     .from('users')
     .select('*')
@@ -91,13 +77,13 @@ const sampleDashboard = async () => {
 
   return (
     <div className='p-4 md:p-8 w-full'>
-      <Chart chartData={chartData} />
+      <ApiRequestChart chartData={chartData} />
       <div className='block lg:flex gap-8'>
         <ApiUsageChart chartData={chartData} />
-        {users && <UsersAreaChart users={users} />}
+        <UserStatsChart users={users || []} />
       </div>
     </div>
   );
 };
 
-export default sampleDashboard;
+export default AdminDashboard;
