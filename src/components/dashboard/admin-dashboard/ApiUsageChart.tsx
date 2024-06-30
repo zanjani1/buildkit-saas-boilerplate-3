@@ -77,7 +77,7 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
     <div className='rounded-xl bg-slate-50/40 p-1.5 ring-1 ring-inset ring-input mt-8 w-full lg:w-1/2'>
       <Card className='rounded-lg p-4 h-full'>
         <h3 className='text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
-          Total API Usage by Category
+          API Usage
         </h3>
         <div className='block md:flex items-center justify-center gap-1'>
           <DonutChart
@@ -90,7 +90,7 @@ const ApiUsageChart: FC<ApiUsageChartType> = ({ chartData }) => {
             index='name'
             variant='donut'
           />
-          <div className='h-auto md:h-60 overflow-auto w-full'>
+          <div className='max-h-64 overflow-auto w-full'>
             <p className='flex items-center justify-between text-tremor-label text-tremor-content dark:text-dark-tremor-content'>
               <span>Category</span>
               <span>API Requests</span>
