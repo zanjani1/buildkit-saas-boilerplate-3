@@ -1,59 +1,48 @@
+import { howTo } from '@/assets/landing-page-6/images';
 import Image from 'next/image';
-import features from '@/assets/landing-page-6/images/feature.svg';
 
-const cardDetails = [
+const workflows = [
   {
-    title: 'Build your AI apps Fast',
+    heading: 'Build your AI apps fast',
     content:
       'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    image: howTo,
   },
   {
-    title: 'Build your AI apps Fast',
+    heading: 'Build your AI apps fast',
     content:
       'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    image: howTo,
   },
   {
-    title: 'Build your AI apps Fast',
+    heading: 'Build your AI apps fast',
     content:
       'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    image: howTo,
   },
 ];
 
 export default async function Features() {
   return (
-    <div id='features' className='flex justify-center'>
-      <div className='md:max-w-[1030px] max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
-        <div className='flex flex-col items-center gap-7 justify-between text-center'>
-          <div className='flex flex-col gap-4'>
-            <span className='font-medium text-sm text-[#227AFF]'>What can you do with builder kit?</span>
-            <h1 className='md:text-4xl text-2xl font-semibold max-w-lg flex flex-col gap-2'>
-              <span>Explore the power of</span>
-              <span>AI apps generation Workflow</span>
-            </h1>
-          </div>
+    <div id='features' className='flex flex-col md:px-32 px-8 my-40 gap-16 items-center'>
+      <div className='flex flex-col gap-6 items-center '>
+        <p className='md:text-4xl text-xl font-medium'>Revolutionize your workflow</p>
+        <p className='text-stone-500 text-sm md:text-base max-w-2xl text-center text-balance '>
+          Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
+          Effort and Use our robust Deployable code.
+        </p>
+      </div>
 
-          <span className='text-[#A8A8A8] leading-6 max-w-[628px] md:text-lg'>
-            Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
-            of Effort and Use our robust Deployable code.
-          </span>
-        </div>
-
-        <div className='flex gap-4 flex-col md:flex-row '>
-          {cardDetails.map((card) => (
-            <div
-              key={card.title}
-              className='md:rounded-3xl rounded-lg flex flex-col md:flex md:gap-8 gap-4 border border-[#2B2F45] p-4 bg-[#161823]'>
-              <Image src={card.url} alt={card.title} width={400} height={400} className='rounded-lg' />
-              <div className='gap-1.5 flex flex-col'>
-                <h2 className='font-semibold md:text-xl text-lg'>{card.title}</h2>
-                <span className='text-[#A8A8A8] leading-7'>{card.content}</span>
-              </div>
+      <div className='flex md:gap-4 gap-2 flex-col md:flex-row'>
+        {workflows.map((item, index) => (
+          <div className='flex flex-col md:gap-6 gap-3 max-w-96' key={index}>
+            <Image src={item.image} width={500} height={500} alt='how-to' className='w-full' />
+            <div className='flex flex-col gap-3'>
+              <h3 className='font-medium md:text-2xl text-xl'>{item.heading}</h3>
+              <span className='text-stone-500 text-sm md:text-base'>{item.content}</span>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,27 +1,19 @@
-/* eslint-disable tailwindcss/no-contradicting-classname */
-// This is the entry component for the landing page of the application.
-// It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
-import Navbar from './Navbar';
 import Hero from './Hero';
-import FeaturedOn from './FeaturedOn';
-import HowTo from './HowTo';
-import Pricing from './Pricing/Pricing';
-import Help from './Help';
+import Features from './Features';
+import Features2 from './Features2';
+import Pricing from './Pricing';
+import Faq from './FAQ';
 import Footer from './Footer';
 
-export default async function LandingPage3() {
+export default async function LandingPage4() {
   return (
-    <>
-      <div className='bg-gradient-to-r from-[#52BDAA33] from-20% via-white  to-[#52BDAA33] to-80%'>
-        <Navbar />
-        <Hero />
-      </div>
-
-      <FeaturedOn />
-      <HowTo />
+    <div className='bg-black text-white '>
+      <Hero />
+      <Features />
+      <Features2 />
       <Pricing />
-      <Help />
+      <Faq />
       <Footer />
-    </>
+    </div>
   );
 }

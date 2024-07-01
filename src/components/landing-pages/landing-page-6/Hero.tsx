@@ -1,36 +1,42 @@
-import Navbar from './Navbar';
 import Image from 'next/image';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
-import Button from './Button';
-import hero from '@/assets/landing-page-6/images/hero.svg';
+import HeroImage from '@/assets/landing-page-6/images/hero.svg';
+import { ArrowRightIcon, VideoIcon } from '@radix-ui/react-icons';
+import { Button } from '@/components/ui/button';
+import LP3Button from './Button';
 
-export default function Hero() {
+export default async function Hero() {
   return (
-    <div className='flex flex-col items-center md:gap-[88px] gap-16 pt-4 '>
-      <Navbar />
+    <div className='flex w-full justify-center'>
+      <div className='flex flex-col w-full items-center md:mt-14 mt-8 '>
+        <div className='flex flex-col gap-8 max-w-[625px] items-center text-center'>
+          <p className='md:text-6xl text-3xl font-semibold px-10 bg-gradient-to-b from-black from-60% to-[#929292] bg-clip-text text-transparent'>
+            Generate AI Apps with Ease
+          </p>
+          <p className='text-stone-500 leading-7 px-2.5 text-sm md:text-base text-balance'>
+            Let's make your work more organize and easily using the Dashboard with many of the latest features
+            in managing work every day.
+          </p>
 
-      <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-4 items-start md:max-w-2xl max-w-80 w-full'>
-          <div className='border border-[#222222] px-4 items-center flex h-7 font-semibold text-sm rounded-full'>
-            Unlock Your Creative Spark!
-            <ArrowRightIcon className='ml-2' />
-          </div>
-
-          <div className='gap-4 flex flex-col'>
-            <h1 className='font-semibold md:text-[40px] text-3xl'>Generate AI Apps with ease</h1>
-            <span className='text-stone-300 text-sm md:text-base leading-7'>
-              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
-              of Effort and Use our robust Deployable code.
-            </span>
+          <div className='flex gap-4 justify-center leading-5'>
+            <LP3Button>
+              <span>Start Creating</span>
+              <ArrowRightIcon />
+            </LP3Button>
+            <Button variant='outline' className='h-8 md:h-12 gap-2 md:px-7 rounded-lg'>
+              <span>Watch Demo</span>
+              <VideoIcon />
+            </Button>
           </div>
         </div>
-        <Button fill={false} size='md' rounded={true}>
-          <span>Get Started</span>
-          <ArrowRightIcon />
-        </Button>
-      </div>
 
-      <Image src={hero} width={200} height={200} alt='hero' className='w-full md:px-[84.5px] px-5' />
+        <Image
+          src={HeroImage}
+          width={500}
+          height={500}
+          alt='hero'
+          className='w-full md:px-24 px-4 mt-8 md:mt-20'
+        />
+      </div>
     </div>
   );
 }

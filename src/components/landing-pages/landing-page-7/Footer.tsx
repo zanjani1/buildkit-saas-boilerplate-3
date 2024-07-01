@@ -1,101 +1,93 @@
+import Button from './Button';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import { Button } from '@/components/landing-pages/landing-page-7/Button';
-import ArrowRightMd from '@/assets/landing-page-7/icons/ArrowRightMd';
-import Image from 'next/image';
 
-const all = [
+const options = [
   {
     label: 'About',
-    link: '/about',
+    url: '',
   },
   {
     label: 'Company',
-    link: '/company',
+    url: '',
   },
   {
-    label: 'Careers',
-    link: '/careers',
+    label: 'Press',
+    url: '',
   },
   {
-    label: 'Newsletter',
-    link: '/newsletter',
-  },
-];
-
-const info = [
-  {
-    label: 'Features',
-    link: '/features',
+    label: 'Contact',
+    url: '',
   },
   {
     label: 'Product',
-    link: '/product',
+    url: '',
   },
   {
-    label: 'Pricing',
-    link: '/pricing',
+    label: 'Careers',
+    url: '',
   },
   {
-    label: 'FAQs',
-    link: '/faqs',
+    label: 'Blog',
+    url: '',
+  },
+  {
+    label: 'Press',
+    url: '',
+  },
+  {
+    label: 'Newsletter',
+    url: '',
+  },
+  {
+    label: 'Story',
+    url: '',
+  },
+  {
+    label: 'More',
+    url: '',
+  },
+  {
+    label: 'More',
+    url: '',
   },
 ];
 
-export default async function Footer() {
+export default function Footer() {
   return (
-    <div className='flex md:justify-center bg-[#FCFCFC] border border-t-[#DEDEDE] p-5'>
-      <div className='flex flex-col md:gap-32 gap-24 md:py-12 md:max-w-5xl w-full'>
-        <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
-          <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
-            <Link href='https://www.builderkit.ai'>
-              <div className='flex items-center gap-2 w-fit'>
-                <Image src='/lp7-logo.svg' width={140} height={140} alt='logo' />
-              </div>
-            </Link>
-
-            <span className='text-lp7-secondary font-medium leading-7 lg:min-w-[400px]'>
-              Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
-            </span>
-
-            <Button className='flex shadow-xl w-fit h-10'>
-              Get Started
-              <ArrowRightMd />
-            </Button>
-          </div>
-
-          <div className='grid grid-cols-2 sm:grid-cols-3 w-full justify-between max-w-xl md:grid-cols-2 xl:grid-cols-3 gap-10'>
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs text-stone-400'>ALL</p>
-              <div className='flex flex-col gap-3 '>
-                {all.map((item) => (
-                  <Link href={item.link} key={item.label}>
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs text-stone-400'>INFO</p>
-              <div className='flex flex-col gap-3'>
-                {info.map((item) => (
-                  <Link href={item.link} key={item.label}>
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs text-stone-400'>CONTACTS</p>
-              <Link href='mailto:vatsal1811@gmail.com' className='text-lp7-secondary'>
-                vatsal1811@gmail.com
-              </Link>
-            </div>
-          </div>
+    // eslint-disable-next-line tailwindcss/no-contradicting-classname
+    <div className='bg-black md:py-20 md:pb-28 md:px-[135px] px-8 py-10 bg-gradient-to-b from-[#090A18] from-80% to-[#313B827D]'>
+      <div className='flex flex-col md:gap-16 gap-8 '>
+        <div className='flex justify-between flex-col md:flex-row gap-6 md:gap-0'>
+          <h1 className='font-medium text-white text-[26px] leading-[52px]'>
+            Get your AI apps built with blazing speed.
+          </h1>
+          <Button fill={false} size='lg'>
+            <span>Get Started</span>
+            <ArrowRightIcon className='font-bolder' />
+          </Button>
         </div>
-        <div className='flex justify-center'>
-          <p className='text-stone-600 text-xs'>© 2024 — 1811 Labs</p>
+
+        <hr className='border opacity-25'></hr>
+
+        <div className='flex justify-between flex-col md:flex-row gap-10 md:gap-0'>
+          <div className='flex flex-col gap-8 max-w-96'>
+            <h1 className='font-medium text-2xl leading-6 text-[#FFFFFFB2]'>BuilderKit.ai</h1>
+            <span className='text-[#B0B2B8]'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
+            </span>
+            <p className='font-medium text-white'>All rights reserved</p>
+          </div>
+
+          <div className='grid grid-cols-3 md:gap-x-[140px] gap-y-4 gap-x-10 text-[#B0B2B8] text-sm font-medium '>
+            {options.map((option, index) => {
+              return (
+                <Link href={option.url} className='text-start hover:underline' key={index}>
+                  {option.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,58 +1,59 @@
-import Image from 'next/image';
-import features from '@/assets/landing-page-8/images/features.svg';
+// Product component of landing page
 
-const cardDetails = [
+import LightningIcon from '@/assets/landing-page-8/icons/LightningIcon';
+
+const cardContent = [
   {
-    title: 'Build your AI apps Fast',
-    content:
-      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    title: 'Build your AI apps Fast',
-    content:
-      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
   {
-    title: 'Build your AI apps Fast',
-    content:
-      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
-    url: features,
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+  },
+  {
+    icon: LightningIcon,
+    title: 'Quality apps',
+    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
   },
 ];
 
 export default async function Features() {
   return (
-    <div id='features' className='flex justify-center'>
-      <div className='md:max-w-6xl max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
-        <div className='flex flex-col items-center gap-7 justify-between text-center'>
-          <h1 className='md:text-4xl text-2xl font-medium max-w-lg flex flex-col md:gap-2'>
-            <span>Explore the power of</span>
-            <span>
-              AI apps generation <span className='text-[#005CE7]'>Workflow</span>
-            </span>
-          </h1>
-
-          <span className='text-[#787878] leading-6 md:text-lg max-w-[628px]'>
-            Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
-            of Effort and Use our robust Deployable code.
-          </span>
+    <div id='features' className='mx-auto px-4 py-20 md:py-28 bg-[#F6FFF8]'>
+      <div className='max-w-6xl flex flex-col justify-center items-center mx-auto space-y-16 md:space-y-20'>
+        <div className='text-center'>
+          <p className='max-w-full md:max-w-[60%] mx-auto leading-tight text-gray-900 tracking-[-1.5px] text-3xl sm:text-4xl'>
+            Essentially, everything you need to ship you first AI App
+          </p>
         </div>
 
-        <div className='flex gap-4 flex-col md:flex-row '>
-          {cardDetails.map((card) => (
-            <div key={card.title} className='flex flex-col md:gap-6 gap-4'>
-              <Image
-                src={card.url}
-                alt={card.title}
-                width={400}
-                height={400}
-                className='bg-[#F2F1F960] rounded-sm'
-              />
-              <div className='text-center'>
-                <h2 className='font-medium md:text-2xl text-xl mb-4'>{card.title}</h2>
-                <span className='text-[#727272]'>{card.content}</span>
+        <div className='grid grid-cols-1 mx-auto md:grid-cols-2 xl:grid-cols-3 gap-2 md:gap-6'>
+          {cardContent.map((item, index) => (
+            <div key={index} className='p-6 flex gap-5'>
+              <div>
+                <item.icon />
+              </div>
+              <div>
+                <p className='text-lg leading-6 text-lp9-primary font-semibold'>{item.title}</p>
+                <p className='text-gray-500 leading-6 text-sm mt-2.5'>{item.description}</p>
               </div>
             </div>
           ))}

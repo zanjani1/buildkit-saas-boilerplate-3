@@ -2,54 +2,58 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 const accordion = [
   {
-    title: 'What is buildekit?',
+    title: 'What is builderkit?',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
   },
   {
-    title: 'What do i get exactly?',
+    title: 'lorem ipsum dolor sit amet?',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
   },
   {
-    title: 'Who is builder kit for?',
+    title: 'lorem ipsum dolor sit amet?',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
   },
   {
-    title: 'Is it a website template?',
+    title: 'lorem ipsum dolor sit amet?',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
+  },
+  {
+    title: 'lorem ipsum dolor sit amet?',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
+  },
+  {
+    title: 'lorem ipsum dolor sit amet?',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus ad vitae excepturi, necessitatibus ex eveniet deserunt eaque qui quisquam architecto sapiente dolorum. Eligendi ipsum perferendis corrupti quasi eius blanditiis beatae.',
   },
 ];
 
-export default function FAQ() {
+export default function Faq() {
   return (
-    <div className='flex justify-center'>
-      <div id='faq' className='flex flex-col md:flex-row md:py-32 md:gap-20 gap-10 py-10 max-w-5xl'>
-        <div className='flex flex-col gap-6 items-center mt-2'>
-          <h1 className='md:text-3xl font-medium text-2xl'>Frequently asked questions</h1>
-          <p className='text-[#A8A8A8] px-10 md:px-0 leading-7 md:w-[334px]'>
-            Don't worry, we got you. Here are some answers for your questions.
-          </p>
-        </div>
+    <div id='faq' className='flex flex-col items-center gap-10 md:gap-16'>
+      <div className='flex flex-col gap-6 items-center justify-around'>
+        <p className='md:text-4xl font-medium text-2xl'>Need Help?</p>
+        <p className='text-stone-500 px-10 md:px-0 text-center'>
+          Don't worry, we got you. Here are some answers for your questions.
+        </p>
+      </div>
 
-        <div className='flex flex-col leading-8 ] items-center'>
-          {accordion.map((item, index) => {
-            return (
-              <Accordion type='single' collapsible key={index}>
-                <AccordionItem value={item.title} className=' md:w-[669px] w-80  border-[#2B2F45] border-b'>
-                  <AccordionTrigger className='text-base flex justify-between w-full md:mx-6 mx-3 md:h-16'>
-                    {item.title}
-                  </AccordionTrigger>
-                  <AccordionContent className='text-[#A8A8A8] md:text-base pb-5 md:px-6 px-3'>
-                    {item.content}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            );
-          })}
-        </div>
+      <div className='flex flex-col items-start'>
+        {accordion.map((item, index) => (
+          <Accordion type='single' collapsible key={index}>
+            <AccordionItem value={item.title} className=' md:w-[640px] w-80 border-b-0'>
+              <AccordionTrigger className='font-medium text-base'>{item.title}</AccordionTrigger>
+              <AccordionContent className='text-stone-500 text-sm bg-[#F4FFF5] border-t border-t-[#F1F1F1] p-2'>
+                {item.content}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ))}
       </div>
     </div>
   );

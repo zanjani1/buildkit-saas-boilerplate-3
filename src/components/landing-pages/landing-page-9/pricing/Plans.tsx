@@ -4,10 +4,11 @@
 
 'use client';
 
-import ArrowRightMd from '@/assets/landing-page-9/icons/ArrowRightMd';
 import TickIcon from '@/assets/landing-page-9/icons/TickIcon';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/utils';
+import ArrowBlack from '@/assets/landing-page-9/icons/ArrowBlack';
+import ArrowWhite from '@/assets/landing-page-9/icons/ArrowWhite';
+import { Button } from '../Button';
 
 const tiers = [
   {
@@ -51,14 +52,13 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mt-20'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mt-10'>
         {tiers.map((tier) => (
-          // Card for each plan with its respective details and pricing.
           <div
             key={tier.id}
             className={cn(
-              'w-full h-fit md:max-w-sm bg-[#1F2E270D] shadow-sm gap-2 text-lp9-secondary rounded-md p-3 sm:p-6 mx-auto mt-3',
-              tier.id === 'ultimate' && 'bg-[#E8F2EC]'
+              'w-full h-fit md:max-w-sm border-[#171717] bg-[#3A556E0D] shadow-sm gap-2 text-[#1C1C1C] rounded-2xl p-3 sm:p-6 mx-auto mt-3',
+              tier.id === 'ultimate' && 'bg-[#E5F4FF]'
             )}>
             <div className='w-full mt-6'>
               <p className='text-lg font-semibold'>{tier.name.toUpperCase()}</p>
@@ -67,29 +67,22 @@ export default function Plans() {
                 <span>{tier.sellingPrice.monthly}</span>
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
-              <p className='text-sm md:text-base font-light'>{tier.description}</p>
+              <p>{tier.description}</p>
             </div>
-            <ul role='list' className='space-y-2 md:space-y-4 mt-8'>
+            <ul role='list' className='space-y-4 mt-8'>
               {tier.features.map((feature) => (
-                <li key={feature} className='leading-relaxed flex gap-3 items-center text-sm md:text-base'>
-                  <TickIcon /> <span>{feature}</span>
+                <li key={feature} className='leading-relaxed flex gap-3 font-medium'>
+                  <TickIcon />
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
 
-            {/* CTA button for the specific plan. */}
             <Button
+              variant={tier.id === 'pro' ? 'default' : 'ghost'}
               size={'lg'}
-              className={cn(
-                'gap-2.5 w-full mt-16 py-6 px-8 font-semibold',
-                tier.id === 'pro'
-                  ? 'bg-lp9-primary hover:bg-lp9-primary/95'
-                  : 'bg-white hover:text-lp9-primary hover:bg-white border border-[#E5E7EB] text-[#030712]'
-              )}>
-              Get Now{' '}
-              <span className={cn(tier.id !== 'pro' && 'invert')}>
-                <ArrowRightMd />{' '}
-              </span>
+              className='flex w-full mt-16 py-6 px-8 font-semibold'>
+              Get Now {tier.id === 'pro' ? <ArrowWhite /> : <ArrowBlack />}
             </Button>
           </div>
         ))}

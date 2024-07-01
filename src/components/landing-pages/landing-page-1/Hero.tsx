@@ -1,38 +1,41 @@
-// This component renders the main hero section of the landing page which is designed to grab the visitor's attention.
-// It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
+// This component serves as the primary visual and textual introduction on the homepage.
+// It typically includes a headline, a subheading, and a call-to-action (CTA) button to engage users right from the start.
+// This component plays a crucial role in setting the tone and providing key information about the product or service.
 
-import Navbar from './Navbar';
-import { Button } from '@/components/ui/button';
+import { FaArrowRight } from 'react-icons/fa';
 import Image from 'next/image';
-import HeroImage from '@/assets/landing-page-1/images/hero.png';
-import Link from 'next/link';
+import dashboard from '@/assets/landing-page-1/dashboard.png';
+import FlickIcon from '@/assets/landing-page-1/FlickIcon';
+import ButtonCta from './ButtonCta';
 
-export default async function Hero() {
+const Hero = () => {
   return (
-    <div className='bg-waves bg-[#EDF6FF]'>
-      <div className='max-w-6xl mx-auto'>
-        {/* Navbar component: Displays the top navigation menu. */}
-        <Navbar />
-
-        <div className='flex flex-col md:flex-row gap-10 py-5 md:py-14 px-4'>
-          <div className='space-y-6 w-full md:w-1/2'>
-            <p className='text-primary text-xs md:text-sm font-bold leading-normal tracking-widest uppercase'>
-              Let's ship your Apps faster
-            </p>
-            <p className='text-5xl md:text-6xl'>Ship AI apps like a pro.</p>
-            <p className='text-lg md:text-xl text-secondary md:leading-relaxed'>
-              With lots of unique blocks, you can easily build a page without coding.
-              <br className='block md:hidden' /> Build your next AI website within few minutes.
-            </p>
-            <Link href='/admin-dashboard' className='block'>
-              <Button className='px-8 py-5'>Get Started</Button>
-            </Link>
+    <section className='space-y-20 px-4'>
+      <div className='flex flex-col justify-center '>
+        <div className='space-y-[18px] max-w-2xl mx-auto'>
+          <div className='px-4 py-1.5 gap-2 bg-[#022f21] rounded-full w-fit mx-auto'>
+            <div className='text-[#18EDA7] text-sm font-semibold flex items-center gap-2'>
+              Unlock Your Creative Spark! <FaArrowRight className='size-3' />
+            </div>
           </div>
-          <div className='w-full md:w-1/2 flex items-center justify-center'>
-            <Image src={HeroImage} width={500} height={500} alt='hero' />
+          <div className='text-center text-[64px] font-bold leading-[4rem] tracking-[-1.28px] grey-gradient text-transparent relative'>
+            <div className='absolute md:left-8 -top-3 md:-top-4'>
+              <FlickIcon />
+            </div>
+            <span>Generate AI Apps with ease</span>
+          </div>
+          <div className='max-w-96 mx-auto text-center font-medium leading-7 tracking-[0.04px] text-[#ABABB0]'>
+            Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
           </div>
         </div>
+        <div className='mt-10 mx-auto'>
+          <ButtonCta className='px-10 py-3 h-10' />
+        </div>
       </div>
-    </div>
+
+      <Image src={dashboard} width={1000} height={420} alt='hero' className='w-full rounded-t-lg' />
+    </section>
   );
-}
+};
+
+export default Hero;

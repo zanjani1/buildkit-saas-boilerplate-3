@@ -1,78 +1,103 @@
-// This component is used to display the website's footer section.
-// It typically contains links to important pages, contact information, and social media icons.
-// This component is crucial for navigation and offers users a way to connect with the company on different platforms.
-
-import { CiTwitter } from 'react-icons/ci';
-import { FaDribbble, FaInstagram } from 'react-icons/fa';
-import { MdOutlineEmail } from 'react-icons/md';
+import Image from 'next/image';
+import Button from './Button';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import ButtonCta from './ButtonCta';
-import { cn } from '@/utils/utils';
 
-const footerItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Pricing', href: '/#pricing' },
-  { name: 'FAQ', href: '/#faq' },
-  { name: 'License', href: '/' },
-  { name: 'Terms', href: '/' },
-  { name: 'Contact', href: 'mailto:vatsal1811@gmail.com' },
+const All = [
+  {
+    label: 'About',
+    link: '',
+  },
+  {
+    label: 'Company',
+    link: '',
+  },
+  {
+    label: 'Careers',
+    link: '',
+  },
+  {
+    label: 'Newsletter',
+    link: '',
+  },
 ];
 
-const socialMediaIcons = [
-  { icon: <CiTwitter className='size-5 text-white' />, name: 'Twitter' },
-  { icon: <FaInstagram className='size-5 text-white' />, name: 'Instagram' },
-  { icon: <FaDribbble className='size-5 text-white' />, name: 'Dribbble' },
-  { icon: <MdOutlineEmail className='size-5 text-white' />, name: 'Email' },
+const Info = [
+  {
+    label: 'Features',
+    link: '',
+  },
+  {
+    label: 'Product',
+    link: '',
+  },
+  {
+    label: 'Pricing',
+    link: '',
+  },
+  {
+    label: 'FAQs',
+    link: '',
+  },
 ];
 
-const Footer = () => {
+export default async function Footer() {
   return (
-    <div className='space-y-[154px] mt-[200px]'>
-      <div className='space-y-10 mx-auto px-4'>
-        <p className='header-gradient text-5xl md:text-[56px] text-center font-medium leading-[64px]'>
-          Unleash the power of AI with GenAI
-        </p>
-        <p className='text-[#ABABB0] text-lg md:text-[22px] font-normal leading-[30px] md:leading-[34px] tracking-[0.2px] text-center max-w-3xl mx-auto'>
-          We share thoughts on design, tools, and productivity. If you don't want to miss them, subscribe to
-          our newsletter on Substack.
-        </p>
-        <div className='w-fit mt-8 mx-auto'>
-          <ButtonCta className='px-10 py-3.5 h-10' />
-        </div>
-        <div className='flex gap-10 justify-center'>
-          {socialMediaIcons.map((socialMedia, index) => (
-            <div
-              key={index}
-              className='flex size-10 md:size-12 justify-center items-center border rounded-full social-background cursor-pointer'>
-              {socialMedia.icon}
+    <div className='flex justify-center'>
+      <div className='flex flex-col md:gap-32 gap-24 md:py-20 py-10 md:max-w-5xl max-w-80 '>
+        <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
+          <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
+            <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32 h-8' />
+
+            <span className='text-[#A8A8A8] text-start'>
+              Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
+            </span>
+
+            <Button fill={false} size='md' rounded={true}>
+              Get Started
+              <ArrowRightIcon />
+            </Button>
+          </div>
+
+          <div className='flex gap-6 md:flex-1 flex-col  md:flex-row'>
+            <div className='flex flex-col gap-4 w-1/3'>
+              <p className='text-xs'>ALL</p>
+              <div className='flex flex-col gap-3 text-[#A8A8A8]'>
+                {All.map((item) => {
+                  return (
+                    <Link href={item.link} key={item.label}>
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          ))}
+
+            <div className='flex flex-col gap-4 w-1/3'>
+              <p className='text-xs'>INFO</p>
+              <div className='flex flex-col gap-3 text-stone-400'>
+                {Info.map((item) => {
+                  return (
+                    <Link href={item.link} key={item.label}>
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className='flex flex-col gap-4 w-1/3'>
+              <p className='text-xs'>CONTACTS</p>
+              <Link href='mailto:vatsal1811@gmail.com' className='text-stone-400'>
+                vatsal1811@gmail.com
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className='border-t border-white/10 space-y-12 px-4 py-16'>
-        <ul className='flex flex-col md:flex-row gap-5 justify-center'>
-          {footerItems.map((item, index) => (
-            <Link
-              href={item.href}
-              key={index}
-              className={cn(item.name === 'Home' ? 'text-white' : 'text-[#A5ABB6]', 'text-base font-normal')}>
-              {item.name}
-            </Link>
-          ))}
-        </ul>
-
-        <div className='text-[#676D79] md:text-center'>
-          Copyright © 2024. A{' '}
-          <Link href='https://1811labs.com' target='_blank' rel='noreferrer' className='hover:underline mr-2'>
-            1811 Labs
-          </Link>
-          product.
-          <br className='block md:hidden' /> All rights reserved.
+        <div className='flex justify-center'>
+          <p className='text-stone-600 text-xs'>© 2024 — 1811 Labs</p>
         </div>
       </div>
     </div>
   );
-};
-
-export default Footer;
+}
