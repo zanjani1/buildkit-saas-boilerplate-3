@@ -30,7 +30,7 @@ export default async function Navbar() {
           </div>
         </Link>
 
-        <ul className='hidden md:flex items-center gap-6'>
+        <ul className='hidden md:flex items-center gap-10'>
           {navbarRoutes.map((item, index) => (
             <li key={index} className='text-sm font-medium '>
               <Link href={item.url} className='hover:underline text-[#4B5563]'>
