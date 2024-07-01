@@ -26,8 +26,6 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@sentry/nextjs": "^8.4.0",
-    "@supabase/auth-ui-react": "latest",
-    "@supabase/auth-ui-shared": "latest",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
     "@tanstack/react-table": "^8.16.0",
