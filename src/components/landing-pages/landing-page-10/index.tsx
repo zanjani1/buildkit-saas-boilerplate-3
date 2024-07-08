@@ -1,6 +1,6 @@
 import FeaturedOn from './FeaturedOn';
 import Hero from './Hero';
-import Features2 from './Features-2';
+import Features2 from './Features2';
 import Features from './Features';
 import Pricing from './Pricing';
 import Footer from './Footer';
