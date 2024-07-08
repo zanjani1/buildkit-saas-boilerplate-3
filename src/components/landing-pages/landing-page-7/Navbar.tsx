@@ -1,68 +1,67 @@
 'use client';
 
-import Link from 'next/link';
-import { HiBars3 } from 'react-icons/hi2';
-import { Sheet, SheetTrigger, SheetContent, SheetClose } from '@/components/ui/sheet';
-import { Button } from '@/components/landing-pages/landing-page-7/Button';
-import ArrowRightSm from '@/assets/landing-page-7/icons/ArrowRightSm';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Button from './Button';
 import Image from 'next/image';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { HiBars3 } from 'react-icons/hi2';
+import Link from 'next/link';
 
-const navbarRoutes = [
-  { label: 'Features', url: '/#features' },
-  { label: 'Product', url: '/#product' },
-  { label: 'Pricing', url: '/#pricing' },
-  { label: 'FAQ', url: '/#faq' },
+const navOptions = [
+  { label: 'Features', url: '#features' },
+  { label: 'Product', url: '#product' },
+  { label: 'Pricing', url: '#pricing' },
+  { label: 'FAQ', url: '#faq' },
 ];
 
 export default function Navbar() {
   return (
-    <div className='max-w-2xl mx-auto px-3 pt-4 bg-white'>
-      <div
-        className='w-full p-2 flex flex-col justify-between items-center border-[#EAEAEA] border rounded-2xl
-        '>
-        <div className='w-full flex justify-between items-center'>
-          <Link href='https://www.builderkit.ai'>
-            <div className='flex items-center gap-2 w-fit'>
-              <Image src='/lp7-logo.svg' width={140} height={140} alt='logo' />
-            </div>
-          </Link>
-
-          <ul className='hidden md:flex items-center gap-6'>
-            {navbarRoutes.map((item, index) => (
-              <li key={index} className='text-sm font-medium text-[#0C0E1E]'>
-                <Link href={item.url} className='hover:underline'>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Button className='hidden md:flex gap-2 px-3 py-1.5'>
-            <Link href={'/login'}>Sign up</Link>
-            <ArrowRightSm />
-          </Button>
-          <Sheet>
-            <SheetTrigger className='block md:hidden'>
-              <HiBars3 size={24} />
-            </SheetTrigger>
-            <SheetContent side='top' className='border-none text-[#0C0E1E]'>
-              <div className='space-y-6'>
-                <div className='flex flex-col gap-4'>
-                  {navbarRoutes.map((item, index) => (
-                    <div key={index} className='text-sm font-medium py-2'>
-                      <SheetClose asChild>
-                        <Link href={item.url}>{item.label}</Link>
-                      </SheetClose>
-                    </div>
-                  ))}
-                </div>
-                <Button className='flex w-full gap-2 px-3 py-1.5'>
-                  <Link href={'/login'}>Sign up</Link>
-                  <ArrowRightSm />
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+    <div className='flex justify-between h-12 md:max-w-screen-sm mt-4 items-center w-full max-w-80 border border-[#222222] px-2 md:rounded-2xl rounded-lg bg-[#0C0E1E]'>
+      <Link href='https://www.builderkit.ai'>
+        <div className='flex items-center gap-2 w-fit'>
+          <Image src='/lp8-logo.svg' width={140} height={140} alt='logo' />
         </div>
+      </Link>
+
+      <div className='md:flex hidden gap-0.5 font-medium'>
+        {navOptions.map((opt) => {
+          return (
+            <Link href={opt.url} key={opt.label} className='px-1 py-2.5 text-sm hover:underline'>
+              {opt.label}
+            </Link>
+          );
+        })}
+      </div>
+      <div className='flex gap-2'>
+        <div className='md:block hidden'>
+          <Button fill={false} size='sm'>
+            <span className='leading-5'>Get Started</span>
+            <ArrowRightIcon />
+          </Button>
+        </div>
+
+        <Sheet>
+          <SheetTrigger className='block md:hidden'>
+            <HiBars3 size={24} />
+          </SheetTrigger>
+          <SheetContent side='top' className='bg-black text-white border-black'>
+            <div className='space-y-6'>
+              <div className='flex flex-col gap-4 text-sm'>
+                {navOptions.map((item, index) => (
+                  <div key={index} className='text-sm font-medium py-2'>
+                    <SheetClose asChild>
+                      <Link href={item.url}>{item.label}</Link>
+                    </SheetClose>
+                  </div>
+                ))}
+              </div>
+              <Button fill={false} size='sm'>
+                <span>Get Started</span>
+                <ArrowRightIcon />
+              </Button>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   );

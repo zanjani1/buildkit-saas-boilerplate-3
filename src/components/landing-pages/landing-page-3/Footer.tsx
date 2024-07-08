@@ -1,79 +1,80 @@
-import { Button } from '@/components/ui/button';
+import Button from './Button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 
 const options = [
   {
     label: 'About',
-    url: '/about',
+    url: '',
   },
   {
     label: 'Company',
-    url: '/company',
+    url: '',
   },
   {
     label: 'Press',
-    url: '/press',
+    url: '',
   },
   {
     label: 'Contact',
-    url: '/contact',
+    url: '',
   },
   {
     label: 'Product',
-    url: '/product',
+    url: '',
   },
   {
     label: 'Careers',
-    url: '/careers',
+    url: '',
   },
   {
     label: 'Blog',
-    url: '/blog',
+    url: '',
   },
   {
     label: 'Press',
-    url: '/press',
+    url: '',
   },
   {
     label: 'Newsletter',
-    url: '/newsletter',
+    url: '',
   },
   {
     label: 'Story',
-    url: '/story',
+    url: '',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '',
   },
 ];
 
 export default function Footer() {
-  const heading = 'Get your AI apps built with blazing speed.';
-  const content = 'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. ';
-
   return (
-    <div className=' mt-[208px] md:py-20 md:px-32 bg-[#062B1C] px-8 py-10'>
+    <div className='md:px-32 px-8 md:py-56 py-24'>
       <div className='flex flex-col md:gap-16 gap-8 '>
-        <div className='flex justify-between flex-col gap-6 md:gap-0 md:flex-row'>
-          <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>{heading}</h1>
-          <Button className='bg-white hover:bg-white hover:opacity-80 rounded-full flex md:gap-2 gap-1  md:px-8 leading-6 px-2 text-black font-semibold md:text-base text-sm md:h-14 h-10'>
+        <div className='flex justify-between flex-col md:flex-row gap-6 md:gap-0'>
+          <h1 className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>
+            Get your AI apps built with blazing speed.
+          </h1>
+          <Button fill={true} size='md'>
             <span>Get Started</span>
-            <ArrowRightIcon></ArrowRightIcon>
+            <ArrowRightIcon className='font-bolder' />
           </Button>
         </div>
 
         <hr className='border opacity-25'></hr>
 
-        <div className='flex justify-between flex-col gap-10 md:flex-row md:gap-0'>
+        <div className='flex justify-between flex-col md:flex-row gap-10 md:gap-0'>
           <div className='flex flex-col gap-8 max-w-[300px]'>
             <h1 className='font-medium text-2xl leading-6 text-stone-300'>BuilderKit.ai</h1>
-            <span className='text-stone-400'>{content}</span>
+            <span className='text-stone-400'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
+            </span>
             <p className='font-medium text-white'>All rights reserved</p>
           </div>
 

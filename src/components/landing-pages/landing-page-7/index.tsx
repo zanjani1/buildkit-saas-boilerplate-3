@@ -1,22 +1,23 @@
-// This is the entry component for the landing page of the application.
-// It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
+import FeaturedOn from './FeaturedOn';
+import Hero from './Hero';
+import Features2 from './Features2';
+import Features from './Features';
+import Pricing from './Pricing';
+import Faq from './Faq';
+import Footer from './Footer';
 
-import Faq from '@/components/landing-pages/landing-page-7/Faq';
-import Features from '@/components/landing-pages/landing-page-7/Features';
-import Footer from '@/components/landing-pages/landing-page-7/Footer';
-import Hero from '@/components/landing-pages/landing-page-7/Hero';
-import Product from '@/components/landing-pages/landing-page-7/Product';
-import Pricing from '@/components/landing-pages/landing-page-7/pricing/Pricing';
-
-export default async function LandingPage7() {
+export default function LandingPage8() {
   return (
-    <>
-      <Hero />
+    <div className='text-[#090A18]'>
+      <div className='bg-black bg-gradient-to-tr from-[#090A1843] to-[#313B825D] text-white'>
+        <Hero />
+        <FeaturedOn />
+      </div>
       <Features />
-      <Product />
+      <Features2 />
       <Pricing />
       <Faq />
       <Footer />
-    </>
+    </div>
   );
 }

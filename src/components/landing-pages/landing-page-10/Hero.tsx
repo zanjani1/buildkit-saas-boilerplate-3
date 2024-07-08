@@ -1,41 +1,36 @@
-// This component serves as the primary visual and textual introduction on the homepage.
-// It typically includes a headline, a subheading, and a call-to-action (CTA) button to engage users right from the start.
-// This component plays a crucial role in setting the tone and providing key information about the product or service.
-
-import { FaArrowRight } from 'react-icons/fa';
+import Navbar from './Navbar';
 import Image from 'next/image';
-import dashboard from '@/assets/landing-page-10/dashboard.png';
-import FlickIcon from '@/assets/landing-page-10/FlickIcon';
-import ButtonCta from './ButtonCta';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Button from './Button';
+import hero from '@/assets/landing-page-10/images/hero.svg';
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className='space-y-20 px-4'>
-      <div className='flex flex-col justify-center '>
-        <div className='space-y-[18px] max-w-2xl mx-auto'>
-          <div className='px-4 py-1.5 gap-2 bg-[#022f21] rounded-full w-fit mx-auto'>
-            <div className='text-[#18EDA7] text-sm font-semibold flex items-center gap-2'>
-              Unlock Your Creative Spark! <FaArrowRight className='size-3' />
-            </div>
+    <div className='flex flex-col items-center md:gap-[88px] gap-16 pt-4 '>
+      <Navbar />
+
+      <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-4 items-start md:max-w-2xl max-w-80 w-full'>
+          <div className='border border-[#222222] px-4 items-center flex h-7 font-semibold text-sm rounded-full'>
+            Unlock Your Creative Spark!
+            <ArrowRightIcon className='ml-2' />
           </div>
-          <div className='text-center text-[64px] font-bold leading-[4rem] tracking-[-1.28px] grey-gradient text-transparent relative'>
-            <div className='absolute md:left-8 -top-3 md:-top-4'>
-              <FlickIcon />
-            </div>
-            <span>Generate AI Apps with ease</span>
-          </div>
-          <div className='max-w-96 mx-auto text-center font-medium leading-7 tracking-[0.04px] text-[#ABABB0]'>
-            Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
+
+          <div className='gap-4 flex flex-col'>
+            <h1 className='font-semibold md:text-[40px] text-3xl'>Generate AI Apps with ease</h1>
+            <span className='text-stone-300 text-sm md:text-base leading-7'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
+              of Effort and Use our robust Deployable code.
+            </span>
           </div>
         </div>
-        <div className='mt-10 mx-auto'>
-          <ButtonCta className='px-10 py-3 h-10' />
-        </div>
+        <Button fill={false} size='md' rounded={true}>
+          <span>Get Started</span>
+          <ArrowRightIcon />
+        </Button>
       </div>
 
-      <Image src={dashboard} width={1000} height={420} alt='hero' className='w-full rounded-t-lg' />
-    </section>
+      <Image src={hero} width={200} height={200} alt='hero' className='w-full md:px-[84.5px] px-5' />
+    </div>
   );
-};
-
-export default Hero;
+}

@@ -1,22 +1,27 @@
-import FeaturedOn from './FeaturedOn';
-import Hero from './Hero';
-import Features2 from './Features-2';
-import Features from './Features';
-import Pricing from './Pricing';
-import Faq from './FAQ';
-import Footer from './Footer';
+// This is the entry component for the landing page of the application.
+// It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
 
-export default function LandingPage6() {
+import Navbar from './Navbar';
+import Hero from './Hero';
+import FeaturedOn from './FeaturedOn';
+import Pricing from './pricing/Pricing';
+import Faq from './Faq';
+import Footer from './Footer';
+import Features from './Features';
+
+export default async function LandingPage3() {
   return (
-    <div className='text-white bg-[#141414] bg-gradient-to-bl from-[#313B8233] to-[#090A1833]'>
-      <Hero />
+    <>
+      {/* eslint-disable tailwindcss/no-contradicting-classname */}
+      <div className='bg-gradient-to-r from-[#52BDAA33] from-20% via-white to-[#52BDAA33] to-80%'>
+        <Navbar />
+        <Hero />
+      </div>
       <FeaturedOn />
-      <Features2 />
       <Features />
       <Pricing />
       <Faq />
-      <hr className='border border-[#2B2F45] w-full' />
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,7 +1,8 @@
 // This is the Footer component of the landing page.
 
 import Link from 'next/link';
-import WhiteArrowIcon from '@/assets/landing-page-2/icons/WhiteArrowIcon';
+import { Button } from '@/components/ui/button';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 // Array of objects representing footer navigation items
 const footerItems = [
@@ -60,24 +61,24 @@ export default async function Footer() {
     <footer className='bg-[#1C1C1C] text-white px-5'>
       <div className='max-w-6xl mx-auto py-16'>
         <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
-          <p className='max-w-xl text-3xl md:text-4xl font-medium leading-tight md:leading-[52px]'>
+          <p className='md:w-1/2 text-2xl font-medium leading-normal md:leading-normal'>
             Get your AI apps built with blazing speed.
           </p>
           <Link href={'/login'}>
-            <button className='h-12 flex items-center gap-2 rounded-xl font-semibold bg-gradient-to-t from-lp5-primary to-[#ff5100dc] px-8 py-3'>
+            <Button className='bg-lp5-primary flex gap-2 px-4 py-6 rounded-full'>
               Get Started
-              <WhiteArrowIcon />
-            </button>
+              <ArrowRightIcon />
+            </Button>
           </Link>
         </div>
 
-        <hr className='opacity-30 my-16' />
+        <hr className='opacity-10 my-16' />
 
         <div className='flex flex-col md:flex-row justify-between gap-10 mb-8'>
           <div className='flex flex-col gap-8'>
-            <p className='text-3xl font-semibold text-white/70'>BuilderKit.ai</p>
-            <p className='md:text-lg max-w-[290px] tracking-[-0.54px] leading-6 text-white/60'>
-              lorem ipsum dolor sit amet lorem ipsum dolor sit maet lorem ipsum dlor sit amet.
+            <p className='text-2xl font-semibold text-white/70'>BuilderKit.ai</p>
+            <p className='max-w-sm tracking-[-0.54px] font-normal leading-6 text-white/60'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
             </p>
           </div>
 
@@ -89,7 +90,7 @@ export default async function Footer() {
             ))}
           </div>
         </div>
-        <p>All rights reserved.</p>
+        <p className='font-medium'>All rights reserved.</p>
       </div>
     </footer>
   );

@@ -1,44 +1,64 @@
-// Faq in the landing page is a section that provides answers to frequently asked questions.
+// This component is used to display a list of frequently asked questions and their answers.
+// This component is typically used in sections like 'Help' or 'Support' to assist users in finding quick answers.
+// The FAQ data is expected to be passed as a prop in the form of an array of {question, answer} objects.
 
+'use client';
+
+import React, { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import PlusIcon from '@/assets/landing-page-1/PlusIcon';
+import MinusIcon from '@/assets/landing-page-1/MinusIcon';
+import { cn } from '@/utils/utils';
 
-const accordionItems = [
+const accordionData = [
+  {
+    value: '0',
+    question: 'Lorem ipsum dolor sit amet?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
   {
     value: '1',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+    question: 'Lorem ipsum dolor sit amet?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
   {
     value: '2',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern. Yes. It adheres to the WAI-ARIA design pattern.',
-  },
-  {
-    value: '3',
-    question: 'Is it accessible?',
-    answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+    question: 'Lorem ipsum dolor sit amet?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   },
 ];
 
-export default async function Faq() {
+export default function Faq() {
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+
+  const toggleAccordion = (value: string) => {
+    setOpenAccordion(value === openAccordion ? null : value);
+  };
+
   return (
-    <div id='faq' className='bg-waves bg-[#EDF6FF] mx-auto py-20'>
-      <div className='max-w-xl mx-auto p-4'>
-        <div className='flex flex-col items-center justify-center'>
-          <div className='space-y-7 max-w-lg'>
-            <p className='text-center text-4xl leading-snug'>Need Help?</p>
-            <p className='text-secondary text-center text-xl font-light leading-8'>
-              Don't worry, we got you. Here are some answers for your questions.
-            </p>
-          </div>
-        </div>
+    <div id='faq' className='space-y-16 mt-[200px]'>
+      <div className='space-y-5 px-4'>
+        <p className='text-center text-3xl md:text-5xl font-medium header-gradient !leading-normal'>
+          Need help?
+        </p>
+        <p className='text-[#C9C9C9] text-center md:text-xl max-w-3xl mx-auto'>
+          Don't worry, we got you. Here are some answers for your questions.
+        </p>
+      </div>
+      <div className='max-w-5xl mx-auto'>
         <Accordion type='single' collapsible className='w-full'>
-          {accordionItems.map((item, index) => (
-            <AccordionItem key={index} className='my-5 bg-white rounded-xl' value={item.value}>
-              <AccordionTrigger className='text-start font-medium px-6 leading-relaxed'>
-                {item.question}
+          {accordionData.map((item, index) => (
+            <AccordionItem key={index} value={item.value} className='px-5 border-border/30'>
+              <AccordionTrigger onClick={() => toggleAccordion(item.value)}>
+                <div className='flex items-center gap-4 text-base md:text-lg leading-7 text-white '>
+                  {openAccordion === item.value ? <MinusIcon /> : <PlusIcon />} {item.question}
+                </div>
               </AccordionTrigger>
-              <AccordionContent className='text-secondary/65 border-t px-6 pt-3 leading-loose'>
+              <AccordionContent
+                className={cn(
+                  openAccordion === item.value ? 'max-h-screen' : 'max-h-0',
+                  'text-[#808080] text-base ml-11 transition-max-height duration-300 ease-in-out'
+                )}>
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

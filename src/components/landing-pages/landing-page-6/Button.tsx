@@ -1,31 +1,13 @@
-import { cn } from '@/utils/utils';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
-  fill?: boolean;
-  size?: string;
-  rounded?: boolean;
-  className?: string;
 }
 
-function Button({ children, fill, size, rounded, className }: ButtonProps) {
+export default function Button({ children }: ButtonProps) {
   return (
-    <button
-      className={cn(
-        'flex hover:opacity-90 rounded-lg items-center shadow w-fit gap-2.5 text-sm',
-        {
-          'text-black bg-white ': fill,
-          'text-white bg-[#343854]': !fill,
-          'px-2.5 h-8': size === 'sm',
-          'px-6 h-11': size == 'md',
-          'rounded-3xl': rounded,
-        },
-        className
-      )}>
+    <button className='flex md:px-6 gap-2 bg-[#26AB75] hover:opacity-90 px-3 md:h-12 text-xs md:text-base text-white rounded-lg items-center shadow h-8'>
       {children}
     </button>
   );
 }
-
-export default Button;

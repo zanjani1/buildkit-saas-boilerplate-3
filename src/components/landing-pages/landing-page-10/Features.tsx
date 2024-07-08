@@ -1,32 +1,60 @@
-// This component displays a list of key features or services offered by the product.
-// Each feature is represented with an icon and a short description, making it easy for users to quickly understand the product's value.
-// The component expects an array of features with `icon`, `title`, and `description` properties.
+import Image from 'next/image';
+import features from '@/assets/landing-page-10/images/feature.svg';
 
-import React from 'react';
-import { FaGraduationCap } from 'react-icons/fa';
+const cardDetails = [
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+];
 
-const Features = () => {
+export default async function Features() {
   return (
-    <div id='features' className='space-y-[96px]'>
-      <div className='space-y-5 px-4'>
-        <h1 className='text-center text-5xl md:text-[56px] font-medium leading-[56px] header-gradient'>
-          Revolutionize your workflow
-        </h1>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
-        {[...Array(6)].map((_, index) => (
-          <div key={index} className='text-white space-y-6 text-center relative p-6'>
-            <div className='bg-[#26AB75]/60 size-20 blur-2xl absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2'></div>
-            <FaGraduationCap className='size-8 z-50 mx-auto' />
-            <h1 className='text-2xl font-bold leading-7'>Free forever</h1>
-            <p className='text-[#ABABB0] text-center text-sm leading-6'>
-              Our free plan gives you unlimited team members, 3 boards, and 300+ expert-made templates.
-            </p>
+    <div id='features' className='flex justify-center'>
+      <div className='md:max-w-[1030px] max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
+        <div className='flex flex-col items-center gap-7 justify-between text-center'>
+          <div className='flex flex-col gap-4'>
+            <span className='font-medium text-sm text-[#227AFF]'>What can you do with builderkit?</span>
+            <h1 className='md:text-4xl text-2xl font-semibold max-w-lg flex flex-col gap-2'>
+              <span>Explore the power of</span>
+              <span>AI apps generation Workflow</span>
+            </h1>
           </div>
-        ))}
+
+          <span className='text-[#A8A8A8] leading-6 max-w-[628px] md:text-lg'>
+            Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
+            of Effort and Use our robust Deployable code.
+          </span>
+        </div>
+
+        <div className='flex gap-4 flex-col md:flex-row '>
+          {cardDetails.map((card) => (
+            <div
+              key={card.title}
+              className='md:rounded-3xl rounded-lg flex flex-col md:flex md:gap-8 gap-4 border border-[#2B2F45] p-4 bg-[#161823]'>
+              <Image src={card.url} alt={card.title} width={400} height={400} className='rounded-lg' />
+              <div className='gap-1.5 flex flex-col'>
+                <h2 className='font-semibold md:text-xl text-lg'>{card.title}</h2>
+                <span className='text-[#A8A8A8] leading-7'>{card.content}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
-};
-
-export default Features;
+}

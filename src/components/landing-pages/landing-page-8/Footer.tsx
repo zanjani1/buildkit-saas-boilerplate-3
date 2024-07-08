@@ -1,95 +1,97 @@
-import Button from './Button';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
+// This is the Footer component of the landing page.
 
-const options = [
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import ArrowRightSm from '@/assets/landing-page-8/icons/ArrowRightSm';
+
+// Array of objects representing footer navigation items
+const footerItems = [
   {
     label: 'About',
-    url: '/about',
-  },
-  {
-    label: 'Company',
-    url: '/company',
-  },
-  {
-    label: 'Press',
-    url: '/press',
+    url: '#',
   },
   {
     label: 'Contact',
-    url: '/contact',
-  },
-  {
-    label: 'Product',
-    url: '/product',
-  },
-  {
-    label: 'Careers',
-    url: '/careers',
+    url: '#',
   },
   {
     label: 'Blog',
-    url: '/blog',
-  },
-  {
-    label: 'Press',
-    url: '/press',
-  },
-  {
-    label: 'Newsletter',
-    url: '/newsletter',
+    url: '#',
   },
   {
     label: 'Story',
-    url: '/story',
+    url: '#',
+  },
+  {
+    label: 'Company',
+    url: '#',
+  },
+  {
+    label: 'Product',
+    url: '#',
+  },
+  {
+    label: 'Press',
+    url: '#',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '#',
+  },
+  {
+    label: 'Press',
+    url: '#',
+  },
+  {
+    label: 'Careers',
+    url: '#',
+  },
+  {
+    label: 'News letters',
+    url: '#',
   },
   {
     label: 'More',
-    url: '/more',
+    url: '#',
   },
 ];
 
-export default function Footer() {
+export default async function Footer() {
   return (
-    // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <div className='bg-black md:py-20 md:pb-28 md:px-[135px] px-8 py-10 bg-gradient-to-b from-[#090A18] from-80% to-[#313B827D]'>
-      <div className='flex flex-col md:gap-16 gap-8 '>
-        <div className='flex justify-between flex-col md:flex-row gap-6 md:gap-0'>
-          <h1 className='font-medium text-white text-[26px] leading-[52px]'>
+    <footer className='bg-[#062616] text-white px-5'>
+      <div className='max-w-6xl mx-auto py-12 md:py-16'>
+        <div className='flex flex-col md:flex-row md:items-center justify-between gap-6'>
+          <p className='md:w-3/4 text-3xl md:text-4xl font-medium'>
             Get your AI apps built with blazing speed.
-          </h1>
-          <Button fill={false} size='lg'>
-            <span>Get Started</span>
-            <ArrowRightIcon className='font-bolder' />
-          </Button>
+          </p>
+          <Link href={'/login'}>
+            <Button variant={'ghost'} className='flex gap-2 px-4 py-6 rounded bg-white text-black'>
+              Get Started
+              <ArrowRightSm />
+            </Button>
+          </Link>
         </div>
 
-        <hr className='border opacity-25'></hr>
+        <hr className='opacity-10 my-16' />
 
-        <div className='flex justify-between flex-col md:flex-row gap-10 md:gap-0'>
-          <div className='flex flex-col gap-8 max-w-96'>
-            <h1 className='font-medium text-2xl leading-6 text-[#FFFFFFB2]'>BuilderKit.ai</h1>
-            <span className='text-[#B0B2B8] md:text-lg'>
+        <div className='flex flex-col md:flex-row justify-between gap-10 max-md:mb-8'>
+          <div className='flex flex-col gap-10'>
+            <p className='text-2xl font-medium text-white/70'>BuilderKit.ai</p>
+            <p className='max-w-sm tracking-[-0.54px] leading-6 text-white/60'>
               Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
-            </span>
-            <p className='font-medium text-white'>All rights reserved</p>
+            </p>
           </div>
 
-          <div className='grid grid-cols-3 md:gap-x-[140px] gap-y-4 gap-x-10 text-[#B0B2B8] text-sm font-medium '>
-            {options.map((option, index) => {
-              return (
-                <Link href={option.url} className='text-start hover:underline' key={index}>
-                  {option.label}
-                </Link>
-              );
-            })}
+          <div className='text-white/60 grid grid-rows-4 grid-cols-3 grid-flow-col lg:gap-x-24 gap-y-6'>
+            {footerItems.map((item, index) => (
+              <Link key={index} href={item.url} className='hover:underline'>
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
+        <p className='font-medium'>All rights reserved.</p>
       </div>
-    </div>
+    </footer>
   );
 }
