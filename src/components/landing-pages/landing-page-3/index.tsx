@@ -5,7 +5,7 @@ import Pricing from './Pricing';
 import Faq from './Faq';
 import Footer from './Footer';
 
-export default async function LandingPage4() {
+export default async function LandingPage3() {
   return (
     <div className='bg-black text-white '>
       <Hero />

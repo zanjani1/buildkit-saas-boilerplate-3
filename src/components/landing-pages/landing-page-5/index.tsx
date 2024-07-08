@@ -8,7 +8,7 @@ import Hero from './Hero';
 import Product from './Product';
 import Pricing from './pricing/Pricing';
 
-export default async function LandingPage2() {
+export default async function LandingPage5() {
   return (
     <>
       <Hero />
