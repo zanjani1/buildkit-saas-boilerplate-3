@@ -23,7 +23,7 @@ const accordion = [
   },
 ];
 
-export default function FAQ() {
+export default function Faq() {
   return (
     <div id='faq' className='flex flex-col items-center md:gap-20 gap-10'>
       <div className='flex flex-col gap-6 items-center justify-around'>

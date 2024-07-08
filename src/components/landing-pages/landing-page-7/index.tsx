@@ -3,7 +3,7 @@ import Hero from './Hero';
 import Features2 from './Features2';
 import Features from './Features';
 import Pricing from './Pricing';
-import Faq from './FAQ';
+import Faq from './Faq';
 import Footer from './Footer';
 
 export default function LandingPage8() {

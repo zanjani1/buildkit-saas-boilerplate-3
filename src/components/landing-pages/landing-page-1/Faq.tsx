@@ -28,7 +28,7 @@ const accordionData = [
   },
 ];
 
-const FAQs = () => {
+const Faq = () => {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (value: string) => {
@@ -69,4 +69,4 @@ const FAQs = () => {
   );
 };
 
-export default FAQs;
+export default Faq;
