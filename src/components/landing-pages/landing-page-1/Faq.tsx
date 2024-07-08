@@ -28,7 +28,7 @@ const accordionData = [
   },
 ];
 
-const Faq = () => {
+export default function Faq() {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (value: string) => {
@@ -67,6 +67,4 @@ const Faq = () => {
       </div>
     </div>
   );
-};
-
-export default Faq;
+}
