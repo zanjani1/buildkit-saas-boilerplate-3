@@ -5,7 +5,7 @@ import Product from './Product';
 import Pricing from './pricing/Pricing';
 import Footer from './Footer';
 
-export default async function LandingPage5() {
+export default async function LandingPage2() {
   return (
     <>
       <main className='bg-black'>

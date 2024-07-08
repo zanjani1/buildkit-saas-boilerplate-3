@@ -1,12 +1,12 @@
 import FeaturedOn from './FeaturedOn';
 import Hero from './Hero';
-import Features2 from './Features-2';
+import Features2 from './Features2';
 import Features from './Features';
 import Pricing from './Pricing';
 import Footer from './Footer';
 import Faq from './Faq';
 
-export default function LandingPage6() {
+export default function LandingPage10() {
   return (
     <div className='text-white bg-[#141414] bg-gradient-to-bl from-[#313B8233] to-[#090A1833]'>
       <Hero />

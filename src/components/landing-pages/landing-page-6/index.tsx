@@ -9,7 +9,7 @@ import Faq from './Faq';
 import Footer from './Footer';
 import Features from './Features';
 
-export default async function LandingPage3() {
+export default async function LandingPage6() {
   return (
     <>
       {/* eslint-disable tailwindcss/no-contradicting-classname */}

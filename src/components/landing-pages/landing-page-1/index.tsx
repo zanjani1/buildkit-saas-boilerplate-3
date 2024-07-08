@@ -10,7 +10,7 @@ import Pricing from './Pricing';
 import WorkFlow from './WorkFlow';
 import Navbar from './Navbar';
 
-export default async function LandingPage10() {
+export default async function LandingPage1() {
   return (
     <>
       <Navbar />
