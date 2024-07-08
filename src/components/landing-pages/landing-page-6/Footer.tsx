@@ -1,101 +1,90 @@
-import Image from 'next/image';
-import Button from './Button';
+import { Button } from '@/components/ui/button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 
-const All = [
+const options = [
   {
     label: 'About',
-    link: '/about',
+    url: '',
   },
   {
     label: 'Company',
-    link: '/company',
+    url: '',
   },
   {
-    label: 'Careers',
-    link: '/careers',
+    label: 'Press',
+    url: '',
   },
   {
-    label: 'Newsletter',
-    link: '/newsletter',
-  },
-];
-
-const Info = [
-  {
-    label: 'Features',
-    link: '/features',
+    label: 'Contact',
+    url: '',
   },
   {
     label: 'Product',
-    link: '/product',
+    url: '',
   },
   {
-    label: 'Pricing',
-    link: '/pricing',
+    label: 'Careers',
+    url: '',
   },
   {
-    label: 'FAQs',
-    link: '/faqs',
+    label: 'Blog',
+    url: '',
+  },
+  {
+    label: 'Press',
+    url: '',
+  },
+  {
+    label: 'Newsletter',
+    url: '',
+  },
+  {
+    label: 'Story',
+    url: '',
+  },
+  {
+    label: 'More',
+    url: '',
+  },
+  {
+    label: 'More',
+    url: '',
   },
 ];
 
-export default async function Footer() {
+export default function Footer() {
   return (
-    <div className='flex justify-center'>
-      <div className='flex flex-col md:gap-32 gap-24 md:py-20 py-10 md:max-w-5xl max-w-80 '>
-        <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
-          <div className='flex flex-col md:gap-6 gap-4 md:w-2/5'>
-            <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32 h-8' />
-
-            <span className='text-[#A8A8A8] text-start'>
-              Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
-            </span>
-
-            <Button fill={false} size='md' rounded={true}>
-              Get Started
-              <ArrowRightIcon />
-            </Button>
-          </div>
-
-          <div className='flex gap-6 md:flex-1 flex-col  md:flex-row'>
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs'>ALL</p>
-              <div className='flex flex-col gap-3 text-[#A8A8A8]'>
-                {All.map((item) => {
-                  return (
-                    <Link href={item.link} key={item.label}>
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs'>INFO</p>
-              <div className='flex flex-col gap-3 text-stone-400'>
-                {Info.map((item) => {
-                  return (
-                    <Link href={item.link} key={item.label}>
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className='flex flex-col gap-4 w-1/3'>
-              <p className='text-xs'>CONTACTS</p>
-              <Link href='mailto:vatsal1811@gmail.com' className='text-stone-400'>
-                vatsal1811@gmail.com
-              </Link>
-            </div>
-          </div>
+    <div className=' mt-20 md:py-20 md:px-32 bg-[#062B1C] px-8 py-10'>
+      <div className='flex flex-col md:gap-16 gap-8 '>
+        <div className='flex justify-between flex-col gap-6 md:gap-0 md:flex-row'>
+          <p className='font-medium md:text-4xl text-white max-w-[613px] text-2xl'>
+            Get your AI apps built with blazing speed.
+          </p>
+          <Button className='h-10 md:h-14 bg-white hover:bg-white/95 text-black text-base px-2 md:px-8 font-semibold rounded-full gap-2'>
+            <span>Get Started</span>
+            <ArrowRightIcon />
+          </Button>
         </div>
-        <div className='flex justify-center'>
-          <p className='text-stone-600 text-xs'>© 2024 — 1811 Labs</p>
+
+        <hr className='border opacity-25'></hr>
+
+        <div className='flex justify-between flex-col gap-10 md:flex-row md:gap-0'>
+          <div className='flex flex-col gap-8 max-w-[300px]'>
+            <p className='font-medium text-2xl leading-6 text-stone-300'>BuilderKit.ai</p>
+            <p className='text-stone-400'>
+              Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.
+            </p>
+            <p className='font-medium text-white'>All rights reserved</p>
+          </div>
+
+          <div className='grid grid-cols-3 md:gap-x-32 gap-y-4 gap-x-10 text-stone-400 text-sm font-medium '>
+            {options.map((option, index) => (
+              <Link href={option.url} className='text-start hover:underline' key={index}>
+                {option.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

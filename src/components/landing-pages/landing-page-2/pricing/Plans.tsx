@@ -4,9 +4,9 @@
 
 'use client';
 
+import BoldRightIcon from '@/assets/landing-page-2/icons/BoldRightIcon';
 import OrangeArrowIcon from '@/assets/landing-page-2/icons/OrangeArrowIcon';
 import { cn } from '@/utils/utils';
-import { FaArrowRightLong } from 'react-icons/fa6';
 
 const tiers = [
   {
@@ -54,29 +54,28 @@ const tiers = [
 export default function Plans() {
   return (
     <>
-      <div className='grid mt-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 mt-16'>
         {tiers.map((tier) => (
           // Card for each plan with its respective details and pricing.
-
           <div
             key={tier.id}
-            className='w-full h-fit shadow-sm bg-gradient-to-b from-white to-neutral-50 border border-[#E5E7EB] p-6 rounded-2xl flex mx-auto flex-col mt-6'>
-            <div className='text-center space-y-4 w-full mt-4'>
+            className='w-full h-fit md:max-w-sm border-[#171717] bg-[#0D0D0D] shadow-sm text-white rounded-2xl p-4 sm:p-6 mx-auto mt-3'>
+            <div className='text-center w-full mt-4'>
               {tier.name === 'Pro' && (
-                <div className='w-1/2 h-7 flex items-center justify-center gap-3 rounded-md mx-auto text-xs font-medium text-lp2-primary bg-[#FCF9F7]'>
+                <div className='w-1/2 h-8 flex items-center justify-center gap-3 rounded-md mx-auto text-xs font-medium text-lp2-primary bg-[#FCF9F712]'>
                   <span className='size-1.5 text-center bg-lp2-primary rounded-full block' /> MOST POPULAR
                 </div>
               )}
-              <p className='text-lg font-semibold'>{tier.name.toUpperCase()}</p>
+              <p className='text-lg font-semibold mt-2'>{tier.name.toUpperCase()}</p>
 
-              <p className='font-semibold text-4xl'>
+              <p className='font-medium leading-loose text-4xl'>
                 <span>{tier.sellingPrice.monthly}</span>
                 <span className='text-[#9CA3AF]'>/mo</span>
               </p>
             </div>
-            <ul role='list' className='space-y-3 mt-6'>
+            <ul role='list' className='space-y-5 mt-5 '>
               {tier.features.map((feature) => (
-                <li key={feature} className='flex items-start gap-3 font-medium'>
+                <li key={feature} className='flex items-start leading-relaxed gap-3 font-medium'>
                   <OrangeArrowIcon /> <span>{feature}</span>
                 </li>
               ))}
@@ -85,12 +84,12 @@ export default function Plans() {
             {/* CTA button for the specific plan. */}
             <button
               className={cn(
-                'w-full h-12 font-semibold flex items-center justify-center gap-2 mt-12 text-sm',
+                'w-full h-12 md:h-14 flex items-center justify-center gap-2 rounded-full mt-12 text-sm',
                 tier.name === 'Pro'
-                  ? 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white rounded-xl'
-                  : 'bg-gradient-to-b from-white to-gray-100 border border-gray-200 rounded-lg'
+                  ? 'bg-gradient-to-t from-lp2-primary to-lp2-primary/80 hover:bg-lp2-primary hover:text-white text-white'
+                  : 'bg-[#262626] hover:bg-[#262626]/90'
               )}>
-              Get Now <FaArrowRightLong />
+              Get Now <BoldRightIcon />
             </button>
           </div>
         ))}

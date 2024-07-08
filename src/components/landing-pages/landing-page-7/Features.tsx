@@ -1,64 +1,56 @@
-// Product component of landing page
+import Image from 'next/image';
+import features from '@/assets/landing-page-7/images/features.svg';
 
-import LightningIcon from '@/assets/landing-page-7/icons/LightningIcon';
-
-const cardContent = [
+const cardDetails = [
   {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
   },
   {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
   },
   {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
-  },
-  {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
-  },
-  {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
-  },
-  {
-    icon: LightningIcon,
-    title: 'Quality apps',
-    description: 'Identify strengths, capitalize on weaknesses, and chart a course for unparalleled success.',
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
   },
 ];
 
-export default async function Features() {
+export default function Features() {
   return (
-    <div id='features' className='mx-auto px-4 my-[120px]'>
-      <div className='max-w-6xl flex flex-col justify-center items-center mx-auto space-y-16 md:space-y-20'>
-        <div className='text-center'>
-          <p className='text-lp7-primary text-sm font-semibold mb-4'>What can you do with builder kit?</p>
-          <p className='font-medium max-w-sm leading-9 text-lp7-secondary tracking-[-1.68px] text-2xl sm:text-[32px]'>
-            Essentially, everything you need to ship you first AI App
-          </p>
-        </div>
+    <div id='features' className='container mx-auto max-w-6xl px-4 py-24 md:py-32'>
+      <div className='text-center mb-16 md:mb-24'>
+        <p className='text-2xl md:text-4xl font-medium mb-7'>
+          Explore the power of
+          <br />
+          AI apps generation <span className='text-blue-600'>Workflow</span>
+        </p>
+        <p className='text-gray-600 md:text-lg max-w-2xl mx-auto'>
+          Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
+          Effort and Use our robust Deployable code.
+        </p>
+      </div>
 
-        <div className='grid grid-cols-1 mx-auto md:grid-cols-2 xl:grid-cols-3 gap-6'>
-          {cardContent.map((item, index) => (
-            <div key={index} className='rounded-xl md:max-w-80 bg-[#FAFAFA] p-6'>
-              <div>
-                <item.icon />
-              </div>
-              <div className='mt-4'>
-                <p className='text-[20px] leading-6 text-lp7-secondary font-semibold'>{item.title}</p>
-                <p className='text-[#727272] text-sm mt-2'>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className='grid md:grid-cols-3 gap-8'>
+        {cardDetails.map((card) => (
+          <div key={card.title} className='flex flex-col items-center'>
+            <Image
+              src={card.url}
+              alt={card.title}
+              width={400}
+              height={400}
+              className='bg-gray-100 rounded mb-6'
+            />
+            <h2 className='font-medium text-xl md:text-2xl mb-4'>{card.title}</h2>
+            <p className='text-gray-600 text-center'>{card.content}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

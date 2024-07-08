@@ -1,40 +1,38 @@
-// This component renders the main hero section of the landing page which is designed to grab the visitor's attention.
-// It includes a navigation bar, a headline, a detailed subtext that explains the product briefly, and a call-to-action button.
-
-import Navbar from '@/components/landing-pages/landing-page-7/Navbar';
+import Navbar from './Navbar';
 import Image from 'next/image';
-import HeroImage from '@/assets/landing-page-7/images/hero.png';
-import Link from 'next/link';
-import { Button } from './Button';
-import HeroBlocksBg from '@/assets/landing-page-7/icons/HeroBlocksBg';
-import ArrowRightMd from '@/assets/landing-page-7/icons/ArrowRightMd';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { FaArrowRight } from 'react-icons/fa6';
+import Button from './Button';
+import hero from '@/assets/landing-page-7/images/hero.svg';
 
-export default async function Hero() {
+export default function Hero() {
   return (
-    <div className='relative'>
-      <div className='max-w-7xl mx-auto'>
-        {/* Navbar component: Displays the top navigation menu. */}
-        <div className='absolute inset-0 -z-20 overflow-hidden max-w-[80vw] left-[12%]'>
-          <HeroBlocksBg />
-        </div>
-        <Navbar />
-        <div className='flex max-w-4xl pt-16 flex-col gap-5 px-4 items-center justify-center mx-auto'>
-          <h1 className='font-semibold max-w-xl md:leading-[64px] text-lp7-secondary text-3xl sm:text-[44px] text-center'>
-            Generate modular AI Apps with ease and pace
+    <div className='flex flex-col items-center md:gap-24 gap-16'>
+      <Navbar />
+
+      <div className='flex flex-col gap-12 items-center'>
+        <div className='flex flex-col gap-5 max-md:max-w-80 w-full items-center'>
+          <div className='border border-[#222222] px-4 items-center flex h-7 font-semibold text-sm rounded-full'>
+            Unlock Your Creative Spark!
+            <ArrowRightIcon className='ml-2' />
+          </div>
+
+          <h1 className='font-medium md:leading-[60px] md:text-[60px] text-3xl text-center md:w-fit'>
+            Generate AI Apps with ease
           </h1>
-          <p className='text-lp7-sub text-center leading-7 max-w-2xl'>
+
+          <span className='text-[#787878] text-sm md:text-base text-center max-w-[736px] leading-7'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
-          </p>
-          <Button className='flex gap-2.5 shadow-xl h-10 px-4'>
-            <Link href={'/login'}>Get started</Link>
-            <ArrowRightMd />
-          </Button>
+          </span>
         </div>
-        <div className='w-full px-6 mt-16 md:mt-10'>
-          <Image src={HeroImage} alt='hero' />
-        </div>
+        <Button fill={false} size='md'>
+          <span>Get Started</span>
+          <FaArrowRight />
+        </Button>
       </div>
+
+      <Image src={hero} width={200} height={200} alt='hero' className='w-full md:px-40 px-5' />
     </div>
   );
 }

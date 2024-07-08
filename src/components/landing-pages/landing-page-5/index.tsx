@@ -1,21 +1,22 @@
-import Hero from '@/components/landing-pages/landing-page-5/Hero';
-import Features from '@/components/landing-pages/landing-page-5/Features';
-import Faq from '@/components/landing-pages/landing-page-5/Faq';
-import Product from '@/components/landing-pages/landing-page-5/Product';
-import Pricing from '@/components/landing-pages/landing-page-5/pricing/Pricing';
-import Footer from '@/components/landing-pages/landing-page-5/Footer';
+// This is the entry component for the landing page of the application.
+// It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
 
-export default async function LandingPage5() {
+import Faq from './Faq';
+import Features from './Features';
+import Footer from './Footer';
+import Hero from './Hero';
+import Product from './Product';
+import Pricing from './pricing/Pricing';
+
+export default async function LandingPage2() {
   return (
     <>
-      <main className='bg-black'>
-        <Hero />
-        <Features />
-        <Product />
-        <Pricing />
-        <Faq />
-        <Footer />
-      </main>
+      <Hero />
+      <Features />
+      <Product />
+      <Pricing />
+      <Faq />
+      <Footer />
     </>
   );
 }
