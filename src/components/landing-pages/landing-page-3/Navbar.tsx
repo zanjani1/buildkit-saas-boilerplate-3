@@ -8,22 +8,10 @@ import Link from 'next/link';
 import Button from './Button';
 
 const navOptions = [
-  {
-    label: 'Features',
-    url: '#features',
-  },
-  {
-    label: 'Product',
-    url: '#product',
-  },
-  {
-    label: 'Pricing',
-    url: '#pricing',
-  },
-  {
-    label: 'FAQ',
-    url: '#faq',
-  },
+  { label: 'Features', url: '#features' },
+  { label: 'Product', url: '#product' },
+  { label: 'Pricing', url: '#pricing' },
+  { label: 'FAQ', url: '#faq' },
 ];
 
 export default function Navbar() {

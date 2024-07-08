@@ -15,6 +15,7 @@ export default function EmailVerification({ searchParams }: { searchParams: { me
       redirect(`/email-verification?message=Invalid email`);
     }
 
+    // Send the magic link to the email
     const response = await sendMagicLink(email);
     if (typeof response === 'string') {
       redirect(`/email-verification?message=${response}`);
