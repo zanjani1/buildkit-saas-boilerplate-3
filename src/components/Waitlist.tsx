@@ -1,3 +1,4 @@
+import { cn } from '@/utils/utils';
 import { PersonIcon } from '@radix-ui/react-icons';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -24,7 +25,7 @@ export default async function WaitlistComponent({ colorScheme }: WaitlistCompone
         'text-black': !colorScheme.dark,
         'text-white': colorScheme.dark,
       })}>
-      <div className='flex flex-col items-center justify-center max-w-xl w-full gap-52'>
+      <div className='flex flex-col items-center justify-around max-w-xl w-full'>
         <div className='flex flex-col items-center gap-[88px]'>
           <div className='flex flex-col items-center gap-8'>
             <Image
@@ -47,7 +48,7 @@ export default async function WaitlistComponent({ colorScheme }: WaitlistCompone
               <input
                 type='text'
                 placeholder='Name'
-                className='bg-transparent w-full outline-none text-[#FFFFFF1A] caret-stone-300'
+                className={cn('bg-transparent w-full outline-none', !colorScheme.dark && 'text-black')}
               />
             </div>
 
@@ -58,7 +59,7 @@ export default async function WaitlistComponent({ colorScheme }: WaitlistCompone
               <input
                 type='email'
                 placeholder='Email'
-                className='bg-transparent w-full outline-none text-[#FFFFFF1A] caret-stone-300'
+                className={cn('bg-transparent w-full outline-none', !colorScheme.dark && 'text-black')}
               />
             </div>
 
