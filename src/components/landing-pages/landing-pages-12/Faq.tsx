@@ -1,7 +1,7 @@
 'use client';
+import React, { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Plus, Minus } from 'lucide-react';
-import { useState } from 'react';
 
 const accordion = [
   {
@@ -22,7 +22,11 @@ const accordion = [
   },
 ];
 
-const CustomAccordionTrigger = ({ children, className, ...props }: React.HTMLProps<HTMLDivElement>) => {
+interface CustomAccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionTrigger> {
+  children: React.ReactNode;
+}
+
+const CustomAccordionTrigger: React.FC<CustomAccordionTriggerProps> = ({ children, className, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <AccordionTrigger
