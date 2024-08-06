@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
@@ -34,30 +35,36 @@ const features = [
   },
 ];
 
-const Features = () => {
+const Features: React.FC = () => {
   const [activeFeature, setActiveFeature] = useState(0);
-  const featureRefs = useRef(features.map(() => React.createRef()));
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const controls = useAnimation();
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const observers = featureRefs.current.map((ref, index) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveFeature(index);
-            resetAutoChange();
-          }
-        },
-        { threshold: 0.5 }
-      );
-      observer.observe(ref.current);
-      return observer;
-    });
+    const observers = featureRefs.current
+      .map((ref, index) => {
+        if (!ref) return null; // Skip if ref is null
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveFeature(index);
+              resetAutoChange();
+            }
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(ref);
+        return observer;
+      })
+      .filter((observer): observer is IntersectionObserver => observer !== null);
 
     return () => {
       observers.forEach((observer) => observer.disconnect());
-      clearInterval(intervalRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
   }, []);
 
@@ -70,11 +77,17 @@ const Features = () => {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 5000);
 
-    return () => clearInterval(intervalRef.current);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, []);
 
   const resetAutoChange = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     intervalRef.current = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 5000);
@@ -100,7 +113,7 @@ const Features = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                ref={featureRefs.current[index]}
+                ref={(el) => (featureRefs.current[index] = el)} // Correct ref assignment
                 className='flex md:w-[346px] max-h-32 pt-5 pl-5 pb-6 pr-6 gap-5 bg-stone-50 rounded-3xl'>
                 <span className='text-3xl font-bold text-stone-300 w-9'>{feature.number}</span>
                 <div>

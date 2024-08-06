@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import Slider, { settings } from 'react-slick';
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
@@ -69,6 +69,18 @@ const Feedback: React.FC = () => {
     ],
   };
 
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
   return (
     <div className='gap-10 md:px-0 px-4 pb-0'>
       <div className='flex items-center flex-col justify-center gap-10 sm:gap-20 bg-neutral-900 w-full py-20 sm:py-40 mx-auto'>
@@ -76,18 +88,18 @@ const Feedback: React.FC = () => {
           <div className='flex flex-col sm:flex-row items-center justify-between w-full px-4 md:px-0 mb-10 sm:mb-0'>
             <div className='flex gap-4 sm:hidden mb-6'>
               <button
-                onClick={() => sliderRef.current.slickPrev()}
+                onClick={handlePrev}
                 className='p-2 rounded-full bg-neutral-700 text-white/20 hover:bg-[#333]'>
                 <FaArrowLeft className='text-center text-lg' />
               </button>
               <button
-                onClick={() => sliderRef.current.slickNext()}
+                onClick={handleNext}
                 className='p-2 rounded-full bg-neutral-700 text-white hover:bg-[#333]'>
                 <FaArrowRight className='text-center text-lg' />
               </button>
             </div>
             <button
-              onClick={() => sliderRef.current.slickPrev()}
+              onClick={handlePrev}
               className='hidden sm:block p-2 rounded-full bg-neutral-700 text-white/20 hover:bg-[#333]'>
               <FaArrowLeft className='text-center text-lg md:text-2xl' />
             </button>
@@ -101,7 +113,7 @@ const Feedback: React.FC = () => {
               </p>
             </div>
             <button
-              onClick={() => sliderRef.current.slickNext()}
+              onClick={handleNext}
               className='hidden sm:block p-2 rounded-full bg-neutral-700 text-white hover:bg-[#333]'>
               <FaArrowRight className='text-center text-lg md:text-2xl' />
             </button>
