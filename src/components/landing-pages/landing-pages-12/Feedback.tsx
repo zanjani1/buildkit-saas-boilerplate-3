@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import Slider, { Settings } from 'react-slick';
+import Slider, { settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
@@ -33,7 +33,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) =>
 );
 
 const Feedback: React.FC = () => {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<Slider | null>(null);
 
   const settings = {
     dots: true,
