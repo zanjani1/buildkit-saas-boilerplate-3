@@ -26,19 +26,19 @@ const All = [
 const Info = [
   {
     label: 'Features',
-    link: '',
+    link: '#features',
   },
   {
     label: 'Product',
-    link: '',
+    link: '#product',
   },
   {
     label: 'Pricing',
-    link: '',
+    link: '#pricing',
   },
   {
     label: 'FAQs',
-    link: '',
+    link: '#faq',
   },
 ];
 

@@ -35,33 +35,32 @@ const features = [
   },
 ];
 
-const Features: React.FC = () => {
+const Features = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const controls = useAnimation();
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const observers = featureRefs.current
-      .map((ref, index) => {
-        if (!ref) return null; // Skip if ref is null
+    featureRefs.current = featureRefs.current.slice(0, features.length);
 
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setActiveFeature(index);
-              resetAutoChange();
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observer.observe(ref);
-        return observer;
-      })
-      .filter((observer): observer is IntersectionObserver => observer !== null);
+    const observers = featureRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveFeature(index);
+            resetAutoChange();
+          }
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(ref);
+      return observer;
+    });
 
     return () => {
-      observers.forEach((observer) => observer.disconnect());
+      observers.forEach((observer) => observer?.disconnect());
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
@@ -113,7 +112,11 @@ const Features: React.FC = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                ref={(el) => (featureRefs.current[index] = el)} // Correct ref assignment
+                ref={(el) => {
+                  if (el) {
+                    featureRefs.current[index] = el;
+                  }
+                }}
                 className='flex md:w-[346px] max-h-32 pt-5 pl-5 pb-6 pr-6 gap-5 bg-stone-50 rounded-3xl'>
                 <span className='text-3xl font-bold text-stone-300 w-9'>{feature.number}</span>
                 <div>
