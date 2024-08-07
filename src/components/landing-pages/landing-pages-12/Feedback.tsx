@@ -24,7 +24,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) =>
       <div className='flex items-center gap-2 sm:gap-4 max-w-60 max-h-16 md:mt-14 '>
         <Image src={avatar} alt={author} width={60} height={60} className='rounded-full' />
         <div>
-          <div className='max-w-40 max-h-10 gap-4'>
+          <div className='max-w-40 max-h-10 gap-1 flex flex-col'>
             <p className='text-white text-base md:max-w-24 md:max-h-4 sm:text-sm font-medium'>{author}</p>
             <p className='text-[#666] text-xs'>{role}</p>
           </div>

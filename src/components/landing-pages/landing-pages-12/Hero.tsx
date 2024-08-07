@@ -15,14 +15,14 @@ export default function Hero() {
       </div>
       <Navbar />
       <div className='flex flex-col gap-8 items-center text-center md:px-0 px-3'>
-        <h1 className='font-semibold md:text-5xl text-3xl md:w-[599px] md:h-28 text-center tracking-tight pt-10 '>
+        <h1 className='font-semibold md:text-5xl text-3xl md:w-[599px] md:h-28 text-center tracking-tight mt-14 '>
           Generate modular AI Apps with ease and pace
         </h1>
-        <span className='text-zinc-950 text-sm md:text-base leading-8 text-center tracking-tight max-w-xl md:h-16 pt-4'>
+        <span className='text-zinc-950 text-sm md:text-base leading-8 text-center tracking-tight max-w-xl md:h-16 -mt-4'>
           Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
           Effort and Use our robust Deployable code.
         </span>
-        <div className='flex flex-col md:flex-row max-w-96 md:max-h-10 gap-4 justify-between items-center pt-6'>
+        <div className='flex flex-col md:flex-row max-w-96 md:max-h-10 gap-4 justify-between items-center mt-2'>
           <Link href='#pricing' passHref>
             <Button pro={true} size='sm' rounded={true}>
               <span>Get Started</span>
