@@ -24,8 +24,8 @@ const cardDetails = [
 
 export default function Features2() {
   return (
-    <div id='features' className='flex justify-center max-w-7xl mx-auto'>
-      <div className='flex flex-col md:py-32 py-16 items-center md:gap-20 gap-10'>
+    <div id='features' className='flex justify-center max-w-7xl mx-auto '>
+      <div className='flex flex-col md:py-40 py-16 items-center md:gap-20 gap-10'>
         <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
           <div className='flex flex-col gap-4 items-center'>
             <h1 className='font-medium text-2xl md:text-4xl max-w-xl text-zinc-900 text-center'>
@@ -39,7 +39,7 @@ export default function Features2() {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {cardDetails.map((card, index) => (
             <div key={index} className='flex flex-col md:w-96 max-h-[435px] gap-6 md:px-0 px-4'>
               <div className='flex justify-center md:max-w-96 md:max-h-72 rounded-3xl bg-zinc-100 gap-3 py-4'>

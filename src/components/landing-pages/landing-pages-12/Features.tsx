@@ -39,7 +39,6 @@ const Features = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const controls = useAnimation();
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     featureRefs.current = featureRefs.current.slice(0, features.length);
@@ -50,7 +49,6 @@ const Features = () => {
         ([entry]) => {
           if (entry.isIntersecting) {
             setActiveFeature(index);
-            resetAutoChange();
           }
         },
         { threshold: 0.5 }
@@ -61,9 +59,6 @@ const Features = () => {
 
     return () => {
       observers.forEach((observer) => observer?.disconnect());
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
     };
   }, []);
 
@@ -71,32 +66,11 @@ const Features = () => {
     controls.start({ opacity: 1, y: 0, transition: { duration: 0.5 } });
   }, [activeFeature, controls]);
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % features.length);
-    }, 5000);
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, []);
-
-  const resetAutoChange = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-    intervalRef.current = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % features.length);
-    }, 5000);
-  };
-
   return (
-    <div id='features' className='flex justify-center'>
-      <div className='md:max-w-[1030px] max-w-80 flex flex-col md:py-32 py-24 items-center md:gap-24 gap-16'>
+    <div id='features' className='flex justify-center '>
+      <div className='md:max-w-[1030px] max-w-80 flex flex-col md:pt-40 py-10 items-center md:gap-24 gap-16'>
         <div className='text-center space-y-6 max-w-2xl mx-auto gap-7 font-medium'>
-          <h1 className='text-4xl text-slate-950 leading-9 tracking-tight'>
+          <h1 className='md:text-4xl text-3xl text-slate-950 leading-9 tracking-tight'>
             Explore the power of
             <br />
             AI apps generation Workflow
@@ -107,7 +81,7 @@ const Features = () => {
           </p>
         </div>
 
-        <div className='md:flex md:items-start justify-between gap-10 pt-10'>
+        <div className='md:flex md:items-start justify-between gap-10 pt-10 '>
           <div className='md:w-1/2 space-y-6'>
             {features.map((feature, index) => (
               <div

@@ -49,7 +49,7 @@ export default function Plans() {
         <div
           key={tier.id}
           className={cn(
-            'w-full h-fit md:max-w-sm border-2 border-zinc-100 shadow-sm gap-2 text-black rounded-2xl p-6 mx-auto mt-3 self-end',
+            'w-full h-fit md:max-w-sm border-2 border-zinc-100 shadow-sm gap-2 text-black rounded-3xl p-6 mx-auto mt-3 self-end',
             tier.id === 'ultimate' && 'bg-stone-900 text-white'
           )}>
           <div className='w-full mt-6'>
