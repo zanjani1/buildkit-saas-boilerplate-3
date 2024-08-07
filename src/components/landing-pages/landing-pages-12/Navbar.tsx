@@ -28,7 +28,7 @@ export default function Navbar() {
               <Link
                 href={opt.url}
                 key={opt.label}
-                className='text-sm font-medium text-gray-900 tracking-tight '>
+                className='text-sm font-medium text-[#0C0E1E] tracking-[-4%] '>
                 {opt.label}
               </Link>
             );

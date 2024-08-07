@@ -52,7 +52,7 @@ const CustomAccordionTrigger: React.FC<CustomAccordionTriggerProps> = ({ childre
 export default function Faq() {
   return (
     <div className='flex justify-center'>
-      <div id='faq' className='flex flex-col md:py-32 gap-10 py-10 max-w-2xl'>
+      <div id='faq' className='flex flex-col md:py-32 gap-10 py-16 max-w-2xl'>
         <div className='flex flex-col gap-7 items-center'>
           <h1 className='md:text-4xl font-medium text-2xl text-slate-950'>Frequently asked questions</h1>
           <p className='text-zinc-950/60 px-10 md:px-0 leading-7'>

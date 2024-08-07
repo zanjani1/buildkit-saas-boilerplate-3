@@ -7,13 +7,6 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <div id='#product' className='flex flex-col items-center md:px-0 px-4 pb-0'>
-      <div className='flex bg-neutral-900 w-full text-white gap-3 py-2 px-3 justify-center items-center max-h-11 text-sm'>
-        <span className='text-center max-w-[397px]'>
-          Summer Sale: Get flat 10% off on any pack of podnotes.
-        </span>
-        <ArrowRightIcon />
-      </div>
-      <Navbar />
       <div className='flex flex-col gap-8 items-center text-center md:px-0 px-3'>
         <h1 className='font-semibold md:text-5xl text-3xl md:w-[599px] md:h-28 text-center tracking-tight mt-14 '>
           Generate modular AI Apps with ease and pace

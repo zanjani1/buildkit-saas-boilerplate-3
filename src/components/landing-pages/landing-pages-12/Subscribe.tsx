@@ -12,7 +12,7 @@ export default function Subscribe() {
   };
 
   return (
-    <div className='flex justify-center py-32 max-h-[619px] gap-8 relative px-4'>
+    <div className='flex justify-center md:py-32 py-10 max-h-[619px] gap-8 relative px-4'>
       <div className='bg-neutral-100 rounded-3xl p-10 max-w-[630px] w-full text-center gap-3'>
         <p className='text-sm text-neutral-900 mb-2 font-semibold'>Subscribe</p>
         <div className='grid grid-cols-1 max-w-xl max-h-64 gap-10 items-center justify-center'>

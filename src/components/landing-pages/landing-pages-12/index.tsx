@@ -7,11 +7,15 @@ import Footer from './Footer';
 import Faq from './Faq';
 import Subscribe from './Subscribe';
 import Feedback from './Feedback';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Headers from './Header';
+import Navbar from './Navbar';
 export default function LandingPage12() {
   return (
     <div>
+      <Headers />
+      <div className='flex flex-col justify-center items-center md:sticky md:top-0 md:z-50'>
+        <Navbar />
+      </div>
       <Hero />
       <FeaturedOn />
       <Features />

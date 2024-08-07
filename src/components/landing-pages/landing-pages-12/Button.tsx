@@ -26,7 +26,7 @@ function Button({ children, fill, bg, size, ghost, rounded, ultimate, pro, class
           'hover:bg-accent hover:text-accent-foreground bg-white gap-2': ghost,
           'px-6 h-10 w-44 font-medium': size === 'sm',
           'px-6 h-11': size === 'md',
-          'w-16 h-10 rounded-2xl py-1 px-2': size === 'semi',
+          'w-16 h-10 rounded-[32px] py-1 px-2 gap-20 tracking-[-4%] text-sm': size === 'semi',
           'w-full h-14 rounded-2xl py-1 px-2 gap-2': size === 'lg',
           'rounded-3xl': rounded,
         },
