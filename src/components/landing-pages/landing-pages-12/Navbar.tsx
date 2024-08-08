@@ -34,9 +34,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`w-full justify-center items-center flex transition-all duration-300 ${isSticky ? 'bg-white shadow-sm py-4' : 'md:py-10 py-4'}`}>
+      className={`w-full justify-center items-center flex transition-all duration-300 ${isSticky ? 'bg-white shadow-sm py-4' : 'py-4'}`}>
       <div
-        className={`w-full ${isSticky ? 'max-w-full' : 'md:max-w-[397px]'} flex ${isSticky ? 'justify-between md:justify-center' : 'md:justify-center justify-between'} items-center gap-2 px-4 md:px-0`}>
+        className={`w-full ${isSticky ? 'max-w-[397px]' : 'md:max-w-[397px]'} flex ${isSticky ? 'justify-between md:justify-center' : 'md:justify-center justify-between'} items-center gap-2 px-4 md:px-0`}>
         <Link href='https://www.builderkit.ai'>
           <div className='flex items-center size-10 bg-neutral-100 p-2 gap-2 rounded-3xl'>
             <Image src='/lp12-logo.svg' width={24} height={24} alt='logo' className='size-6' />

@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <div id='#product' className='flex flex-col items-center md:px-0 px-4 pb-0'>
-      <div className='flex flex-col gap-8 items-center text-center md:px-0 px-3'>
+      <div className='flex flex-col gap-8 items-center text-center md:px-0 px-3 md:pt-6'>
         <h1 className='font-medium md:text-5xl text-3xl md:w-[599px] md:h-28 text-center tracking-tight md:leading-[56.25px] my-3'>
           Generate modular AI Apps with ease and pace
         </h1>
