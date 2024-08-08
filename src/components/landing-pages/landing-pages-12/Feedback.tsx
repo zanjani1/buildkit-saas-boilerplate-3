@@ -2,21 +2,27 @@
 
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
 import avatar from '@/assets/landing-page-12/images/feedback.svg';
-import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 
-const FeedbackCard = ({ content, author, role }) => (
+// Define types for FeedbackCard props
+interface FeedbackCardProps {
+  content: string;
+  author: string;
+  role: string;
+}
+
+const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) => (
   <div className='w-full'>
     <div className='bg-[#1A1D1E] rounded-3xl p-6 shadow-lg md:h-[280px] flex flex-col md:w-[337px]'>
       <p className='text-white/60 text-sm sm:text-base leading-7 font-light line-clamp-3 sm:line-clamp-none md:w-72 h-28'>
         {content}
       </p>
-      <div className='flex items-center gap-2 sm:gap-4 max-w-60 max-h-16 md:mt-14 '>
+      <div className='flex items-center gap-2 sm:gap-4 max-w-60 max-h-16 md:mt-14'>
         <Image src={avatar} alt={author} width={60} height={60} className='rounded-full' />
         <div>
           <div className='max-w-40 max-h-10 gap-1 flex flex-col'>
@@ -29,8 +35,8 @@ const FeedbackCard = ({ content, author, role }) => (
   </div>
 );
 
-const Feedback = () => {
-  const sliderRef = useRef(null);
+const Feedback: React.FC = () => {
+  const sliderRef = useRef<Slider>(null);
   const [arrowColors, setArrowColors] = useState({
     left: 'text-white/15 bg-neutral-700/15',
     right: 'text-white bg-neutral-700',
@@ -45,13 +51,13 @@ const Feedback = () => {
     rows: 2,
     initialSlide: 0,
     arrows: false,
-    afterChange: (current) => {
+    afterChange: (current: number) => {
       if (current === 0) {
         setArrowColors({
           left: 'text-white/15 bg-neutral-700/15',
           right: 'text-white bg-neutral-700',
         });
-      } else if (current > feedbacks.length - settings.slidesToShow) {
+      } else if (current >= feedbacks.length - settings.slidesToShow) {
         setArrowColors({
           left: 'text-white bg-neutral-700',
           right: 'text-white/15 bg-neutral-700/15',
@@ -117,17 +123,17 @@ const Feedback = () => {
               <button
                 onClick={handlePrev}
                 className={`p-2 rounded-full size-12 ${arrowColors.left} hover:bg-[#333]`}>
-                <ArrowLeftIcon className='text-center  ml-2' />
+                <ArrowLeftIcon className='text-center size-8' />
               </button>
               <button onClick={handleNext} className={`p-2 rounded-full size-12 ${arrowColors.right}`}>
-                <ArrowRightIcon className='text-center text-white ml-2' />
+                <ArrowRightIcon className='text-center size-8' />
               </button>
             </div>
             <div className='flex items-center'>
               <button
                 onClick={handlePrev}
                 className={`hidden sm:block p-2 size-12 rounded-full ${arrowColors.left} mr-60`}>
-                <ArrowLeftIcon className='text-center size-8 ' />
+                <ArrowLeftIcon className='text-center size-8' />
               </button>
               <div className='max-w-xl gap-4 sm:gap-7 flex flex-col items-center justify-center text-center'>
                 <h2 className='text-xl sm:text-2xl md:text-4xl font-medium text-white'>
