@@ -154,9 +154,9 @@ const Feedback: React.FC = () => {
           </div>
         </div>
         <div className='w-full md:max-w-[1300px] md:p-0 p-2 md:max-h-[592px]'>
-          <Slider ref={sliderRef} {...settings}>
+          <Slider className='-m-4' ref={sliderRef} {...settings}>
             {feedbacks.map((feedback, index) => (
-              <div key={index} className='p-2 sm:p-2'>
+              <div key={index} className='p-3'>
                 <FeedbackCard {...feedback} />
               </div>
             ))}
