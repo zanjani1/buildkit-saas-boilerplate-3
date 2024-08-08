@@ -65,7 +65,7 @@ export default function Faq() {
               <Accordion type='single' collapsible>
                 <AccordionItem
                   value={item.title}
-                  className='md:w-[669px] w-full bg-[#FAFAFA] rounded-2xl shadow-none'>
+                  className='md:w-[669px] w-full bg-[#FAFAFA] rounded-2xl shadow-none border-none'>
                   <CustomAccordionTrigger className='text-base w-full md:mx-6 mx-3 md:h-16'>
                     {item.title}
                   </CustomAccordionTrigger>

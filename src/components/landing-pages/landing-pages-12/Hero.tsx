@@ -1,4 +1,3 @@
-import Navbar from './Navbar';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Button from './Button';
