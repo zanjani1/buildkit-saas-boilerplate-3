@@ -44,7 +44,7 @@ const tiers = [
 
 export default function Plans() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 md:gap-6  md:mt-10'>
       {tiers.map((tier) => (
         <div
           key={tier.id}
@@ -53,16 +53,16 @@ export default function Plans() {
             tier.id === 'ultimate' && 'bg-stone-900 text-white'
           )}>
           <div className='w-full mt-6'>
-            <p className='text-lg font-semibold'>{tier.name.toUpperCase()}</p>
+            <p className='text-lg font-medium'>{tier.name.toUpperCase()}</p>
             <p className='font-medium mt-2 mb-8 text-4xl'>
               <span>{tier.sellingPrice.monthly}</span>
               <span className='text-[#9CA3AF]'>/mo</span>
             </p>
-            <p>{tier.description}</p>
+            <p className='font-light text-base'>{tier.description}</p>
           </div>
           <ul role='list' className='space-y-4 mt-8'>
             {tier.features.map((feature) => (
-              <li key={feature} className='leading-relaxed flex gap-3 font-medium'>
+              <li key={feature} className='leading-relaxed flex gap-3 font-normal text-[15px]'>
                 {tier.id === 'pro' ? <TickIconBlack /> : <TickIconWhite />}
                 <span>{feature}</span>
               </li>
