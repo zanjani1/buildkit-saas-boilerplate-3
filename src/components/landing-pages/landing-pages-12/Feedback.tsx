@@ -8,14 +8,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
 import avatar from '@/assets/landing-page-12/images/feedback.svg';
+import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 
-interface FeedbackCardProps {
-  content: string;
-  author: string;
-  role: string;
-}
-
-const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) => (
+const FeedbackCard = ({ content, author, role }) => (
   <div className='w-full'>
     <div className='bg-[#1A1D1E] rounded-3xl p-6 shadow-lg md:h-[280px] flex flex-col md:w-[337px]'>
       <p className='text-white/60 text-sm sm:text-base leading-7 font-light line-clamp-3 sm:line-clamp-none md:w-72 h-28'>
@@ -34,9 +29,12 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) =>
   </div>
 );
 
-const Feedback: React.FC = () => {
-  const sliderRef = useRef<Slider | null>(null);
-  const [arrowColors, setArrowColors] = useState({ left: 'text-white/20', right: 'text-white' });
+const Feedback = () => {
+  const sliderRef = useRef(null);
+  const [arrowColors, setArrowColors] = useState({
+    left: 'text-white/15 bg-neutral-700/15',
+    right: 'text-white bg-neutral-700',
+  });
 
   const settings = {
     dots: false,
@@ -47,13 +45,22 @@ const Feedback: React.FC = () => {
     rows: 2,
     initialSlide: 0,
     arrows: false,
-    afterChange: (current: number) => {
+    afterChange: (current) => {
       if (current === 0) {
-        setArrowColors({ left: 'text-white/20', right: 'text-white' });
-      } else if (current >= feedbacks.length - 1) {
-        setArrowColors({ left: 'text-white', right: 'text-white/20' });
+        setArrowColors({
+          left: 'text-white/15 bg-neutral-700/15',
+          right: 'text-white bg-neutral-700',
+        });
+      } else if (current > feedbacks.length - settings.slidesToShow) {
+        setArrowColors({
+          left: 'text-white bg-neutral-700',
+          right: 'text-white/15 bg-neutral-700/15',
+        });
       } else {
-        setArrowColors({ left: 'text-white', right: 'text-white/20' });
+        setArrowColors({
+          left: 'text-white bg-neutral-700',
+          right: 'text-white/15 bg-neutral-700/15',
+        });
       }
     },
     responsive: [
@@ -103,26 +110,24 @@ const Feedback: React.FC = () => {
 
   return (
     <div className='md:px-0 px-4 pb-0 bg-neutral-900'>
-      <div className='flex items-center flex-col justify-center gap-10 sm:gap-20 py-20 sm:py-40 '>
+      <div className='flex items-center flex-col justify-center gap-10 sm:gap-20 py-20 sm:py-40'>
         <div className='flex flex-col items-center'>
           <div className='flex flex-col sm:flex-row items-center justify-between w-full px-4 md:px-0 mb-10 sm:mb-0'>
             <div className='flex gap-4 sm:hidden mb-6'>
               <button
                 onClick={handlePrev}
-                className={`p-2 rounded-full bg-neutral-700/15 size-12 ${arrowColors.left} hover:bg-[#333]`}>
-                <FaArrowLeft className='text-center ml-2' />
+                className={`p-2 rounded-full size-12 ${arrowColors.left} hover:bg-[#333]`}>
+                <ArrowLeftIcon className='text-center  ml-2' />
               </button>
-              <button
-                onClick={handleNext}
-                className={`p-2 rounded-full bg-neutral-700 size-12 ${arrowColors.right} hover:bg-[#333]`}>
-                <FaArrowRight className='text-center ml-2' />
+              <button onClick={handleNext} className={`p-2 rounded-full size-12 ${arrowColors.right}`}>
+                <ArrowRightIcon className='text-center text-white ml-2' />
               </button>
             </div>
             <div className='flex items-center'>
               <button
                 onClick={handlePrev}
-                className={`hidden sm:block p-2 size-12 rounded-full bg-neutral-700 ${arrowColors.left} hover:bg-[#333] mr-60`}>
-                <FaArrowLeft className='text-center ml-2' />
+                className={`hidden sm:block p-2 size-12 rounded-full ${arrowColors.left} mr-60`}>
+                <ArrowLeftIcon className='text-center size-8 ' />
               </button>
               <div className='max-w-xl gap-4 sm:gap-7 flex flex-col items-center justify-center text-center'>
                 <h2 className='text-xl sm:text-2xl md:text-4xl font-medium text-white'>
@@ -136,8 +141,8 @@ const Feedback: React.FC = () => {
               </div>
               <button
                 onClick={handleNext}
-                className={`hidden sm:block p-2 size-12 items-center justify-center rounded-full bg-neutral-700 ${arrowColors.right} hover:bg-[#333] ml-60`}>
-                <FaArrowRight className='text-center ml-2' />
+                className={`hidden sm:block p-2 size-12 items-center justify-center rounded-full ${arrowColors.right} ml-60`}>
+                <ArrowRightIcon className='text-center size-8' />
               </button>
             </div>
           </div>

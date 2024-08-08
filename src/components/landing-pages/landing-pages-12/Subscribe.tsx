@@ -28,12 +28,12 @@ export default function Subscribe() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='Enter your email address'
-                className='rounded-l-2xl rounded-r-none p-4 gap-3 w-40 h-30 md:w-80 md:h-14 md:text-base'
+                className='rounded-l-2xl rounded-r-none p-4 gap-3 w-40 h-10 md:w-80 md:h-14 md:text-base'
               />
               <button
                 type='submit'
                 className={cn(
-                  'md:px-6 md:py-2 bg-stone-900 text-white font-semibold rounded-r-2xl md:size-auto text-xs w-16 h-16',
+                  'md:px-6 md:py-2 bg-stone-900 text-white font-semibold rounded-r-2xl md:size-auto text-xs w-16 h-10',
                   'hover:bg-stone-900/90 transition-colors duration-200'
                 )}>
                 Subscribe

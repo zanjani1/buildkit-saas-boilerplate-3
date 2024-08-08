@@ -66,7 +66,7 @@ export default function Navbar() {
           <SheetTrigger className='block md:hidden'>
             <HiBars3 size={25} />
           </SheetTrigger>
-          <SheetContent side='top' className='bg-neutral-100 text-black w-full overflow-hidden'>
+          <SheetContent side='top' className='bg-white text-black w-full overflow-hidden'>
             <div className='space-y-6 p-4'>
               <div className='flex flex-col gap-2 text-sm'>
                 {NavbarRoutes.map((item, index) => (
