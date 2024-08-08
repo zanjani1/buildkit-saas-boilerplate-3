@@ -56,7 +56,7 @@ const Contact = [
 export default function Footer() {
   return (
     <div className='px-4 md:px-0 bg-neutral-900 md:pt-0 pt-12'>
-      <div className='flex items-center flex-col justify-center px-4 gap-10 sm:gap-20 w-full pt-5 md:pt-20 pb-0 mx-auto'>
+      <div className='flex items-center flex-col justify-center px-4 gap-10 sm:gap-20 w-full md:pt-20 pb-0 mx-auto'>
         <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
           <div className='flex flex-col gap-6 md:w-2/5'>
             <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32 h-8' />
