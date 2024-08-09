@@ -44,7 +44,7 @@ const tiers = [
 
 export default function Plans() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 md:gap-6  md:mt-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-1 md:mt-7'>
       {tiers.map((tier) => (
         <div
           key={tier.id}
@@ -70,7 +70,7 @@ export default function Plans() {
           </ul>
 
           <Button
-            pro={tier.id === 'pro'}
+            Pro={tier.id === 'pro'}
             ultimate={tier.id === 'ultimate'}
             size='lg'
             className='flex w-full mt-16 py-6 px-8 font-semibold text-center'>

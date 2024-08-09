@@ -52,10 +52,10 @@ const CustomAccordionTrigger: React.FC<CustomAccordionTriggerProps> = ({ childre
 export default function Faq() {
   return (
     <div className='flex justify-center'>
-      <div id='faq' className='flex flex-col md:py-32 gap-10 py-12 max-w-2xl'>
+      <div id='faq' className='flex flex-col md:py-28 gap-10 py-10 md:mb-0 mb-10 max-w-2xl'>
         <div className='flex flex-col gap-7 items-center'>
           <h1 className='md:text-4xl font-medium text-2xl text-slate-950'>Frequently asked questions</h1>
-          <p className='text-zinc-950/60 px-10 md:px-0 leading-7 text-center'>
+          <p className='text-zinc-950/60 px-10 md:px-0 text-center text-base font-medium'>
             Don't worry, we got you. Here are some answers for your questions.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function Faq() {
                   <CustomAccordionTrigger className='text-base w-full md:mx-6 mx-3 md:h-16'>
                     {item.title}
                   </CustomAccordionTrigger>
-                  <AccordionContent className='text-[#A8A8A8] pb-5 md:px-6 px-3 '>
+                  <AccordionContent className='text-[#727272] pb-5 md:px-6 px-3 '>
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>

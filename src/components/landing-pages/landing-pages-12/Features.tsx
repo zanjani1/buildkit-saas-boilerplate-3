@@ -1,6 +1,7 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import FeaturesImage1 from '@/assets/landing-page-12/images/hero.svg';
 import FeaturesImage2 from '@/assets/landing-page-12/images/feature.svg';
 import FeaturesImage3 from '@/assets/landing-page-12/images/feedback.svg';
@@ -34,147 +35,72 @@ const features = [
 ];
 
 const Features: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const imageContainerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Scroll to the current feature image when the index changes
-    const container = imageContainerRef.current;
-    if (container) {
-      const index = currentIndex;
-      const imageHeight = container.scrollHeight / features.length;
-      container.scrollTo({
-        top: index * imageHeight,
-        behavior: 'smooth',
-      });
-    }
-  }, [currentIndex]);
-
-  const handleScroll = () => {
-    const container = imageContainerRef.current;
-    if (container) {
-      const scrollTop = container.scrollTop;
-      const containerHeight = container.clientHeight;
-      const totalHeight = container.scrollHeight - containerHeight;
-      const index = Math.min(Math.floor((scrollTop / totalHeight) * features.length), features.length - 1);
-      setCurrentIndex(index);
-
-      // Check if the user has scrolled past the last image
-      if (scrollTop >= totalHeight) {
-        const section = sectionRef.current;
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  });
 
   return (
-    <div id='features' className='flex justify-center'>
-      <div className='md:max-w-[1030px] max-w-80 flex flex-col md:pt-40 py-10 items-center md:gap-24 gap-16'>
-        <div className='text-center space-y-6 max-w-2xl mx-auto gap-7 font-medium'>
-          <h1 className='md:text-4xl text-3xl text-slate-950 md:leading-[44px] tracking-tight font-medium'>
-            Explore the power of
-            <br />
-            AI apps generation Workflow
-          </h1>
-          <p className='text-zinc-950/60 md:text-base md:w-[642px] font-medium leading-7 md:h-14'>
+    <div id='features' className='flex justify-center px-4'>
+      <div className='md:max-w-[1030px] max-w-full flex flex-col md:pt-40 py-0 md:mt-0 mt-10 items-center md:gap-24 gap-12'>
+        <div className='flex flex-col items-center gap-5 justify-between text-center'>
+          <div className='flex flex-col gap-3'>
+            <h1 className='md:text-4xl text-2xl font-semibold md:max-w-lg flex flex-col md:gap-2 text-slate-950'>
+              <span>Explore the power of</span>
+              <span>AI apps generation Workflow</span>
+            </h1>
+          </div>
+
+          <span className='text-zinc-950/60 max-w-[642px] text-sm md:text-base leading-[22px] md:leading-[25.6px] font-medium'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
             of Effort and Use our robust Deployable code.
-          </p>
+          </span>
         </div>
 
-        <div className='md:flex md:items-start justify-between gap-10 pt-10'>
+        <div className='flex flex-col md:flex-row md:items-start justify-between pt-3 w-full'>
           <div className='md:w-1/2 space-y-6'>
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
                 key={feature.number}
-                className={`flex md:w-[346px] max-h-32 pt-5 pl-5 pb-6 pr-6 gap-5 rounded-3xl cursor-pointer ${
-                  currentIndex === index ? 'bg-stone-50' : ''
-                }`}
-                onClick={() => setCurrentIndex(index)}>
-                <span
-                  className={`text-3xl font-bold ${
-                    currentIndex === index ? 'text-stone-300' : 'text-stone-300'
-                  } w-9`}>
-                  {feature.number}
-                </span>
+                className='flex md:w-[346px] w-full max-h-32 pt-5 pl-5 pb-6 pr-6 gap-5 rounded-3xl cursor-pointer bg-stone-50'>
+                <span className='text-3xl font-bold w-9 text-stone-300'>{feature.number}</span>
                 <div>
-                  <h3
-                    className={`text-lg font-medium ${
-                      currentIndex === index ? 'text-zinc-950' : 'text-zinc-950'
-                    }`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`text-sm ${currentIndex === index ? 'text-zinc-600' : 'text-zinc-600'}`}>
-                    {feature.description}
-                  </p>
+                  <h3 className='text-lg font-medium text-slate-950'>{feature.title}</h3>
+                  <p className='text-sm text-zinc-600'>{feature.description}</p>
                 </div>
               </div>
             ))}
           </div>
+          <motion.div
+            ref={containerRef}
+            className='relative md:w-[748px] md:h-[556px] w-full h-[300px] overflow-hidden pt-5 bg-neutral-200/20 bg-gradient-to-b from-zinc-900/90 to-zinc-900 rounded-3xl mt-10 md:mt-0'>
+            {features.map((feature, index) => {
+              const yProgress = useTransform(
+                scrollYProgress,
+                [index * 0.25, (index + 1) * 0.25],
+                ['100%', '0%']
+              );
+              const opacity = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]);
 
-          {/* Image container for large screens */}
-          <div
-            ref={imageContainerRef}
-            onScroll={handleScroll}
-            className='hidden md:block relative w-[748px] h-[556px] overflow-y-scroll scrollbar-hidden pt-5 bg-gradient-to-bl from-zinc-900/90 to-zinc-900'>
-            {features.map((feature, index) => (
-              <div
-                key={feature.number}
-                className={`sticky top-0 z-[${features.length - index}] transform transition-transform duration-800 ease-in-out ${
-                  currentIndex >= index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-                } mb-12`}>
-                <div className='relative h-[400px] w-[305px] mx-auto'>
-                  <Image
-                    src={feature.image}
-                    alt={`Feature ${feature.number}`}
-                    layout='fill'
-                    objectFit='cover'
-                    className='rounded-lg'
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Image container for small screens */}
-        <div
-          ref={imageContainerRef}
-          onScroll={handleScroll}
-          className='md:hidden relative w-full h-[300px] overflow-y-scroll scrollbar-hidden pt-5 bg-gradient-to-bl from-zinc-900/90 to-zinc-900'>
-          {features.map((feature, index) => (
-            <div
-              key={feature.number}
-              className={`sticky top-0 z-[${features.length - index}] transform transition-transform duration-800 ease-in-out ${
-                currentIndex >= index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-              } mb-12`}>
-              <div className='relative h-[200px] w-[150px] mx-auto'>
-                <Image
-                  src={feature.image}
-                  alt={`Feature ${feature.number}`}
-                  layout='fill'
-                  objectFit='cover'
-                  className='rounded-lg'
-                />
-              </div>
-            </div>
-          ))}
+              return (
+                <motion.div
+                  key={feature.number}
+                  className='absolute top-0 left-0 right-0 h-full flex items-center justify-center'
+                  style={{
+                    y: index === 0 ? 0 : yProgress,
+                    opacity: index === 0 ? 1 : opacity,
+                    zIndex: features.length - index,
+                  }}>
+                  <div className='h-[80%] md:h-[453px] w-[70%] md:w-[305px] mx-auto'>
+                    <Image src={feature.image} alt={`Feature ${feature.number}`} className='rounded-lg' />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </div>
-      <div ref={sectionRef} className='h-0' />
-      {/* eslint-disable-next-line react/no-unknown-property */}
-      <style jsx>{`
-        .scrollbar-hidden::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hidden {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 };

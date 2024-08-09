@@ -2,14 +2,13 @@
 
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
 import avatar from '@/assets/landing-page-12/images/feedback.svg';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-// Define types for FeedbackCard props
 interface FeedbackCardProps {
   content: string;
   author: string;
@@ -118,37 +117,24 @@ const Feedback: React.FC = () => {
     <div className='md:px-0 px-4 pb-0 bg-neutral-900'>
       <div className='flex items-center flex-col justify-center gap-10 sm:gap-20 py-20 sm:py-40'>
         <div className='flex flex-col items-center'>
-          <div className='flex flex-col sm:flex-row items-center justify-between w-full px-4 md:px-0 mb-10 sm:mb-0'>
-            <div className='flex gap-4 sm:hidden mb-6'>
-              <button
-                onClick={handlePrev}
-                className={`p-2 rounded-full size-12 ${arrowColors.left} hover:bg-[#333]`}>
-                <ArrowLeftIcon className='text-center size-8' />
-              </button>
-              <button onClick={handleNext} className={`p-2 rounded-full size-12 ${arrowColors.right}`}>
-                <ArrowRightIcon className='text-center size-8' />
-              </button>
-            </div>
+          <div className='flex items-center justify-center md:w-[1280px] w-full px-4 md:px-0 mb-1'>
             <div className='flex items-center'>
               <button
                 onClick={handlePrev}
-                className={`hidden sm:block p-2 size-12 rounded-full ${arrowColors.left} mr-60`}>
-                <ArrowLeftIcon className='text-center size-8' />
+                className={`md:p-2 p-1 rounded-full size-9 md:size-12 ${arrowColors.left} hover:bg-[#333] md:mr-64 md:mt-2`}>
+                <ArrowLeft size={32} strokeWidth={0.75} className='size-6 md:size-8' />
               </button>
-              <div className='max-w-xl gap-4 sm:gap-7 flex flex-col items-center justify-center text-center'>
-                <h2 className='text-xl sm:text-2xl md:text-4xl font-medium text-white'>
-                  People Say Nice Things
-                </h2>
-                <p className='text-white/60 text-sm md:text-base font-normal leading-[25.6px] md:w-[512px]'>
+              <div className='max-w-xl gap-4 sm:gap-7 flex flex-col items-center justify-center text-center md:mx-10 mx-6'>
+                <h2 className='text-xl  md:text-4xl font-medium text-white'>People Say Nice Things</h2>
+                <p className='text-white/60 text-xs md:text-base text-center font-normal leading-[25.6px] md:w-[512px] w-60 md:flex md:flex-col'>
                   Some of the most successful product teams in the world use. Not to mention the hundreds of
-                  thousands of other talented <br />
-                  individuals who have lots of lovely things to say.
+                  thousands of other talented <span> individuals who have lots of lovely things to say.</span>
                 </p>
               </div>
               <button
                 onClick={handleNext}
-                className={`hidden sm:block p-2 size-12 items-center justify-center rounded-full ${arrowColors.right} ml-60`}>
-                <ArrowRightIcon className='text-center size-8' />
+                className={`md:p-2 p-1 rounded-full size-9 md:size-12 ${arrowColors.right} hover:bg-[#333] md:ml-64 md:mt-2`}>
+                <ArrowRight size={32} strokeWidth={0.75} className='size-6 md:size-8' />
               </button>
             </div>
           </div>

@@ -25,15 +25,15 @@ const cardDetails = [
 export default function Features2() {
   return (
     <div id='features' className='flex justify-center max-w-7xl mx-auto '>
-      <div className='flex flex-col md:py-40 py-16 items-center md:gap-20 gap-10'>
+      <div className='flex flex-col md:py-40 py-20 items-center md:gap-20 gap-10'>
         <div className='flex flex-col gap-7 items-center max-md:max-w-80'>
           <div className='flex flex-col gap-4 items-center'>
-            <h1 className='font-medium text-2xl md:text-4xl md:leading-[44px] max-w-xl text-zinc-900 text-center'>
+            <h1 className='font-medium text-2xl md:text-4xl md:leading-[44px] max-w-[561px] text-zinc-900 text-center tracking-tight'>
               Essentially, everything you need to ship your first AI App
             </h1>
           </div>
 
-          <p className='text-base md:max-w-[642px] text-zinc-950/60 text-center'>
+          <p className='text-base md:max-w-[642px] text-zinc-950/60 text-center leading-[25.6px] tracking-tight font-medium'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within <br /> days. Save
             Hours of Effort and Use our robust Deployable code.
           </p>
@@ -48,7 +48,7 @@ export default function Features2() {
                 </div>
               </div>
               <div className='flex flex-col gap-3 max-w-96 max-h-32'>
-                <span className='font-semibold text-xl tracking-tight text-center text-zinc-900'>
+                <span className='font-semibold text-xl tracking-tight text-center text-[#090A18] leading-7'>
                   {card.title}
                 </span>
                 <div className='max-w-96 max-h-20 gap-3 flex justify-center items-center'>

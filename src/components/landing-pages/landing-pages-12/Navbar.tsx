@@ -46,17 +46,14 @@ export default function Navbar() {
         <div className='md:flex hidden md:w-72 md:h-10 py-1 px-3 items-center justify-between bg-neutral-100 rounded-3xl gap-2'>
           <div className='flex justify-between items-center gap-1 md:w-60 pl-2 md:h-8'>
             {NavbarRoutes.map((opt) => (
-              <Link
-                href={opt.url}
-                key={opt.label}
-                className='text-sm font-medium text-[#0C0E1E] tracking-[-4%]'>
+              <Link href={opt.url} key={opt.label} className='text-sm font-medium text-black tracking-tight'>
                 {opt.label}
               </Link>
             ))}
           </div>
         </div>
         <div className='md:block hidden'>
-          <Link href='/login' className='text-sm'>
+          <Link href='/login' className='font-medium tracking-tight'>
             <Button size='semi' bg={true}>
               Login
             </Button>
