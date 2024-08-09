@@ -41,10 +41,9 @@ const Features: React.FC = () => {
     offset: ['start start', 'end end'],
   });
 
-  const transforms = features.map((_, index) => {
+  const featureAnimations = features.map((_, index) => {
     const yProgress = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], ['100%', '0%']);
     const opacity = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]);
-
     return { yProgress, opacity };
   });
 
@@ -87,8 +86,8 @@ const Features: React.FC = () => {
                 key={feature.number}
                 className='absolute top-0 inset-x-0 h-full flex items-center justify-center'
                 style={{
-                  y: transforms[index].yProgress,
-                  opacity: transforms[index].opacity,
+                  y: featureAnimations[index].yProgress,
+                  opacity: featureAnimations[index].opacity,
                   zIndex: features.length - index,
                 }}>
                 <div className='size-4/5 md:h-[453px] md:w-[305px] mx-auto'>
