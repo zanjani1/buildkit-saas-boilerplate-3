@@ -41,6 +41,13 @@ const Features: React.FC = () => {
     offset: ['start start', 'end end'],
   });
 
+  const transforms = features.map((_, index) => {
+    const yProgress = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], ['100%', '0%']);
+    const opacity = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]);
+
+    return { yProgress, opacity };
+  });
+
   return (
     <div id='features' className='flex justify-center px-4'>
       <div className='md:max-w-[1030px] max-w-full flex flex-col md:pt-40 py-0 md:mt-0 mt-10 items-center md:gap-24 gap-12'>
@@ -75,29 +82,20 @@ const Features: React.FC = () => {
           <motion.div
             ref={containerRef}
             className='relative md:w-[748px] md:h-[556px] w-full h-[300px] overflow-hidden pt-5 bg-neutral-200/20 bg-gradient-to-b from-zinc-900/90 to-zinc-900 rounded-3xl mt-10 md:mt-0'>
-            {features.map((feature, index) => {
-              const yProgress = useTransform(
-                scrollYProgress,
-                [index * 0.25, (index + 1) * 0.25],
-                ['100%', '0%']
-              );
-              const opacity = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]);
-
-              return (
-                <motion.div
-                  key={feature.number}
-                  className='absolute top-0 left-0 right-0 h-full flex items-center justify-center'
-                  style={{
-                    y: index === 0 ? 0 : yProgress,
-                    opacity: index === 0 ? 1 : opacity,
-                    zIndex: features.length - index,
-                  }}>
-                  <div className='h-[80%] md:h-[453px] w-[70%] md:w-[305px] mx-auto'>
-                    <Image src={feature.image} alt={`Feature ${feature.number}`} className='rounded-lg' />
-                  </div>
-                </motion.div>
-              );
-            })}
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.number}
+                className='absolute top-0 inset-x-0 h-full flex items-center justify-center'
+                style={{
+                  y: index === 0 ? 0 : transforms[index].yProgress,
+                  opacity: index === 0 ? 1 : transforms[index].opacity,
+                  zIndex: features.length - index,
+                }}>
+                <div className='h-4/5 md:h-[453px] w-4/5 md:w-[305px] mx-auto'>
+                  <Image src={feature.image} alt={`Feature ${feature.number}`} className='rounded-lg' />
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>
