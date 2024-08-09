@@ -42,11 +42,11 @@ const Features: React.FC = () => {
   });
 
   const featureAnimations = features.map((_, index) => {
-    const yProgress = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], ['100%', '0%']);
-    const opacity = useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]);
-    return { yProgress, opacity };
+    return {
+      yProgress: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], ['100%', '0%']),
+      opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]),
+    };
   });
-
   return (
     <div id='features' className='flex justify-center px-4'>
       <div className='md:max-w-[1030px] max-w-full flex flex-col md:pt-40 py-0 md:mt-0 mt-10 items-center md:gap-24 gap-12'>
