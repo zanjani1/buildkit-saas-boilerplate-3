@@ -1,7 +1,7 @@
 import FeaturedOn from './FeaturedOn';
 import Hero from './Hero';
 import Features2 from './Features2';
-import Features from './Features';
+// import Features from './Features';
 import Pricing from './Pricing/Pricing';
 import Footer from './Footer';
 import Faq from './Faq';
@@ -18,7 +18,7 @@ export default function LandingPage12() {
       </div>
       <Hero />
       <FeaturedOn />
-      <Features />
+      {/* <Features /> */}
       <Features2 />
       <Feedback />
       <Pricing />
