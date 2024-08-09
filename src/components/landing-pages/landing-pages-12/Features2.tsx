@@ -33,7 +33,7 @@ export default function Features2() {
             </h1>
           </div>
 
-          <p className='text-base md:max-w-[642px] text-zinc-950/60 text-center leading-[25.6px] tracking-tight font-medium'>
+          <p className='text-sm md:text-base md:max-w-[642px] text-zinc-950/60 text-center leading-[25.6px] tracking-tight font-medium'>
             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within <br /> days. Save
             Hours of Effort and Use our robust Deployable code.
           </p>

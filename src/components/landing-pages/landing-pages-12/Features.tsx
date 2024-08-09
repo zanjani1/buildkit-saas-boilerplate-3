@@ -87,11 +87,11 @@ const Features: React.FC = () => {
                 key={feature.number}
                 className='absolute top-0 inset-x-0 h-full flex items-center justify-center'
                 style={{
-                  y: index === 0 ? 0 : transforms[index].yProgress,
-                  opacity: index === 0 ? 1 : transforms[index].opacity,
+                  y: transforms[index].yProgress,
+                  opacity: transforms[index].opacity,
                   zIndex: features.length - index,
                 }}>
-                <div className='h-4/5 md:h-[453px] w-4/5 md:w-[305px] mx-auto'>
+                <div className='size-4/5 md:h-[453px] md:w-[305px] mx-auto'>
                   <Image src={feature.image} alt={`Feature ${feature.number}`} className='rounded-lg' />
                 </div>
               </motion.div>
