@@ -1,19 +1,12 @@
 'use client';
 
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './content';
 import avatar from '@/assets/landing-page-12/images/feedback.svg';
-import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
-
-interface FeedbackCardProps {
-  content: string;
-  author: string;
-  role: string;
-}
 
 const Feedback = () => {
   const sliderRef = useRef(null);
