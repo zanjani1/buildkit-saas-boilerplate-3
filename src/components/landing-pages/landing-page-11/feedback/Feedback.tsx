@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './content';
-import avatar from '@/assets/landing-page-12/images/feedback.svg';
+import avatar from '@/assets/landing-page-11/images/feedback.svg';
 
 const Feedback = () => {
   const sliderRef = useRef(null);

@@ -31,7 +31,7 @@ const Navbar = () => (
       <Link
         href='https://www.builderkit.ai'
         className='flex items-center size-10 bg-neutral-100 p-2 rounded-3xl'>
-        <Image src='/lp12-logo.svg' width={24} height={24} alt='logo' className='size-6' />
+        <Image src='/lp11-logo.svg' width={24} height={24} alt='logo' className='size-6' />
       </Link>
 
       {/* Dasktop Version */}

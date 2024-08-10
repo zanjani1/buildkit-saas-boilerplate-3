@@ -1,4 +1,4 @@
-import { Notion, Grammarly, Intercom, Unsplash, Descript } from '@/assets/landing-page-12/icons';
+import { Notion, Grammarly, Intercom, Unsplash, Descript } from '@/assets/landing-page-11/icons';
 import Image from 'next/image';
 
 const imageSrc = [Unsplash, Notion, Intercom, Descript, Grammarly];

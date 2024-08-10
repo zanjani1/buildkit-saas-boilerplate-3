@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Button from './Button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import footer from '@/assets/landing-page-12/images/copyright.svg';
+import footer from '@/assets/landing-page-11/images/copyright.svg';
 
 const all = [
   {

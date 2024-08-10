@@ -1,9 +1,9 @@
 'use client';
 
-import { TickIconBlack, TickIconWhite } from '@/assets/landing-page-12/icons/TickIcon';
+import { TickIconBlack, TickIconWhite } from '@/assets/landing-page-11/icons/TickIcon';
 import { cn } from '@/utils/utils';
-import ArrowBlack from '@/assets/landing-page-12/icons/ArrowBlack';
-import ArrowWhite from '@/assets/landing-page-12/icons/ArrowWhite';
+import ArrowBlack from '@/assets/landing-page-11/icons/ArrowBlack';
+import ArrowWhite from '@/assets/landing-page-11/icons/ArrowWhite';
 import Button from '../Button';
 
 const tiers = [

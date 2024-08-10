@@ -9,7 +9,7 @@ import Headers from './Header';
 import Navbar from './Navbar';
 import Features from './Features';
 
-export default function LandingPage12() {
+export default function LandingPage11() {
   return (
     <div>
       <Headers />

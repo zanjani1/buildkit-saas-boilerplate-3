@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import features from '@/assets/landing-page-12/images/feature.svg';
+import features from '@/assets/landing-page-11/images/feature.svg';
 
 const cardDetails = [
   {
