@@ -1,105 +1,64 @@
-// 'use client';
-// import React, { useRef } from 'react';
-// import Image from 'next/image';
-// import { motion, useScroll, useTransform } from 'framer-motion';
-// import FeaturesImage1 from '@/assets/landing-page-12/images/hero.svg';
-// import FeaturesImage2 from '@/assets/landing-page-12/images/feature.svg';
-// import FeaturesImage3 from '@/assets/landing-page-12/images/feedback.svg';
-// import FeaturesImage4 from '@/assets/landing-page-12/images/hero.svg';
+import Image from 'next/image';
+import features from '@/assets/landing-page-12/images/feature.svg';
 
-// const features = [
-//   {
-//     number: '01',
-//     title: 'Quality apps',
-//     description: 'BuilderKit takes care of everything from authentication to payments.',
-//     image: FeaturesImage1,
-//   },
-//   {
-//     number: '02',
-//     title: 'Robust security',
-//     description: 'Built with security in mind, ensuring your apps are safe and secure.',
-//     image: FeaturesImage2,
-//   },
-//   {
-//     number: '03',
-//     title: 'Scalability',
-//     description: 'Easily scale your applications to handle more users and data.',
-//     image: FeaturesImage3,
-//   },
-//   {
-//     number: '04',
-//     title: 'Seamless integration',
-//     description: 'Integrate with various tools and services effortlessly.',
-//     image: FeaturesImage4,
-//   },
-// ];
+const cardDetails = [
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+  {
+    title: 'Build your AI apps Fast',
+    content:
+      'Builderkit takes care of everything from authentication to payments, get your production-ready app within hours.',
+    url: features,
+  },
+];
 
-// const Features: React.FC = () => {
-//   const containerRef = useRef<HTMLDivElement>(null);
-//   const { scrollYProgress } = useScroll({
-//     target: containerRef,
-//     offset: ['start start', 'end end'],
-//   });
+export default function Features() {
+  return (
+    <div id='features' className='max-w-7xl mx-auto mt-32 md:mt-40 px-4'>
+      <div className='flex flex-col items-center gap-8'>
+        <p className='w-5/6 md:w-1/2 font-medium text-2xl md:text-4xl md:leading-tight text-zinc-900 text-center tracking-tight'>
+          Essentially, everything you need to ship your first AI App
+        </p>
 
-//   const featureAnimations = features.map((_, index) => {
-//     return {
-//       yProgress: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], ['100%', '0%']),
-//       opacity: useTransform(scrollYProgress, [index * 0.25, (index + 1) * 0.25], [0, 1]),
-//     };
-//   });
-//   return (
-//     <div id='features' className='flex justify-center px-4'>
-//       <div className='md:max-w-[1030px] max-w-full flex flex-col md:pt-40 py-0 md:mt-0 mt-10 items-center md:gap-24 gap-12'>
-//         <div className='flex flex-col items-center gap-5 justify-between text-center'>
-//           <div className='flex flex-col gap-3'>
-//             <h1 className='md:text-4xl text-2xl font-semibold md:max-w-lg flex flex-col md:gap-2 text-slate-950'>
-//               <span>Explore the power of</span>
-//               <span>AI apps generation Workflow</span>
-//             </h1>
-//           </div>
+        <p className='w-5/6 text-sm md:text-base text-zinc-950/60 text-center leading-relaxed'>
+          Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within <br /> days. Save
+          Hours of Effort and Use our robust Deployable code.
+        </p>
 
-//           <span className='text-zinc-950/60 max-w-[642px] text-sm md:text-base leading-[22px] md:leading-[25.6px] font-medium'>
-//             Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours
-//             of Effort and Use our robust Deployable code.
-//           </span>
-//         </div>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-6 mt-10'>
+          {cardDetails.map((card, index) => (
+            <div key={index} className='flex flex-col gap-2 md:gap-3'>
+              <div className='rounded-3xl bg-[#EEEEEE] p-4 mb-3'>
+                <Image
+                  src={card.url}
+                  alt={card.title}
+                  width={171}
+                  height={253.28}
+                  className='rounded-lg mx-auto'
+                />
+              </div>
 
-//         <div className='flex flex-col md:flex-row md:items-start justify-between pt-3 w-full'>
-//           <div className='md:w-1/2 space-y-6'>
-//             {features.map((feature) => (
-//               <div
-//                 key={feature.number}
-//                 className='flex md:w-[346px] w-full max-h-32 pt-5 pl-5 pb-6 pr-6 gap-5 rounded-3xl cursor-pointer bg-stone-50'>
-//                 <span className='text-3xl font-bold w-9 text-stone-300'>{feature.number}</span>
-//                 <div>
-//                   <h3 className='text-lg font-medium text-slate-950'>{feature.title}</h3>
-//                   <p className='text-sm text-zinc-600'>{feature.description}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//           <motion.div
-//             ref={containerRef}
-//             className='relative md:w-[748px] md:h-[556px] w-full h-[300px] overflow-hidden pt-5 bg-neutral-200/20 bg-gradient-to-b from-zinc-900/90 to-zinc-900 rounded-3xl mt-10 md:mt-0'>
-//             {features.map((feature, index) => (
-//               <motion.div
-//                 key={feature.number}
-//                 className='absolute top-0 inset-x-0 h-full flex items-center justify-center'
-//                 style={{
-//                   y: featureAnimations[index].yProgress,
-//                   opacity: featureAnimations[index].opacity,
-//                   zIndex: features.length - index,
-//                 }}>
-//                 <div className='size-4/5 md:h-[453px] md:w-[305px] mx-auto'>
-//                   <Image src={feature.image} alt={`Feature ${feature.number}`} className='rounded-lg' />
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+              <p className='font-semibold text-lg md:text-xl tracking-tight text-center text-zinc-900 leading-7'>
+                {card.title}
+              </p>
 
-// export default Features;
+              <p className='text-zinc-950/60 md:text-base text-sm leading-6 md:leading-7 text-center'>
+                {card.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
