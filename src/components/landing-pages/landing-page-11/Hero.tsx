@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Button from './Button';
-import hero from '@/assets/landing-page-12/images/hero.svg';
+import hero from '@/assets/landing-page-11/images/hero.svg';
 import Link from 'next/link';
 
 export default function Hero() {

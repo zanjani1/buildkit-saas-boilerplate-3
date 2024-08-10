@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
-import BentArrowIcon from '@/assets/landing-page-12/icons/bent-arrow.svg';
+import BentArrowIcon from '@/assets/landing-page-11/icons/bent-arrow.svg';
 import Image from 'next/image';
 
 export default function Subscribe() {

@@ -133,7 +133,7 @@
 
 .slick-next:before {
   content: '' !important;
-  background-image: url('/lp-12-right-arrow.svg') !important;
+  background-image: url('/lp-11-right-arrow.svg') !important;
   border-radius: 24px;
   background: #434343;
   background-repeat: no-repeat;
@@ -145,7 +145,7 @@
 
 .slick-prev:before {
   content: '' !important;
-  background-image: url('/lp-12-left-arrow.svg') !important;
+  background-image: url('/lp-11-left-arrow.svg') !important;
   border-radius: 24px;
   background: #434343;
   background-repeat: no-repeat;
