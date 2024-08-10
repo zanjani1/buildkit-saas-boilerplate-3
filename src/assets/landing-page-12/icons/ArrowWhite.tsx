@@ -6,14 +6,14 @@ const ArrowWhite = () => {
       <path
         d='M3.3335 8H12.6668'
         stroke='white'
-        strokeWidth='1.6'
+        strokeWidth='1.3'
         strokeLinecap='round'
         strokeLinejoin='round'
       />
       <path
         d='M8 3.33333L12.6667 8L8 12.6667'
         stroke='white'
-        strokeWidth='1.6'
+        strokeWidth='1.3'
         strokeLinecap='round'
         strokeLinejoin='round'
       />

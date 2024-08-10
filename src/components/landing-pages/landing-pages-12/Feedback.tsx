@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import feedbacks from './Feedback-data';
 import avatar from '@/assets/landing-page-12/images/feedback.svg';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 
 interface FeedbackCardProps {
   content: string;
@@ -15,7 +15,7 @@ interface FeedbackCardProps {
   role: string;
 }
 
-const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) => (
+const FeedbackCard: FC<FeedbackCardProps> = ({ content, author, role }) => (
   <div className='w-full'>
     <div className='bg-[#1A1D1E] rounded-3xl p-6 shadow-lg md:h-[280px] flex flex-col md:w-[337px]'>
       <p className='text-white/60 text-sm sm:text-base leading-7 font-light line-clamp-3 sm:line-clamp-none md:w-72 h-28'>
@@ -34,7 +34,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ content, author, role }) =>
   </div>
 );
 
-const Feedback: React.FC = () => {
+const Feedback = () => {
   const sliderRef = useRef<Slider>(null);
   const [arrowColors, setArrowColors] = useState({
     left: 'text-white/15 bg-neutral-700/15',
@@ -114,7 +114,7 @@ const Feedback: React.FC = () => {
   };
 
   return (
-    <div className='md:px-0 px-4 pb-0 bg-neutral-900'>
+    <div className='md:px-0 px-4 pb-0 bg-neutral-900 mt-32 md:mt-40'>
       <div className='flex items-center flex-col justify-center gap-10 sm:gap-20 py-20 sm:py-40'>
         <div className='flex flex-col items-center'>
           <div className='flex items-center justify-center md:w-[1280px] w-full px-4 md:px-0 mb-1'>
@@ -122,7 +122,7 @@ const Feedback: React.FC = () => {
               <button
                 onClick={handlePrev}
                 className={`md:p-2 p-1 rounded-full size-9 md:size-12 ${arrowColors.left} hover:bg-[#333] md:mr-64 md:mt-2`}>
-                <ArrowLeft size={32} strokeWidth={0.75} className='size-6 md:size-8' />
+                <HiOutlineArrowLeft size={32} strokeWidth={0.9} className='size-6 md:size-8' />
               </button>
               <div className='max-w-xl gap-4 sm:gap-7 flex flex-col items-center justify-center text-center md:mx-10 mx-6'>
                 <h2 className='text-xl  md:text-4xl font-medium text-white'>People Say Nice Things</h2>
@@ -134,7 +134,7 @@ const Feedback: React.FC = () => {
               <button
                 onClick={handleNext}
                 className={`md:p-2 p-1 rounded-full size-9 md:size-12 ${arrowColors.right} hover:bg-[#333] md:ml-64 md:mt-2`}>
-                <ArrowRight size={32} strokeWidth={0.75} className='size-6 md:size-8' />
+                <HiOutlineArrowRight size={32} strokeWidth={0.9} className='size-6 md:size-8' />
               </button>
             </div>
           </div>

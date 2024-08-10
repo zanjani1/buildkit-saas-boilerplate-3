@@ -9,13 +9,12 @@ import Subscribe from './Subscribe';
 import Feedback from './Feedback';
 import Headers from './Header';
 import Navbar from './Navbar';
+
 export default function LandingPage12() {
   return (
     <div>
       <Headers />
-      <div className='flex flex-col justify-center items-center md:sticky md:top-0 md:z-50'>
-        <Navbar />
-      </div>
+      <Navbar />
       <Hero />
       <FeaturedOn />
       {/* <Features /> */}

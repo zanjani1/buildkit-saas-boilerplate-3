@@ -1,9 +1,9 @@
 'use client';
 
-import { TickIconBlack, TickIconWhite } from '../../../../assets/landing-page-12/icons/TickIcon';
-import { cn } from '../../../../utils/utils';
-import ArrowBlack from '../../../../assets/landing-page-12/icons/ArrowBlack';
-import ArrowWhite from '../../../../assets/landing-page-12/icons/ArrowWhite';
+import { TickIconBlack, TickIconWhite } from '@/assets/landing-page-12/icons/TickIcon';
+import { cn } from '@/utils/utils';
+import ArrowBlack from '@/assets/landing-page-12/icons/ArrowBlack';
+import ArrowWhite from '@/assets/landing-page-12/icons/ArrowWhite';
 import Button from '../Button';
 
 const tiers = [
@@ -44,36 +44,33 @@ const tiers = [
 
 export default function Plans() {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-1 md:mt-7'>
+    <div className='md:w-[71%] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6'>
       {tiers.map((tier) => (
         <div
           key={tier.id}
           className={cn(
-            'w-full h-fit md:max-w-sm border-2 border-zinc-100 shadow-sm gap-2 text-black rounded-3xl p-6 mx-auto mt-3 self-end',
+            'w-full border-2 border-zinc-100 gap-2 rounded-3xl p-6 self-end',
             tier.id === 'ultimate' && 'bg-stone-900 text-white'
           )}>
-          <div className='w-full mt-6'>
-            <p className='text-lg font-medium'>{tier.name.toUpperCase()}</p>
-            <p className='font-medium mt-2 mb-8 text-4xl'>
+          <div className='font-medium mt-6'>
+            <p className='text-lg mb-2'>{tier.name.toUpperCase()}</p>
+            <p className='mb-8 text-4xl'>
               <span>{tier.sellingPrice.monthly}</span>
               <span className='text-[#9CA3AF]'>/mo</span>
             </p>
             <p className='font-light text-base'>{tier.description}</p>
           </div>
+
           <ul role='list' className='space-y-4 mt-8'>
             {tier.features.map((feature) => (
-              <li key={feature} className='leading-relaxed flex gap-3 font-normal text-[15px]'>
+              <li key={feature} className='leading-relaxed flex gap-3 text-[15px]'>
                 {tier.id === 'pro' ? <TickIconBlack /> : <TickIconWhite />}
                 <span>{feature}</span>
               </li>
             ))}
           </ul>
 
-          <Button
-            Pro={tier.id === 'pro'}
-            ultimate={tier.id === 'ultimate'}
-            size='lg'
-            className='flex w-full mt-16 py-6 px-8 font-semibold text-center'>
+          <Button variant={tier.id === 'pro' ? 'default' : 'fill'} size='lg' className='h-12 mt-16'>
             Get Now {tier.id === 'pro' ? <ArrowWhite /> : <ArrowBlack />}
           </Button>
         </div>

@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import footer from '@/assets/landing-page-12/images/copyright.svg';
 
-const All = [
+const all = [
   {
     label: 'About',
     link: '',
@@ -23,7 +23,7 @@ const All = [
   },
 ];
 
-const Info = [
+const info = [
   {
     label: 'Features',
     link: '#features',
@@ -42,83 +42,75 @@ const Info = [
   },
 ];
 
-const Contact = [
+const contact = [
   {
     label: 'vatsal1811@gmail.com',
     link: 'mailto:vatsal1811@gmail.com',
   },
-  {
-    label: 'India',
-    link: '',
-  },
+  { label: 'India' },
 ];
 
 export default function Footer() {
   return (
-    <div className='px-4 md:px-0 bg-neutral-900 md:pt-0 pt-12'>
-      <div className='flex items-center flex-col justify-center md:px-4 gap-10 sm:gap-20 w-full md:pt-20 pb-0 mx-auto'>
-        <div className='flex md:flex-row flex-col justify-between md:gap-20 gap-10'>
-          <div className='flex flex-col gap-6 md:w-2/5'>
-            <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32 h-8' />
+    <div className='bg-neutral-900 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-32'>
+      <div className='max-w-6xl mx-auto space-y-10 sm:space-y-20'>
+        <div className='flex flex-col md:flex-row justify-between md:gap-20 gap-10'>
+          <div className='md:w-2/5 space-y-6'>
+            <Image src='/lp6-logo.svg' alt='logo' width={100} height={100} className='w-32' />
 
-            <span className='text-neutral-400 text-start'>
+            <p className='text-neutral-400'>
               Unleash Your Creative Potential by Turning What You Consume into Engaging Content Ideas
-            </span>
+            </p>
 
-            <Button bg={true} size='md' rounded={true} className='font-medium'>
+            <Button variant='fill' size='md'>
               Get Started
               <ArrowRightIcon className='ml-2' />
             </Button>
           </div>
 
-          <div className='flex gap-6 md:flex-1 flex-col md:flex-row py-3'>
-            <div className='flex flex-col gap-4 w-1/3'>
+          <div className='flex flex-1 flex-col md:flex-row gap-10 md:gap-6'>
+            <div className='space-y-4 w-1/3'>
               <p className='text-[10px] text-white'>ALL</p>
-              <div className='flex flex-col gap-3 text-neutral-400'>
-                {All.map((item) => {
-                  return (
-                    <Link href={item.link} key={item.label}>
-                      {item.label}
-                    </Link>
-                  );
-                })}
+              <div className='space-y-4 text-neutral-400'>
+                {all.map((item) => (
+                  <Link href={item.link} key={item.label} className='block'>
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
-            <div className='flex flex-col gap-4 w-1/3'>
+            <div className='space-y-4 w-1/3'>
               <p className='text-[10px] text-white'>INFO</p>
-              <div className='flex flex-col gap-3 text-neutral-400'>
-                {Info.map((item) => {
-                  return (
-                    <Link href={item.link} key={item.label}>
-                      {item.label}
-                    </Link>
-                  );
-                })}
+              <div className='space-y-4 text-neutral-400'>
+                {info.map((item) => (
+                  <Link href={item.link} key={item.label} className='block'>
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
-            <div className='flex flex-col gap-4 w-1/3'>
+            <div className='space-y-4 w-1/3'>
               <p className='text-[10px] text-white'>CONTACTS</p>
-              <div className='flex flex-col gap-3 text-neutral-400 text-sm'>
-                {Contact.map((item) => {
+              <div className='space-y-4 text-neutral-400 text-sm'>
+                {contact.map((item) => {
                   return item.link ? (
-                    <Link href={item.link} key={item.label}>
+                    <Link href={item.link} key={item.label} className='block'>
                       {item.label}
                     </Link>
                   ) : (
-                    <span className='text-sm tracking-[-0.02em] font-medium text-[#A8A8A8] ' key={item.label}>
+                    <p className='text-sm font-medium text-[#A8A8A8]' key={item.label}>
                       {item.label}
-                    </span>
+                    </p>
                   );
                 })}
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <Image src={footer} alt='logo' width={1169} height={291} />
-        </div>
+
+        <Image src={footer} alt='logo' width={1169} height={291} />
       </div>
     </div>
   );

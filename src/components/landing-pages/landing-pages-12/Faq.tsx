@@ -1,9 +1,10 @@
 'use client';
-import React, { useState } from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Plus, Minus } from 'lucide-react';
 
-const accordion = [
+import React, { ComponentPropsWithoutRef, FC, ReactNode, useState } from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { FiPlus, FiMinus } from 'react-icons/fi';
+
+const faqData = [
   {
     title: 'What is builderkit?',
     content: 'Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days.',
@@ -22,12 +23,12 @@ const accordion = [
   },
 ];
 
-interface CustomAccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionTrigger> {
-  children: React.ReactNode;
+interface CustomAccordionTriggerProps extends ComponentPropsWithoutRef<typeof AccordionTrigger> {
+  children: ReactNode;
 }
-
-const CustomAccordionTrigger: React.FC<CustomAccordionTriggerProps> = ({ children, className, ...props }) => {
+const CustomAccordionTrigger: FC<CustomAccordionTriggerProps> = ({ children, className, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <AccordionTrigger
       className={`group ${className} [&>svg]:hidden`}
@@ -35,49 +36,47 @@ const CustomAccordionTrigger: React.FC<CustomAccordionTriggerProps> = ({ childre
       onClick={() => setIsOpen(!isOpen)}>
       <div className='flex justify-between w-full items-center'>
         {children}
-        {isOpen ? (
-          <div className='size-6 bg-[#F2F2F2] rounded-[8px] p-1 gap-3'>
-            <Minus className='size-4 shrink-0 text-muted-foreground transition-transform' />
-          </div>
-        ) : (
-          <div className='size-6 bg-[#F2F2F2] rounded-[8px] p-1 gap-3'>
-            <Plus className='size-4 shrink-0 text-muted-foreground transition-transform' />
-          </div>
-        )}
+        <div className='size-6 bg-[#F2F2F2] rounded-[8px] p-1 gap-3'>
+          {isOpen ? (
+            <FiMinus className='size-4 shrink-0 text-muted-foreground transition-transform' />
+          ) : (
+            <FiPlus className='size-4 shrink-0 text-muted-foreground transition-transform' />
+          )}
+        </div>
       </div>
     </AccordionTrigger>
   );
 };
 
-export default function Faq() {
+const FAQ = () => {
   return (
-    <div className='flex justify-center'>
-      <div id='faq' className='flex flex-col md:py-28 gap-10 py-10 md:mb-0 mb-10 max-w-2xl'>
-        <div className='flex flex-col gap-7 items-center'>
-          <h1 className='md:text-4xl font-medium text-2xl text-slate-950'>Frequently asked questions</h1>
-          <p className='text-zinc-950/60 px-10 md:px-0 text-center text-base font-medium'>
+    <div id='faq' className='w-11/12 md:w-1/2 mx-auto text-center mt-32 md:mt-48'>
+      <div className='space-y-12'>
+        <div className='space-y-6 items-center'>
+          <h2 className='text-2xl md:text-4xl font-medium text-slate-950'>Frequently asked questions</h2>
+          <p className='text-zinc-950/60 text-center'>
             Don't worry, we got you. Here are some answers for your questions.
           </p>
         </div>
-        <div className='flex flex-col leading-8 items-center gap-2 px-4'>
-          {accordion.map((item, index) => (
-            <div key={index} className='w-full rounded-2xl'>
-              <Accordion type='single' collapsible>
-                <AccordionItem
-                  value={item.title}
-                  className='md:w-[669px] w-full bg-[#FAFAFA] rounded-2xl shadow-none border-none'>
-                  <CustomAccordionTrigger className='text-base w-full md:mx-6 mx-3 md:h-16'>
-                    {item.title}
-                  </CustomAccordionTrigger>
-                  <AccordionContent className='text-[#727272] pb-5 md:px-6 px-3 '>
-                    {item.content}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
+
+        <Accordion type='single' collapsible className='space-y-2'>
+          {faqData.map((item, index) => (
+            <AccordionItem
+              key={index}
+              value={item.title}
+              className='w-full bg-[#FAFAFA] rounded-2xl shadow-none border-none'>
+              <CustomAccordionTrigger className='w-full px-3 md:px-6 md:h-16 text-base font-normal'>
+                {item.title}
+              </CustomAccordionTrigger>
+              <AccordionContent className='text-[#727272] text-start pb-5 px-3 md:px-6'>
+                {item.content}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </div>
   );
-}
+};
+
+export default FAQ;
