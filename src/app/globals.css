@@ -110,3 +110,69 @@
   background-color: #dfdfdf;
   border-radius: 10px;
 }
+
+/* --- START --- Landing Page 12 carousel button style */
+
+.slick-slide > div {
+  padding: 16px;
+}
+
+.slick-arrow {
+  position: absolute !important;
+  top: -150px !important;
+}
+
+.slick-next {
+  right: 75px !important;
+  margin-top: 0px !important;
+}
+
+.slick-prev {
+  left: 75px !important;
+}
+
+.slick-next:before {
+  content: '' !important;
+  background-image: url('/lp-12-right-arrow.svg') !important;
+  border-radius: 24px;
+  background: #434343;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+.slick-prev:before {
+  content: '' !important;
+  background-image: url('/lp-12-left-arrow.svg') !important;
+  border-radius: 24px;
+  background: #434343;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .slick-arrow {
+    top: -240px !important;
+  }
+
+  .slick-next {
+    right: 130px !important;
+  }
+
+  .slick-prev {
+    left: 130px !important;
+  }
+
+  .slick-next:before,
+  .slick-prev:before {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* --- END --- Landing Page 12 carousel button style */
