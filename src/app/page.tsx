@@ -1,7 +1,8 @@
 // This is the entry component for the landing page of the application.
 // It sequentially renders the primary sections of the landing page including Hero, Features, Product, Pricing, Faq, and Footer components.
 
-import LandingPage1 from '@/components/landing-pages/landing-page-1';
+// import LandingPage1 from '@/components/landing-pages/landing-page-1';
+import LandingPage12 from '@/components/landing-pages/landing-pages-12';
 // import LandingPage2 from '@/components/landing-pages/landing-page-2';
 // import LandingPage3 from '@/components/landing-pages/landing-page-3';
 // import LandingPage4 from '@/components/landing-pages/landing-page-4';
@@ -15,7 +16,7 @@ import LandingPage1 from '@/components/landing-pages/landing-page-1';
 export default async function Home() {
   return (
     <>
-      <LandingPage1 />
+      {/* <LandingPage1 /> */}
       {/* <LandingPage2 /> */}
       {/* <LandingPage3 /> */}
       {/* <LandingPage4 /> */}
@@ -25,6 +26,7 @@ export default async function Home() {
       {/* <LandingPage8 /> */}
       {/* <LandingPage9 /> */}
       {/* <LandingPage10 /> */}
+      <LandingPage12 />
     </>
   );
 }
