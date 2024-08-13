@@ -64,6 +64,7 @@ Ensure you have the following installed:
    Create a `.env.local` file in the root directory and add the following variables:
 
    ```plaintext
+   NEXT_PUBLIC_APP_URL=<your-app-url>
    NEXT_PUBLIC_SUPABASE_URL=<your-supabase-url>
    NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-supabase-anon-key>
    SUPABASE_SERVICE_ROLE_KEY=<your-supabase-service-role-key>
@@ -157,4 +158,4 @@ This project is licensed under the MIT License. See the [LICENSE](https://www.bu
 
 ## Contact
 
-For any inquiries or issues, please open an issue on the [GitHub repository](https://github.com/1811-Labs-LLC/BuilderKit) or contact the author at [vatsal1811@gmail.com](mailto:vatsal1811@gmail.com).
+For any inquiries or issues please contact [hello@builderkit.ai](mailto:hello@builderkit.ai).
