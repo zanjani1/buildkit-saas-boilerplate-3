@@ -38,9 +38,9 @@ const CustomAccordionTrigger: FC<CustomAccordionTriggerProps> = ({ children, cla
         {children}
         <div className='size-6 bg-[#F2F2F2] rounded-[8px] p-1 gap-3'>
           {isOpen ? (
-            <FiMinus className='size-4 shrink-0 text-muted-foreground transition-transform text-[#0B3721]' />
+            <FiMinus className='size-4 shrink-0 transition-transform text-[#0B3721]' />
           ) : (
-            <FiPlus className='size-4 shrink-0 text-muted-foreground transition-transform text-[#0B3721]' />
+            <FiPlus className='size-4 shrink-0 transition-transform text-[#0B3721]' />
           )}
         </div>
       </div>

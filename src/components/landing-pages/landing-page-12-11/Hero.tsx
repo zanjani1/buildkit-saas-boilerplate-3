@@ -3,7 +3,6 @@ import Button from './Button';
 import Link from 'next/link';
 import Dashboard from '@/assets/landing-page-12/dashboard.png';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import waves from '@/assets/landing-page-12/icons/hero.svg';
 export default function Hero() {
   return (
     <div className='bg-lp12 bg-no-repeat'>

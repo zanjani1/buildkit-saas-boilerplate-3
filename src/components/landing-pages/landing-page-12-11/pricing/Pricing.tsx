@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/utils/utils';
-import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
 
 type Plan = {
   name: string;
@@ -86,7 +86,7 @@ const PricingPlan: React.FC<PricingPlanProps> = ({ plan }) => (
       {plan.features.map((feature, index) => (
         <li key={index} className='flex items-center text-sm font-medium text-[#211143]'>
           <svg
-            className='w-4 h-4 mr-2 text-violet-500'
+            className='size-4 mr-2 text-violet-500'
             fill='none'
             strokeLinecap='round'
             strokeLinejoin='round'
