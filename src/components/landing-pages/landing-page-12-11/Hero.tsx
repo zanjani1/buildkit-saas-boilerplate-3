@@ -1,0 +1,42 @@
+import Image from 'next/image';
+import Button from './Button';
+import Link from 'next/link';
+import Dashboard from '@/assets/landing-page-12/dashboard.png';
+import { ArrowRightIcon } from '@radix-ui/react-icons';
+import waves from '@/assets/landing-page-12/icons/hero.svg';
+export default function Hero() {
+  return (
+    <div className='bg-lp12 bg-no-repeat'>
+      <div className='max-w-4xl mx-auto px-4 py-9 text-center'>
+        <h1 className='text-4xl md:text-[56px] font-extrabold mb-4 md:leading-[62px] tracking-tight'>
+          Generate modular AI Apps <br />
+          with ease and pace
+        </h1>
+
+        <p className='text-base text-zinc-600 mb-10 max-w-xl mx-auto font-medium leading-8 tracking-tight'>
+          Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
+          Effort and Use our robust Deployable code.
+        </p>
+
+        <div className='flex justify-center items-center gap-4 mt-4'>
+          <Link href='#pricing'>
+            <Button variant='tertiary' size='lg'>
+              <span>Get Started</span>
+              <ArrowRightIcon className='size-3' />
+            </Button>
+          </Link>
+        </div>
+
+        <div className='mt-20 size-full'>
+          <Image
+            src={Dashboard}
+            width={1028}
+            height={588}
+            alt='Dashboard Preview'
+            className='rounded-3xl drop-shadow-2xl'
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

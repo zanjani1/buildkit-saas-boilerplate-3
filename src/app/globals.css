@@ -176,3 +176,10 @@
 }
 
 /* --- END --- Landing Page 12 carousel button style */
+
+.custom-blue {
+  box-shadow: 0px -8px 0px 0px #0f6fff;
+}
+.custom-white {
+  box-shadow: 0px -8px 0px 0px #f8f9fa;
+}
