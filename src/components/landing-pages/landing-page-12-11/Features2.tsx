@@ -36,7 +36,7 @@ const features = [
 
 const Features2 = () => {
   return (
-    <div className='py-40 px-4'>
+    <div className='md:py-40 py-20 px-4'>
       <div className='flex flex-col text-center gap-5 max-w-2xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-semibold md:leading-[44px] tracking-tight'>
           Essentially, <span className='text-blue-600'>everything</span> you need
