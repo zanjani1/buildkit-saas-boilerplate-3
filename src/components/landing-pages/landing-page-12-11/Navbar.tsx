@@ -26,7 +26,7 @@ const NavLink = ({ href, children, className }: INavLink) => (
 
 const Navbar = () => (
   <div className='bg-white sticky top-0 z-50 py-1 px-4 md:py-8'>
-    <div className='flex items-center justify-between p-2 md:pr-2 md:pl-3 gap-4 border-[#EAEAEA] border rounded-3xl max-w-2xl mx-auto'>
+    <div className='flex items-center justify-between p-2 md:pr-2 md:pl-3 gap-4 border-[#EAEAEA] border rounded-[32px] max-w-2xl mx-auto'>
       <Link href='https://www.builderkit.ai' className='flex items-center'>
         <Image src='/lp12-logo.svg' width={124} height={24} alt='logo' />
       </Link>

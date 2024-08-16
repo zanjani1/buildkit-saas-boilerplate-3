@@ -183,3 +183,7 @@
 .custom-white {
   box-shadow: 0px -8px 0px 0px #f8f9fa;
 }
+
+.shadow-image {
+  box-shadow: 0px 0px 16.6px 16px #e1e1e140;
+}

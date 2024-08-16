@@ -52,13 +52,13 @@ const contact = [
 
 export default function Footer() {
   return (
-    <div className='bg-zinc-50 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-32'>
+    <div className='bg-zinc-50 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-32 border-t border-[#DEDEDE]'>
       <div className='max-w-6xl mx-auto space-y-10 sm:space-y-20'>
         <div className='flex flex-col md:flex-row justify-between md:gap-40 gap-10'>
-          <div className='md:w-1/2 space-y-6'>
-            <Image src='/lp12-logo.svg' alt='logo' width={100} height={100} className='w-32' />
+          <div className='md:w-1/2 space-y-8'>
+            <Image src='/lp12-logo.svg' alt='logo' width={124} height={124} className='w-32' />
 
-            <p className='text-[#3E3E3E] font-medium max-w-[480px]'>
+            <p className='text-[#3E3E3E] font-normal max-w-[480px] leading-7 tracking-tight'>
               Highly modular NextJS AI Boilerplate that allows you to ship an AI App super fast
             </p>
 
@@ -70,8 +70,8 @@ export default function Footer() {
 
           <div className='flex flex-1 flex-col md:flex-row gap-10 md:gap-6'>
             <div className='space-y-4 w-1/3'>
-              <p className='text-[10px] text-[#303850]'>ALL</p>
-              <div className='space-y-4 text-[#3E3E3E] font-medium'>
+              <p className='text-[10px] text-[#303850] opacity-50 tracking-tight font-medium'>ALL</p>
+              <div className='space-y-4 text-[#3E3E3E] '>
                 {all.map((item) => (
                   <Link href={item.link} key={item.label} className='block'>
                     {item.label}
@@ -81,8 +81,8 @@ export default function Footer() {
             </div>
 
             <div className='space-y-4 w-1/3'>
-              <p className='text-[10px] text-[#303850] '>INFO</p>
-              <div className='space-y-4 text-[#3E3E3E] font-medium'>
+              <p className='text-[10px] text-[#303850] opacity-50 tracking-tight font-medium '>INFO</p>
+              <div className='space-y-4 text-[#3E3E3E]'>
                 {info.map((item) => (
                   <Link href={item.link} key={item.label} className='block'>
                     {item.label}
@@ -92,15 +92,15 @@ export default function Footer() {
             </div>
 
             <div className='space-y-4 w-1/3'>
-              <p className='text-[10px] text-[#303850]'>CONTACTS</p>
-              <div className='space-y-4 text-[#3E3E3E] text-sm font-medium'>
+              <p className='text-[10px] text-[#303850] opacity-50 tracking-tight font-medium'>CONTACTS</p>
+              <div className='space-y-4 text-[#3E3E3E] text-sm '>
                 {contact.map((item) => {
                   return item.link ? (
                     <Link href={item.link} key={item.label} className='block'>
                       {item.label}
                     </Link>
                   ) : (
-                    <p className='text-sm font-medium text-[#3E3E3E]' key={item.label}>
+                    <p className='text-sm text-[#3E3E3E]' key={item.label}>
                       {item.label}
                     </p>
                   );

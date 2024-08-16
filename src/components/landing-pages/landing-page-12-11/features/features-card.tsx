@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, description, progress, color, range,
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className='sticky top-0 bg-white'>
+    <div ref={container} className='sticky top-0 bg-white -mt-24'>
       <motion.div
         className='card flex flex-col relative rounded-3xl '
         style={{
@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({ title, description, progress, color, range,
             <h2 className='text-3xl md:text-[40px] font-semibold mb-4 tracking-tight md:leading-[56px]'>
               {title}
             </h2>
-            <p className='text-base md:text-lg leading-8 text-[#727272] tracking-tight font-normal'>
+            <p className='text-base md:text-lg md:leading-8 text-[#727272] tracking-tight font-normal'>
               {description}
             </p>
           </div>

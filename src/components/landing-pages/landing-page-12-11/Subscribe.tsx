@@ -29,7 +29,7 @@ export default function Subscribe() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter your email address'
-              className='w-3/4 h-12 md:h-14 rounded-l-xl md:rounded-l-2xl rounded-r-none p-4 border-none'
+              className='w-3/4 h-12 md:h-14 rounded-l-xl md:rounded-l-2xl rounded-r-none p-4 border-none text-base'
             />
             <button
               type='submit'
@@ -38,7 +38,7 @@ export default function Subscribe() {
             </button>
           </form>
 
-          <div className='hidden md:block absolute -right-4 top-5'>
+          <div className='hidden md:block absolute -right-5 top-8'>
             <Image src={BentArrowIcon} alt='bent-arrow-icon' />
           </div>
         </div>

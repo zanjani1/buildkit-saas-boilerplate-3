@@ -38,12 +38,12 @@ const Features3 = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className='bg-blue-800 rounded-3xl p-6 gap-4 flex flex-col max-w-[308px] shadow-sm'>
+              className='bg-[#0F4EAC] rounded-3xl p-6 gap-4 flex flex-col max-w-[308px] shadow-sm'>
               <div>
                 <Image src={feature.icon} width={32} height={32} alt={feature.title} />
               </div>
-              <div className='font-light'>
-                <h3 className='font-medium text-white mb-1'>{feature.title}</h3>
+              <div className='font-light gap-4'>
+                <h3 className='font-medium text-white mb-2'>{feature.title}</h3>
                 <p className='text-blue-100 text-sm tracking-tight'>{feature.description}</p>
               </div>
             </div>

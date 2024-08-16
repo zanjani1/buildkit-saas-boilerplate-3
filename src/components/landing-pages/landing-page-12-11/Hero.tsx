@@ -6,7 +6,7 @@ import { ArrowRightIcon } from '@radix-ui/react-icons';
 export default function Hero() {
   return (
     <div className='bg-lp12 bg-no-repeat'>
-      <div className='max-w-4xl mx-auto px-4 py-9 text-center'>
+      <div className='max-w-6xl mx-auto px-4 py-9 text-center'>
         <h1 className='text-4xl md:text-[56px] font-extrabold mb-4 md:leading-[62px] tracking-tight'>
           Generate modular AI Apps <br />
           with ease and pace
@@ -26,13 +26,13 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className='mt-20 size-full'>
+        <div className='pt-20'>
           <Image
-            src={Dashboard}
             width={1028}
-            height={588}
+            height={589}
+            src={Dashboard}
             alt='Dashboard Preview'
-            className='rounded-3xl drop-shadow-2xl'
+            className='rounded-3xl shadow-image mx-auto border border-[#F2F2F2]'
           />
         </div>
       </div>

@@ -50,7 +50,7 @@ const CustomAccordionTrigger: FC<CustomAccordionTriggerProps> = ({ children, cla
 
 const FAQ = () => {
   return (
-    <div id='faq' className='w-11/12 md:w-1/2 mx-auto text-center mt-32 md:mt-60'>
+    <div id='faq' className='w-11/12 md:w-1/2 mx-auto text-center py-20 md:mt-60'>
       <div className='space-y-12'>
         <div className='space-y-6 items-center'>
           <h2 className='text-2xl md:text-4xl font-medium text-slate-950 tracking-tight'>

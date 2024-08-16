@@ -53,7 +53,7 @@ export default function Home(): JSX.Element {
           </h1>
         </div>
 
-        <p className='text-[#53535C] leading-6 md:leading-8 max-w-xl'>
+        <p className='text-[#53535C] leading-6 md:leading-[30px] max-w-2xl font-light'>
           Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save hours of
           effort and use our robust deployable code.
         </p>
