@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/utils/utils';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
-import { motion, AnimatePresence } from 'framer-motion';
 
 type Plan = {
   name: string;
@@ -91,17 +90,17 @@ type PricingPlanProps = {
 const PricingPlan: React.FC<PricingPlanProps> = ({ plan }) => (
   <div
     className={cn(
-      'rounded-2xl py-6 px-5 gap-4 border border-neutral-200 max-w-72 self-end',
+      'rounded-2xl py-6 px-5 gap-4 border border-neutral-200 md:w-[272px] h-full font-medium',
       plan.isPopular && 'custom-blue',
       plan.isStarter && 'custom-white'
     )}>
     {plan.isPopular && (
-      <div className='bg-blue-50 text-blue-600 text-xs font-semibold px-2 rounded-sm mb-4 inline-block'>
+      <div className='bg-blue-50 text-blue-600 text-xs font-bold px-2 rounded-sm mb-4 inline-block'>
         MOST POPULAR
       </div>
     )}
     <h3 className='tracking-tight font-medium mb-4'>{plan.name}</h3>
-    <div className='text-3xl md:text-[44px] font-medium mb-6 text-indigo-950'>
+    <div className='text-3xl md:text-[44px] font-medium mb-6 text-[#211143] flex items-end'>
       {plan.price}
       <span className='text-[#ABABAB] text-sm font-normal ml-2'>/month</span>
     </div>
@@ -123,7 +122,7 @@ const PricingPlan: React.FC<PricingPlanProps> = ({ plan }) => (
     </p>
     <ul className='space-y-3'>
       {plan.features.map((feature, index) => (
-        <li key={index} className='flex items-center text-sm font-normal text-[#211143]'>
+        <li key={index} className='flex items-center text-sm font-semibold text-[#211143]'>
           <svg
             className='size-4 mr-2 text-violet-500'
             fill='none'
@@ -153,7 +152,7 @@ const Pricing: React.FC = () => {
         Sign up for free and get 50 min of transcription free to try out the app
       </p>
       <div className='flex justify-center pt-14 pb-10'>
-        <div className='bg-gray-100 rounded-2xl p-1 flex border border-[#E4E4E4]'>
+        <div className='bg-gray-100 rounded-2xl p-1 gap-1 flex border border-[#E4E4E4]'>
           <button
             onClick={() => setIsAnnual(false)}
             className={cn(
@@ -172,19 +171,14 @@ const Pricing: React.FC = () => {
           </button>
         </div>
       </div>
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key={isAnnual ? 'annual' : 'monthly'}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className='grid md:grid-cols-2 gap-8 max-w-xl mx-auto justify-center'>
-          {currentPlans.map((plan, index) => (
-            <PricingPlan key={index} plan={plan} />
-          ))}
-        </motion.div>
-      </AnimatePresence>
+      <div className='grid md:grid-cols-2 gap-5 max-w-xl md:max-h-[539px] mx-auto justify-center'>
+        <div className='flex flex-col justify-end mt-8 md:mt-[72px]'>
+          <PricingPlan key={1} plan={currentPlans[0]} />
+        </div>
+        <div className='flex flex-col justify-between'>
+          <PricingPlan key={0} plan={currentPlans[1]} />
+        </div>
+      </div>
     </div>
   );
 };

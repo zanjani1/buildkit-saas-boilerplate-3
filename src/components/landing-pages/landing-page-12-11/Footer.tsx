@@ -52,7 +52,7 @@ const contact = [
 
 export default function Footer() {
   return (
-    <div className='bg-zinc-50 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-32 border-t border-[#DEDEDE]'>
+    <div className='bg-zinc-50 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-0 border-t border-[#DEDEDE]'>
       <div className='max-w-6xl mx-auto space-y-10 sm:space-y-20'>
         <div className='flex flex-col md:flex-row justify-between md:gap-40 gap-10'>
           <div className='md:w-1/2 space-y-8'>

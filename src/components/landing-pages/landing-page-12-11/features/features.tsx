@@ -2,8 +2,8 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { useScroll, useTransform, useSpring, motion } from 'framer-motion';
-import Card from './features-card';
 import { projects } from './features-data';
+import FeaturesCard from './features-card';
 
 export default function Home(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -27,9 +27,8 @@ export default function Home(): JSX.Element {
 
   const progress = useTransform(scrollY, [0, scrollHeight], [0, 1]);
 
-  // Use useMemo to memoize the results of useSpring to avoid calling it inside the map function
   const scales = projects.map((project, index) => {
-    const targetScale = 1 - (projects.length - index) * 0.05;
+    const targetScale = 1 - (projects.length - index) * 0.25;
     const range: [number, number] = [index * 0.25, 1];
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useSpring(useTransform(progress, range, [1, targetScale]), {
@@ -41,7 +40,7 @@ export default function Home(): JSX.Element {
   return (
     <motion.main
       ref={containerRef}
-      className='max-w-full flex flex-col py-16 md:py-24 items-center md:gap-24 gap-12 px-4 md:px-0 mx-auto'>
+      className='max-w-7xl flex flex-col py-16 md:py-24 items-center px-4 md:px-0 mx-auto'>
       <header className='flex flex-col items-center gap-4 md:gap-7 text-center'>
         <div className='flex flex-col gap-2 md:gap-4'>
           <h1 className='text-2xl md:text-4xl font-semibold max-w-lg flex flex-col gap-1'>
@@ -53,15 +52,15 @@ export default function Home(): JSX.Element {
           </h1>
         </div>
 
-        <p className='text-[#53535C] leading-6 md:leading-[30px] max-w-2xl font-light'>
+        <p className='text-[#53535C] leading-6 md:leading-[30px] max-w-2xl'>
           Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save hours of
           effort and use our robust deployable code.
         </p>
       </header>
 
-      <div className='flex flex-col w-full gap-12 md:gap-16'>
+      <div className='flex flex-col w-full gap-12 md:gap-16 '>
         {projects.map((project, index) => (
-          <Card
+          <FeaturesCard
             i={0}
             link={''}
             key={project.id || index}
@@ -69,7 +68,7 @@ export default function Home(): JSX.Element {
             progress={scrollY}
             range={[index * 0.25, 1]}
             targetScale={1 - (projects.length - index) * 0.05}
-            scale={scales[index]} // Use the memoized scale value
+            scale={scales[index]}
           />
         ))}
       </div>

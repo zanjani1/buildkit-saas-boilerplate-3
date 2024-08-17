@@ -85,7 +85,7 @@ const Feedback: React.FC = () => {
   return (
     <div className='py-40 px-4'>
       <div className='max-w-7xl mx-auto'>
-        <h2 className='text-3xl font-semibold text-center mb-12'>
+        <h2 className='text-3xl font-semibold text-center mb-20'>
           Supporting over 1 million
           <br />
           developers and designers

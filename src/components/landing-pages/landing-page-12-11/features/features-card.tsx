@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useTransform, MotionValue } from 'framer-motion';
+import { motion, MotionValue } from 'framer-motion';
 import Image1 from '@/assets/landing-page-11/images/feature.svg';
 
 interface CardProps {
@@ -18,34 +18,30 @@ interface CardProps {
 }
 
 // Card component
-const Card: React.FC<CardProps> = ({ title, description, progress, color, range, targetScale }) => {
+const FeaturesCard: React.FC<CardProps> = ({ title, description, color }) => {
   const container = useRef<HTMLDivElement>(null);
-  const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className='sticky top-0 bg-white -mt-24'>
+    <div ref={container} className='sticky top-20 bg-white'>
       <motion.div
-        className='card flex flex-col relative rounded-3xl '
+        className='card flex flex-col rounded-3xl mt-10'
         style={{
-          scale,
           backgroundColor: color,
         }}>
-        <div className='flex flex-col md:flex-row items-center justify-between bg-[#F6F6F6] rounded-[20px] md:rounded-[40px] p-4 md:pl-10 md:pr-4 gap-6'>
+        <div className='flex flex-col md:flex-row items-center justify-between bg-[#F6F6F6] rounded-[20px] md:rounded-[40px] pl-10 pr-4 py-4 gap-6'>
           <div className='p-4 md:p-6 rounded-3xl w-full md:w-96 text-center md:text-start'>
             <h2 className='text-3xl md:text-[40px] font-semibold mb-4 tracking-tight md:leading-[56px]'>
               {title}
             </h2>
-            <p className='text-base md:text-lg md:leading-8 text-[#727272] tracking-tight font-normal'>
-              {description}
-            </p>
+            <p className='text-base md:text-lg md:leading-8 text-[#727272] tracking-tight'>{description}</p>
           </div>
-          <div className='bg-blue-600 rounded-3xl w-full h-auto md:w-[588px] md:h-[568px] py-12 flex items-center justify-center '>
+          <div className='bg-blue-600 rounded-3xl w-full h-auto md:w-[588px] md:h-[568px] flex items-center justify-center md:p-0 p-10'>
             <Image
               width={305}
               height={453}
               src={Image1}
               alt='Feature'
-              className='w-[200px] h-[300px] md:w-[305px] md:h-[453px] mx-auto rounded-3xl'
+              className='w-[200px] h-[300px] md:w-[305px] md:h-[453px] rounded-3xl'
             />
           </div>
         </div>
@@ -54,4 +50,4 @@ const Card: React.FC<CardProps> = ({ title, description, progress, color, range,
   );
 };
 
-export default Card;
+export default FeaturesCard;
