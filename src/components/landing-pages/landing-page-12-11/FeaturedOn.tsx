@@ -16,7 +16,7 @@ export default function FeaturedOn() {
 
       <div className='flex flex-wrap justify-center gap-5 md:gap-10'>
         {imageSrc.map(({ src, alt }, index) => (
-          <Image key={index} src={src} width={125} height={125} alt={`${alt} logo`} />
+          <Image key={index} src={src} width={112} height={112} alt={`${alt} logo`} />
         ))}
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Hero() {
           with ease and pace
         </h1>
 
-        <p className='text-base text-zinc-600 mb-10 max-w-xl mx-auto font-semibold leading-8 tracking-tight'>
+        <p className='text-zinc-600 mb-10 max-w-xl mx-auto font-medium leading-8 tracking-tight'>
           Highly modular NextJS AI Boilerplate that allows you to ship any AI Apps within days. Save Hours of
           Effort and Use our robust Deployable code.
         </p>
@@ -28,9 +28,11 @@ export default function Hero() {
 
         <div className='pt-20'>
           <Image
+            width={1028}
+            height={588}
             src={Dashboard}
             alt='Dashboard Preview'
-            className='rounded-3xl shadow-image mx-auto border border-[#F2F2F2] md:max-w-5xl md:max-h-[588px]'
+            className='rounded-3xl shadow-image mx-auto border border-[#F2F2F2] bg-contain'
           />
         </div>
       </div>

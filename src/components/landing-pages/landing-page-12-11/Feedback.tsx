@@ -71,13 +71,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => (
           className='rounded-full mr-3'
         />
         <div>
-          <p className='font-semibold text-[15px]'>{testimonial.name}</p>
-          <p className='text-gray-500 text-sm'>{testimonial.username}</p>
+          <p className='font-semibold'>{testimonial.name}</p>
+          <p className='text-gray-500 text-sm font-light'>{testimonial.username}</p>
         </div>
       </div>
       <TwitterIcon />
     </div>
-    <p className='text-gray-700 text-sm md:w-80'>{testimonial.content}</p>
+    <p className='text-gray-700 text-sm md:w-80 leading-6'>{testimonial.content}</p>
   </div>
 );
 
@@ -85,7 +85,7 @@ const Feedback: React.FC = () => {
   return (
     <div className='py-40 px-4'>
       <div className='max-w-7xl mx-auto'>
-        <h2 className='text-3xl font-semibold text-center mb-20'>
+        <h2 className='text-4xl font-semibold text-center mb-20'>
           Supporting over 1 million
           <br />
           developers and designers

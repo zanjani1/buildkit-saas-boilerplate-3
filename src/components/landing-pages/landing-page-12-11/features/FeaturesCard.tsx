@@ -28,7 +28,7 @@ const FeaturesCard: React.FC<CardProps> = ({ title, description, color }) => {
         style={{
           backgroundColor: color,
         }}>
-        <div className='flex flex-col md:flex-row items-center justify-between bg-[#F6F6F6] rounded-[20px] md:rounded-[40px] pl-10 pr-4 py-4 gap-6'>
+        <div className='flex flex-col md:flex-row items-center justify-between bg-[#F6F6F6] rounded-[20px] md:rounded-[40px] md:pl-10 md:pr-4 px-5 py-4 gap-6'>
           <div className='p-4 md:p-6 rounded-3xl w-full md:w-96 text-center md:text-start'>
             <h2 className='text-3xl md:text-[40px] font-semibold mb-4 tracking-tight md:leading-[56px]'>
               {title}

@@ -2,8 +2,8 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { useScroll, useTransform, useSpring, motion } from 'framer-motion';
-import { projects } from './features-data';
-import FeaturesCard from './features-card';
+import { projects } from './FeaturesData';
+import FeaturesCard from './FeaturesCard';
 
 export default function Home(): JSX.Element {
   const containerRef = useRef<HTMLElement>(null);
@@ -40,7 +40,8 @@ export default function Home(): JSX.Element {
   return (
     <motion.main
       ref={containerRef}
-      className='max-w-7xl flex flex-col py-16 md:py-24 items-center px-4 md:px-0 mx-auto'>
+      className='max-w-7xl flex flex-col py-16 md:py-24 items-center px-4 md:px-0 mx-auto'
+      id='features'>
       <header className='flex flex-col items-center gap-4 md:gap-7 text-center'>
         <div className='flex flex-col gap-2 md:gap-4'>
           <h1 className='text-2xl md:text-4xl font-semibold max-w-lg flex flex-col gap-1'>
