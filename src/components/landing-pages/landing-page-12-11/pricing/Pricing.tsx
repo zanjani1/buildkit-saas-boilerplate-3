@@ -104,7 +104,7 @@ const Pricing: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
 
   return (
-    <div id='Pricing' className='max-w-6xl mx-auto px-4 py-14 md:py-24'>
+    <div id='pricing' className='max-w-6xl mx-auto px-4 py-14 md:py-24'>
       <h2 className='text-3xl md:text-4xl font-semibold text-center mb-4 tracking-tight'>Pricing Plans</h2>
       <p className='text-center text-gray-600 font-normal text-[15px]'>
         Sign up for free and get 50 min of transcription free to try out the app

@@ -51,7 +51,7 @@ const FooterSection: React.FC<{ title: string; links: FooterLink[] }> = ({ title
 export default function Footer() {
   return (
     <div className='bg-zinc-50 px-4 md:px-0 pt-12 md:pt-20 mt-24 md:mt-0 border-t border-[#DEDEDE] gap-16'>
-      <div className='max-w-7xl mx-auto space-y-16 md:px-14'>
+      <div className='max-w-7xl mx-auto space-y-16 md:pl-14'>
         <div className='flex flex-col md:flex-row md:gap-40 gap-10'>
           <div className='md:w-1/2 space-y-8'>
             <Image src='/lp12-logo.svg' alt='logo' width={124} height={124} className='w-32' />
