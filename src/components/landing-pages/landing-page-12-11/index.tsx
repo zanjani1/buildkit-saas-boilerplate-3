@@ -9,7 +9,7 @@ import FeaturedOn from './FeaturedOn';
 import Features2 from './Features2';
 import Features3 from './Features3';
 import Feedback from './Feedback';
-import Features from './features/Features';
+
 const font = Space_Grotesk({
   subsets: ['latin'],
 });
@@ -20,7 +20,6 @@ export default function LandingPage12() {
       <Navbar />
       <Hero />
       <FeaturedOn />
-      <Features />
       <Features2 />
       <Features3 />
       <Feedback />
