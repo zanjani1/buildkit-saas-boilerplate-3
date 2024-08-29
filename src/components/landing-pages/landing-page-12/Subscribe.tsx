@@ -14,8 +14,8 @@ export default function Subscribe() {
   };
 
   return (
-    <div className='w-11/12 md:w-[44%] bg-neutral-100 rounded-3xl p-8 md:p-10 text-center mx-auto mt-32 md:mt-48'>
-      <p className='text-sm text-blue-500 mb-4 font-semibold leading-6'>Subscribe</p>
+    <div className='w-11/12 md:w-[46%] bg-neutral-100 rounded-3xl p-8 md:p-10 text-center mx-auto mt-32 md:mt-60'>
+      <p className='text-sm text-blue-500 mb-4 font-medium leading-6'>Subscribe</p>
 
       <div className='space-y-10'>
         <h2 className='text-2xl md:text-4xl font-medium text-neutral-700'>
@@ -29,7 +29,7 @@ export default function Subscribe() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter your email address'
-              className='w-3/4 h-12 md:h-14 rounded-l-xl md:rounded-l-2xl rounded-r-none p-4 border-none'
+              className='w-3/4 h-12 md:h-14 rounded-l-xl md:rounded-l-2xl text-base font-light rounded-r-none p-4 border-none'
             />
             <button
               type='submit'
@@ -38,7 +38,7 @@ export default function Subscribe() {
             </button>
           </form>
 
-          <div className='hidden md:block absolute -right-4 top-5'>
+          <div className='hidden md:block absolute -right-4 top-7'>
             <Image src={BentArrowIcon} alt='bent-arrow-icon' />
           </div>
         </div>

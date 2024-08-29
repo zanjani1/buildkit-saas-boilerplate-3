@@ -12,7 +12,7 @@
 // import LandingPage9 from '@/components/landing-pages/landing-page-9';
 // import LandingPage10 from '@/components/landing-pages/landing-page-10';
 // import LandingPage11 from '@/components/landing-pages/landing-page-11';
-import LandingPage12 from '@/components/landing-pages/landing-page-12-11';
+import LandingPage12 from '@/components/landing-pages/landing-page-12';
 
 export default async function Home() {
   return (

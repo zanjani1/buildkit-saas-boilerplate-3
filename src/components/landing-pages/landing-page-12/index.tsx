@@ -6,6 +6,7 @@ import Subscribe from './Subscribe';
 import Navbar from './Navbar';
 import { Space_Grotesk } from 'next/font/google';
 import FeaturedOn from './FeaturedOn';
+import Features from './features/Features';
 import Features2 from './Features2';
 import Features3 from './Features3';
 import Feedback from './Feedback';
@@ -20,6 +21,7 @@ export default function LandingPage12() {
       <Navbar />
       <Hero />
       <FeaturedOn />
+      <Features />
       <Features2 />
       <Features3 />
       <Feedback />

@@ -13,7 +13,7 @@ const variantClasses = {
   fill: 'text-black bg-white',
   default: 'text-white bg-[#0C0E1E]',
   secondary: 'text-[#0C0E1E] border-[#EAEAEA] border rounded-3xl ',
-  tertiary: 'bg-blue-600 text-white rounded-3xl font-normal',
+  tertiary: 'bg-blue-600/90 text-white rounded-3xl font-normal',
 };
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

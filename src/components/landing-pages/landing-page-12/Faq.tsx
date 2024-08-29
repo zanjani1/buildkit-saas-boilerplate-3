@@ -50,13 +50,13 @@ const CustomAccordionTrigger: FC<CustomAccordionTriggerProps> = ({ children, cla
 
 const FAQ = () => {
   return (
-    <div id='faq' className='w-11/12 md:w-1/2 mx-auto text-center py-20 md:mt-40'>
+    <div id='faq' className='w-11/12 md:w-1/2 mx-auto text-center mt-60'>
       <div className='space-y-12'>
-        <div className='space-y-6 items-center'>
+        <div className='space-y-6'>
           <h2 className='text-2xl md:text-4xl font-medium text-slate-950 tracking-tight'>
             Frequently asked questions
           </h2>
-          <p className='text-[#53535C] text-center'>
+          <p className='text-[#53535C] text-center font-light'>
             Don't worry, we got you. Here are some answers for your questions.
           </p>
         </div>
