@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Button from './Button';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import footer from '@/assets/landing-page-12/images/footer.svg';
+import footer from '@/assets/landing-page-13/images/footer.svg';
 
 interface FooterLink {
   label: string;
@@ -32,7 +32,7 @@ export default function Footer() {
       <div className='max-w-7xl mx-auto space-y-14 md:space-y-28'>
         <div className='flex flex-col md:flex-row gap-10 md:gap-40'>
           <div className='md:w-1/2 space-y-8'>
-            <Image src='/lp12-logo.svg' alt='logo' width={124} height={124} className='w-32' />
+            <Image src='/lp13-logo.svg' alt='logo' width={124} height={124} className='w-32' />
             <p className='w-3/4 text-[#3E3E3E] leading-7 font-medium'>
               Highly modular NextJS AI Boilerplate that allows you to ship an AI App super fast
             </p>

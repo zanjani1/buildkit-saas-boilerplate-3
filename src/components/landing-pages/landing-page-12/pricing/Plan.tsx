@@ -49,7 +49,7 @@ const PricingPlan: FC<PricingPlanProps> = ({ billingCycle }) => {
           key={plan.name}
           className={cn(
             'rounded-2xl py-6 px-5 border border-neutral-200',
-            plan.isPopular ? 'custom-blue' : 'h-fit custom-white'
+            plan.isPopular ? 'shadow-[0px_-8px_0px_0px_#0f6fff]' : 'h-fit shadow-[0px_-8px_0px_0px_#f8f9fa]'
           )}>
           {plan.isPopular && (
             <div className='bg-blue-50 text-blue-600 text-xs font-semibold px-2 py-0.5 rounded mb-4 inline-block'>

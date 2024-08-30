@@ -30,7 +30,7 @@ export default function Hero() {
         height={588}
         src={Dashboard}
         alt='Dashboard Preview'
-        className='rounded-3xl shadow-image mx-auto border border-[#F2F2F2]'
+        className='rounded-3xl shadow-[0px_0px_16.6px_16px_#e1e1e140] mx-auto border border-[#F2F2F2]'
       />
     </div>
   );
