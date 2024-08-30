@@ -33,7 +33,7 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row gap-10 md:gap-40'>
           <div className='md:w-1/2 space-y-8'>
             <Image src='/lp12-logo.svg' alt='logo' width={124} height={124} className='w-32' />
-            <p className='w-3/4 text-[#3E3E3E] leading-7'>
+            <p className='w-3/4 text-[#3E3E3E] leading-7 font-medium'>
               Highly modular NextJS AI Boilerplate that allows you to ship an AI App super fast
             </p>
             <Button variant='tertiary' size='md' className='text-base'>
@@ -51,7 +51,7 @@ export default function Footer() {
               return (
                 <div key={title} className='space-y-4'>
                   <p className='text-[12px] text-[#303850] opacity-50'>{title}</p>
-                  <div className='space-y-3 text-[#3E3E3E]'>
+                  <div className='space-y-3 text-[#3E3E3E] font-medium'>
                     {links.map((item) =>
                       item.link ? (
                         <Link href={item.link} key={item.label} className={`block ${textSize}`}>

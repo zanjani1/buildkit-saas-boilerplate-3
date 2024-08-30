@@ -49,9 +49,9 @@ export default function Footer() {
               const textSize = isContacts ? 'text-sm' : 'text-base';
 
               return (
-                <div key={title} className='space-y-4 font-medium'>
-                  <p className='text-[10px] text-[#303850] opacity-50'>{title}</p>
-                  <div className='space-y-3 text-[#3E3E3E]'>
+                <div key={title} className='space-y-4'>
+                  <p className='text-[12px] text-[#303850] opacity-50'>{title}</p>
+                  <div className='space-y-3 text-[#3E3E3E] font-medium'>
                     {links.map((item) =>
                       item.link ? (
                         <Link href={item.link} key={item.label} className={`block ${textSize}`}>

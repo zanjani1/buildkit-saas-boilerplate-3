@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -10,40 +10,23 @@ import avatar from '@/assets/landing-page-11/images/feedback.svg';
 
 const Feedback = () => {
   const sliderRef = useRef(null);
-  const [slidesToShow, setSlidesToShow] = useState(3.6);
-
-  const updateSlidesToShow = useCallback(() => {
-    if (window.innerWidth < 640) {
-      setSlidesToShow(1.2);
-    } else if (window.innerWidth < 1024) {
-      setSlidesToShow(2.2);
-    } else {
-      setSlidesToShow(3.6);
-    }
-  }, []);
-
-  useEffect(() => {
-    updateSlidesToShow();
-    window.addEventListener('resize', updateSlidesToShow);
-    return () => window.removeEventListener('resize', updateSlidesToShow);
-  }, [updateSlidesToShow]);
 
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow,
-    slidesToScroll: 2,
+    slidesToShow: 3.6,
+    slidesToScroll: 1,
     rows: 2,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow, slidesToScroll: 1 },
+        settings: { slidesToShow: 2.2 },
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow, slidesToScroll: 1 },
+        settings: { slidesToShow: 1.2 },
       },
     ],
   };
@@ -60,7 +43,7 @@ const Feedback = () => {
         </div>
 
         <div className='w-full'>
-          <Slider ref={sliderRef} {...settings} className='space-y-4'>
+          <Slider ref={sliderRef} {...settings} className='lp-11-slider space-y-4'>
             {feedbacks.map(({ content, author, role }, index) => (
               <div key={index} className='bg-[#1A1D1E] rounded-3xl p-8 space-y-14'>
                 <p className='text-white/60 text-sm md:text-base md:leading-7 font-light'>{content}</p>

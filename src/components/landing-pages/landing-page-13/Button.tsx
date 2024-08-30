@@ -5,7 +5,7 @@ const sizeClasses = {
   sm: 'px-6 h-10 w-44 font-medium',
   md: 'px-6 h-11',
   semi: 'w-full h-9 rounded-[32px] py-2 px-3 gap-20 text-sm',
-  start: 'py-3 px-4 w-full h-[41px] text-sm gap-2 leading-4',
+  default: 'py-3 px-4 h-[41px] text-sm gap-2 leading-4 mx-auto',
   lg: 'w-auto text-sm h-12 rounded-3xl py-3 px-6 gap-2',
 };
 
