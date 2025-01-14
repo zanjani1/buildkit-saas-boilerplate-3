@@ -3,6 +3,7 @@ import ApiUsageChart from '@/components/dashboard/admin-dashboard/ApiUsageChart'
 import UserStatsChart from '@/components/dashboard/admin-dashboard/UserStatsChart';
 import { getUser } from '@/utils/get-user';
 import { supabaseAdmin } from '@/utils/supabase/admin';
+import { supabaseServerClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
 // Define the type of Supabase tables
@@ -43,8 +44,9 @@ const AdminDashboard = async () => {
     redirect('/login');
   }
 
-  // Check if user is admin
-  const { data: userData, error: userError } = await supabaseAdmin
+  // First check user role with regular client (respects RLS)
+  const supabase = supabaseServerClient();
+  const { data: userData, error: userError } = await supabase
     .from('users')
     .select('role')
     .eq('id', user.id)
@@ -54,7 +56,7 @@ const AdminDashboard = async () => {
     redirect('/sample-dashboard');
   }
 
-  // Fetch data from each table
+  // Only after confirming admin role, use admin client for fetching data
   const chartData: ChartData[] = await Promise.all(
     tables.map(async ({ name, table, field }) => {
       const { data, error } = await supabaseAdmin.from(table as SupabaseTable).select(field);

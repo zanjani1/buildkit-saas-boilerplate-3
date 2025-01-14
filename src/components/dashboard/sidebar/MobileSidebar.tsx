@@ -1,49 +1,63 @@
-// This is the MobileSidebar component that displays the sidebar items in the dashboard for mobile devices only.
+// Mobile sidebar component used in the dashboard layout to display the sidebar with the logo, sidebar items, and sign-out button.
 
+import { FC } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { BiMenu } from 'react-icons/bi';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { getUser } from '@/utils/get-user';
+import { Menu } from 'lucide-react';
 import Logo from '../../Logo';
-import ButtonSignout from './ButtonSignout';
 import MobileSidebarItems from './MobileSidebarItems';
+import ButtonSignout from './ButtonSignout';
+import Link from 'next/link';
+import { getUser } from '@/utils/get-user';
+import { supabaseServerClient } from '@/utils/supabase/server';
 
-const MobileSidebar = async () => {
+interface MobileSidebarProps {}
+
+const MobileSidebar: FC<MobileSidebarProps> = async () => {
   const user = await getUser();
+  
+  // Fetch user role server-side
+  let isAdmin = false;
+  if (user) {
+    const supabase = supabaseServerClient();
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .select('role')
+      .eq('id', user.id)
+      .single();
+    
+    console.log('User role check:', { userData, userError });
+    isAdmin = !userError && userData?.role === 'admin';
+  }
 
   return (
-    <div className='p-4 h-full flex items-center justify-between shadhow-sm'>
-      <Logo />
-      <Sheet>
-        <SheetTrigger className='md:hidden hover:opacity-75 transition'>
-          <BiMenu size={20} />
-        </SheetTrigger>
-        <SheetContent side='left' className='p-0'>
-          <div className='h-screen flex flex-col justify-between items-start border-r px-4 py-8'>
-            <div className='w-full flex flex-col gap-8'>
-              <div className='px-3'>
-                <Logo />
-              </div>
-
-              <MobileSidebarItems user={user} />
-            </div>
-
-            <div className='w-full flex flex-col gap-4'>
-              {user ? (
-                <ButtonSignout />
-              ) : (
-                <Link href='/login' className='w-full'>
-                  <Button variant='outline' className='w-full text-primary border-primary'>
-                    Sign In
-                  </Button>
-                </Link>
-              )}
-            </div>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant='outline' size='icon' className='lg:hidden'>
+          <Menu className='h-4 w-4' />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side='left' className='p-0'>
+        <div className='h-full flex flex-col justify-between items-start p-6'>
+          <div className='w-full flex flex-col gap-8'>
+            <Logo />
+            <MobileSidebarItems user={user} isAdmin={isAdmin} />
           </div>
-        </SheetContent>
-      </Sheet>
-    </div>
+
+          <div className='w-full flex flex-col gap-4'>
+            {user ? (
+              <ButtonSignout />
+            ) : (
+              <Link href='/login' className='w-full'>
+                <Button variant='outline' className='w-full text-primary border-primary'>
+                  Sign In
+                </Button>
+              </Link>
+            )}
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 

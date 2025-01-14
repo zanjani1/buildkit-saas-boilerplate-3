@@ -7,11 +7,26 @@ import ButtonSignout from './ButtonSignout';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { getUser } from '@/utils/get-user';
+import { supabaseServerClient } from '@/utils/supabase/server';
 
 interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = async () => {
   const user = await getUser();
+  
+  // Fetch user role server-side
+  let isAdmin = false;
+  if (user) {
+    const supabase = supabaseServerClient();
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .select('role')
+      .eq('id', user.id)
+      .single();
+    
+    console.log('User role check:', { userData, userError });
+    isAdmin = !userError && userData?.role === 'admin';
+  }
 
   return (
     <div className='h-screen flex flex-col justify-between items-start border-r px-4 py-8'>
@@ -20,7 +35,7 @@ const Sidebar: FC<SidebarProps> = async () => {
           <Logo />
         </div>
 
-        <SidebarItems user={user} />
+        <SidebarItems user={user} isAdmin={isAdmin} />
       </div>
 
       <div className='w-full flex flex-col gap-4'>
