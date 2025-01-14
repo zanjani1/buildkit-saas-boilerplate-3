@@ -17,7 +17,6 @@ type SupabaseTable =
   | 'chat_with_file';
 
 // Define the tables to fetch data from supabase
-// Each table has a name, table name, and field name to fetch data from the table
 const tables = [
   { name: 'Image Generations', table: 'image_generations', field: 'image_urls' },
   { name: 'QR Code Generations', table: 'qr_code_generations', field: 'image_url' },
@@ -41,6 +40,17 @@ const AdminDashboard = async () => {
   const user = await getUser();
 
   if (!user) {
+    redirect('/login');
+  }
+
+  // Check if user is admin
+  const { data: userData, error: userError } = await supabaseAdmin
+    .from('users')
+    .select('role')
+    .eq('id', user.id)
+    .single();
+
+  if (userError || !userData || userData.role !== 'admin') {
     redirect('/sample-dashboard');
   }
 

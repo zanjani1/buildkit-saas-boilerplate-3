@@ -29,15 +29,17 @@ const MobileSidebar = async () => {
               <MobileSidebarItems user={user} />
             </div>
 
-            {user ? (
-              <ButtonSignout />
-            ) : (
-              <Link href='/login' className='w-full'>
-                <Button variant='outline' className='w-full text-primary border-primary'>
-                  Sign In
-                </Button>
-              </Link>
-            )}
+            <div className='w-full flex flex-col gap-4'>
+              {user ? (
+                <ButtonSignout />
+              ) : (
+                <Link href='/login' className='w-full'>
+                  <Button variant='outline' className='w-full text-primary border-primary'>
+                    Sign In
+                  </Button>
+                </Link>
+              )}
+            </div>
           </div>
         </SheetContent>
       </Sheet>
